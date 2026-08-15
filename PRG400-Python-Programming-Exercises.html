@@ -1048,44 +1048,100 @@ details.solution-page pre {
 
   <li><a href="#ex-0"><span class="toc-text">Exercise 1 : Environment Configuration</span><span class="toc-dots"></span><span class="toc-page">2</span></a></li>
 
-  <li><a href="#ex-1"><span class="toc-text">Exercise 2 : Variables and Data Types</span><span class="toc-dots"></span><span class="toc-page">3</span></a></li>
+  <li><a href="#ex-1"><span class="toc-text">Exercise 2 : Variables and Data Types</span><span class="toc-dots"></span><span class="toc-page">6</span></a></li>
 
-  <li><a href="#ex-2"><span class="toc-text">Exercise 3 : Data Structures</span><span class="toc-dots"></span><span class="toc-page">6</span></a></li>
+  <li><a href="#ex-2"><span class="toc-text">Exercise 3 : Data Structures</span><span class="toc-dots"></span><span class="toc-page">9</span></a></li>
 
-  <li><a href="#ex-3"><span class="toc-text">Exercise 4 : Control Flow</span><span class="toc-dots"></span><span class="toc-page">10</span></a></li>
+  <li><a href="#ex-3"><span class="toc-text">Exercise 4 : Control Flow</span><span class="toc-dots"></span><span class="toc-page">13</span></a></li>
 
-  <li><a href="#ex-4"><span class="toc-text">Exercise 5 : Functions</span><span class="toc-dots"></span><span class="toc-page">12</span></a></li>
+  <li><a href="#ex-4"><span class="toc-text">Exercise 5 : Functions</span><span class="toc-dots"></span><span class="toc-page">15</span></a></li>
 
-  <li><a href="#ex-5"><span class="toc-text">Exercise 6 : Modules</span><span class="toc-dots"></span><span class="toc-page">14</span></a></li>
+  <li><a href="#ex-5"><span class="toc-text">Exercise 6 : Modules</span><span class="toc-dots"></span><span class="toc-page">17</span></a></li>
 
-  <li><a href="#ex-6"><span class="toc-text">Exercise 7 : Comprehensions</span><span class="toc-dots"></span><span class="toc-page">16</span></a></li>
+  <li><a href="#ex-6"><span class="toc-text">Exercise 7 : Comprehensions</span><span class="toc-dots"></span><span class="toc-page">19</span></a></li>
 
-  <li><a href="#ex-7"><span class="toc-text">Exercise 8 : Exception Handling</span><span class="toc-dots"></span><span class="toc-page">18</span></a></li>
+  <li><a href="#ex-7"><span class="toc-text">Exercise 8 : Exception Handling</span><span class="toc-dots"></span><span class="toc-page">21</span></a></li>
 
-  <li><a href="#ex-8"><span class="toc-text">Exercise 9 : Python IO</span><span class="toc-dots"></span><span class="toc-page">20</span></a></li>
+  <li><a href="#ex-8"><span class="toc-text">Exercise 9 : Python IO</span><span class="toc-dots"></span><span class="toc-page">23</span></a></li>
 
-  <li><a href="#ex-9"><span class="toc-text">Exercise 10 : Python Database Access</span><span class="toc-dots"></span><span class="toc-page">22</span></a></li>
+  <li><a href="#ex-9"><span class="toc-text">Exercise 10 : Python Database Access</span><span class="toc-dots"></span><span class="toc-page">25</span></a></li>
 
-  <li><a href="#ex-10"><span class="toc-text">Exercise 11 : Python Classes</span><span class="toc-dots"></span><span class="toc-page">24</span></a></li>
+  <li><a href="#ex-10"><span class="toc-text">Exercise 11 : Python Classes</span><span class="toc-dots"></span><span class="toc-page">27</span></a></li>
 
-  <li><a href="#ex-11"><span class="toc-text">Exercise 12 : Optional Exercise : Python Libraries</span><span class="toc-dots"></span><span class="toc-page">27</span></a></li>
+  <li><a href="#ex-11"><span class="toc-text">Exercise 12 : Optional Exercise : Python Libraries</span><span class="toc-dots"></span><span class="toc-page">30</span></a></li>
 
 </ul>
 
 <h1 id="exercise-1--environment-configuration"><a id="ex-0"></a>Exercise 1 : Environment Configuration</h1>
-<p>To create Python scripts we can use different IDEs :</p>
-<ul>
-<li>PyCharm Community Edition IDE that is free and can be downloaded</li>
-<li>Spyder IDE from the community Anaconda distribution that is free and can be downloaded</li>
-<li>Visual Code with a Python plugin that is free but has limited capabilities</li>
-<li>Eclipse IDE with the Python plugin PyDev for Python development, not recommended</li>
-</ul>
-<p>But first we need to install a Python version.</p>
+<p>This exercise takes about fifteen minutes and leaves you with a working Python 3.14, the <code>uv</code> project manager, the <code>ruff</code> linter and an editor that understands Python. Everything you do in the rest of the course runs in the project you build here.</p>
 <hr>
-<h3 id="step-1--python-installation">Step 1 : Python Installation</h3>
-<p>Install a recent Python 3 version (the course was developed against Python 3.10+). Do a full install, for example in <code>C:\Python310</code>, and add the installation directory to the <code>PATH</code> environment variable (Computer -&gt; Properties -&gt; Advanced System Settings -&gt; Environment Variables).</p>
-<h3 id="step-2--pycharm-ide">Step 2 : PyCharm IDE</h3>
-<p>Download and install the latest version of the PyCharm Community Edition. The demo projects in the course are made with PyCharm and this is the IDE that we recommend.</p>
+<h3 id="step-1--install-uv">Step 1 : Install uv</h3>
+<p><code>uv</code> is the project manager the course uses, and it can install Python itself, so it is the only thing you install by hand. On Windows, run this in PowerShell :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">powershell </span><span style="color:#D32F2F">-</span><span style="color:#24292EFF">ExecutionPolicy ByPass </span><span style="color:#D32F2F">-</span><span style="color:#24292EFF">c </span><span style="color:#22863A">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code></pre>
+
+<p>On macOS or Linux, run this in a terminal :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">curl</span><span style="color:#2B5581"> -LsSf</span><span style="color:#2B5581"> https://astral.sh/uv/install.sh</span><span style="color:#D32F2F"> |</span><span style="color:#6F42C1"> sh</span></span></code></pre>
+
+<p>Close and reopen the terminal afterwards so that <code>uv</code> is on your <code>PATH</code>, then confirm it works with <code>uv --version</code>.</p>
+<p>See also : <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a></p>
+<h3 id="step-2--install-python">Step 2 : Install Python</h3>
+<p>Let <code>uv</code> fetch the interpreter the course uses :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> python</span><span style="color:#2B5581"> install</span><span style="color:#1976D2"> 3.14</span></span></code></pre>
+
+<p>This needs no administrator rights and leaves any Python already on the machine alone. Confirm it with <code>uv python list</code>.</p>
+<hr>
+<h3 id="step-3--install-an-editor">Step 3 : Install an editor</h3>
+<p>Install Visual Studio Code from <code>https://code.visualstudio.com</code>, then add two extensions from the Extensions panel, the square icon on the left :</p>
+<ul>
+<li><code>Python</code>, published by Microsoft</li>
+<li><code>Ruff</code>, published by Astral</li>
+</ul>
+<p>Any editor works, but the course demonstrates VS Code and the slides assume it.</p>
+<p>See also : <a href="https://docs.astral.sh/ruff/">https://docs.astral.sh/ruff/</a></p>
+<h3 id="step-4--create-your-course-project">Step 4 : Create your course project</h3>
+<p>You write your own code this week in a project of your own, the same way you would at work. From the folder where you keep your work :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> init</span><span style="color:#2B5581"> course-work</span></span>
+<span class="line"><span style="color:#6F42C1">cd</span><span style="color:#2B5581"> course-work</span></span></code></pre>
+
+<p>Open that folder in VS Code, then use the Command Palette, <code>Python: Select Interpreter</code>, and choose the interpreter in <code>.venv</code>.</p>
+<hr>
+<h3 id="step-5--confirm-the-toolchain-runs">Step 5 : Confirm the toolchain runs</h3>
+<p>Run each of these from inside <code>course-work</code> :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> --version</span></span>
+<span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> python</span><span style="color:#2B5581"> --version</span><span style="color:#4a9c59">      # prints Python 3.14.x</span></span>
+<span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> ruff</span><span style="color:#2B5581"> --version</span></span></code></pre>
+
+<p>Then write a first annotated function. Create <code>hello.py</code> in the project :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> greet</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"Hello, </span><span style="color:#1976D2">{</span><span style="color:#24292EFF">name</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">greet</span><span style="color:#212121">(</span><span style="color:#22863A">"Python"</span><span style="color:#212121">))</span></span></code></pre>
+
+<p>Run it with <code>uv run python hello.py</code>. You should see <code>Hello, Python</code>.</p>
+<h3 id="step-6--see-the-linter-work">Step 6 : See the linter work</h3>
+<p>Run the linter over your project :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> ruff</span><span style="color:#2B5581"> check</span><span style="color:#2B5581"> .</span></span></code></pre>
+
+<p>It should report nothing. Now break something on purpose. Add an unused import at the top of <code>hello.py</code> :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> json</span></span></code></pre>
+
+<p>Run <code>uv run ruff check .</code> again. It reports <code>F401 'json' imported but unused</code>. Notice that VS Code underlines the same line. Remove the import, or let the linter do it for you :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> ruff</span><span style="color:#2B5581"> check</span><span style="color:#2B5581"> .</span><span style="color:#2B5581"> --fix</span></span></code></pre>
+
+<hr>
+<h3 id="step-7--see-a-type-checker-work">Step 7 : See a type checker work</h3>
+<p>Add <code>mypy</code> to the project and give it something to object to :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> add</span><span style="color:#2B5581"> --dev</span><span style="color:#2B5581"> mypy</span></span></code></pre>
+
+<p>Change the last line of <code>hello.py</code> to pass a number instead of a string :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">greet</span><span style="color:#212121">(</span><span style="color:#1976D2">42</span><span style="color:#212121">))</span></span></code></pre>
+
+<p>Run the program with <code>uv run python hello.py</code>. It runs, and it fails at runtime inside the f-string only if the type actually matters. The annotation was ignored. Now run the checker :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> mypy</span><span style="color:#2B5581"> hello.py</span></span></code></pre>
+
+<p>It reports <code>Argument 1 to "greet" has incompatible type "int"; expected "str"</code> without running the program at all. Put the string back.</p>
+<p><strong>If time permits</strong> : look at <code>demos/00a-modern-python/02_ruff_findings.py</code>, which is written badly on purpose. Run <code>uv run ruff check</code> over it and read every finding before you look at the comments explaining them.</p>
 <h1 id="exercise-2--variables-and-data-types"><a id="ex-1"></a>Exercise 2 : Variables and Data Types</h1>
 <p>In this exercise you build the first version of the calculator application that you will extend throughout the course.</p>
 <hr>
