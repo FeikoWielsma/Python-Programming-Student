@@ -1046,7 +1046,7 @@ details.solution-page pre {
 
 <ul class="toc-list">
 
-  <li><a href="#ex-0"><span class="toc-text">Exercise 1 : Environment Configuration</span><span class="toc-dots"></span><span class="toc-page">2</span></a></li>
+  <li><a href="#ex-0"><span class="toc-text">Exercise 1 : Python Tooling</span><span class="toc-dots"></span><span class="toc-page">3</span></a></li>
 
   <li><a href="#ex-1"><span class="toc-text">Exercise 2 : Variables and Data Types</span><span class="toc-dots"></span><span class="toc-page">6</span></a></li>
 
@@ -1068,11 +1068,15 @@ details.solution-page pre {
 
   <li><a href="#ex-10"><span class="toc-text">Exercise 11 : Python Classes</span><span class="toc-dots"></span><span class="toc-page">27</span></a></li>
 
-  <li><a href="#ex-11"><span class="toc-text">Exercise 12 : Optional Exercise : Python Libraries</span><span class="toc-dots"></span><span class="toc-page">30</span></a></li>
+  <li><a href="#ex-11"><span class="toc-text">Exercise 12 : Type Hinting</span><span class="toc-dots"></span><span class="toc-page">30</span></a></li>
+
+  <li class="toc-divider"><span>Appendix</span></li>
+
+  <li><a href="#ex-12"><span class="toc-text">Exercise 13 : Python Libraries</span><span class="toc-dots"></span><span class="toc-page">33</span></a></li>
 
 </ul>
 
-<h1 id="exercise-1--environment-configuration"><a id="ex-0"></a>Exercise 1 : Environment Configuration</h1>
+<h1 id="exercise-1--python-tooling"><a id="ex-0"></a>Exercise 1 : Python Tooling</h1>
 <p>This exercise takes about fifteen minutes and leaves you with a working Python 3.14, the <code>uv</code> project manager, the <code>ruff</code> linter and an editor that understands Python. Everything you do in the rest of the course runs in the project you build here.</p>
 <hr>
 <h3 id="step-1--install-uv">Step 1 : Install uv</h3>
@@ -1111,8 +1115,8 @@ details.solution-page pre {
 <span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> python</span><span style="color:#2B5581"> --version</span><span style="color:#4a9c59">      # prints Python 3.14.x</span></span>
 <span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> ruff</span><span style="color:#2B5581"> --version</span></span></code></pre>
 
-<p>Then write a first annotated function. Create <code>hello.py</code> in the project :</p>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> greet</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">:</span></span>
+<p>Then write a first script. Create <code>hello.py</code> in the project :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> greet</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">name</span><span style="color:#24292EFF">):</span></span>
 <span class="line"><span style="color:#D32F2F">    return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"Hello, </span><span style="color:#1976D2">{</span><span style="color:#24292EFF">name</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -1129,19 +1133,7 @@ details.solution-page pre {
 <p>Run <code>uv run ruff check .</code> again. It reports <code>F401 'json' imported but unused</code>. Notice that VS Code underlines the same line. Remove the import, or let the linter do it for you :</p>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> ruff</span><span style="color:#2B5581"> check</span><span style="color:#2B5581"> .</span><span style="color:#2B5581"> --fix</span></span></code></pre>
 
-<hr>
-<h3 id="step-7--see-a-type-checker-work">Step 7 : See a type checker work</h3>
-<p>Add <code>mypy</code> to the project and give it something to object to :</p>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> add</span><span style="color:#2B5581"> --dev</span><span style="color:#2B5581"> mypy</span></span></code></pre>
-
-<p>Change the last line of <code>hello.py</code> to pass a number instead of a string :</p>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">greet</span><span style="color:#212121">(</span><span style="color:#1976D2">42</span><span style="color:#212121">))</span></span></code></pre>
-
-<p>Run the program with <code>uv run python hello.py</code>. It runs, and it fails at runtime inside the f-string only if the type actually matters. The annotation was ignored. Now run the checker :</p>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> mypy</span><span style="color:#2B5581"> hello.py</span></span></code></pre>
-
-<p>It reports <code>Argument 1 to "greet" has incompatible type "int"; expected "str"</code> without running the program at all. Put the string back.</p>
-<p><strong>If time permits</strong> : look at <code>demos/00a-modern-python/02_ruff_findings.py</code>, which is written badly on purpose. Run <code>uv run ruff check</code> over it and read every finding before you look at the comments explaining them.</p>
+<p><strong>If time permits</strong> : look at <code>demos/00a-python-tooling/02_ruff_findings.py</code>, which is written badly on purpose. Run <code>uv run ruff check</code> over it and read every finding before you look at the comments explaining them.</p>
 <h1 id="exercise-2--variables-and-data-types"><a id="ex-1"></a>Exercise 2 : Variables and Data Types</h1>
 <p>In this exercise you build the first version of the calculator application that you will extend throughout the course.</p>
 <hr>
@@ -1540,8 +1532,101 @@ details.solution-page pre {
 <p>Create a number of employees and put them in a list, called for instance <code>employeeList</code>. Next iterate through the list and print the name of the employees in the list.</p>
 <p><strong>If time permits</strong> : alternatively you could create a <code>Company</code> class with functions to add or to remove employees from the <code>employeeList</code>, which displays a list of employees including their name and ID. In that case make a simple script which declares a <code>Company</code> object, add several employees to the company and display a list of employees.</p>
 <p>The relationship between the <code>Company</code> class and the <code>Employee</code> class is an association relation of the normal type. We can say every Company employs Employees, or every Employee works for a Company.</p>
-<h1 id="exercise-12--optional-exercise--python-libraries"><a id="ex-11"></a>Exercise 12 : Optional Exercise : Python Libraries</h1>
-<p>This optional exercise is provided as a separate document; see the appendix PDFs in the course material. Library exercises (numpy, datetime, regular expressions and others) are also available in the <code>exercises/</code> directory of the repository.</p>
+<h1 id="exercise-12--type-hinting"><a id="ex-11"></a>Exercise 12 : Type Hinting</h1>
+<p>In this exercise you annotate code you have already written, and let a checker read the annotations for you. Work in the <code>course-work</code> project you created in Exercise 1.</p>
+<hr>
+<h3 id="step-1--install-the-checker">Step 1 : Install the checker</h3>
+<p><code>mypy</code> is a development dependency, so add it to the project with the <code>--dev</code> flag :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> add</span><span style="color:#2B5581"> --dev</span><span style="color:#2B5581"> mypy</span></span></code></pre>
+
+<h3 id="step-2--annotate-a-function">Step 2 : Annotate a function</h3>
+<p>Create a module <code>shapes12.py</code> with two functions and no annotations at all :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> area</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">width</span><span style="color:#212121">,</span><span style="color:#FF9800"> height</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#24292EFF"> width </span><span style="color:#D32F2F">*</span><span style="color:#24292EFF"> height</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> describe</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">name</span><span style="color:#212121">,</span><span style="color:#FF9800"> area</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">name</span><span style="color:#1976D2">}</span><span style="color:#22863A"> has an area of </span><span style="color:#1976D2">{</span><span style="color:#24292EFF">area</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">describe</span><span style="color:#212121">(</span><span style="color:#22863A">"kitchen"</span><span style="color:#212121">, </span><span style="color:#6F42C1">area</span><span style="color:#212121">(</span><span style="color:#1976D2">3.0</span><span style="color:#212121">, </span><span style="color:#1976D2">4.0</span><span style="color:#212121">)))</span></span></code></pre>
+
+<p>Run it with <code>uv run python shapes12.py</code> and confirm it works. Now annotate both functions. Every parameter takes a colon and a type, and the result takes an arrow :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> area</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">width</span><span style="color:#212121">:</span><span style="color:#1976D2"> float</span><span style="color:#212121">,</span><span style="color:#FF9800"> height</span><span style="color:#212121">:</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<p>Do the same for <code>describe</code>, which takes a string and a number and returns a string. Run the program again and confirm the output has not changed. Annotations do not alter what the program does.</p>
+<hr>
+<h3 id="step-3--let-the-checker-find-a-mistake">Step 3 : Let the checker find a mistake</h3>
+<p>Run the checker over the module :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> mypy</span><span style="color:#2B5581"> shapes12.py</span></span></code></pre>
+
+<p>It should report nothing. Now introduce a mistake on purpose. Change the last line so that it passes the name and the area the wrong way round :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">describe</span><span style="color:#212121">(</span><span style="color:#6F42C1">area</span><span style="color:#212121">(</span><span style="color:#1976D2">3.0</span><span style="color:#212121">, </span><span style="color:#1976D2">4.0</span><span style="color:#212121">), </span><span style="color:#22863A">"kitchen"</span><span style="color:#212121">))</span></span></code></pre>
+
+<p>Run the program. Notice that Python is perfectly happy and prints nonsense. Now run <code>uv run mypy shapes12.py</code> again. The checker reports the mismatch and names the argument that is wrong, without the program having run at all. Put the call back the way it was.</p>
+<h3 id="step-4--annotate-a-collection">Step 4 : Annotate a collection</h3>
+<p>Add a function that takes a list of numbers and returns their average :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> average</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">values</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#6F42C1"> sum</span><span style="color:#212121">(values)</span><span style="color:#D32F2F"> /</span><span style="color:#6F42C1"> len</span><span style="color:#212121">(values)</span></span></code></pre>
+
+<p>Annotate it. The parameter is a list of floating point numbers, written <code>list[float]</code>, and the result is a <code>float</code>. Call it with <code>average([1.0, 2.0, 3.0])</code> and check it with <code>mypy</code>.</p>
+<p>Then call it with a list of strings, <code>average(["a", "b"])</code>, and run <code>mypy</code> again. The checker reports the mismatch even though the offending value is inside a list.</p>
+<hr>
+<h3 id="step-5--a-value-that-may-be-absent">Step 5 : A value that may be absent</h3>
+<p>Add a function that greets someone whose name you may not know :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> greet</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">name</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">None</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> name </span><span style="color:#D32F2F">is</span><span style="color:#1976D2"> None</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#22863A"> "Hello, stranger"</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"Hello, </span><span style="color:#1976D2">{</span><span style="color:#24292EFF">name</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span></span></code></pre>
+
+<p>Annotating this as <code>name: str = None</code> would be a lie, because <code>None</code> is not a <code>str</code>. Write it as <code>name: str | None = None</code> instead, and give the function a <code>-&gt; str</code> result. Confirm with <code>mypy</code> that both <code>greet()</code> and <code>greet("Alice")</code> are accepted.</p>
+<h3 id="step-6--annotate-a-class">Step 6 : Annotate a class</h3>
+<p>Take the <code>Employee</code> class from Exercise 11 and annotate its <code>__init__</code> method. The <code>self</code> parameter is never annotated. A method that returns nothing is annotated <code>-&gt; None</code> :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Employee</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __init__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#212121">,</span><span style="color:#FF9800"> salary</span><span style="color:#212121">:</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> name</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">salary </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> salary</span></span></code></pre>
+
+<p>Annotate the other methods as well, then run <code>mypy</code> over the module and fix whatever it reports.</p>
+<p><strong>If time permits</strong> : run <code>uv run mypy</code> over one of your solutions from an earlier exercise, with no annotations added at all. Notice how little it can say. Then annotate one function and watch how much further it can reason from that single signature.</p>
+<h1 id="exercise-13--python-libraries-appendix"><a id="ex-12"></a>Exercise 13 : Python Libraries <span class="exercise-appendix-tag">Appendix</span></h1>
+<p>An optional exercise covering the four standard library modules from the appendix. Each step stands on its own, so take them in whatever order interests you. Work in your <code>course-work</code> project.</p>
+<hr>
+<h3 id="step-1--datetime">Step 1 : datetime</h3>
+<p>Create a module <code>dates13.py</code>. Write a function <code>days_until(target)</code> that takes a <code>date</code> and returns the number of days between today and that date. Use it to print how many days remain until the next New Year's Day.</p>
+<p>Then print today's date in three formats :</p>
+<ul>
+<li><code>15-08-2026</code></li>
+<li><code>Saturday 15 August 2026</code></li>
+<li>the ISO form, <code>2026-08-15</code></li>
+</ul>
+<p>Finally, read the string <code>"24-12-2026 18:00"</code> back into a <code>datetime</code> with <code>strptime</code> and print the weekday it falls on.</p>
+<h3 id="step-2--json">Step 2 : json</h3>
+<p>Create a module <code>books13.py</code> holding a list of at least three dictionaries, each with a <code>title</code>, a <code>pages</code> count and a list of <code>tags</code>.</p>
+<p>Write the list to <code>books.json</code> with <code>json.dump</code>, using <code>indent=2</code> so the file is readable. Open the file in your editor and look at it. Then read it back with <code>json.load</code> and print the title of every book with more than 500 pages.</p>
+<p>Now add a <code>published</code> key whose value is a <code>date</code> object and try to write the file again. Read the error carefully. Fix it by converting the date to a string with <code>isoformat()</code> before writing.</p>
+<hr>
+<h3 id="step-3--regular-expressions">Step 3 : Regular expressions</h3>
+<p>Create a module <code>log13.py</code> with the following lines as a list of strings :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span>2026-08-15 12:30 ERROR disk full</span></span>
+<span class="line"><span>2026-08-15 12:31 INFO backup started</span></span>
+<span class="line"><span>2026-08-15 12:45 WARN disk at 91 percent</span></span>
+<span class="line"><span>2026-08-16 09:02 ERROR connection refused</span></span></code></pre>
+
+<p>Write a regular expression with named groups for the date, the time, the level and the message. For each line, print only the entries whose level is <code>ERROR</code>, formatted as <code>date time : message</code>.</p>
+<p>Then use <code>re.findall</code> to collect every number that appears in any message, and <code>re.sub</code> to replace every date with the word <code>[date]</code>.</p>
+<h3 id="step-4--unittest">Step 4 : unittest</h3>
+<p>Create a module <code>calculator13.py</code> with four functions, <code>add</code>, <code>subtract</code>, <code>multiply</code> and <code>divide</code>. Make <code>divide</code> raise a <code>ValueError</code> when asked to divide by zero.</p>
+<p>Create a second module <code>test_calculator13.py</code> with a <code>TestCase</code> class that tests all four. Include :</p>
+<ul>
+<li>a test per function for the ordinary case</li>
+<li>a test that <code>divide</code> raises <code>ValueError</code> on a zero divisor, using <code>assertRaises</code></li>
+<li>a <code>setUp</code> method that prepares any values the tests share</li>
+</ul>
+<p>Run the tests with <code>python -m unittest test_calculator13.py -v</code> and read the output. Then break one function on purpose and run the tests again, so that you see what a failure report looks like.</p>
+<hr>
+<p><strong>If time permits</strong> : the <code>appendices/</code> folder holds reference PDFs on several further libraries, and <code>demos/13-appendix-libraries/</code> holds a runnable example for every slide in the appendix module.</p>
 </div>
 	
 
