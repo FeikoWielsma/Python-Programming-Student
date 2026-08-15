@@ -78,7 +78,6 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="4" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="4" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="what-is-python">What is Python?</h1>
-
 <ul>
 <li>Python is a general purpose high-level scripting language :
 <ul>
@@ -252,7 +251,7 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">export PATH</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"$PATH:/usr/local/bin/python"</span><span style="color:#D32F2F"> and</span><span style="color:#24292EFF"> press Enter</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">export</span><span style="color:#24292EFF"> PATH</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"$PATH:/usr/local/bin/python"</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Setting PATH in Windows :
@@ -261,7 +260,7 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">PATH</span><span style="color:#D32F2F">=%</span><span style="color:#24292EFF">PATH</span><span style="color:#D32F2F">%</span><span style="color:#24292EFF">;C</span><span style="color:#212121">:\</span><span style="color:#24292EFF">Python and press Enter</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">PATH</span><span style="color:#D32F2F">=</span><span style="color:#2B5581">%PATH%</span><span style="color:#24292EFF">;</span><span style="color:#6F42C1">C:\Python</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Or use the environment variables tab under System Properties</li>
@@ -283,9 +282,9 @@
 </li>
 <li>Interactive Interpreter :
 <ul>
-<li>Start the Python interactive interpreter from command line by entering <code>python</code> :</li>
+<li>Start the Python interactive interpreter from command line by entering <code>python</code></li>
 <li>You will get <code>$python</code> in Linux and <code>&gt;&gt;&gt;</code> in Windows or Anaconda prompt with <code>IPython</code></li>
-<li>Script can be parameterized with command line arguments <code>C:\ python -h</code> :</li>
+<li>Script can be parameterized with command line arguments <code>C:\ python -h</code></li>
 </ul>
 </li>
 <li>Script from Command Line :
@@ -294,9 +293,9 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">$ python script</span><span style="color:#212121">.</span><span style="color:#24292EFF">py </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> Linux</span></span>
-<span class="line"><span style="color:#24292EFF"> C</span><span style="color:#212121">:</span><span style="color:#D32F2F">></span><span style="color:#24292EFF"> python script</span><span style="color:#212121">.</span><span style="color:#24292EFF">py </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> Windows</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>$ python script.py      # Linux</span></span>
+<span class="line"><span>C:> python script.py    # Windows</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Integrated Development Environment :
 <ul>
@@ -322,19 +321,23 @@
 </li>
 <li>Start with Hello World Python program in interactive mode :
 <ul>
-<li>Invoking interpreter by typing <code>python</code> in a command prompt :</li>
+<li>Invoke the interpreter by typing <code>python</code> in a command prompt</li>
 </ul>
 </li>
-<li>Type following right of the <code>python</code> prompt and press Enter :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">>>></span><span style="color:#6F42C1"> print </span><span style="color:#212121">(</span><span style="color:#22863A">"Hello, Python!"</span><span style="color:#212121">)</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>C:\> python</span></span>
+<span class="line"><span>Python 3.14.0 (main, Oct  7 2025, 10:12:33) [MSC v.1942 64 bit (AMD64)] on win32</span></span>
+<span class="line"><span>Type "help", "copyright", "credits" or "license" for more information.</span></span>
+<span class="line"><span>>>> print("Hello, Python!")</span></span>
+<span class="line"><span>Hello, Python!</span></span>
+<span class="line"><span>>>></span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
-<li>This will produce following result :</li>
+<li>Type the statement right of the <code>&gt;&gt;&gt;</code> prompt and press Enter :
+<ul>
+<li>The interpreter evaluates it and prints the result immediately</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Hello</span><span style="color:#212121">,</span><span style="color:#24292EFF"> Python!</span></span>
-<span class="line"></span></code></pre>
-<ul>
+</li>
 <li>Separate multiple statements with a semicolon ;</li>
 </ul>
 </section>
@@ -359,18 +362,18 @@
 <ul>
 <li>Run the script as follows :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">C</span><span style="color:#212121">:\</span><span style="color:#24292EFF"> python test.py</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>C:\ python test.py</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>In a Unix environment make file executable with <code>:</code></li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">$ chmod </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF">x test</span><span style="color:#212121">.</span><span style="color:#24292EFF">py </span><span style="color:#4a9c59"># set execute permission</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">$</span><span style="color:#2B5581"> chmod</span><span style="color:#2B5581"> +x</span><span style="color:#2B5581"> test.py</span><span style="color:#4a9c59"> # set execute permission</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>This will produce following result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Hello</span><span style="color:#212121">,</span><span style="color:#24292EFF"> Python!</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Hello, Python!</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li><code>print()</code> default prints a new line</li>
 </ul>
@@ -427,17 +430,17 @@
 <ul>
 <li>May not be used as constant or variable or other identifier name</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">and</span><span style="color:#6F42C1"> exec</span><span style="color:#D32F2F"> not</span></span>
-<span class="line"><span style="color:#D32F2F">assert</span><span style="color:#D32F2F"> finally</span><span style="color:#D32F2F"> or</span></span>
-<span class="line"><span style="color:#D32F2F">break</span><span style="color:#D32F2F"> for</span><span style="color:#D32F2F"> pass</span></span>
-<span class="line"><span style="color:#D32F2F">class</span><span style="color:#D32F2F"> from</span><span style="color:#6F42C1"> print</span></span>
-<span class="line"><span style="color:#D32F2F">continue</span><span style="color:#D32F2F"> global</span><span style="color:#D32F2F"> raise</span></span>
-<span class="line"><span style="color:#D32F2F">def</span><span style="color:#D32F2F"> if</span><span style="color:#D32F2F"> return</span></span>
-<span class="line"><span style="color:#D32F2F">del</span><span style="color:#D32F2F"> import</span><span style="color:#D32F2F"> try</span></span>
-<span class="line"><span style="color:#D32F2F">elif</span><span style="color:#D32F2F"> in</span><span style="color:#D32F2F"> while</span></span>
-<span class="line"><span style="color:#D32F2F">else</span><span style="color:#D32F2F"> is</span><span style="color:#D32F2F"> with</span></span>
-<span class="line"><span style="color:#D32F2F">except</span><span style="color:#D32F2F"> lambda</span><span style="color:#D32F2F"> yield</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>and exec not</span></span>
+<span class="line"><span>assert finally or</span></span>
+<span class="line"><span>break for pass</span></span>
+<span class="line"><span>class from print</span></span>
+<span class="line"><span>continue global raise</span></span>
+<span class="line"><span>def if return</span></span>
+<span class="line"><span>del import try</span></span>
+<span class="line"><span>elif in while</span></span>
+<span class="line"><span>else is with</span></span>
+<span class="line"><span>except lambda yield</span></span>
+<span class="line"><span></span></span></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="14" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="14" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
@@ -456,8 +459,8 @@
 <ul>
 <li>Will produce following result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Hello</span><span style="color:#212121">,</span><span style="color:#24292EFF"> Python!</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Hello, Python!</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Comment may be on same line after statement or expression :</li>
 </ul>
@@ -608,12 +611,15 @@
 <li>Denote that the line should continue</li>
 </ul>
 </li>
-<li>Python uses quotes to denote string literals :Exercise 1
+<li>Python uses quotes to denote string literals :
 <ul>
 <li>single ('), double (&quot;) and triple (''' or &quot;&quot;&quot;)</li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p><code class="pill-exercise pill-id">exercise01</code><br><code class="pill-exercise pill-desc">Python Intro</code></p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="19" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="19" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#19"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -658,9 +664,8 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="20" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="20" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#19"><span class="ml-tag">python</span>Variables and Data Types</a></div>
 <h1 id="variables">Variables</h1>
-
 <ul>
-<li>Variables are
+<li>Variables represent memory locations to store values :
 <ul>
 <li>When a variable is created memory space is reserved</li>
 </ul>
@@ -763,14 +768,12 @@
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">a</span><span style="color:#212121">,</span><span style="color:#24292EFF"> b</span><span style="color:#212121">,</span><span style="color:#24292EFF"> c </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 1</span><span style="color:#212121">,</span><span style="color:#1976D2"> 2</span><span style="color:#212121">,</span><span style="color:#22863A"> "john"</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>
-<p>Two integer objects with values 1 and 2 :</p>
+<li>Two integer objects with values 1 and 2 :
 <ul>
 <li>Assigned to variables a and b</li>
 </ul>
 </li>
-<li>
-<p>One string object with the value &quot;john&quot; :</p>
+<li>One string object with the value &quot;john&quot; :
 <ul>
 <li>Assigned to the variable c</li>
 </ul>
@@ -803,24 +806,12 @@
 </li>
 <li>Important Python data types :
 <ul>
-<li>
-<p>Numbers</p>
-</li>
-<li>
-<p>String</p>
-</li>
-<li>
-<p>List</p>
-</li>
-<li>
-<p>Tuple</p>
-</li>
-<li>
-<p>Set</p>
-</li>
-<li>
-<p>Dictionary</p>
-</li>
+<li>Numbers</li>
+<li>String</li>
+<li>List</li>
+<li>Tuple</li>
+<li>Set</li>
+<li>Dictionary</li>
 </ul>
 </li>
 </ul>
@@ -859,14 +850,12 @@
 <div class="ml-eyebrow"><a href="#19"><span class="ml-tag">python</span>Variables and Data Types</a></div>
 <h1 id="type-conversions">Type Conversions</h1>
 <ul>
-<li>
-<p>Sometimes number must be explicitly converted :</p>
+<li>Sometimes number must be explicitly converted :
 <ul>
 <li>Coerced from one type to another to satisfy requirements of function parameter</li>
 </ul>
 </li>
-<li>
-<p>Built-in functions perform conversion between data types :</p>
+<li>Built-in functions perform conversion between data types :
 <ul>
 <li><code>int(x [,base]) :</code>
 <ul>
@@ -885,20 +874,17 @@
 </li>
 </ul>
 </li>
-<li>
-<p>All integers, positive and negative behave as <code>True</code> :</p>
+<li>All integers, positive and negative behave as <code>True</code> :
 <ul>
 <li>Only 0 behaves as <code>False</code></li>
 </ul>
 </li>
-<li>
-<p>All non empty strings behave as <code>True</code> :</p>
+<li>All non empty strings behave as <code>True</code> :
 <ul>
 <li>Only empty string <code>&quot;&quot;</code> behave as <code>False</code> and <code>None</code> as well</li>
 </ul>
 </li>
-<li>
-<p>Boolean type is a subtype of the integer type :</p>
+<li>Boolean type is a subtype of the integer type :
 <ul>
 <li>Boolean values behave like values 0 and 1</li>
 <li>When converted to a string in string context <code>&quot;False&quot;</code> or <code>&quot;True&quot;</code> are returned</li>
@@ -1132,8 +1118,8 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Updated String </span><span style="color:#212121">:</span><span style="color:#D32F2F">-</span><span style="color:#24292EFF"> Hello Python</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Updated String :- Hello Python</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>New string var2 will have different id</li>
 </ul>
@@ -1245,12 +1231,8 @@
 </li>
 <li><code>unicodedata</code> module <code>:</code>
 <ul>
-<li>
-<p>Provides access to Unicode Character Database (UCD)</p>
-</li>
-<li>
-<p>UCD contains character properties for all Unicode characters</p>
-</li>
+<li>Provides access to Unicode Character Database (UCD)</li>
+<li>UCD contains character properties for all Unicode characters</li>
 </ul>
 </li>
 </ul>
@@ -1282,14 +1264,13 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">s </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> '</span><span style="color:#1976D2">{0}</span><span style="color:#22863A">, </span><span style="color:#1976D2">{1}</span><span style="color:#22863A">, </span><span style="color:#1976D2">{2}</span><span style="color:#22863A">'</span><span style="color:#212121">.</span><span style="color:#6F42C1">format</span><span style="color:#212121">(</span><span style="color:#22863A">'a'</span><span style="color:#212121">, </span><span style="color:#22863A">'b'</span><span style="color:#212121">, </span><span style="color:#22863A">'c'</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(s)</span><span style="color:#D32F2F"> =></span><span style="color:#22863A"> 'a, b, c'</span></span>
-<span class="line"><span style="color:#24292EFF">s </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> '</span><span style="color:#1976D2">{}</span><span style="color:#22863A">, </span><span style="color:#1976D2">{}</span><span style="color:#22863A">, </span><span style="color:#1976D2">{}</span><span style="color:#22863A">'</span><span style="color:#212121">.</span><span style="color:#6F42C1">format</span><span style="color:#212121">(</span><span style="color:#22863A">'a'</span><span style="color:#212121">, </span><span style="color:#22863A">'b'</span><span style="color:#212121">, </span><span style="color:#22863A">'c'</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(s)</span><span style="color:#D32F2F"> =></span><span style="color:#22863A"> 'a, b, c'</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">s </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> '</span><span style="color:#1976D2">{2}</span><span style="color:#22863A">, </span><span style="color:#1976D2">{1}</span><span style="color:#22863A">, </span><span style="color:#1976D2">{0}</span><span style="color:#22863A">'</span><span style="color:#212121">.</span><span style="color:#6F42C1">format</span><span style="color:#212121">(</span><span style="color:#22863A">'a'</span><span style="color:#212121">, </span><span style="color:#22863A">'b'</span><span style="color:#212121">, </span><span style="color:#22863A">'c'</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(s)</span><span style="color:#D32F2F"> =></span><span style="color:#22863A"> 'c, b, a'</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>s = '{0}, {1}, {2}'.format('a', 'b', 'c')</span></span>
+<span class="line"><span>print (s) => 'a, b, c'</span></span>
+<span class="line"><span>s = '{}, {}, {}'.format('a', 'b', 'c')</span></span>
+<span class="line"><span>print (s) => 'a, b, c'</span></span>
+<span class="line"><span>s = '{2}, {1}, {0}'.format('a', 'b', 'c')</span></span>
+<span class="line"><span>print (s) => 'c, b, a'</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo10</code><br><code class="pill-demo pill-desc">stringformatting</code></p>
 </blockquote>
@@ -1359,6 +1340,68 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="35" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="35" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#19"><span class="ml-tag">python</span>Variables and Data Types</a></div>
 <h1 id="format-method">Format Method</h1>
+<ul>
+<li>Method <code>str.format</code> substitutes arguments into replacement fields :
+<ul>
+<li>A field is written as <code>{index:spec}</code> inside the template string</li>
+<li>The index selects the argument, the spec decides how it is rendered</li>
+</ul>
+</li>
+</ul>
+<svg viewBox="0 0 960 250" width="100%" style="width:100%;height:auto;display:block;margin:10px 0 6px" role="img" aria-label="Each replacement field selects one argument of format and renders it into the result string">
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="21" fill="currentColor">
+<text x="20" y="92" textLength="60" lengthAdjust="spacingAndGlyphs">"Art:</text>
+<text x="92" y="92" textLength="72" lengthAdjust="spacingAndGlyphs">{0:5d}</text>
+<text x="164" y="92" textLength="204" lengthAdjust="spacingAndGlyphs">, Price per Unit:</text>
+<text x="380" y="92" textLength="96" lengthAdjust="spacingAndGlyphs">{1:8.2f}</text>
+<text x="476" y="92" textLength="108" lengthAdjust="spacingAndGlyphs">".format(</text>
+<text x="584" y="92" textLength="36" lengthAdjust="spacingAndGlyphs">453</text>
+<text x="620" y="92" textLength="12" lengthAdjust="spacingAndGlyphs">,</text>
+<text x="644" y="92" textLength="72" lengthAdjust="spacingAndGlyphs">59.058</text>
+<text x="716" y="92" textLength="12" lengthAdjust="spacingAndGlyphs">)</text>
+</g>
+<g fill="none" stroke="currentColor" stroke-width="2">
+<rect x="90" y="72" width="76" height="28" rx="3" />
+<rect x="378" y="72" width="100" height="28" rx="3" />
+</g>
+<g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7" stroke-dasharray="4 4">
+<rect x="582" y="72" width="40" height="28" rx="3" />
+<rect x="642" y="72" width="76" height="28" rx="3" />
+</g>
+<defs>
+<marker id="fm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+</marker>
+</defs>
+<g fill="none" stroke="currentColor" stroke-width="1.8" marker-end="url(#fm-arrow)">
+<path d="M 128 72 L 128 20 L 602 20 L 602 68" />
+<path d="M 428 72 L 428 46 L 680 46 L 680 68" />
+<path d="M 128 100 L 128 140 L 110 140 L 110 186" />
+<path d="M 428 100 L 428 140 L 404 140 L 404 186" />
+</g>
+<g fill="currentColor" opacity="0.12">
+<rect x="80" y="188" width="60" height="38" />
+<rect x="356" y="188" width="96" height="38" />
+</g>
+<g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5">
+<rect x="20" y="188" width="432" height="38" />
+</g>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="21" fill="currentColor">
+<text x="20" y="214" textLength="48" lengthAdjust="spacingAndGlyphs">Art:</text>
+<text x="140" y="214" textLength="36" lengthAdjust="spacingAndGlyphs" text-anchor="end">453</text>
+<text x="140" y="214" textLength="204" lengthAdjust="spacingAndGlyphs">, Price per Unit:</text>
+<text x="452" y="214" textLength="60" lengthAdjust="spacingAndGlyphs" text-anchor="end">59.06</text>
+</g>
+<g fill="currentColor" font-size="17" opacity="0.75">
+<text x="640" y="124">positional arguments</text>
+<text x="480" y="214">result string</text>
+</g>
+</svg>
+<ul>
+<li>Fields may be named instead of numbered :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#22863A">"Art: {a:5d}, Price per Unit: {p:8.2f}"</span><span style="color:#212121">.</span><span style="color:#6F42C1">format</span><span style="color:#212121">(a</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">453</span><span style="color:#212121">, p</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">59.058</span><span style="color:#212121">)</span></span>
+<span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo11</code><br><code class="pill-demo pill-desc">formatmethod</code></p>
 </blockquote>
@@ -1420,13 +1463,13 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">this string </span><span style="color:#D32F2F">is</span><span style="color:#24292EFF"> made up of several lines </span><span style="color:#D32F2F">and</span><span style="color:#24292EFF"> non</span><span style="color:#D32F2F">-</span><span style="color:#24292EFF">printable</span></span>
-<span class="line"><span style="color:#24292EFF">characters such </span><span style="color:#D32F2F">as</span><span style="color:#6F42C1"> TAB </span><span style="color:#212121">( )</span><span style="color:#D32F2F"> and</span><span style="color:#24292EFF"> they will show up that way when</span></span>
-<span class="line"><span style="color:#24292EFF">displayed</span><span style="color:#212121">.</span><span style="color:#24292EFF"> NEWLINEs within the string</span><span style="color:#212121">,</span><span style="color:#24292EFF"> whether explicitly given like</span></span>
-<span class="line"><span style="color:#24292EFF">this within the brackets </span><span style="color:#212121">[</span></span>
-<span class="line"><span style="color:#212121"> ],</span><span style="color:#D32F2F"> or</span><span style="color:#24292EFF"> just a NEWLINE</span></span>
-<span class="line"><span style="color:#24292EFF">within the variable assignment will also show up</span><span style="color:#212121">.</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>this string is made up of several lines and non-printable</span></span>
+<span class="line"><span>characters such as TAB ( ) and they will show up that way when</span></span>
+<span class="line"><span>displayed. NEWLINEs within the string, whether explicitly given like</span></span>
+<span class="line"><span>this within the brackets [</span></span>
+<span class="line"><span> ], or just a NEWLINE</span></span>
+<span class="line"><span>within the variable assignment will also show up.</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo13</code><br><code class="pill-demo pill-desc">triplequotes</code></p>
 </blockquote>
@@ -1531,10 +1574,13 @@
 </li>
 <li>Python has built-in functions to convert between data types :
 <ul>
-<li>Functions return new object representing converted valueExercise 2</li>
+<li>Functions return new object representing converted value</li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p><code class="pill-exercise pill-id">exercise02</code><br><code class="pill-exercise pill-desc">Variables and Data Types</code></p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="40" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="40" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#40"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -1641,8 +1687,7 @@
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">list1 </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [ </span><span style="color:#22863A">'abcd'</span><span style="color:#212121">,</span><span style="color:#1976D2"> 786</span><span style="color:#212121"> ,</span><span style="color:#1976D2"> 2.23</span><span style="color:#212121">,</span><span style="color:#22863A"> 'john'</span><span style="color:#212121">,</span><span style="color:#1976D2"> True</span><span style="color:#24292EFF"> ]</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(list1)</span><span style="color:#4a9c59"> # Prints complete list</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(list1[</span><span style="color:#1976D2">0</span><span style="color:#212121">])</span><span style="color:#4a9c59"> # Prints first element of the list</span></span>
-<span class="line"><span style="color:#24292EFF">                                                                          th</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(list1[</span><span style="color:#1976D2">1</span><span style="color:#212121">:</span><span style="color:#1976D2">3</span><span style="color:#212121">])</span><span style="color:#4a9c59"> # Prints elements starting from 2nd to 4</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(list1[</span><span style="color:#1976D2">1</span><span style="color:#212121">:</span><span style="color:#1976D2">3</span><span style="color:#212121">])</span><span style="color:#4a9c59"> # Prints elements starting from 2nd to 4th</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(list1 </span><span style="color:#D32F2F">*</span><span style="color:#1976D2"> 2</span><span style="color:#212121">)</span><span style="color:#4a9c59"> # Prints list two times</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(list1[::</span><span style="color:#D32F2F">-</span><span style="color:#1976D2">1</span><span style="color:#212121">])</span><span style="color:#4a9c59"> # Prints complete list in reverse order</span></span>
 <span class="line"></span></code></pre>
@@ -1940,8 +1985,7 @@
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">tup1 </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#1976D2">12</span><span style="color:#212121">,</span><span style="color:#1976D2"> 34.56</span><span style="color:#24292EFF">)</span></span>
 <span class="line"><span style="color:#24292EFF">tup2 </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">'abc'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'xyz'</span><span style="color:#24292EFF">)</span></span>
 <span class="line"><span style="color:#24292EFF">tup3 </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> tup1 </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> tup2</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(tup3)</span><span style="color:#4a9c59"> # (12, 34.56, 'abc', 'xyz')</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(tup3)</span><span style="color:#4a9c59"> # (12, 34.56, 'abc', 'xyz')</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Tuples can have other tuples or lists as elements</li>
@@ -1962,7 +2006,7 @@
 <li>Entire tuple can be removed with <code>del</code> statement :</li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">tup1 </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">'physics'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'chemistry'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'biology'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'computer science'</span><span style="color:#24292EFF">)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(tup)</span><span style="color:#4a9c59"> # ('physics', 'chemistry', 'biology', 'computer science’)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(tup)</span><span style="color:#4a9c59"> # ('physics', 'chemistry', 'biology', 'computer science')</span></span>
 <span class="line"><span style="color:#D32F2F">del</span><span style="color:#24292EFF"> tup</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"After deleting tup : "</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(tup)</span></span>
@@ -1970,11 +2014,11 @@
 <ul>
 <li>Result after deleting tup :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">Traceback </span><span style="color:#212121">(most recent call last):</span></span>
-<span class="line"><span style="color:#24292EFF">  File </span><span style="color:#22863A">"test.py"</span><span style="color:#212121">,</span><span style="color:#24292EFF"> line </span><span style="color:#1976D2">9</span><span style="color:#212121">,</span><span style="color:#D32F2F"> in</span><span style="color:#D32F2F"> &#x3C;</span><span style="color:#24292EFF">module</span><span style="color:#D32F2F">></span></span>
-<span class="line"><span style="color:#6F42C1">     print</span><span style="color:#24292EFF"> tup;</span></span>
-<span class="line"><span style="color:#1976D2">NameError</span><span style="color:#212121">:</span><span style="color:#24292EFF"> name </span><span style="color:#22863A">'tup'</span><span style="color:#D32F2F"> is</span><span style="color:#D32F2F"> not</span><span style="color:#24292EFF"> defined</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Traceback (most recent call last):</span></span>
+<span class="line"><span>  File "test.py", line 9, in &#x3C;module></span></span>
+<span class="line"><span>     print(tup)</span></span>
+<span class="line"><span>NameError: name 'tup' is not defined</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Error since after <code>del tup</code> tuple is gone</li>
 </ul>
@@ -2013,8 +2057,7 @@
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">t </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">'Albert'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'Einstein'</span><span style="color:#24292EFF">)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(t)</span><span style="color:#4a9c59"> # ('Albert', 'Einstein')</span></span>
 <span class="line"><span style="color:#24292EFF">v</span><span style="color:#212121">,</span><span style="color:#24292EFF"> s </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> t</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(v)</span><span style="color:#4a9c59"> # 'Albert'</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(v)</span><span style="color:#4a9c59"> # 'Albert'</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(s)</span><span style="color:#4a9c59"> # 'Einstein'</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
@@ -2090,14 +2133,12 @@
 <span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(str2)</span><span style="color:#4a9c59"> # ABCD</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>
-<p>Bytearray object is mutable array created <code>bytearray()</code> constructor :</p>
+<li>Bytearray object is mutable array created <code>bytearray()</code> constructor :
 <ul>
 <li>Has same interface as immutable bytes objects</li>
 </ul>
 </li>
-<li>
-<p>Extension modules <code>array</code> and <code>collections</code> :09_bytesandbytearrays</p>
+<li>Extension modules <code>array</code> and <code>collections</code> :09_bytesandbytearrays
 <ul>
 <li>Provide additional mutable sequence examples</li>
 </ul>
@@ -2345,15 +2386,16 @@
 <li>Set is mutable and <code>frozenset</code> is immutable</li>
 </ul>
 </li>
-<li>Dictionaries are comparable to associative arrays :</li>
-</ul>
-<blockquote>
-<p><code class="pill-exercise pill-id">exercise03</code><br><code class="pill-exercise pill-desc">Data Structures</code></p>
-</blockquote>
+<li>Dictionaries are comparable to associative arrays :
 <ul>
 <li>Pairs of keys and values separated by comma , and colon :</li>
 <li>Enclosed by curly braces <code>{ },</code> values access with square brackets <code>[]</code></li>
 </ul>
+</li>
+</ul>
+<blockquote>
+<p><code class="pill-exercise pill-id">exercise03</code><br><code class="pill-exercise pill-desc">Data Structures</code></p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="60" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="60" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#60"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -2478,10 +2520,10 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#1976D2">1</span><span style="color:#D32F2F"> -</span><span style="color:#24292EFF"> Got a true expression value</span></span>
-<span class="line"><span style="color:#1976D2">100</span></span>
-<span class="line"><span style="color:#24292EFF">Good bye!</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>1 - Got a true expression value</span></span>
+<span class="line"><span>100</span></span>
+<span class="line"><span>Good bye!</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>In case <code>if</code> has only one line it may go on same line :</li>
 </ul>
@@ -2519,8 +2561,7 @@
 <span class="line"><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> name</span><span style="color:#212121">.</span><span style="color:#6F42C1">endswith</span><span style="color:#212121">(</span><span style="color:#22863A">'Gumby'</span><span style="color:#212121">):</span></span>
 <span class="line"><span style="color:#6F42C1">     print </span><span style="color:#212121">(</span><span style="color:#22863A">'Hello, Mr. Gumby'</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">'Hello, stranger'</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">     print </span><span style="color:#212121">(</span><span style="color:#22863A">'Hello, stranger'</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo02</code><br><code class="pill-demo pill-desc">else</code></p>
@@ -2542,15 +2583,15 @@
 </li>
 <li>Syntax of the <code>if...elif</code> statement :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> expression1</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">elif</span><span style="color:#24292EFF"> expression2</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">elif</span><span style="color:#24292EFF"> expression3</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>if expression1:</span></span>
+<span class="line"><span>    statement(s)</span></span>
+<span class="line"><span>elif expression2:</span></span>
+<span class="line"><span>    statement(s)</span></span>
+<span class="line"><span>elif expression3:</span></span>
+<span class="line"><span>    statement(s)</span></span>
+<span class="line"><span>else:</span></span>
+<span class="line"><span>    statement(s)</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>No support for <code>switch</code> or <code>case</code> statements as in other languages</li>
 </ul>
@@ -2569,19 +2610,19 @@
 </li>
 <li>Syntax nested <code>if...elif...else</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> expression1</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> expression2</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">       statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">    elif</span><span style="color:#24292EFF"> expression3</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">       statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">    else</span></span>
-<span class="line"><span style="color:#6F42C1">       statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">elif</span><span style="color:#24292EFF"> expression4</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    statement</span><span style="color:#212121">(s)</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>if expression1:</span></span>
+<span class="line"><span>    statement(s)</span></span>
+<span class="line"><span>    if expression2:</span></span>
+<span class="line"><span>       statement(s)</span></span>
+<span class="line"><span>    elif expression3:</span></span>
+<span class="line"><span>       statement(s)</span></span>
+<span class="line"><span>    else</span></span>
+<span class="line"><span>       statement(s)</span></span>
+<span class="line"><span>elif expression4:</span></span>
+<span class="line"><span>    statement(s)</span></span>
+<span class="line"><span>else:</span></span>
+<span class="line"><span>    statement(s)</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo04</code><br><code class="pill-demo pill-desc">nested_if</code></p>
 </blockquote>
@@ -2643,18 +2684,17 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Enter a number </span><span style="color:#212121">:</span><span style="color:#1976D2">20</span></span>
-<span class="line"><span style="color:#24292EFF">You entered</span><span style="color:#212121">:</span><span style="color:#1976D2"> 20</span></span>
-<span class="line"><span style="color:#24292EFF">Enter a number </span><span style="color:#212121">:</span><span style="color:#1976D2">3</span></span>
-<span class="line"><span style="color:#24292EFF">You entered</span><span style="color:#212121">:</span><span style="color:#1976D2"> 3</span></span>
-<span class="line"><span style="color:#24292EFF">Enter a number between </span><span style="color:#212121">:</span><span style="color:#6F42C1">Traceback </span><span style="color:#212121">(most recent call last):</span></span>
-<span class="line"><span style="color:#24292EFF">  File </span><span style="color:#22863A">"test.py"</span><span style="color:#212121">,</span><span style="color:#24292EFF"> line </span><span style="color:#1976D2">5</span><span style="color:#212121">,</span><span style="color:#D32F2F"> in</span><span style="color:#D32F2F"> &#x3C;</span><span style="color:#24292EFF">module</span><span style="color:#D32F2F">></span></span>
-<span class="line"><span style="color:#24292EFF">     num </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"Enter a number :"</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#1976D2">KeyboardInterrupt</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Enter a number :20</span></span>
+<span class="line"><span>You entered: 20</span></span>
+<span class="line"><span>Enter a number :3</span></span>
+<span class="line"><span>You entered: 3</span></span>
+<span class="line"><span>Enter a number between :Traceback (most recent call last):</span></span>
+<span class="line"><span>  File "test.py", line 5, in &#x3C;module></span></span>
+<span class="line"><span>     num = input("Enter a number :")</span></span>
+<span class="line"><span>KeyboardInterrupt</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
-<li>
-<p>Above example will go in an infinite loop :</p>
+<li>Above example will go in an infinite loop :
 <ul>
 <li>Use CTRL+C to stop the program</li>
 </ul>
@@ -2693,8 +2733,7 @@
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(word , end</span><span style="color:#D32F2F">=</span><span style="color:#22863A">' '</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">''</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#24292EFF">list1 </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2"> 1</span><span style="color:#212121">,</span><span style="color:#1976D2"> 2</span><span style="color:#212121">,</span><span style="color:#1976D2"> 3</span><span style="color:#212121">,</span><span style="color:#1976D2"> 4</span><span style="color:#212121">,</span><span style="color:#1976D2"> 5</span><span style="color:#212121">,</span><span style="color:#1976D2"> 6</span><span style="color:#212121">,</span><span style="color:#1976D2"> 7</span><span style="color:#212121">,</span><span style="color:#1976D2"> 8</span><span style="color:#212121">,</span><span style="color:#1976D2"> 9</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> number </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> list1</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> number </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> list1</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(number)</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
@@ -2715,11 +2754,11 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Current planet </span><span style="color:#212121">:</span><span style="color:#24292EFF"> venus</span></span>
-<span class="line"><span style="color:#24292EFF">Current planet </span><span style="color:#212121">:</span><span style="color:#24292EFF"> mars</span></span>
-<span class="line"><span style="color:#24292EFF">Current planet </span><span style="color:#212121">:</span><span style="color:#24292EFF"> jupiter</span></span>
-<span class="line"><span style="color:#24292EFF">Lift off!</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Current planet : venus</span></span>
+<span class="line"><span>Current planet : mars</span></span>
+<span class="line"><span>Current planet : jupiter</span></span>
+<span class="line"><span>Lift off!</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Used utility functions are built-in <code>len()</code> and <code>range()</code> functions :
 <ul>
@@ -2792,7 +2831,7 @@
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(root)</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#1976D2">int</span><span style="color:#212121">(root))</span></span>
 <span class="line"><span style="color:#D32F2F">     if</span><span style="color:#24292EFF"> root </span><span style="color:#D32F2F">==</span><span style="color:#1976D2"> int</span><span style="color:#212121">(root):</span></span>
-<span class="line"><span style="color:#6F42C1">        print</span><span style="color:#212121">(</span><span style="color:#22863A">"Perfect square is </span><span style="color:#1976D2">%d</span><span style="color:#22863A">"</span><span style="color:#D32F2F"> %</span><span style="color:#212121"> (n))</span><span style="color:#24292EFF">)</span></span>
+<span class="line"><span style="color:#6F42C1">        print</span><span style="color:#212121">(</span><span style="color:#22863A">"Perfect square is </span><span style="color:#1976D2">%d</span><span style="color:#22863A">"</span><span style="color:#D32F2F"> %</span><span style="color:#212121"> n)</span></span>
 <span class="line"><span style="color:#D32F2F">        break</span></span>
 <span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Didn't find it!"</span><span style="color:#212121">)</span></span>
@@ -2829,8 +2868,7 @@
 <span class="line"><span style="color:#D32F2F">       pass</span></span>
 <span class="line"><span style="color:#6F42C1">       print</span><span style="color:#212121">(</span><span style="color:#22863A">'This is pass block'</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">'Current Letter :'</span><span style="color:#212121">, letter)</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Good bye!"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Good bye!"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo11</code><br><code class="pill-demo pill-desc">passstatement</code></p>
@@ -2842,13 +2880,13 @@
 <ul>
 <li>Operators perform operations on the operands :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#1976D2">4</span><span style="color:#D32F2F"> +</span><span style="color:#1976D2"> 5</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 9</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>4 + 5 = 9</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Here 4 and 5 are called operands and <code>+</code> is called operator</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#1976D2">3</span><span style="color:#D32F2F"> **</span><span style="color:#1976D2"> 2</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 9</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>3 ** 2 = 9</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Here 3 and 2 are called operands and <code>**</code> is called operator</li>
 <li>Python language supports a number of traditional operators :
@@ -3166,17 +3204,15 @@
 <li>Used to terminate current iteration and pass control elsewhere</li>
 </ul>
 </li>
-</ul>
-<blockquote>
-<p><code class="pill-exercise pill-id">exercise04</code><br><code class="pill-exercise pill-desc">Control Flow and Operators</code></p>
-</blockquote>
-<ul>
 <li>Python supports the following operators :
 <ul>
 <li>Arithmetic, Comparison, Logical, Assignment and Conditional Operators</li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p><code class="pill-exercise pill-id">exercise04</code><br><code class="pill-exercise pill-desc">Control Flow and Operators</code></p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="80" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="80" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#80"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -3216,9 +3252,8 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="81" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="81" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#80"><span class="ml-tag">python</span>Functions</a></div>
 <h1 id="functions">Functions</h1>
-
 <ul>
-<li>A function
+<li>Blocks of reusable code performing some action :
 <ul>
 <li>Python has many built-in functions like <code>print(),input(),len()</code> etc.</li>
 <li>It is also possible to create user-defined functions</li>
@@ -3307,14 +3342,13 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">First call to user defined function!</span></span>
-<span class="line"><span style="color:#24292EFF">Again second call to the same function</span></span>
-<span class="line"><span style="color:#6F42C1">Traceback </span><span style="color:#212121">(most recent call last):</span></span>
-<span class="line"><span style="color:#24292EFF">  File </span><span style="color:#22863A">"01_showmessage.py"</span><span style="color:#212121">,</span><span style="color:#24292EFF"> line </span><span style="color:#1976D2">8</span><span style="color:#212121">,</span><span style="color:#D32F2F"> in</span><span style="color:#D32F2F"> &#x3C;</span><span style="color:#24292EFF">module</span><span style="color:#D32F2F">></span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">showmessage</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#1976D2">TypeError</span><span style="color:#212121">:</span><span style="color:#6F42C1"> showmessage</span><span style="color:#212121">()</span><span style="color:#24292EFF"> takes exactly </span><span style="color:#1976D2">1</span><span style="color:#6F42C1"> argument </span><span style="color:#212121">(</span><span style="color:#1976D2">0</span><span style="color:#212121"> given)</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>First call to user defined function!</span></span>
+<span class="line"><span>Again second call to the same function</span></span>
+<span class="line"><span>Traceback (most recent call last):</span></span>
+<span class="line"><span>  File "01_showmessage.py", line 8, in &#x3C;module></span></span>
+<span class="line"><span>showmessage()</span></span>
+<span class="line"><span>TypeError: showmessage() takes exactly 1 argument (0 given)</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo01</code><br><code class="pill-demo pill-desc">showmessage</code></p>
 </blockquote>
@@ -3346,10 +3380,9 @@
 <ul>
 <li>Reference of passed object is used to append values :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">List inside the function changeme1</span><span style="color:#212121">:</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2"> 20</span><span style="color:#212121">,</span><span style="color:#1976D2"> 30</span><span style="color:#212121">,</span><span style="color:#1976D2"> 40</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">List outside the function</span><span style="color:#212121">:</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2"> 20</span><span style="color:#212121">,</span><span style="color:#1976D2"> 30</span><span style="color:#212121">,</span><span style="color:#1976D2"> 40</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>List inside the function changeme1: [10, 20, 30, 40]</span></span>
+<span class="line"><span>List outside the function: [10, 20, 30, 40]</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo02</code><br><code class="pill-demo pill-desc">passbyvalue</code></p>
 </blockquote>
@@ -3369,8 +3402,7 @@
 <li>Call <code>changeme</code> function :</li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">mylistouter </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2">20</span><span style="color:#212121">,</span><span style="color:#1976D2">30</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">changeme</span><span style="color:#212121">(mylistouter)</span></span>
+<span class="line"><span style="color:#6F42C1">changeme</span><span style="color:#212121">(mylistouter)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Values outside the function: "</span><span style="color:#212121">, mylistouter)</span></span>
 <span class="line"></span></code></pre>
 <ul>
@@ -3381,12 +3413,11 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Values inside the function</span><span style="color:#212121">:</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">1</span><span style="color:#212121">,</span><span style="color:#1976D2"> 2</span><span style="color:#212121">,</span><span style="color:#1976D2"> 3</span><span style="color:#212121">,</span><span style="color:#1976D2"> 4</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#24292EFF">Values outside the function</span><span style="color:#212121">:</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2"> 20</span><span style="color:#212121">,</span><span style="color:#1976D2"> 30</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Values inside the function: [1, 2, 3, 4]</span></span>
+<span class="line"><span>Values outside the function: [10, 20, 30]</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
-<li>
-<p>Changing immutable references :</p>
+<li>Changing immutable references :
 <ul>
 <li>Always results in new objects and is true for Strings and Numbers</li>
 </ul>
@@ -3403,38 +3434,31 @@
 <div class="ml-eyebrow"><a href="#80"><span class="ml-tag">python</span>Functions</a></div>
 <h1 id="function-arguments">Function Arguments</h1>
 <ul>
-<li>
-<p>Functions can be called with different types of arguments</p>
-</li>
-<li>
-<p>Required arguments :</p>
+<li>Functions can be called with different types of arguments</li>
+<li>Required arguments :
 <ul>
 <li>Passed to a function in correct positional order</li>
 <li>Number of arguments in call should match exactly with the definition</li>
 </ul>
 </li>
-<li>
-<p>Keyword arguments :</p>
+<li>Keyword arguments :
 <ul>
 <li>Caller identifies arguments by name and allows parameters to be out of order</li>
 <li>Python interpreter is able to use the keywords to match the values with parameters</li>
 </ul>
 </li>
-<li>
-<p>Default arguments :</p>
+<li>Default arguments :
 <ul>
 <li>Assume default value if value is not provided in the function call for that argument</li>
 </ul>
 </li>
-<li>
-<p>Variable-length arguments :</p>
+<li>Variable-length arguments :
 <ul>
 <li>Sometimes more arguments must be processed than specified in function definition</li>
 <li>These are called variable-length arguments and are not named in function definition</li>
 </ul>
 </li>
-<li>
-<p>Python does not support function overloading :</p>
+<li>Python does not support function overloading :
 <ul>
 <li>Defining same method with different parameters</li>
 <li>Python is dynamically typed and supports optional arguments</li>
@@ -3537,8 +3561,7 @@
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">testArgLists</span><span style="color:#212121">(</span><span style="color:#1976D2">1</span><span style="color:#212121">, </span><span style="color:#1976D2">2</span><span style="color:#212121">, </span><span style="color:#1976D2">3</span><span style="color:#212121">, </span><span style="color:#1976D2">4</span><span style="color:#212121">, </span><span style="color:#1976D2">5</span><span style="color:#212121">, x</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">, y</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">2</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">testArgLists</span><span style="color:#212121">(</span><span style="color:#1976D2">33</span><span style="color:#212121">, x</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">8</span><span style="color:#212121">, y</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">9</span><span style="color:#212121">)</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">testArgLists</span><span style="color:#212121">(</span><span style="color:#1976D2">44</span><span style="color:#212121">)</span><span style="color:#24292EFF">08_variable_argumentlist</span></span>
+<span class="line"><span style="color:#6F42C1">testArgLists</span><span style="color:#212121">(</span><span style="color:#1976D2">44</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo08</code><br><code class="pill-demo pill-desc">variableargumentlist</code></p>
@@ -3580,8 +3603,8 @@
 <ul>
 <li>Lambda functions contain only a single statement :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">lambda</span><span style="color:#24292EFF"> [arg1 [,</span><span style="color:#FF9800">arg2</span><span style="color:#212121">,</span><span style="color:#24292EFF">.....argn]]:expression</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>lambda [arg1 [,arg2,.....argn]]:expression</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Function definition :</li>
 </ul>
@@ -3596,9 +3619,9 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Value of total </span><span style="color:#212121">:</span><span style="color:#1976D2"> 30</span></span>
-<span class="line"><span style="color:#24292EFF">Value of total </span><span style="color:#212121">:</span><span style="color:#1976D2"> 40</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Value of total : 30</span></span>
+<span class="line"><span>Value of total : 40</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo09</code><br><code class="pill-demo pill-desc">lambdafunctions</code></p>
 </blockquote>
@@ -3631,9 +3654,9 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Inside the function </span><span style="color:#212121">:</span><span style="color:#1976D2"> 30</span></span>
-<span class="line"><span style="color:#24292EFF">Outside the function </span><span style="color:#212121">:</span><span style="color:#1976D2"> 30</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Inside the function : 30</span></span>
+<span class="line"><span>Outside the function : 30</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo10</code><br><code class="pill-demo pill-desc">returnstatement</code></p>
 </blockquote>
@@ -3698,8 +3721,7 @@
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">func1</span><span style="color:#212121">()</span><span style="color:#4a9c59"> # prints 2</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">'x is still'</span><span style="color:#212121">, x)</span><span style="color:#4a9c59"> # prints 50</span></span>
 <span class="line"><span style="color:#6F42C1">func2</span><span style="color:#212121">()</span><span style="color:#4a9c59"> # prints 50</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">'x is still'</span><span style="color:#212121">, x)</span><span style="color:#4a9c59"> # prints 50</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">'x is still'</span><span style="color:#212121">, x)</span><span style="color:#4a9c59"> # prints 50</span></span>
 <span class="line"><span style="color:#6F42C1">func3</span><span style="color:#212121">()</span><span style="color:#4a9c59"> # prints 2</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">'Value of y is'</span><span style="color:#212121">, y)</span><span style="color:#4a9c59"> # prints 2</span></span>
 <span class="line"></span></code></pre>
@@ -3741,12 +3763,15 @@
 <li>Variables defined inside a function body have a local scope</li>
 </ul>
 </li>
-<li>Global variables :Exercise 5
+<li>Global variables :
 <ul>
 <li>Variables defined outside functions have a global scope</li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p><code class="pill-exercise pill-id">exercise05</code><br><code class="pill-exercise pill-desc">Functions</code></p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="96" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="96" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#96"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -3786,9 +3811,8 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="97" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="97" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#96"><span class="ml-tag">python</span>Modules</a></div>
 <h1 id="modules">Modules</h1>
-
 <ul>
-<li>A module
+<li>Used to organize number of Python definitions in single file :
 <ul>
 <li>Used to logically organize your Python code</li>
 <li>Can be bind and referenced</li>
@@ -3831,8 +3855,8 @@
 </li>
 <li><code>import</code> has the following syntax :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> module1</span><span style="color:#212121">[,</span><span style="color:#24292EFF"> module2</span><span style="color:#212121">[,</span><span style="color:#24292EFF">... moduleN</span><span style="color:#212121">]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>import module1[, module2[,... moduleN]</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>On encountering an <code>import</code> statement :
 <ul>
@@ -3854,7 +3878,7 @@
 <li>Name to reference module can be changed with :</li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> test </span><span style="color:#D32F2F">as</span><span style="color:#24292EFF"> t</span></span>
-<span class="line"><span style="color:#24292EFF">t</span><span style="color:#212121">.</span><span style="color:#6F42C1">print_func</span><span style="color:#212121">(</span><span style="color:#22863A">'pipo’) # Hello : pipo</span></span>
+<span class="line"><span style="color:#24292EFF">t</span><span style="color:#212121">.</span><span style="color:#6F42C1">print_func</span><span style="color:#212121">(</span><span style="color:#22863A">'pipo'</span><span style="color:#212121">)</span><span style="color:#4a9c59"> # Hello : pipo</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo01</code><br><code class="pill-demo pill-desc">importmodule</code></p>
@@ -3866,8 +3890,8 @@
 <ul>
 <li><code>from...import</code> makes specific names from module accessible:</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> modname </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> name1</span><span style="color:#212121">[,</span><span style="color:#24292EFF"> name2</span><span style="color:#212121">[,</span><span style="color:#24292EFF"> ... nameN</span><span style="color:#212121">]]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>from modname import name1[, name2[, ... nameN]]</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Function <code>sqrt</code> from module <code>math</code> is imported with :</li>
 </ul>
@@ -3889,8 +3913,7 @@
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> modname </span><span style="color:#D32F2F">import</span><span style="color:#D32F2F"> *</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>
-<p>Statement should be used sparingly :</p>
+<li>Statement should be used sparingly :
 <ul>
 <li>More names are then visible which can give rise to name conflicts</li>
 </ul>
@@ -3925,12 +3948,12 @@
 </li>
 <li>Typical <code>PYTHONPATH</code> from Windows system :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#1976D2">set</span><span style="color:#24292EFF"> PYTHONPATH</span><span style="color:#D32F2F">=</span><span style="color:#24292EFF">c</span><span style="color:#212121">:\</span><span style="color:#24292EFF">python37\lib;</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">set</span><span style="color:#2B5581"> PYTHONPATH=c:</span><span style="color:#24292EFF">\p</span><span style="color:#2B5581">ython37</span><span style="color:#24292EFF">\l</span><span style="color:#2B5581">ib</span><span style="color:#24292EFF">;</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Typical <code>PYTHONPATH</code> from UNIX system :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#1976D2">set</span><span style="color:#24292EFF"> PYTHONPATH</span><span style="color:#D32F2F">=/</span><span style="color:#24292EFF">usr</span><span style="color:#D32F2F">/</span><span style="color:#24292EFF">local</span><span style="color:#D32F2F">/</span><span style="color:#24292EFF">lib</span><span style="color:#D32F2F">/</span><span style="color:#24292EFF">python</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">set</span><span style="color:#2B5581"> PYTHONPATH=/usr/local/lib/python</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo03</code><br><code class="pill-demo pill-desc">pythonpath</code></p>
@@ -3966,8 +3989,7 @@
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(version)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>
-<p>Modules contain :</p>
+<li>Modules contain :
 <ul>
 <li>Variables, functions, classes and potentially executable code</li>
 </ul>
@@ -3996,20 +4018,16 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">[</span><span style="color:#22863A">'__doc__'</span><span style="color:#212121">,</span><span style="color:#22863A"> '__name__'</span><span style="color:#212121">,</span><span style="color:#22863A"> '__package__'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'acos'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'acosh'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'asin'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'asinh'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'atan'</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'atan2'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'atanh'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'ceil'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'copysign'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'cos'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'cosh'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'degrees'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'e'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'erf'</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'erfc'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'exp'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'expm1'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'fabs'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'factorial'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'floor'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'fmod'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'frexp'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'fsum'</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'gamma'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'hypot'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'isfinite'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'isinf'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'isnan'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'ldexp'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'lgamma'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'log'</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'log10'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'log1p'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'modf'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'pi'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'pow'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'radians'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'sin'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'sinh'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'sqrt'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'tan'</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'tanh'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'trunc'</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>['__doc__', '__name__', '__package__', 'acos', 'acosh', 'asin', 'asinh', 'atan',</span></span>
+<span class="line"><span>'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf',</span></span>
+<span class="line"><span>'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum',</span></span>
+<span class="line"><span>'gamma', 'hypot', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log',</span></span>
+<span class="line"><span>'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan',</span></span>
+<span class="line"><span>'tanh', 'trunc']</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
-<li>
-<p><code>__name__</code> is module's name</p>
-</li>
-<li>
-<p><code>__package__</code> is package name of module</p>
-</li>
+<li><code>__name__</code> is module's name</li>
+<li><code>__package__</code> is package name of module</li>
 </ul>
 <blockquote>
 <p><code class="pill-demo pill-id">demo05</code><br><code class="pill-demo pill-desc">usingdir</code></p>
@@ -4110,8 +4128,7 @@
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> NikonInfo</span><span style="color:#212121">,</span><span style="color:#24292EFF"> CanonInfo</span><span style="color:#212121">,</span><span style="color:#24292EFF"> LeikaInfo</span></span>
 <span class="line"><span style="color:#6F42C1">NikonInfo</span><span style="color:#212121">()</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">CanonInfo</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#6F42C1">CanonInfo</span><span style="color:#212121">()</span></span>
 <span class="line"><span style="color:#6F42C1">LeikaInfo</span><span style="color:#212121">()</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
@@ -4183,10 +4200,9 @@
 <span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> f</span><span style="color:#24292EFF">() :</span></span>
 <span class="line"><span style="color:#24292EFF">     y </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 1</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">"Globals from f"</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#6F42C1">globals</span><span style="color:#212121">().</span><span style="color:#6F42C1">keys</span><span style="color:#212121">())</span><span style="color:#4a9c59"> # dict_keys(['__name__', '__doc__’, … 'x', 'f'])</span></span>
+<span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#6F42C1">globals</span><span style="color:#212121">().</span><span style="color:#6F42C1">keys</span><span style="color:#212121">())</span><span style="color:#4a9c59"> # dict_keys(['__name__', '__doc__', ..., 'x', 'f'])</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">"Locals from f"</span><span style="color:#212121">)</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">locals</span><span style="color:#212121">().</span><span style="color:#6F42C1">keys</span><span style="color:#212121">())</span><span style="color:#4a9c59"> # dict_keys(['y'])</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">locals</span><span style="color:#212121">().</span><span style="color:#6F42C1">keys</span><span style="color:#212121">())</span><span style="color:#4a9c59"> # dict_keys(['y'])</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo09</code><br><code class="pill-demo pill-desc">localsandglobals</code></p>
@@ -4270,18 +4286,20 @@
 <li>With <code>uv</code>, virtual environments are automatic :</li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> init</span><span style="color:#2B5581"> myproject</span><span style="color:#4a9c59">     # creates pyproject.toml + .venv</span></span>
-<span class="line"><span style="color:#6F42C1">cd</span><span style="color:#2B5581"> myproject</span></span>
 <span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> add</span><span style="color:#2B5581"> requests</span><span style="color:#4a9c59">       # installs into .venv automatically</span></span>
 <span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> python</span><span style="color:#2B5581"> app.py</span><span style="color:#4a9c59">  # runs with the venv activated</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>Manual venv (if you ever need it without uv) :
-<ul>
-<li><code>python -m venv .venv</code></li>
-<li>Activate : <code>.venv\Scripts\activate</code> (Windows) or <code>source .venv/bin/activate</code></li>
-<li>Deactivate : <code>deactivate</code></li>
+<li>The environment is a directory beside the project files :</li>
 </ul>
-</li>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>myproject/</span></span>
+<span class="line"><span>├─ pyproject.toml   dependencies this project declares</span></span>
+<span class="line"><span>└─ .venv/</span></span>
+<span class="line"><span>   ├─ Scripts/      the interpreter and installed commands</span></span>
+<span class="line"><span>   └─ Lib/          the installed packages</span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li>Without <code>uv</code> the same directory is made by <code>python -m venv .venv</code></li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="111" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="111" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
@@ -4318,10 +4336,13 @@
 </li>
 <li>Virtual environments allow to install packages in separate location :
 <ul>
-<li>Not shared globally and each environment has its own Python binaryExercise 6</li>
+<li>Not shared globally and each environment has its own Python binary</li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p><code class="pill-exercise pill-id">exercise06</code><br><code class="pill-exercise pill-desc">Modules</code></p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="112" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="112" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#112"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -4422,12 +4443,8 @@
 <span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(some_list)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>
-<p>Output : <code>[100, 144, 196, 256, 324]</code></p>
-</li>
-<li>
-<p>More Pythonic are list comprehensions</p>
-</li>
+<li>Output : <code>[100, 144, 196, 256, 324]</code></li>
+<li>More Pythonic are list comprehensions</li>
 </ul>
 <blockquote>
 <p><code class="pill-demo pill-id">demo01</code><br><code class="pill-demo pill-desc">map_and_filter_functions</code></p>
@@ -4527,9 +4544,9 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">li </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">3</span><span style="color:#212121">,</span><span style="color:#1976D2"> 6</span><span style="color:#212121">,</span><span style="color:#1976D2"> 2</span><span style="color:#212121">,</span><span style="color:#1976D2"> 7</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#24292EFF">li_new </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [elem</span><span style="color:#D32F2F">*</span><span style="color:#1976D2">2</span><span style="color:#D32F2F"> for</span><span style="color:#24292EFF"> elem </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> li] </span><span style="color:#D32F2F">=></span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">6</span><span style="color:#212121">,</span><span style="color:#1976D2"> 12</span><span style="color:#212121">,</span><span style="color:#1976D2"> 4</span><span style="color:#212121">,</span><span style="color:#1976D2"> 14</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>li = [3, 6, 2, 7]</span></span>
+<span class="line"><span>li_new = [elem*2 for elem in li] => [6, 12, 4, 14]</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li><code>if</code> statement acts as a filter and is optional :</li>
 </ul>
@@ -4562,9 +4579,9 @@
 <ul>
 <li>Pythonic syntax using list comprehension :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">new_list </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">str</span><span style="color:#212121">(x)</span><span style="color:#D32F2F"> for</span><span style="color:#24292EFF"> x </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> slist </span><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> (x </span><span style="color:#D32F2F">%</span><span style="color:#1976D2"> 2</span><span style="color:#24292EFF">) </span><span style="color:#D32F2F">==</span><span style="color:#1976D2"> 0</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(new_list)</span><span style="color:#D32F2F"> =></span><span style="color:#24292EFF"> [</span><span style="color:#22863A">'2'</span><span style="color:#212121">,</span><span style="color:#22863A"> '4'</span><span style="color:#212121">,</span><span style="color:#22863A"> '6'</span><span style="color:#212121">,</span><span style="color:#22863A"> '8'</span><span style="color:#212121">,</span><span style="color:#22863A"> '10'</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>new_list = [str(x) for x in slist if (x % 2) == 0]</span></span>
+<span class="line"><span>print (new_list) => ['2', '4', '6', '8', '10']</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo04</code><br><code class="pill-demo pill-desc">comprehension_with_predicate</code></p>
 </blockquote>
@@ -4623,8 +4640,8 @@
 <ul>
 <li>Produces :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">[[</span><span style="color:#22863A">'AC'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'BC'</span><span style="color:#24292EFF">]</span><span style="color:#212121">,</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">'AD'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'BD'</span><span style="color:#24292EFF">]]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>[['AC', 'BC'], ['AD', 'BD']]</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo06</code><br><code class="pill-demo pill-desc">nested_comprehensions</code></p>
 </blockquote>
@@ -4825,8 +4842,7 @@
 <span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(my_set3)</span><span style="color:#4a9c59"> #{0, 8, 2, 4, 6}</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>
-<p>Set comprehensions do not have to take set as input :</p>
+<li>Set comprehensions do not have to take set as input :
 <ul>
 <li>They can take any sequence</li>
 </ul>
@@ -4873,14 +4889,15 @@
 <li>Constructs a dictionary instead of a list</li>
 </ul>
 </li>
-<li>Set comprehensions have similar syntax as dictionaries :</li>
+<li>Set comprehensions have similar syntax as dictionaries :
+<ul>
+<li>Difference is that sets have values instead of <code>key:value</code> pairs</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p><code class="pill-exercise pill-id">exercise07</code><br><code class="pill-exercise pill-desc">Comprehensions</code></p>
 </blockquote>
-<ul>
-<li>Difference is that sets have values instead of <code>key:value</code> pairs</li>
-</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="128" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="128" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#128"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -4970,14 +4987,13 @@
 <span class="line"><span style="color:#24292EFF">     z </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> x</span><span style="color:#D32F2F">/</span><span style="color:#24292EFF">y </span><span style="color:#4a9c59"># ZeroDivisionError</span></span>
 <span class="line"><span style="color:#D32F2F">except</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">'Cannot divide by zero'</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#D32F2F"> try</span><span style="color:#212121"> :</span></span>
+<span class="line"><span style="color:#D32F2F">try</span><span style="color:#212121"> :</span></span>
 <span class="line"><span style="color:#24292EFF">     fh </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> open</span><span style="color:#212121">(</span><span style="color:#22863A">"somefile"</span><span style="color:#212121">, </span><span style="color:#22863A">"r"</span><span style="color:#212121">)</span><span style="color:#4a9c59"> # IOError</span></span>
 <span class="line"><span style="color:#D32F2F">except</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">'Cannot open file'</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>
-<p>After handling exception in <code>except</code> statement :</p>
+<li>After handling exception in <code>except</code> statement :
 <ul>
 <li>Normal program flow continues</li>
 </ul>
@@ -5032,13 +5048,13 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">try</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    Do you operations here</span></span>
-<span class="line"><span style="color:#D32F2F">except</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    If there </span><span style="color:#D32F2F">is</span><span style="color:#6F42C1"> any</span><span style="color:#24292EFF"> exception</span><span style="color:#212121">,</span><span style="color:#24292EFF"> then execute this block</span></span>
-<span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    If there </span><span style="color:#D32F2F">is</span><span style="color:#24292EFF"> no exception then execute this block</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>try:</span></span>
+<span class="line"><span>    Do you operations here</span></span>
+<span class="line"><span>except:</span></span>
+<span class="line"><span>    If there is any exception, then execute this block</span></span>
+<span class="line"><span>else:</span></span>
+<span class="line"><span>    If there is no exception then execute this block</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Example :</li>
 </ul>
@@ -5059,14 +5075,14 @@
 <ul>
 <li>Same <code>except</code> clause may also handle multiple exceptions :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">try</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    Do you operations here;</span></span>
-<span class="line"><span style="color:#D32F2F">except</span><span style="color:#24292EFF">(Exception1</span><span style="color:#212121">[,</span><span style="color:#24292EFF"> Exception2</span><span style="color:#212121">[,</span><span style="color:#24292EFF">...ExceptionN</span><span style="color:#212121">]]</span><span style="color:#24292EFF">])</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    If there </span><span style="color:#D32F2F">is</span><span style="color:#6F42C1"> any</span><span style="color:#24292EFF"> exception </span><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> the given exception </span><span style="color:#1976D2">list</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#24292EFF">    then execute this block</span></span>
-<span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    If there </span><span style="color:#D32F2F">is</span><span style="color:#24292EFF"> no exception then execute this block</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>try:</span></span>
+<span class="line"><span>    Do you operations here;</span></span>
+<span class="line"><span>except(Exception1[, Exception2[,...ExceptionN]]]):</span></span>
+<span class="line"><span>    If there is any exception from the given exception list,</span></span>
+<span class="line"><span>    then execute this block</span></span>
+<span class="line"><span>else:</span></span>
+<span class="line"><span>    If there is no exception then execute this block</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Example :</li>
 </ul>
@@ -5227,12 +5243,12 @@
 </li>
 <li>Syntax of the <code>try-finally</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">try</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    Do you operations here;</span></span>
-<span class="line"><span style="color:#24292EFF">    Due to </span><span style="color:#6F42C1">any</span><span style="color:#24292EFF"> exception</span><span style="color:#212121">,</span><span style="color:#24292EFF"> this may be skipped</span></span>
-<span class="line"><span style="color:#D32F2F">finally</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    This would always be executed</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>try:</span></span>
+<span class="line"><span>    Do you operations here;</span></span>
+<span class="line"><span>    Due to any exception, this may be skipped</span></span>
+<span class="line"><span>finally:</span></span>
+<span class="line"><span>    This would always be executed</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Combining <code>finally</code> and <code>except</code> is allowed :
 <ul>
@@ -5258,8 +5274,8 @@
 <ul>
 <li>Result without permission to open the file in writing mode :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Error</span><span style="color:#212121">:</span><span style="color:#24292EFF"> can</span><span style="color:#22863A">'t find file or read data</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Error: can't find file or read data</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Same example can be written more cleanly as follows :</li>
 </ul>
@@ -5269,8 +5285,7 @@
 <span class="line"><span style="color:#24292EFF">       fh</span><span style="color:#212121">.</span><span style="color:#6F42C1">write</span><span style="color:#212121">(</span><span style="color:#22863A">"This is my test file for exception handling!!"</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#D32F2F">    finally</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#24292EFF">       fh</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">except</span><span style="color:#1976D2"> IOError</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">except</span><span style="color:#1976D2"> IOError</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">    print </span><span style="color:#212121">(</span><span style="color:#22863A">"Error: can\'t find file or read data"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
@@ -5289,11 +5304,11 @@
 </li>
 <li>Capture argument by supplying a variable in <code>except</code> clause :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">try</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    Do you operations here;</span></span>
-<span class="line"><span style="color:#D32F2F">except</span><span style="color:#24292EFF"> ExceptionType </span><span style="color:#D32F2F">as</span><span style="color:#24292EFF"> Argument</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    You can </span><span style="color:#6F42C1">print</span><span style="color:#24292EFF"> value of Argument here...</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>try:</span></span>
+<span class="line"><span>    Do you operations here;</span></span>
+<span class="line"><span>except ExceptionType as Argument:</span></span>
+<span class="line"><span>    You can print value of Argument here...</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>In case of handling a single exception :
 <ul>
@@ -5328,9 +5343,9 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">The argument does </span><span style="color:#D32F2F">not</span><span style="color:#24292EFF"> contain numbers</span></span>
-<span class="line"><span style="color:#24292EFF">invalid literal </span><span style="color:#D32F2F">for</span><span style="color:#1976D2"> int</span><span style="color:#212121">()</span><span style="color:#D32F2F"> with</span><span style="color:#24292EFF"> base </span><span style="color:#1976D2">10</span><span style="color:#212121">:</span><span style="color:#22863A"> 'xyz'</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>The argument does not contain numbers</span></span>
+<span class="line"><span>invalid literal for int() with base 10: 'xyz'</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo08</code><br><code class="pill-demo pill-desc">exceptionarguments</code></p>
 </blockquote>
@@ -5341,8 +5356,8 @@
 <ul>
 <li>Exceptions can be raised with the <code>raise</code> statement :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">raise</span><span style="color:#24292EFF"> [Exception </span><span style="color:#212121">[,</span><span style="color:#24292EFF"> args </span><span style="color:#212121">[,</span><span style="color:#24292EFF"> traceback</span><span style="color:#212121">]]</span><span style="color:#24292EFF">]</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>raise [Exception [, args [, traceback]]]</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Explanation :
 <ul>
@@ -5459,17 +5474,15 @@
 </ul>
 </li>
 <li>Exceptions can be raised with the <code>raise</code> statement</li>
-</ul>
-<blockquote>
-<p><code class="pill-exercise pill-id">exercise08</code><br><code class="pill-exercise pill-desc">Exception Handling</code></p>
-</blockquote>
-<ul>
 <li>It is possible to create User Defined Exceptions :
 <ul>
 <li>By deriving classes from standard built-in exceptions</li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p><code class="pill-exercise pill-id">exercise08</code><br><code class="pill-exercise pill-desc">Exception Handling</code></p>
+</blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="144" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="144" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#144"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -5652,19 +5665,53 @@
 <div class="ml-eyebrow"><a href="#144"><span class="ml-tag">python</span>Python IO</a></div>
 <h1 id="result-of-calling-open">Result of Calling open</h1>
 <ul>
-<li>
-<p>Varies depending on file mode and buffering</p>
-</li>
-<li>
-<p>Carefully study output of this for an existing file <code>&quot;test.txt&quot;</code> :</p>
-</li>
-<li>
-<p>Result of opening a &quot;text&quot; file :</p>
-</li>
-<li>
-<p>This is very different from Python 2</p>
-</li>
+<li>The object returned varies with the file mode and the buffering :</li>
 </ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>>>> open("test.txt", "rt")</span></span>
+<span class="line"><span>&#x3C;_io.TextIOWrapper name='test.txt' mode='rt' encoding='utf-8'></span></span>
+<span class="line"><span>>>> open("test.txt", "rb")</span></span>
+<span class="line"><span>&#x3C;_io.BufferedReader name='test.txt'></span></span>
+<span class="line"><span>>>> open("test.txt", "rb", buffering=0)</span></span>
+<span class="line"><span>&#x3C;_io.FileIO name='test.txt' mode='rb'></span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li>Opening a text file stacks three objects, and you are handed the outermost :</li>
+</ul>
+<svg viewBox="0 0 960 140" width="100%" style="width:100%;height:auto;display:block;margin:10px 0 4px" role="img" aria-label="Opening a text file layers TextIOWrapper over BufferedReader over FileIO">
+<defs>
+<marker id="io-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+</marker>
+</defs>
+<g fill="none" stroke="currentColor" stroke-width="2">
+<rect x="230" y="42" width="196" height="46" rx="4" />
+<rect x="466" y="42" width="196" height="46" rx="4" />
+<rect x="702" y="42" width="130" height="46" rx="4" />
+</g>
+<g fill="none" stroke="currentColor" stroke-width="1.8" marker-end="url(#io-arrow)">
+<path d="M 196 65 L 224 65" />
+<path d="M 426 65 L 460 65" />
+<path d="M 662 65 L 696 65" />
+<path d="M 832 65 L 900 65" />
+</g>
+<g fill="currentColor" font-size="20" text-anchor="middle">
+<text x="328" y="72">TextIOWrapper</text>
+<text x="564" y="72">BufferedReader</text>
+<text x="767" y="72">FileIO</text>
+</g>
+<g fill="currentColor" font-size="17" text-anchor="middle" opacity="0.75">
+<text x="328" y="30">"rt"</text>
+<text x="564" y="30">"rb"</text>
+<text x="767" y="30">buffering=0</text>
+<text x="328" y="112">text and bytes</text>
+<text x="564" y="112">buffered bytes</text>
+<text x="767" y="112">raw bytes</text>
+</g>
+<g fill="currentColor" font-size="19">
+<text x="20" y="72">open(...)</text>
+<text x="908" y="72">disk</text>
+</g>
+</svg>
 <blockquote>
 <p><code class="pill-demo pill-id">demo02</code><br><code class="pill-demo pill-desc">openfile</code></p>
 </blockquote>
@@ -5688,11 +5735,10 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Name of the file</span><span style="color:#212121">:</span><span style="color:#24292EFF"> test</span><span style="color:#212121">.</span><span style="color:#24292EFF">txt</span></span>
-<span class="line"><span style="color:#24292EFF">Closed </span><span style="color:#D32F2F">or</span><span style="color:#D32F2F"> not</span><span style="color:#212121"> :</span><span style="color:#1976D2"> False</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Opening mode </span><span style="color:#212121">:</span><span style="color:#24292EFF"> wb</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Name of the file: test.txt</span></span>
+<span class="line"><span>Closed or not : False</span></span>
+<span class="line"><span>Opening mode : wb</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo03</code><br><code class="pill-demo pill-desc">fileioobject</code></p>
 </blockquote>
@@ -5719,16 +5765,15 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">fr </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> open</span><span style="color:#212121">(</span><span style="color:#22863A">'trilobyte.jpg'</span><span style="color:#212121">, mode</span><span style="color:#D32F2F">=</span><span style="color:#22863A">'rb'</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#24292EFF">fr</span><span style="color:#212121">.</span><span style="color:#6F42C1">tell</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">data </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> fr</span><span style="color:#212121">.</span><span style="color:#6F42C1">read</span><span style="color:#212121">(</span><span style="color:#1976D2">3</span><span style="color:#212121">)</span><span style="color:#D32F2F"> =></span><span style="color:#24292EFF"> read three </span><span style="color:#1976D2">bytes</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#1976D2">type</span><span style="color:#212121">(data))</span><span style="color:#D32F2F"> =></span><span style="color:#1976D2"> type</span><span style="color:#D32F2F"> is</span><span style="color:#1976D2"> bytes</span></span>
-<span class="line"><span style="color:#24292EFF">fr</span><span style="color:#212121">.</span><span style="color:#6F42C1">tell</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">fr</span><span style="color:#212121">.</span><span style="color:#6F42C1">seek</span><span style="color:#212121">(</span><span style="color:#1976D2">0</span><span style="color:#212121">)</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">data </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> fr</span><span style="color:#212121">.</span><span style="color:#6F42C1">read</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(data)</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>fr = open('trilobyte.jpg', mode='rb')</span></span>
+<span class="line"><span>fr.tell()</span></span>
+<span class="line"><span>data = fr.read(3) => read three bytes</span></span>
+<span class="line"><span>print(type(data)) => type is bytes</span></span>
+<span class="line"><span>fr.tell()</span></span>
+<span class="line"><span>fr.seek(0)</span></span>
+<span class="line"><span>data = fr.read()</span></span>
+<span class="line"><span>print(data)</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo04</code><br><code class="pill-demo pill-desc">readbinaryfile</code></p>
 </blockquote>
@@ -5795,8 +5840,8 @@
 <ul>
 <li>File <code>textfilepolish.txt</code> with following content is created :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Polish text</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Ä…Ä‡Ä™Å‚Å„Ã³Å›ÅºÅ¼Ä„Ä†Ä˜Å�ÅƒÃ“ÅšÅ¹Å»</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Polish text: ąćęłńóśźżĄĆĘŁŃÓŚŹŻ</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo06</code><br><code class="pill-demo pill-desc">writetextfile</code></p>
 </blockquote>
@@ -5833,8 +5878,8 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Polish text</span><span style="color:#212121">:</span><span style="color:#24292EFF"> ąćęłńóśźżĄĆĘŁŃÓŚŹŻ</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Polish text: ąćęłńóśźżĄĆĘŁŃÓŚŹŻ</span></span>
+<span class="line"><span></span></span></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="155" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="155" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#144"><span class="ml-tag">python</span>Python IO</a></div>
@@ -5860,8 +5905,8 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Name of the file</span><span style="color:#212121">:</span><span style="color:#24292EFF"> foo</span><span style="color:#212121">.</span><span style="color:#24292EFF">txt</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Name of the file: foo.txt</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Good practice to use <code>close()</code> method to close a file</li>
 </ul>
@@ -5919,10 +5964,10 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Read String </span><span style="color:#D32F2F">is</span><span style="color:#212121"> :</span><span style="color:#24292EFF"> Python </span><span style="color:#D32F2F">is</span></span>
-<span class="line"><span style="color:#24292EFF">Current file position </span><span style="color:#212121">:</span><span style="color:#1976D2"> 10</span></span>
-<span class="line"><span style="color:#24292EFF">Again read String </span><span style="color:#D32F2F">is</span><span style="color:#212121"> :</span><span style="color:#24292EFF"> Python </span><span style="color:#D32F2F">is</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Read String is : Python is</span></span>
+<span class="line"><span>Current file position : 10</span></span>
+<span class="line"><span>Again read String is : Python is</span></span>
+<span class="line"><span></span></span></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="158" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="158" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10">
 <div class="ml-eyebrow"><a href="#144"><span class="ml-tag">python</span>Python IO</a></div>
@@ -5992,8 +6037,7 @@
 </li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> os</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">os</span><span style="color:#212121">.</span><span style="color:#6F42C1">rmdir</span><span style="color:#212121">(</span><span style="color:#22863A">"/tmp/test"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">os</span><span style="color:#212121">.</span><span style="color:#6F42C1">rmdir</span><span style="color:#212121">(</span><span style="color:#22863A">"/tmp/test"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo08</code><br><code class="pill-demo pill-desc">creatingandremoving_directories</code></p>
@@ -6067,15 +6111,13 @@
 <li>Python also has OS Object Methods to manipulate directories :
 <ul>
 <li>Creating and deleting directories</li>
+<li>Changing and displaying the current directory</li>
 </ul>
 </li>
 </ul>
 <blockquote>
 <p><code class="pill-exercise pill-id">exercise09</code><br><code class="pill-exercise pill-desc">Python IO</code></p>
 </blockquote>
-<ul>
-<li>Changing and displaying the current directory</li>
-</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="162" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="162" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#162"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -6339,12 +6381,17 @@
 <li>Actually the result set is a list of tuples</li>
 </ul>
 </li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>(1, 'Audi', 52643)</span></span>
+<span class="line"><span>(2, 'Mercedes', 57127)</span></span>
+<span class="line"><span>(3, 'Skoda', 9000)</span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
 <li>Other <code>fetch*()</code> methods read data from result set :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">cursor</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">'select * from testtable'</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#24292EFF">first_row </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> cursor</span><span style="color:#212121">.</span><span style="color:#6F42C1">fetchone</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">next_10_rows </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> cursor</span><span style="color:#212121">.</span><span style="color:#6F42C1">fetchmany</span><span style="color:#212121">(</span><span style="color:#1976D2">10</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#24292EFF">all_remaining_rows </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> cursors</span><span style="color:#212121">.</span><span style="color:#6F42C1">fetchall</span><span style="color:#212121">()</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">first_row </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">fetchone</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">next_10_rows </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">fetchmany</span><span style="color:#212121">(</span><span style="color:#1976D2">10</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">all_remaining_rows </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">fetchall</span><span style="color:#212121">()</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo06</code><br><code class="pill-demo pill-desc">retrievingdata</code></p>
@@ -6456,11 +6503,15 @@
 <span class="line"><span style="color:#D32F2F">     for</span><span style="color:#24292EFF"> d </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> data</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">          print </span><span style="color:#212121">(d[</span><span style="color:#1976D2">0</span><span style="color:#212121">], d[</span><span style="color:#1976D2">1</span><span style="color:#212121">], d[</span><span style="color:#1976D2">2</span><span style="color:#212121">])</span></span>
 <span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>0 Id INT</span></span>
+<span class="line"><span>1 Name TEXT</span></span>
+<span class="line"><span>2 Price INT</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Metadata in SQLite can be obtained using <code>PRAGMA</code> command :
 <ul>
 <li>SQLite objects may have attributes, which are metadata</li>
-<li>Obtain specific metatada from querying the SQLite system sqlite_master table</li>
+<li>Obtain specific metadata from querying the SQLite system <code>sqlite_master</code> table</li>
 </ul>
 </li>
 </ul>
@@ -6524,9 +6575,8 @@
 <span class="line"><span style="color:#6F42C1">     print </span><span style="color:#212121">(</span><span style="color:#22863A">"Error </span><span style="color:#1976D2">%s</span><span style="color:#22863A">:"</span><span style="color:#D32F2F"> %</span><span style="color:#212121"> e.args[</span><span style="color:#1976D2">0</span><span style="color:#212121">])</span></span>
 <span class="line"><span style="color:#24292EFF">     sys</span><span style="color:#212121">.</span><span style="color:#6F42C1">exit</span><span style="color:#212121">(</span><span style="color:#1976D2">1</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#D32F2F">finally</span><span style="color:#212121">:</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#24292EFF">    con</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#D32F2F">     if</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">          con</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo11</code><br><code class="pill-demo pill-desc">transactions</code></p>
@@ -6566,14 +6616,15 @@
 <li>Changes are automatically committed</li>
 </ul>
 </li>
-<li>DB API supports transactions if database supports them :</li>
+<li>DB API supports transactions if database supports them :
+<ul>
+<li>Via methods on the connection object</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p><code class="pill-exercise pill-id">exercise10</code><br><code class="pill-exercise pill-desc">Python Database Access</code></p>
 </blockquote>
-<ul>
-<li>Via methods on the connection object</li>
-</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="178" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="178" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="197" data-size="16:10"><div class="ml-eyebrow"><a href="#178"><span class="ml-tag">python</span>Course Schedule</a></div>
 <div class="sched-grid" style="position:absolute;top:22px;left:72px;right:72px;bottom:8px;margin:0;height:770px;">
@@ -6829,15 +6880,9 @@
 </li>
 <li><code>self</code> is a reference to the instance :
 <ul>
-<li>
-<p>Reference to the container for state of object</p>
-</li>
-<li>
-<p>In many OO languages, instance is hidden in method definitions</p>
-</li>
-<li>
-<p>In Python, instance is visible and explicit in method definitions</p>
-</li>
+<li>Reference to the container for state of object</li>
+<li>In many OO languages, instance is hidden in method definitions</li>
+<li>In Python, instance is visible and explicit in method definitions</li>
 </ul>
 </li>
 </ul>
@@ -6870,11 +6915,10 @@
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Name </span><span style="color:#212121">:</span><span style="color:#24292EFF"> Albert </span><span style="color:#212121">,</span><span style="color:#24292EFF">Salary</span><span style="color:#212121">:</span><span style="color:#1976D2"> 2000</span></span>
-<span class="line"><span style="color:#24292EFF">Name </span><span style="color:#212121">:</span><span style="color:#24292EFF"> Werner </span><span style="color:#212121">,</span><span style="color:#24292EFF">Salary</span><span style="color:#212121">:</span><span style="color:#1976D2"> 5000</span></span>
-<span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Total Employee </span><span style="color:#1976D2">2</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Name : Albert ,Salary: 2000</span></span>
+<span class="line"><span>Name : Werner ,Salary: 5000</span></span>
+<span class="line"><span>Total Employee 2</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo04</code><br><code class="pill-demo pill-desc">classdata</code></p>
 </blockquote>
@@ -6916,7 +6960,7 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> SquareGetterSetter</span><span style="color:#24292EFF">(</span><span style="color:#1976D2">object</span><span style="color:#24292EFF">):</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> SquareGetterSetter</span><span style="color:#24292EFF">:</span></span>
 <span class="line"><span style="color:#D32F2F">     def</span><span style="color:#6F42C1"> get_length</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">): </span><span style="color:#4a9c59"># Java-style</span></span>
 <span class="line"><span style="color:#D32F2F">          return</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">_length</span></span>
 <span class="line"><span style="color:#D32F2F">     def</span><span style="color:#6F42C1"> set_length</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> length</span><span style="color:#24292EFF">): </span><span style="color:#4a9c59"># Java-style</span></span>
@@ -6930,7 +6974,7 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> SquarePropertySyntax</span><span style="color:#24292EFF">(</span><span style="color:#1976D2">object</span><span style="color:#24292EFF">):</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> SquarePropertySyntax</span><span style="color:#24292EFF">:</span></span>
 <span class="line"><span style="color:#D32F2F">     def</span><span style="color:#6F42C1"> get_length</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
 <span class="line"><span style="color:#D32F2F">          return</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">_length</span></span>
 <span class="line"><span style="color:#D32F2F">     def</span><span style="color:#6F42C1"> set_length</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> length</span><span style="color:#24292EFF">):</span></span>
@@ -6987,16 +7031,16 @@ In the order of their occurrence in the base class list</p>
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Employee</span><span style="color:#212121">.</span><span style="color:#1976D2">__doc__</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Common base </span><span style="color:#D32F2F">class</span><span style="color:#D32F2F"> for</span><span style="color:#6F42C1"> all</span><span style="color:#24292EFF"> employees</span></span>
-<span class="line"><span style="color:#24292EFF">Employee</span><span style="color:#212121">.</span><span style="color:#1976D2">__name__</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Employee</span></span>
-<span class="line"><span style="color:#24292EFF">Employee</span><span style="color:#212121">.</span><span style="color:#1976D2">__module__</span><span style="color:#212121">:</span><span style="color:#24292EFF"> __main__</span></span>
-<span class="line"><span style="color:#24292EFF">Employee</span><span style="color:#212121">.</span><span style="color:#1976D2">__bases__</span><span style="color:#212121">:</span><span style="color:#24292EFF"> (</span><span style="color:#D32F2F">&#x3C;class</span><span style="color:#22863A"> 'object'</span><span style="color:#D32F2F">></span><span style="color:#212121">,</span><span style="color:#24292EFF">)</span></span>
-<span class="line"><span style="color:#24292EFF">Employee</span><span style="color:#212121">.</span><span style="color:#1976D2">__dict__</span><span style="color:#212121">:</span><span style="color:#212121"> {</span><span style="color:#22863A">'__module__'</span><span style="color:#212121">:</span><span style="color:#22863A"> '__main__'</span><span style="color:#212121">,</span><span style="color:#22863A"> 'displayCount'</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#D32F2F">&#x3C;</span><span style="color:#24292EFF">function displayCount at </span><span style="color:#D32F2F">0x</span><span style="color:#1976D2">b7c84994</span><span style="color:#D32F2F">></span><span style="color:#212121">,</span><span style="color:#22863A"> 'empCount'</span><span style="color:#212121">:</span><span style="color:#1976D2"> 2</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'displayEmployee'</span><span style="color:#212121">:</span><span style="color:#D32F2F"> &#x3C;</span><span style="color:#24292EFF">function displayEmployee at </span><span style="color:#D32F2F">0x</span><span style="color:#1976D2">b7c8441c</span><span style="color:#D32F2F">></span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'__doc__'</span><span style="color:#212121">:</span><span style="color:#22863A"> 'Common base class for all employees'</span><span style="color:#212121">,</span></span>
-<span class="line"><span style="color:#22863A">'__init__'</span><span style="color:#212121">:</span><span style="color:#D32F2F"> &#x3C;</span><span style="color:#24292EFF">function </span><span style="color:#6F42C1">__init__</span><span style="color:#24292EFF"> at </span><span style="color:#D32F2F">0x</span><span style="color:#1976D2">b7c846bc</span><span style="color:#D32F2F">></span><span style="color:#212121">}</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Employee.__doc__: Common base class for all employees</span></span>
+<span class="line"><span>Employee.__name__: Employee</span></span>
+<span class="line"><span>Employee.__module__: __main__</span></span>
+<span class="line"><span>Employee.__bases__: (&#x3C;class 'object'>,)</span></span>
+<span class="line"><span>Employee.__dict__: {'__module__': '__main__', 'displayCount':</span></span>
+<span class="line"><span>&#x3C;function displayCount at 0xb7c84994>, 'empCount': 2,</span></span>
+<span class="line"><span>'displayEmployee': &#x3C;function displayEmployee at 0xb7c8441c>,</span></span>
+<span class="line"><span>'__doc__': 'Common base class for all employees',</span></span>
+<span class="line"><span>'__init__': &#x3C;function __init__ at 0xb7c846bc>}</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo07</code><br><code class="pill-demo pill-desc">builtinattributes</code></p>
 </blockquote>
@@ -7058,9 +7102,9 @@ In the order of their occurrence in the base class list</p>
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#1976D2">3083401324</span><span style="color:#1976D2"> 3083401324</span><span style="color:#1976D2"> 3083401324</span></span>
-<span class="line"><span style="color:#24292EFF">Point destroyed</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>3083401324 3083401324 3083401324</span></span>
+<span class="line"><span>Point destroyed</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>The destructor is only called when the last reference is deleted</li>
 </ul>
@@ -7176,11 +7220,11 @@ In the order of their occurrence in the base class list</p>
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">Traceback </span><span style="color:#212121">(most recent call last):</span></span>
-<span class="line"><span style="color:#24292EFF">  File </span><span style="color:#22863A">""</span><span style="color:#212121">,</span><span style="color:#24292EFF"> line </span><span style="color:#1976D2">21</span><span style="color:#212121">,</span><span style="color:#D32F2F"> in</span><span style="color:#D32F2F"> &#x3C;</span><span style="color:#24292EFF">module</span><span style="color:#D32F2F">></span></span>
-<span class="line"><span style="color:#6F42C1">     print </span><span style="color:#212121">(s.__secretCount)</span></span>
-<span class="line"><span style="color:#1976D2">AttributeError</span><span style="color:#212121">:</span><span style="color:#22863A"> 'Secretive'</span><span style="color:#1976D2"> object</span><span style="color:#24292EFF"> has no attribute </span><span style="color:#22863A">'__secretCount'</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Traceback (most recent call last):</span></span>
+<span class="line"><span>  File "", line 21, in &#x3C;module></span></span>
+<span class="line"><span>     print (s.__secretCount)</span></span>
+<span class="line"><span>AttributeError: 'Secretive' object has no attribute '__secretCount'</span></span>
+<span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo11</code><br><code class="pill-demo pill-desc">datahiding</code></p>
 </blockquote>
@@ -7261,14 +7305,15 @@ In the order of their occurrence in the base class list</p>
 <li>Can be accessed through a scrambled name</li>
 </ul>
 </li>
-<li>Static methods and properties bound to class not to object :</li>
+<li>Static methods and properties bound to class not to object :
+<ul>
+<li>Static data only exists once per class rather than per instance</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p><code class="pill-exercise pill-id">exercise11</code><br><code class="pill-exercise pill-desc">Python Classes</code></p>
 </blockquote>
-<ul>
-<li>Static data only exists once per class rather than per instance</li>
-</ul>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()})}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame(()=>{t.style.display=""}))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol(),l=()=>o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o);let c;const d="marpitSVGPolyfill:setZoomFactor,",h=Symbol(),g=Symbol();const p=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[v]:[],i={then:e=>(t?(async()=>{if(void 0===c){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise(t=>{i.addEventListener("load",()=>t())});i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),c=e.getImageData(5,5,1,1).data[3]<128}return c})().then(t=>{null==e||e(t?[v]:[])}):null==e||e([]),i)};return Object.assign(e,i)};let m,u;function v(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(d)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(u=i)}}catch(t){console.error(t)}}));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||u||t.currentScale||1;m!==a&&(m=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}}),!1!==n&&Array.from(e.querySelectorAll("iframe"),({contentWindow:t})=>{null==t||t.postMessage(`${d}${n}`,"null"===window.origin?"*":window.origin)})}function w({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[h])return t[h];let e=!0;const i=()=>{e=!1,delete t[h]};Object.defineProperty(t,h,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await p()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}m=1,u=void 0;const b=Symbol(),y=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,o=t[n].proto();l()&&o!==HTMLElement?i||customElements.define(s,r(o,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach(t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)}))}window[a]=!0})(e),e[b])return e[b];const i=w({target:e}),n=()=>{i(),delete e[b]},o=Object.assign(n,{cleanup:n,update:()=>y(e)});return Object.defineProperty(e,b,{configurable:!0,value:o}),o},f=document.currentScript;y(f?f.getRootNode():document)}();
 </script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>NOTES:
@@ -7277,5 +7322,5 @@ Python is a general purpose, high-level language emphasizing readability and dev
 Set expectations: we cover the language fundamentals through classes, with hands-on exercises after every module.</p></div><div class="bespoke-marp-note" data-index="1" tabindex="0"><p>NOTES:
 Go over logistics: start/end times, lunch break, coffee/drinks, restroom locations, and policy on mobile phones (please keep them silent).
 Confirm everyone has the course manual and a working Python installation.
-Einstein quote: the goal is to make these concepts simple and understandable, but not so simple that we lose technical rigor.</p></div><div class="bespoke-marp-note" data-index="3" tabindex="0"><p>NOTES: For Perl students: Python is also interpreted like Perl, but with enforced indentation instead of braces. No sigils ($, @, %), no 'my' declarations. Think of it as Perl with training wheels removed and readability enforced.</p></div><div class="bespoke-marp-note" data-index="19" tabindex="0"><p>NOTES: Perl comparison: 'my $x = 5' becomes 'x = 5'. No sigils, no 'my'. Python is dynamically typed like Perl, but variable names are bare identifiers. Type hints (x: int = 5) are optional annotations, not enforced at runtime.</p></div><div class="bespoke-marp-note" data-index="80" tabindex="0"><p>NOTES: Perl comparison: 'sub name { my ($a, $b) = @_; ... }' becomes 'def name(a, b): ...'. No @_ array — parameters are named directly. Return is implicit (last expression) or explicit 'return'. Python has no prototypes. Default args: def f(x=10). *args/**kwargs are like Perl's @_ but structured.</p></div><div class="bespoke-marp-note" data-index="96" tabindex="0"><p>NOTES: Perl comparison: 'use Module;' or 'require Module;' becomes 'import module'. Python modules are just .py files (like Perl packages but simpler). 'from module import func' is like 'use Module qw(func)'. __name__ == '__main__' is like Perl's 'unless caller' idiom. No @INC manipulation needed — Python uses sys.path.</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.4.0/lib/bespoke.js.LICENSE.txt */
+Einstein quote: the goal is to make these concepts simple and understandable, but not so simple that we lose technical rigor.</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.4.0/lib/bespoke.js.LICENSE.txt */
 !function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,function(e){return"SCRIPT"!==e.nodeName}),i={},a=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){i[e]=(i[e]||[]).filter(function(e){return e!==t})},l=function(e,t){return(i[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},c=function(e,t){o[e]&&(n&&l("deactivate",a(n,t)),n=o[e],l("activate",a(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:s,on:function(e,t){return(i[e]||(i[e]=[])).push(t),s.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return o.indexOf(n);l("slide",a(o[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){l("destroy",a(n,e)),i={}}};return(t||[]).forEach(function(e){e(u)}),n||c(0),u}}),t),o=e(r);const i=document.body,a=(...e)=>history.replaceState(...e),s="",l="presenter",c="next",d="overview",u=["",l,d,c],f="bespoke-marp-",m=`data-${f}`,g=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},p=()=>i.dataset.bespokeView,v=e=>new URLSearchParams(location.search).get(e),h=(e,t={})=>{const n={location,setter:a,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",g(r,n.location))}catch(e){console.error(e)}},w=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},k=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},E=e=>{e.parent.classList.add(`${f}parent`),e.slides.forEach(e=>e.classList.add(`${f}slide`)),e.on("activate",t=>{const n=`${f}active`,r=t.slide,o=r.classList,i=!o.contains(n);if(e.slides.forEach(e=>{e.classList.remove(n),x(e,!0)}),o.add(n),x(r,!1),i){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}})},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${m}fragment`,(i?"":"in")+"active");const a=`${m}current-fragment`;t===r&&n===o?e.setAttribute(a,"current"):e.removeAttribute(a)})}),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}}),e.on("prev",({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)}),o(0,0)},L=document,S=()=>!(!L.fullscreenEnabled&&!L.webkitFullscreenEnabled),P=()=>!(!L.fullscreenElement&&!L.webkitFullscreenElement),_=e=>{e.fullscreen=()=>{S()&&(async()=>{P()?(L.exitFullscreen||L.webkitExitFullscreen)?.call(L):((e=L.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!S()||(e.fullscreen(),t.preventDefault())})},O=`${f}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout(()=>{r.add(O),o()},e),r.contains(O)&&(r.remove(O),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})},A=e=>{window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${m}load`,e?"":"hideable")}})},C=({interval:e=250}={})=>t=>{document.addEventListener("keydown",e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,o=0;t.parent.addEventListener("wheel",i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const c=Date.now()-o<e,d=l<=n;if(n=l,c||d)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())})},D=(e=`.${f}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${m}osc=${JSON.stringify(e)}]`).forEach(n)};if(S()||n("fullscreen",e=>e.style.display="none"),!w){const e=(e,t)=>{e.disabled=!0,e.title=`${t} is disabled due to restricted localStorage.`};n("presenter",t=>e(t,"Presenter view")),n("overview",t=>e(t,"Overview view"))}return e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n?e.openPresenterView():"overview"===n&&e.toggleOverviewView()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:o})=>{n("prev",e=>e.disabled=0===t&&0===o),n("next",n=>n.disabled=t===e.slides.length-1&&o===r.length-1)}),e.on("marp-active",()=>x(t,!1)),e.on("marp-inactive",()=>x(t,!0)),S()&&(e=>{for(const t of["","webkit"])L.addEventListener(t+"fullscreenchange",e)})(()=>n("fullscreen",e=>e.classList.toggle("exit",S()&&P())))}},N=e=>{if(e.syncKey&&"string"==typeof e.syncKey)return!0;throw new Error("The current instance of Bespoke.js is incompatible with Marp bespoke sync plugin.")},B=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},h({},{setter:(e,...t)=>a({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},i=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),i(e=>({reference:(e.reference||0)+1}))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout(()=>{e.on("fragment",e=>{r&&i(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}});const a=()=>{const{reference:e}=o();void 0===e||e<=1?k(n):i(()=>({reference:e-1}))};window.addEventListener("pagehide",e=>{e.persisted&&window.addEventListener("pageshow",s),a()}),e.on("destroy",a)}},K=e=>{w&&document.addEventListener("keydown",t=>{("o"!==t.key||t.altKey||t.ctrlKey||t.metaKey)&&"Escape"!==t.key||(t.preventDefault(),e())})};let q=null;const V=({closeOnSelect:e=!0}={})=>t=>{N(t);const n=n=>{const r=(()=>{if(!q||!q.isConnected){q=document.createElement("div"),q.className=`${f}overview`,q.inert=!0;const n=document.createElement("iframe");n.src=(()=>{const n=new URLSearchParams(location.search);return n.set("view","overview"),n.set("sync",t.syncKey),e&&n.set("closeOnSelect","1"),g(n)})(),q.append(n),document.body.append(q)}return q})(),o=n??!r.dataset.open;setTimeout(()=>{if(r.dataset.open=o?"1":"",r.inert=!o,t.skipTransition=o,o){const e=r.querySelector("iframe");try{e?.contentWindow?.focus()}catch{e?.focus()}}else window.focus()},0)};Object.defineProperties(t,{toggleOverviewView:{enumerable:!0,value:n}}),window.addEventListener("message",e=>{e.origin===window.origin&&"closeOverview"===e.data&&n(!1)}),K(n)},j=e=>{const{title:t}=document;document.title="[Overview]"+(t?` - ${t}`:"");const n=!!v("closeOnSelect"),r=()=>{window.parent.postMessage("closeOverview","null"===window.origin?"*":window.origin)};if(e.slides.forEach((t,o)=>{t.tabIndex=0;const i=()=>{e.slide(o,{fragment:-1}),n&&r()};t.addEventListener("click",i),t.addEventListener("keydown",e=>{"Enter"!==e.key&&" "!==e.key||(e.preventDefault(),i())})}),window.addEventListener("keydown",t=>{const n=e.slide(),r=t=>{const r=t=>{const n=e.slides[t].getBoundingClientRect();return[Math.round((n.left+n.right)/2),Math.round((n.top+n.bottom)/2)]};let o=null,i=n;do{const e=r(i);if(o){if(Math.abs(e[0]-o[0])<2)return i}else o=e;i+=t}while(i>=0&&i<e.slides.length);return n};if("ArrowLeft"===t.key)e.slide(Math.max(n-1,0),{fragment:-1});else if("ArrowRight"===t.key)e.slide(Math.min(n+1,e.slides.length-1),{fragment:-1});else if("ArrowUp"===t.key)e.slide(r(-1),{fragment:-1});else if("ArrowDown"===t.key)e.slide(r(1),{fragment:-1});else if("End"===t.key)e.slide(e.slides.length-1,{fragment:-1});else{if("Home"!==t.key)return;e.slide(0,{fragment:-1})}t.preventDefault();const o=e.slide();e.slides[o]?.focus?.(),e.slides[o]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),e.on("slide",({index:t})=>{e.slides[t]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),window.parent!==window){K(r);const e=document.createElement("header");e.className=`${f}overview-header`;const t=document.createElement("button");t.className=`${f}overview-close`,t.type="button",t.title="Close overview",t.textContent=t.title,t.addEventListener("click",r),e.append(t),document.body.prepend(e)}},F=()=>{const e=p();return{[s]:V(),[l]:V({closeOnSelect:!1}),[d]:j}[e]},U=e=>{window.addEventListener("message",t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}})};var R,X,H,W,J,Y,z,G={exports:{}},Q=(R||(R=1,G.exports=(X=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],H=function(e){return String(e).replace(/[&<>"']/g,function(e){return"&"+W[e]+";"})},W={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},J="dangerouslySetInnerHTML",Y={className:"class",htmlFor:"for"},z={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var i in t)!1!==t[i]&&null!=t[i]&&i!==J&&(r+=" "+(Y[i]?Y[i]:H(i))+'="'+H(t[i])+'"');r+=">"}if(-1===X.indexOf(e)){if(t[J])r+=t[J].__html;else for(;n.length;){var a=n.pop();if(a)if(a.pop)for(var s=a.length;s--;)n.push(a[s]);else r+=!0===z[a]?a:H(a)}r+=e?"</"+e+">":""}return z[r]=!0,r})),G.exports),Z=e(Q);const ee=({children:e})=>Z(null,null,...e),te=`${f}presenter-`,ne={container:`${te}container`,dragbar:`${te}dragbar-container`,next:`${te}next`,nextContainer:`${te}next-container`,noteContainer:`${te}note-container`,noteWrapper:`${te}note-wrapper`,noteButtons:`${te}note-buttons`,infoContainer:`${te}info-container`,infoPageArea:`${te}info-page-area`,infoPage:`${te}info-page`,infoPagePrev:`${te}info-page-prev`,infoPageNext:`${te}info-page-next`,noteButtonsBigger:`${te}note-bigger`,noteButtonsSmaller:`${te}note-smaller`,infoTime:`${te}info-time`,infoTimer:`${te}info-timer`},re=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=ne.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",Z(ee,null,Z("div",{class:ne.nextContainer},Z("iframe",{class:ne.next,src:"?view=next"})),Z("div",{class:ne.dragbar}),Z("div",{class:ne.noteContainer},Z("div",{class:ne.noteWrapper}),Z("div",{class:ne.noteButtons},Z("button",{class:ne.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),Z("button",{class:ne.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),Z("div",{class:ne.infoContainer},Z("div",{class:ne.infoPageArea},Z("button",{class:ne.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),Z("button",{class:ne.infoPage}),Z("button",{class:ne.infoPageNext,tabindex:"-1",title:"Next"},"Next")),Z("time",{class:ne.infoTime,title:"Current time"}),Z("time",{class:ne.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(ne.dragbar).addEventListener("mousedown",()=>{t=!0,r(ne.dragbar).classList.add("active")}),window.addEventListener("mouseup",()=>{t=!1,r(ne.dragbar).classList.remove("active")}),window.addEventListener("mousemove",e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(ne.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)}),r(ne.nextContainer).addEventListener("click",()=>e.next());const n=r(ne.next),o=(i=n,(e,t)=>i.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var i;n.addEventListener("load",()=>{r(ne.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>o(e,t))});const a=document.querySelectorAll(".bespoke-marp-note");a.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(ne.noteWrapper).appendChild(e)}),e.on("activate",()=>a.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide())));let s=0;const l=e=>{s=Math.max(-5,s+e),r(ne.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},c=()=>l(1),d=()=>l(-1),u=r(ne.noteButtonsBigger),f=r(ne.noteButtonsSmaller);u.addEventListener("click",()=>{u.blur(),c()}),f.addEventListener("click",()=>{f.blur(),d()}),document.addEventListener("keydown",e=>{"+"===e.key&&c(),"-"===e.key&&d()},!0);const m=r(ne.infoPage);e.on("activate",({index:t})=>{m.textContent=`${t+1} / ${e.slides.length}`}),m.addEventListener("click",()=>{m.blur(),e.toggleOverviewView()});const g=r(ne.infoPagePrev),p=r(ne.infoPageNext);g.addEventListener("click",t=>{g.blur(),e.prev({fragment:!t.shiftKey})}),p.addEventListener("click",t=>{p.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{g.disabled=0===t&&0===r,p.disabled=t===e.slides.length-1&&r===n.length-1});let v=new Date;const h=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-v.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(ne.infoTime).textContent=e.toLocaleTimeString(),r(ne.infoTimer).textContent=`${a}:${i}:${o}`};h(),setInterval(h,250),r(ne.infoTimer).addEventListener("click",()=>{v=new Date})})(e)},oe=e=>{N(e),Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:ie},presenterUrl:{enumerable:!0,get:ae}}),w&&document.addEventListener("keydown",t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})};function ie(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,te+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function ae(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),g(e)}const se=e=>{const t=p();return t===c&&e.appendChild(document.createElement("span")),{[s]:oe,[l]:re,[c]:U}[t]},le=e=>{e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})},ce=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},de=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?ce(v("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(ce(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],i=r.closest("[data-marpit-fragment]");if(t&&i){const e=t.indexOf(i);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||h({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{o(),window.addEventListener("hashchange",()=>r(()=>{o({fragment:!1}),h({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>o())}),n=!1},0)}},{PI:ue,abs:fe,sqrt:me,atan2:ge}=Math,pe={passive:!0},ve=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",({touches:e})=>{r=1===e.length?i(e[0]):void 0},pe),o.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=me(fe(n)**2+fe(o)**2),r.radian=ge(n,o)}else r=void 0}),o.addEventListener("touchend",o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+ue)%(2*ue)-ue;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}},pe)},he=new Map;he.clear(),he.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const we={both:"",outgoing:"outgoing-",incoming:"incoming-"},ye={forward:"",backward:"-backward"},be=e=>`--marp-bespoke-transition-animation-${e}`,ke=e=>`--marp-transition-${e}`,xe=be("name"),Ee=be("duration"),$e=e=>new Promise(t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",()=>o(n)),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(ke("duration"));i&&Number.parseFloat(i)>=0&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame(()=>{e.style.animationPlayState="running",requestAnimationFrame(()=>t(void 0))})})(r,o)}),Le=async e=>he.has(e)?he.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(we))for(const[i,a]of Object.entries(ye)){const s=`marp-${o}transition${a}-${e}`;n.push($e(s).then(e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0}))}return Promise.all(n).then(()=>t)})(e).then(t=>(he.set(e,t),t)),Se=e=>Object.values(e).flatMap(Object.values).every(e=>!e),Pe=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[xe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[be("direction")]="reverse"),e}})();return!o&&n?Pe(e,{type:t,backward:!1}):o||{[xe]:"__bespoke_marp_transition_no_animation__"}},_e=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},Oe="_tSId",Te="_tA",Ie="bespoke-marp-transition-warming-up",Me=window.matchMedia("(prefers-reduced-motion: reduce)"),Ae="__bespoke_marp_transition_reduced_outgoing__",Ce="__bespoke_marp_transition_reduced_incoming__",De={forward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}},backward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}}},Ne=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ke("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map(e=>Le(e))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap(e=>[e.dataset.transition,e.dataset.transitionBack].flatMap(e=>{const t=_e(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]}).filter(e=>!!e))).then(()=>{document.querySelectorAll("style").forEach(e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,e=>e.slice(0,-1)+"!important"+e.slice(-1))})});const r=(n,{back:r,cond:o})=>i=>{const a=t();if(a)return!!i[Te]||!("object"!=typeof a||(a.skipTransition(),!i.forSync));if(e.skipTransition)return!0;if(!o(i))return!0;const s=e.slides[e.slide()],l=()=>i.back??r,c="data-transition"+(l()?"-back":""),d=s.querySelector(`section[${c}]`);if(!d)return!0;const u=_e(d.getAttribute(c)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await Le(e);if(Se(n)){if(!t)return;return n=await Le(`__builtin__${e}`),Se(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then(e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;Me.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=De);const o=document.getElementById(Oe);o&&o.remove();const a=document.createElement("style");a.id=Oe,document.head.appendChild(a),((e,t)=>{const n=[`:root{${ke("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${Ee}:${o};}`);const i=e=>Object.entries(e).map(([e,t])=>`${e}:${t};`).join("");return n.push(`::view-transition-old(root){${i(Pe(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(Pe(e,{...t,type:"incoming"}))}}`),n})(r,{backward:l(),duration:u.duration}).forEach(e=>a.sheet?.insertRule(e));const s=document.documentElement.classList;s.add(Ie);let c=!1;const d=()=>{c||(n(i),c=!0,s.remove(Ie))},f=()=>{t(!1),a.remove(),s.remove(Ie)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}}),!1)};e.on("prev",r(t=>e.prev({...t,[Te]:!0}),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r(t=>e.next({...t,[Te]:!0}),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout(()=>{e.on("slide",r(t=>e.slide(t.index,{...t,[Te]:!0}),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))},0),e.on("fragment",e=>{n=e})};let Be;const Ke=()=>(void 0===Be&&(Be="wakeLock"in navigator&&navigator.wakeLock),Be),qe=async()=>{const e=Ke();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ve=async()=>{if(!Ke())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&qe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await qe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=v("view");i.dataset.bespokeView=u.some(t=>t&&t===e)?e:""})();const t=(e=>{const t=v(e);return h({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=u.findIndex(e=>p()===e);return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[1,1,1,0],B({key:t})],[[1,1,0,1],se(e)],[[1,1,0,0],M],[[1,1,1,1],E],[[1,0,0,0],T()],[[1,1,1,1],A],[[1,1,1,1],de({history:!1})],[[1,1,0,0],C()],[[1,1,1,0],_],[[1,0,0,0],le],[[1,1,0,0],ve()],[[1,0,0,0],D()],[[1,1,1,0],F()],[[1,0,0,0],Ne],[[1,1,1,1],$],[[1,1,1,0],Ve]))})()}();</script></body></html>
