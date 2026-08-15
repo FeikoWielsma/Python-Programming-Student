@@ -1,0 +1,17 @@
+# System and Python temp files
+Thumbs.db
+Desktop.ini
+.DS_Store
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.venv/
+**/venv/
+**/env/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.pytest_cache/
+
+# Custom course work folders created by the student
+/course-work/
+/my-project/

@@ -1,0 +1,1492 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/workspace/SpiralTrain/Presentation-Template/build/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/workspace/SpiralTrain/Presentation-Template/build/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<style>
+
+/* =============================================================================
+   exercises.css — SpiralTrain Multi-Language Exercises Theme
+   -----------------------------------------------------------------------------
+   A4 print companion to spiraltrain.css. Same 15-language palette system, same
+   typography (Space Grotesk + JetBrains Mono), same brand identity — but tuned
+   for a printable PDF reference manual rather than 16:10 slides.
+
+   Apply a language palette by adding a class to <body> (or any wrapping div):
+       <body class="lang-cs">  (or lang-py / cpp / rust / java / html / js /
+                                    json / n8n / powerbi / perl / oop / sql /
+                                    scrum / git)
+   Without a class, the document uses the default SpiralTrain palette.
+   ============================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm 18mm;
+}
+
+/* ============ DEFAULT PALETTE (SpiralTrain blue) ============ */
+:root,
+body {
+  --ml-primary:    #1F5D9C;
+  --ml-secondary:  #2A8AA8;
+  --ml-accent:     #D94C2F;
+  --ml-tint:       #EEF3F9;
+  --ml-tint-strong:#CCDDED;
+  --ml-text:       #0F1729;
+  --ml-muted:      #6B7686;
+  --ml-rule:       #D9DDE5;
+  --ml-bg:         #FFFFFF;
+
+  --solution-bg:   #F6F8FB;
+  --solution-rule: var(--ml-primary);
+
+  --code-bg:    #F5F7FA;
+  --code-fg:    #0F1729;
+  --code-kw:    #1F5D9C;
+  --code-type:  #6F42C1;
+  --code-prop:  #2761B5;
+  --code-str:   #1A7A3E;
+  --code-cmt:   #7A8493;
+}
+
+/* ============ BODY ============ */
+html, body {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+body {
+  font-family: 'Space Grotesk', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13pt;
+  line-height: 1.55;
+  color: var(--ml-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* ============ HEADINGS ============ */
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26pt;
+  font-weight: 700;
+  color: var(--ml-text);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  border-bottom: 3px solid var(--ml-primary);
+  padding-bottom: 8px;
+  margin: 0 0 0.9em;
+  page-break-before: always;
+  page-break-after: avoid;
+}
+/* Only the TOC title may share its page; every exercise h1 must start a fresh
+   page AND carry its own break-before so Chrome attributes the exercise's
+   anchor destination to the new page (a break inherited from the previous
+   element's break-after lands the anchor on the page before the break). */
+h1.toc-title { page-break-before: auto; }
+
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17pt;
+  font-weight: 600;
+  color: var(--ml-primary);
+  margin: 1.7em 0 0.6em;
+  letter-spacing: -0.005em;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14pt;
+  font-weight: 600;
+  color: var(--ml-primary);
+  margin: 1.3em 0 0.4em;
+  page-break-after: avoid;
+}
+
+h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: var(--ml-text);
+  margin: 1.1em 0 0.3em;
+  page-break-after: avoid;
+}
+
+/* ============ BODY COPY ============ */
+p {
+  margin: 0.5em 0 0.8em;
+  orphans: 3;
+  widows: 3;
+}
+p + pre,
+p + ul,
+p + ol { page-break-before: avoid; }
+
+strong { font-weight: 700; color: var(--ml-text); }
+em { font-style: italic; }
+
+/* ============ LISTS ============ */
+ul, ol {
+  margin: 0.3em 0 0.9em 0;
+  padding-left: 1.5em;
+}
+ul { list-style: disc; }
+ol { list-style: decimal; }
+li {
+  margin-bottom: 0.3em;
+  page-break-inside: avoid;
+}
+li > p { margin: 0.2em 0; }
+li > ul, li > ol { margin: 0.2em 0; }
+
+/* ============ INLINE CODE CHIP ============ */
+:not(pre) > code,
+li > code,
+p > code,
+strong > code,
+em > code {
+  display: inline-block;
+  background: var(--ml-tint);
+  color: var(--ml-primary);
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.86em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ============ CODE BLOCKS ============ */
+pre {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 11pt;
+  line-height: 1.45;
+  padding: 11px 14px;
+  margin: 0.5em 0 0.9em;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border-left: 3px solid var(--ml-primary);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  page-break-inside: avoid;
+  tab-size: 4;
+}
+pre code {
+  background: transparent !important;
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: inherit;
+  display: inline;
+}
+pre.shiki { background: var(--code-bg) !important; }
+pre.shiki code { background: transparent; padding: 0; }
+
+/* ============ HORIZONTAL RULES (step separators) ============ */
+hr {
+  border: 0;
+  border-top: 1px solid var(--ml-rule);
+  margin: 1.4em 0;
+}
+
+/* ============ TABLES ============ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6em 0 1em;
+  font-size: 11.5pt;
+  page-break-inside: avoid;
+}
+th {
+  background: var(--ml-primary);
+  color: #fff;
+  padding: 5px 9px;
+  text-align: left;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 11pt;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--ml-rule);
+}
+td {
+  padding: 4px 9px;
+  border: 1px solid var(--ml-rule);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td { background: #fafbfd; }
+
+/* ============ BLOCKQUOTES ============ */
+blockquote {
+  margin: 0.8em 0;
+  padding: 0.6em 1em;
+  border-left: 3px solid var(--ml-secondary);
+  background: var(--ml-tint);
+  color: var(--ml-text);
+  font-size: 0.97em;
+  border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: 0.2em 0; }
+
+/* ============ CALLOUTS (GitHub-style alerts) =================================
+   Generated from `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and
+   `> [!CAUTION]` blockquotes by shiki-exercises.mjs. NOTE / TIP / IMPORTANT pick
+   up the active language palette; WARNING / CAUTION use fixed semantic colours so
+   they read as warnings regardless of the per-language theme.
+   ============================================================================= */
+.callout {
+  margin: 1em 0;
+  padding: 0.7em 1.1em 0.8em;
+  border-left: 4px solid var(--callout-accent, var(--ml-secondary));
+  background: var(--callout-bg, var(--ml-tint));
+  border-radius: 0 6px 6px 0;
+  font-size: 0.97em;
+  page-break-inside: avoid;
+}
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 0.35em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--callout-accent, var(--ml-secondary));
+}
+.callout-title::before {
+  content: '';
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--callout-accent, var(--ml-secondary));
+}
+.callout-body > :first-child { margin-top: 0; }
+.callout-body > :last-child { margin-bottom: 0; }
+.callout-body p { margin: 0.35em 0; }
+
+.callout-note     { --callout-accent: var(--ml-secondary); --callout-bg: var(--ml-tint); }
+.callout-tip      { --callout-accent: #1F8A5B; --callout-bg: #EAF6F0; }
+.callout-important { --callout-accent: var(--ml-primary); --callout-bg: var(--ml-tint); }
+.callout-warning  { --callout-accent: #B07A12; --callout-bg: #FBF3E0; }
+.callout-caution  { --callout-accent: #C0392B; --callout-bg: #FBEAE7; }
+
+/* ============ LINKS ============ */
+a {
+  color: var(--ml-primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ml-secondary);
+}
+a:hover { border-bottom-style: solid; }
+
+/* =============================================================================
+   TABLE-OF-CONTENTS PAGE (rendered by build.ts buildExercises)
+   ============================================================================= */
+.toc-stripe {
+  height: 12px;
+  background: linear-gradient(90deg, var(--ml-primary) 0%, var(--ml-secondary) 50%, var(--ml-accent) 100%);
+  margin: 0 0 3.5em 0;
+  border-radius: 6px;
+}
+.toc-title {
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48pt;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ml-primary);
+  margin: 0.5em 0 0.1em;
+  padding: 0;
+  border: 0;
+  page-break-before: auto;
+}
+.toc-subtitle {
+  text-align: center;
+  color: var(--ml-secondary);
+  margin-bottom: 4.5em;
+  font-size: 16pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+.toc-list {
+  list-style: none;
+  padding: 0;
+  max-width: 720px;
+  margin: 0 auto;
+  /* No break-after here: the first exercise h1 must own its page break, or
+     Chrome attributes its anchor destination to the TOC's last page. */
+}
+.toc-list li {
+  margin-bottom: 18px;
+  font-size: 16.5pt;
+  font-weight: 500;
+}
+.toc-list a {
+  display: flex;
+  align-items: baseline;
+  color: var(--ml-text);
+  text-decoration: none;
+  border-bottom: 0;
+}
+.toc-list a:hover {
+  color: var(--ml-primary);
+}
+.toc-text {
+  flex-shrink: 0;
+}
+.toc-dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted var(--ml-rule);
+  margin: 0 10px;
+}
+.toc-page {
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--ml-muted);
+}
+.toc-list a:hover .toc-page {
+  color: var(--ml-primary);
+}
+
+/* TOC divider: before the first appendix entry, and as module group header
+   when a course keeps several exercises in one file per module */
+.toc-list li.toc-divider {
+  list-style: none;
+  margin: 1.4em 0 0.6em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ml-muted);
+  font-weight: 700;
+  border-top: 1px dashed var(--ml-rule);
+  padding-top: 0.6em;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+.toc-list li {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.toc-list li.toc-divider span {
+  background: var(--ml-bg, #fff);
+}
+
+/* Appendix tag rendered next to the exercise H1 */
+.exercise-appendix-tag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 14px;
+  padding: 3px 10px;
+  background: var(--ml-tint);
+  color: var(--ml-primary);
+  border: 1px solid var(--ml-secondary);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+  top: -4px;
+}
+
+/* TOC compact variants — triggered when item count exceeds threshold
+   toc-lg: 16–20 items   toc-xl: 21+ items */
+.toc-lg .toc-stripe { margin-bottom: 2em; }
+.toc-lg .toc-title { font-size: 40pt; }
+.toc-lg .toc-subtitle { font-size: 13pt; margin-bottom: 3em; }
+.toc-lg .toc-list li { font-size: 14pt; margin-bottom: 13px; }
+.toc-lg .toc-list li.toc-divider { font-size: 10pt; margin: 0.9em 0 0.4em; }
+
+.toc-xl .toc-stripe { margin-bottom: 1.5em; }
+.toc-xl .toc-title { font-size: 36pt; }
+.toc-xl .toc-subtitle { font-size: 12pt; margin-bottom: 2em; }
+.toc-xl .toc-list li { font-size: 13pt; margin-bottom: 9px; }
+.toc-xl .toc-list li.toc-divider { font-size: 9pt; margin: 0.7em 0 0.3em; }
+
+/* =============================================================================
+   REFERENCE SOLUTION BLOCK
+   ============================================================================= */
+details.solution-page {
+  page-break-before: always;
+  margin-top: 0.6em;
+}
+details.solution-page > summary {
+  list-style: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 11.5pt;
+  color: var(--ml-primary);
+  margin-bottom: 0.5em;
+  cursor: default;
+  letter-spacing: 0.01em;
+}
+details.solution-page > summary::-webkit-details-marker { display: none; }
+details.solution-page > summary::marker { content: ""; }
+details.solution-page pre {
+  page-break-inside: auto;
+  background: var(--solution-bg);
+  border-left: 3px solid var(--solution-rule);
+}
+
+.solution-hint {
+  font-size: 9pt;
+  color: var(--ml-muted);
+  font-style: italic;
+  text-align: right;
+  margin: 0.4em 0 0;
+  letter-spacing: 0.02em;
+}
+
+/* =============================================================================
+   PER-LANGUAGE PALETTES — apply class on <body> or any wrapper element
+   ============================================================================= */
+
+/* ── C# / .NET ────────────────────────────────────────────────────────── */
+.lang-cs {
+  --ml-primary: #512BD4;
+  --ml-secondary: #9B4993;
+  --ml-accent: #E5004B;
+  --ml-tint: #F0ECFB;
+  --ml-tint-strong: #DDD0F4;
+  --solution-bg: #F7F5FC;
+  --solution-rule: #9B4993;
+  --code-bg: #F7F5FC;
+  --code-kw: #9B4993;
+  --code-type: #512BD4;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8B88A8;
+}
+
+/* ── Python ───────────────────────────────────────────────────────────── */
+.lang-py {
+  --ml-primary: #2B6BAD;
+  --ml-secondary: #4B8BBE;
+  --ml-accent: #F2C94C;
+  --ml-tint: #EAF2FA;
+  --ml-tint-strong: #C7DDF0;
+  --solution-bg: #F4F8FC;
+  --solution-rule: #F2C94C;
+  --code-bg: #F4F8FC;
+  --code-kw: #2B6BAD;
+  --code-type: #1C4F84;
+  --code-prop: #1F6F4F;
+  --code-str: #A56700;
+  --code-cmt: #859AB0;
+}
+
+/* ── C / C++ ──────────────────────────────────────────────────────────── */
+.lang-cpp,
+.lang-c {
+  --ml-primary: #00599C;
+  --ml-secondary: #004482;
+  --ml-accent: #659AD2;
+  --ml-tint: #E5EEF6;
+  --ml-tint-strong: #B8CFE5;
+  --solution-bg: #F1F6FB;
+  --solution-rule: #659AD2;
+  --code-bg: #F1F6FB;
+  --code-kw: #00599C;
+  --code-type: #6B358C;
+  --code-prop: #1F6F4F;
+  --code-str: #B14E22;
+  --code-cmt: #7A8DA1;
+}
+
+/* ── Rust (dark code panel) ───────────────────────────────────────────── */
+.lang-rust {
+  --ml-primary: #B7410E;
+  --ml-secondary: #CE422B;
+  --ml-accent: #2A2A2A;
+  --ml-tint: #FBEDE5;
+  --ml-tint-strong: #F2CFB8;
+  --solution-bg: #1a1a1f;
+  --solution-rule: #B7410E;
+  --code-bg: #1a1a1f;
+  --code-fg: #e8e6e3;
+  --code-kw: #CE422B;
+  --code-type: #E8C547;
+  --code-prop: #88C0D0;
+  --code-str: #A3BE8C;
+  --code-cmt: #8a8278;
+}
+.lang-rust pre,
+.lang-rust pre.shiki,
+.lang-rust details.solution-page pre { background: #1a1a1f !important; color: #e8e6e3 !important; }
+.lang-rust pre code { color: inherit; }
+
+/* ── Java ─────────────────────────────────────────────────────────────── */
+.lang-java {
+  --ml-primary: #5382A1;
+  --ml-secondary: #ED8B00;
+  --ml-accent: #1F4F7A;
+  --ml-tint: #ECF2F6;
+  --ml-tint-strong: #C7D9E5;
+  --solution-bg: #F3F7FA;
+  --solution-rule: #ED8B00;
+  --code-bg: #F3F7FA;
+  --code-kw: #ED8B00;
+  --code-type: #5382A1;
+  --code-prop: #1F4F7A;
+  --code-str: #1F7A4A;
+  --code-cmt: #7E94A6;
+}
+
+/* ── HTML / CSS ───────────────────────────────────────────────────────── */
+.lang-html,
+.lang-css {
+  --ml-primary: #E34F26;
+  --ml-secondary: #264DE4;
+  --ml-accent: #2965F1;
+  --ml-tint: #FDEFEA;
+  --ml-tint-strong: #FACFBE;
+  --solution-bg: #FFF8F5;
+  --solution-rule: #264DE4;
+  --code-bg: #FFF8F5;
+  --code-kw: #264DE4;
+  --code-type: #E34F26;
+  --code-prop: #B14E22;
+  --code-str: #1F7A4A;
+  --code-cmt: #98968F;
+}
+
+/* ── JavaScript ───────────────────────────────────────────────────────── */
+.lang-js {
+  --ml-primary: #1A1A1A;
+  --ml-secondary: #B58900;
+  --ml-accent: #323330;
+  --ml-tint: #FFF8C9;
+  --ml-tint-strong: #FFEC4F;
+  --solution-bg: #FFFDF0;
+  --solution-rule: #F7DF1E;
+  --code-bg: #FFFDF0;
+  --code-kw: #B58900;
+  --code-type: #1A1A1A;
+  --code-prop: #1F6F4F;
+  --code-str: #A56700;
+  --code-cmt: #8A8A8A;
+}
+
+/* ── JSON ─────────────────────────────────────────────────────────────── */
+.lang-json {
+  --ml-primary: #2D3142;
+  --ml-secondary: #FF6B35;
+  --ml-accent: #4F5466;
+  --ml-tint: #F2F1F4;
+  --ml-tint-strong: #D6D4DC;
+  --solution-bg: #F9F8FC;
+  --solution-rule: #FF6B35;
+  --code-bg: #F9F8FC;
+  --code-kw: #2D3142;
+  --code-type: #FF6B35;
+  --code-prop: #2563EB;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a87a3;
+}
+
+/* ── n8n ──────────────────────────────────────────────────────────────── */
+.lang-n8n {
+  --ml-primary: #EA4B71;
+  --ml-secondary: #1D1D1D;
+  --ml-accent: #FF6D5A;
+  --ml-tint: #FCEAF0;
+  --ml-tint-strong: #F5C4D2;
+  --solution-bg: #FFF6F8;
+  --solution-rule: #EA4B71;
+  --code-bg: #FFF6F8;
+  --code-kw: #EA4B71;
+  --code-type: #B73552;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #B19BA5;
+}
+
+/* ── Power BI ─────────────────────────────────────────────────────────── */
+.lang-powerbi {
+  --ml-primary: #0B5394;
+  --ml-secondary: #F2C811;
+  --ml-accent: #E8A33D;
+  --ml-tint: #E7F0FB;
+  --ml-tint-strong: #B8D2EE;
+  --solution-bg: #F4F8FD;
+  --solution-rule: #F2C811;
+  --code-bg: #F4F8FD;
+  --code-kw: #0B5394;
+  --code-type: #B58900;
+  --code-prop: #117DBB;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a9fb0;
+}
+
+/* ── Perl ─────────────────────────────────────────────────────────────── */
+.lang-perl {
+  --ml-primary: #002545;
+  --ml-secondary: #4A82B6;
+  --ml-accent: #93C9FF;
+  --ml-tint: #E5EEF7;
+  --ml-tint-strong: #B8D0E8;
+  --solution-bg: #F4F8FC;
+  --solution-rule: #4A82B6;
+  --code-bg: #F4F8FC;
+  --code-kw: #002545;
+  --code-type: #4A82B6;
+  --code-prop: #B14E22;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a9fb0;
+}
+
+/* ── OOP ──────────────────────────────────────────────────────────────── */
+.lang-oop {
+  --ml-primary: #1F8A5B;
+  --ml-secondary: #4A5568;
+  --ml-accent: #2DA66F;
+  --ml-tint: #E8F4ED;
+  --ml-tint-strong: #B8DDC8;
+  --solution-bg: #F4FAF6;
+  --solution-rule: #2DA66F;
+  --code-bg: #F4FAF6;
+  --code-kw: #1F8A5B;
+  --code-type: #2D5F89;
+  --code-prop: #1B66C9;
+  --code-str: #B14E22;
+  --code-cmt: #8a9b8e;
+}
+
+/* ── SQL ──────────────────────────────────────────────────────────────── */
+.lang-sql {
+  --ml-primary: #0F766E;
+  --ml-secondary: #E0AF68;
+  --ml-accent: #135C57;
+  --ml-tint: #E0F2F1;
+  --ml-tint-strong: #ABDDD8;
+  --solution-bg: #F2FAF9;
+  --solution-rule: #E0AF68;
+  --code-bg: #F2FAF9;
+  --code-kw: #0F766E;
+  --code-type: #B58900;
+  --code-prop: #2761b5;
+  --code-str: #B14E22;
+  --code-cmt: #6f897f;
+}
+
+/* ── Scrum / Agile ────────────────────────────────────────────────────── */
+.lang-scrum,
+.lang-agile {
+  --ml-primary: #5E60CE;
+  --ml-secondary: #FFB703;
+  --ml-accent: #4A4DA8;
+  --ml-tint: #ECECFA;
+  --ml-tint-strong: #C9C9F0;
+  --solution-bg: #F5F5FC;
+  --solution-rule: #FFB703;
+  --code-bg: #F5F5FC;
+  --code-kw: #5E60CE;
+  --code-type: #C58800;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a87a3;
+}
+
+/* ── Git ──────────────────────────────────────────────────────────────── */
+.lang-git {
+  --ml-primary: #F05033;
+  --ml-secondary: #2C2C2C;
+  --ml-accent: #C04125;
+  --ml-tint: #FBE9E3;
+  --ml-tint-strong: #F5C0B0;
+  --solution-bg: #FAFAFA;
+  --solution-rule: #F05033;
+  --code-bg: #FAFAFA;
+  --code-kw: #F05033;
+  --code-type: #2C2C2C;
+  --code-prop: #2C2C2C;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a8a8a;
+}
+
+/* ── Go ───────────────────────────────────────────────────────────────── */
+.lang-go {
+  --ml-primary: #00ADD8;
+  --ml-secondary: #00758D;
+  --ml-accent: #CE3262;
+  --ml-tint: #E0F4F9;
+  --ml-tint-strong: #B5E5F0;
+  --solution-bg: #F2FAFC;
+  --solution-rule: #00758D;
+  --code-bg: #F2FAFC;
+  --code-kw: #00758D;
+  --code-type: #CE3262;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8AA5AC;
+}
+
+/* ============ TWO-COL LAYOUT ============ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+  margin-top: 0.4em;
+  align-items: start;
+}
+.two-col.split-20-80 { grid-template-columns: 2fr 8fr; }
+.two-col.split-30-70 { grid-template-columns: 3fr 7fr; }
+.two-col.split-40-60 { grid-template-columns: 4fr 6fr; }
+.two-col.split-60-40 { grid-template-columns: 6fr 4fr; }
+.two-col.split-70-30 { grid-template-columns: 7fr 3fr; }
+.two-col.split-80-20 { grid-template-columns: 8fr 2fr; }
+.two-col table { font-size: 9.5pt; margin-top: 0; }
+
+
+/* ============ MEDIA SCREEN (Simulation of A4 page on screen) ============ */
+@media screen {
+  html {
+    background-color: #f3f4f6;
+  }
+  body {
+    background-color: #ffffff;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 50px 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* Simulate A4 page breaks/chapter dividers on screen */
+  h1 {
+    margin-top: 80px !important;
+    padding-top: 50px;
+    border-top: 2px dashed var(--ml-rule);
+  }
+  h1:first-of-type,
+  h1.toc-title {
+    margin-top: 0 !important;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  /* Simulate page breaks before solutions on screen */
+  details.solution-page {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px dashed var(--ml-rule);
+  }
+}
+
+
+
+
+</style>
+
+
+
+<div class="lang-python">
+
+<div class="toc-stripe"></div>
+
+<h1 class="toc-title">Python Programming</h1>
+
+<div class="toc-subtitle">Course Exercises</div>
+
+<ul class="toc-list">
+
+  <li><a href="#ex-0"><span class="toc-text">Exercise 1 : Environment Configuration</span><span class="toc-dots"></span><span class="toc-page">2</span></a></li>
+
+  <li><a href="#ex-1"><span class="toc-text">Exercise 2 : Variables and Data Types</span><span class="toc-dots"></span><span class="toc-page">3</span></a></li>
+
+  <li><a href="#ex-2"><span class="toc-text">Exercise 3 : Data Structures</span><span class="toc-dots"></span><span class="toc-page">6</span></a></li>
+
+  <li><a href="#ex-3"><span class="toc-text">Exercise 4 : Control Flow</span><span class="toc-dots"></span><span class="toc-page">10</span></a></li>
+
+  <li><a href="#ex-4"><span class="toc-text">Exercise 5 : Functions</span><span class="toc-dots"></span><span class="toc-page">12</span></a></li>
+
+  <li><a href="#ex-5"><span class="toc-text">Exercise 6 : Modules</span><span class="toc-dots"></span><span class="toc-page">14</span></a></li>
+
+  <li><a href="#ex-6"><span class="toc-text">Exercise 7 : Comprehensions</span><span class="toc-dots"></span><span class="toc-page">16</span></a></li>
+
+  <li><a href="#ex-7"><span class="toc-text">Exercise 8 : Exception Handling</span><span class="toc-dots"></span><span class="toc-page">18</span></a></li>
+
+  <li><a href="#ex-8"><span class="toc-text">Exercise 9 : Python IO</span><span class="toc-dots"></span><span class="toc-page">20</span></a></li>
+
+  <li><a href="#ex-9"><span class="toc-text">Exercise 10 : Python Database Access</span><span class="toc-dots"></span><span class="toc-page">22</span></a></li>
+
+  <li><a href="#ex-10"><span class="toc-text">Exercise 11 : Python Classes</span><span class="toc-dots"></span><span class="toc-page">24</span></a></li>
+
+  <li><a href="#ex-11"><span class="toc-text">Exercise 12 : Optional Exercise : Python Libraries</span><span class="toc-dots"></span><span class="toc-page">27</span></a></li>
+
+</ul>
+
+<h1 id="exercise-1--environment-configuration"><a id="ex-0"></a>Exercise 1 : Environment Configuration</h1>
+<p>To create Python scripts we can use different IDEs :</p>
+<ul>
+<li>PyCharm Community Edition IDE that is free and can be downloaded</li>
+<li>Spyder IDE from the community Anaconda distribution that is free and can be downloaded</li>
+<li>Visual Code with a Python plugin that is free but has limited capabilities</li>
+<li>Eclipse IDE with the Python plugin PyDev for Python development, not recommended</li>
+</ul>
+<p>But first we need to install a Python version.</p>
+<hr>
+<h3 id="step-1--python-installation">Step 1 : Python Installation</h3>
+<p>Install a recent Python 3 version (the course was developed against Python 3.10+). Do a full install, for example in <code>C:\Python310</code>, and add the installation directory to the <code>PATH</code> environment variable (Computer -&gt; Properties -&gt; Advanced System Settings -&gt; Environment Variables).</p>
+<h3 id="step-2--pycharm-ide">Step 2 : PyCharm IDE</h3>
+<p>Download and install the latest version of the PyCharm Community Edition. The demo projects in the course are made with PyCharm and this is the IDE that we recommend.</p>
+<h1 id="exercise-2--variables-and-data-types"><a id="ex-1"></a>Exercise 2 : Variables and Data Types</h1>
+<p>In this exercise you build the first version of the calculator application that you will extend throughout the course.</p>
+<hr>
+<h3 id="step-1">Step 1</h3>
+<p>Create a directory or project named <code>exercise2</code>. Next create a Python module <code>calculator2.py</code> in this directory and create two variables <code>nr1</code> and <code>nr2</code>. Assign integer values to them as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">nr1 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 16</span></span>
+<span class="line"><span style="color:#24292EFF">nr2 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 23</span></span></code></pre>
+
+<p>Use your own values if you like. Print the values, the type and the memory location of the variables with :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(nr1)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(nr2)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#1976D2">type</span><span style="color:#212121">(nr1))</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#1976D2">type</span><span style="color:#212121">(nr2))</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#6F42C1">id</span><span style="color:#212121">(nr1))</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#6F42C1">id</span><span style="color:#212121">(nr2))</span></span></code></pre>
+
+<p>You should see that the type of the variables is <code>&lt;class 'int'&gt;</code>. The <code>id</code> function gives some numeric value which actually indicates the memory address in a default Python implementation.</p>
+<p>Now change the values of the variables by assigning them to a new value and print the memory location of the variables again with the <code>id</code> function. Notice that the id of the variables has changed just by assigning them. This illustrates the fact that integer variables are read-only : they cannot change once they are created. When you change an integer variable you actually create a new one.</p>
+<h3 id="step-2">Step 2</h3>
+<p>Next perform arithmetic operations on the variables by adding, subtracting, multiplying and dividing them. Store the result of these operations in other variables. An example for the addition operation is :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addresult </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> nr1 </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> nr2</span></span></code></pre>
+
+<p>Display the results of the operations with an explanatory message :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">"The result of the addition of : "</span><span style="color:#D32F2F"> +</span><span style="color:#1976D2"> str</span><span style="color:#212121">(nr1) </span><span style="color:#D32F2F">+</span><span style="color:#22863A"> " and "</span><span style="color:#D32F2F"> +</span><span style="color:#1976D2"> str</span><span style="color:#212121">(nr2) </span><span style="color:#D32F2F">+</span><span style="color:#22863A"> " is : "</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(addresult)</span></span></code></pre>
+
+<p>Notice the conversion function <code>str</code> that turns an integer into a string, so that it can be added to other strings.</p>
+<p>As an alternative you can also use the string format operator <code>%</code> for printing values in a string :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">"The result of the addition of : </span><span style="color:#1976D2">%d</span><span style="color:#22863A"> and </span><span style="color:#1976D2">%d</span><span style="color:#22863A"> is : "</span><span style="color:#D32F2F"> %</span><span style="color:#212121"> (nr1, nr2))</span></span></code></pre>
+
+<p>A third alternative is to use the new style of formatting in Python 3 with the <code>format()</code> function. Figure out using the course manual or documentation how to use this style of string formatting. And a fourth alternative would be to use an f-string. Figure that one out as well.</p>
+<p>Also display the types of the results. The first three are of <code>&lt;class 'int'&gt;</code>. Notice that the type of the division is <code>&lt;class 'float'&gt;</code>.</p>
+<h3 id="step-3">Step 3</h3>
+<p>Now use the <code>input()</code> function to ask for the input of two numbers from the user as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">s1 </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"give me number 1 : "</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">s2 </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"give me number 2 : "</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>The <code>input()</code> function returns a string. Find out about the type of the return values by printing their type. Now perform addition with the <code>+</code> operator on the user input. With user input 1 and 3 the result will be 13, because 1 and 3 are seen as strings : the strings are concatenated.</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addresult </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> s1 </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> s2  </span><span style="color:#4a9c59"># s1='1', s2='3'</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(addresult)</span><span style="color:#4a9c59">    # prints 13</span></span></code></pre>
+
+<p>Next convert the strings to integers with the <code>int()</code> conversion function as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addresult </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> int</span><span style="color:#212121">(s1)</span><span style="color:#D32F2F"> +</span><span style="color:#1976D2"> int</span><span style="color:#212121">(s2)</span></span></code></pre>
+
+<p>With the same input the result will now be 4. When the given input cannot be converted to an int, a runtime error occurs :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span>ValueError: invalid literal for int() with base 10: 'w'</span></span></code></pre>
+
+
+<h1 id="exercise-3--data-structures"><a id="ex-2"></a>Exercise 3 : Data Structures</h1>
+<p>In this exercise you extend the calculator with lists, multidimensional lists, tuples and dictionaries.</p>
+<hr>
+<h3 id="step-1-1">Step 1</h3>
+<p>Create a project or directory named <code>exercise3</code> and a Python module <code>calculator3.py</code>. Next create an empty list variable and ask the user for the input of two float numbers. Add these numbers, store the result in a variable and append the numbers and the result of their addition to the list. Repeat this operation until the user quits the program by pressing the red button in the IDE. Your code could look like the following :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">reslist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> []</span></span>
+<span class="line"><span style="color:#D32F2F">while</span><span style="color:#1976D2"> True</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    f1 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> float</span><span style="color:#212121">(</span><span style="color:#6F42C1">input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give me number 1 : "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#24292EFF">    f2 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> float</span><span style="color:#212121">(</span><span style="color:#6F42C1">input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give me number 2 : "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#24292EFF">    addresult </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> f1 </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> f2</span></span>
+<span class="line"><span style="color:#24292EFF">    reslist</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(f1)</span></span>
+<span class="line"><span style="color:#24292EFF">    reslist</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(f2)</span></span>
+<span class="line"><span style="color:#24292EFF">    reslist</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(addresult)</span></span></code></pre>
+
+<p>Also print the content of the list, print the length of the list and print a subset of the list as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Content of list : </span><span style="color:#1976D2">{</span><span style="color:#212121">reslist</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Length of list : </span><span style="color:#1976D2">{</span><span style="color:#6F42C1">len</span><span style="color:#212121">(reslist)</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Part of list : </span><span style="color:#1976D2">{</span><span style="color:#212121">reslist[</span><span style="color:#1976D2">0</span><span style="color:#212121">:</span><span style="color:#1976D2">3</span><span style="color:#212121">]</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Finally remove the first element of the list and print the list again :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(reslist[</span><span style="color:#1976D2">0</span><span style="color:#212121">])</span></span>
+<span class="line"><span style="color:#D32F2F">del</span><span style="color:#24292EFF"> reslist</span><span style="color:#212121">[</span><span style="color:#1976D2">0</span><span style="color:#212121">]</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Content of list after deletion : </span><span style="color:#1976D2">{</span><span style="color:#212121">reslist</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<h3 id="step-2-1">Step 2</h3>
+<p>Now create a multidimensional list in which each row contains a calculation with as elements the type of operation, the two float numbers and the result. Also calculate the results of the subtraction, multiplication and division and store these as rows in the multidimensional list. Start by allocating memory for the multidimensional list as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">multireslist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [[</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#24292EFF">]</span><span style="color:#212121">,</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#24292EFF">]</span><span style="color:#212121">,</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#24292EFF">]</span><span style="color:#212121">,</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#212121">,</span><span style="color:#1976D2">0</span><span style="color:#24292EFF">]]</span></span></code></pre>
+
+<p>Then store the results of the operations in separate lists and add these lists at appropriate places in the multidimensional list. For the add operation your code could look as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addresult </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> f1 </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> f2</span></span>
+<span class="line"><span style="color:#24292EFF">addlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Add"</span><span style="color:#212121">,</span><span style="color:#24292EFF"> f1</span><span style="color:#212121">,</span><span style="color:#24292EFF"> f2</span><span style="color:#212121">,</span><span style="color:#24292EFF"> addresult]</span></span>
+<span class="line"><span style="color:#24292EFF">multireslist</span><span style="color:#212121">[</span><span style="color:#1976D2">0</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> addlist</span></span></code></pre>
+
+<p>Write similar code for the subtract, multiply and divide operations. Print the multidimensional list after storing the results. Your result should look as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span>Content of list : [['Add', 2.0, 2.0, 4.0], ['Subtract', 2.0, 2.0, 0.0],</span></span>
+<span class="line"><span>['Multiply', 2.0, 2.0, 4.0], ['Divide', 2.0, 2.0, 1.0]]</span></span></code></pre>
+
+<p>Finally try to change some element in one of the sublists and notice that you are able to make the change. Then change one of the sublists to a tuple :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Add"</span><span style="color:#212121">,</span><span style="color:#24292EFF"> f1</span><span style="color:#212121">,</span><span style="color:#24292EFF"> f2</span><span style="color:#212121">,</span><span style="color:#24292EFF"> addresult)</span></span></code></pre>
+
+<p>Notice that when you try to change elements of this tuple you get the following error :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span>TypeError: 'tuple' object does not support item assignment</span></span></code></pre>
+
+<h3 id="step-3-1">Step 3</h3>
+<p>Now create an empty dictionary. Ask the user for the input of two numbers like before. Perform add, subtract, multiply and divide operations on the numbers. Store the numbers and the results of the calculation in a small list for each calculation type :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">resdict </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {}</span></span>
+<span class="line"><span style="color:#D32F2F">while</span><span style="color:#1976D2"> True</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    f1 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> float</span><span style="color:#212121">(</span><span style="color:#6F42C1">input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give me number 1 : "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#24292EFF">    f2 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> float</span><span style="color:#212121">(</span><span style="color:#6F42C1">input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give me number 2 : "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#24292EFF">    addresult </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> f1 </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> f2</span></span>
+<span class="line"><span style="color:#24292EFF">    addlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [f1</span><span style="color:#212121">,</span><span style="color:#24292EFF"> f2</span><span style="color:#212121">,</span><span style="color:#24292EFF"> addresult]</span></span></code></pre>
+
+<p>Now store the list in the dictionary under the key <code>"Add"</code> as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">resdict</span><span style="color:#212121">[</span><span style="color:#22863A">"Add"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> addlist</span></span></code></pre>
+
+<p>Use similar code for the other calculation operations and print the dictionary after the input of two numbers.</p>
+<p>Try to read and extend the value at a dictionary key. The reading will succeed if the dictionary key was created before, but you will get an error if the key did not exist. Next make sure that the keys exist before starting to ask input from the user, by initializing the dictionary as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">resdict </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Add"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">,</span><span style="color:#22863A"> "Subtract"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">,</span><span style="color:#22863A"> "Multiply"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">,</span><span style="color:#22863A"> "Divide"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">}</span></span></code></pre>
+
+<p>Now store multiple results of add calculations under the <code>"Add"</code> key as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">resdict</span><span style="color:#212121">[</span><span style="color:#22863A">"Add"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> resdict</span><span style="color:#212121">[</span><span style="color:#22863A">"Add"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> +</span><span style="color:#24292EFF"> addlist</span></span></code></pre>
+
+<h3 id="step-4">Step 4</h3>
+<p>Ask the user to input a list of integers and split the input string into a list :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">s </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give me a set of numbers separated by space characters : "</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">slist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> s</span><span style="color:#212121">.</span><span style="color:#6F42C1">split</span><span style="color:#212121">(</span><span style="color:#22863A">' '</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(slist)</span></span></code></pre>
+
+<p>Also sort and reverse the list with the <code>sort</code> and <code>reverse</code> functions. Finally convert the list of strings to a list of integers with :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">intlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> []</span></span>
+<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> x </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> slist</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    x </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> int</span><span style="color:#212121">(x)</span></span>
+<span class="line"><span style="color:#24292EFF">    intlist</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(x)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(intlist)</span></span></code></pre>
+
+<p>Feel free to experiment with other string, list and dictionary functions. Use the documentation.</p>
+<h1 id="exercise-4--control-flow"><a id="ex-3"></a>Exercise 4 : Control Flow</h1>
+<p>In this exercise the calculator becomes interactive : the user chooses the type of calculation.</p>
+<hr>
+<h3 id="step-1-2">Step 1</h3>
+<p>Create a project or directory named <code>exercise4</code> and a Python module <code>calculator4.py</code>. Copy the contents of step 3 of the previous exercise to <code>calculator4.py</code>.</p>
+<p>Now ask the user, beside the numbers for the calculations, also which type of calculation the user wants to perform. Use <code>if</code>, <code>else</code> and <code>elif</code> statements to determine which branch of the code must be entered. If the user enters <code>"Quit"</code> the application should stop :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">resdict </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Add"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">,</span><span style="color:#22863A"> "Subtract"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">,</span><span style="color:#22863A"> "Multiply"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">,</span><span style="color:#22863A"> "Divide"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> []</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#D32F2F">while</span><span style="color:#1976D2"> True</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    calcAction </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"What type of calculation do you want to do : "</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> calcAction </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Quit"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">        break</span></span>
+<span class="line"><span style="color:#D32F2F">    else</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">        f1 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> float</span><span style="color:#212121">(</span><span style="color:#6F42C1">input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give me number 1 : "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#24292EFF">        f2 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> float</span><span style="color:#212121">(</span><span style="color:#6F42C1">input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give me number 2 : "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#D32F2F">        if</span><span style="color:#24292EFF"> calcAction </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Add"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">            addresult </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> f1 </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> f2</span></span>
+<span class="line"><span style="color:#24292EFF">            addlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [f1</span><span style="color:#212121">,</span><span style="color:#24292EFF"> f2</span><span style="color:#212121">,</span><span style="color:#24292EFF"> addresult]</span></span>
+<span class="line"><span style="color:#24292EFF">            resdict</span><span style="color:#212121">[</span><span style="color:#22863A">"Add"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> resdict</span><span style="color:#212121">[</span><span style="color:#22863A">"Add"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> +</span><span style="color:#24292EFF"> addlist</span></span>
+<span class="line"><span style="color:#D32F2F">        elif</span><span style="color:#24292EFF"> calcAction </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Subtract"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">            ...</span></span></code></pre>
+
+<h3 id="step-2-2">Step 2</h3>
+<p>Now add an option to calculate the sum and average of a list of numbers. Copy part of the code from step 4 of exercise 3 to convert a list of strings to a list of integers. Based on the input of the desired calculation type, you will have to make a distinction between the input of a list of numbers or only two numbers :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">elif</span><span style="color:#24292EFF"> (calcAction </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Sum"</span><span style="color:#24292EFF">) </span><span style="color:#D32F2F">or</span><span style="color:#24292EFF"> (calcAction </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Average"</span><span style="color:#24292EFF">)</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    s </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give a set of numbers separated by space characters : "</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Now calculate the sum or the average of the list of numbers in a <code>for</code> loop. Do not use <code>sum</code> as a variable name since this is a reserved word; use <code>summation</code> instead. For the calculation of the sum the code could look as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">summation </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0</span></span>
+<span class="line"><span style="color:#24292EFF">average </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0</span></span>
+<span class="line"><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> calcAction </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Sum"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">    for</span><span style="color:#24292EFF"> x </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> slist</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">        x </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> int</span><span style="color:#212121">(x)</span></span>
+<span class="line"><span style="color:#24292EFF">        summation </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> summation </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> x</span></span>
+<span class="line"><span style="color:#24292EFF">        intlist</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(x)</span></span>
+<span class="line"><span style="color:#6F42C1">    print </span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Sum of list </span><span style="color:#1976D2">{</span><span style="color:#212121">intlist</span><span style="color:#1976D2">}</span><span style="color:#22863A"> is </span><span style="color:#1976D2">{</span><span style="color:#212121">summation</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<h3 id="step-3-2">Step 3</h3>
+<p>Replace the <code>while True</code> statement at the beginning of the code by a test on the input of the calculation type. Stop the while loop when the input is <code>"Quit"</code> :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">calcAction </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Continue"</span></span>
+<span class="line"><span style="color:#D32F2F">while</span><span style="color:#24292EFF"> calcAction </span><span style="color:#D32F2F">!=</span><span style="color:#22863A"> "Quit"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    calcAction </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"What type of calculation do you want to do : "</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Also add an <code>else</code> statement to the while loop that gets executed when the while loop stops :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    print </span><span style="color:#212121">(</span><span style="color:#22863A">"Thank you for using our software"</span><span style="color:#212121">)</span></span></code></pre>
+
+
+<h1 id="exercise-5--functions"><a id="ex-4"></a>Exercise 5 : Functions</h1>
+<p>In this exercise the inline calculations are replaced by functions.</p>
+<hr>
+<h3 id="step-1-3">Step 1</h3>
+<p>Create a project or directory named <code>exercise5</code> and a Python module <code>calculator5.py</code>. Copy the contents of the previous exercise to <code>calculator5.py</code>.</p>
+<p>Write functions to add, subtract, multiply and divide two numbers and replace the code that does the calculations inline by a call to these functions :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> add</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">i</span><span style="color:#212121">,</span><span style="color:#FF9800"> j</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    z </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> i </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> j</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#24292EFF"> z</span></span></code></pre>
+
+<p>Calling this function is done with :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addresult </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> add</span><span style="color:#212121">(f1, f2)</span></span></code></pre>
+
+<h3 id="step-2-3">Step 2</h3>
+<p>Write a function <code>convertointlist</code> that converts a list of input characters to a list of integers :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> convertointlist</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">slist</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    ilist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> []</span></span>
+<span class="line"><span style="color:#D32F2F">    for</span><span style="color:#24292EFF"> x </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> slist</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">        x </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> int</span><span style="color:#212121">(x)</span></span>
+<span class="line"><span style="color:#24292EFF">        ilist</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(x)</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#24292EFF"> ilist</span></span></code></pre>
+
+<p>Call this function with as parameter the input list given by the user for the sum and average calculations.</p>
+<p>Also write a function <code>summate</code> that takes a list of integers as an argument and returns the sum of the integers in that list. And write a function <code>average</code> that takes a list of integers and returns the average of these integers :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> summate</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">ilist</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    s </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0</span></span>
+<span class="line"><span style="color:#D32F2F">    for</span><span style="color:#24292EFF"> x </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> ilist</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">        s </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> s </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> x</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#24292EFF"> s</span></span></code></pre>
+
+<p>Replace the inline summation and averaging code by calls to these functions.</p>
+<h3 id="step-3-3">Step 3</h3>
+<p>Add another calculation option to the calculator called <code>"Faculty"</code>. When the user enters this, one number should be entered and the factorial of this number should be calculated. Hereby the factorial of n is defined as n * (n-1) * (n-2) * (n-3) * ... * 1.</p>
+<p>Create a recursive function called <code>faculty</code> to perform this calculation and call this function.</p>
+<h1 id="exercise-6--modules"><a id="ex-5"></a>Exercise 6 : Modules</h1>
+<p>In this exercise the calculation functions are moved to their own module and package.</p>
+<hr>
+<h3 id="step-1-4">Step 1</h3>
+<p>Create a project or directory named <code>exercise6</code> and a Python module <code>calculator6.py</code>. Copy the contents of <code>calculator5.py</code> from the previous exercise to <code>calculator6.py</code>.</p>
+<p>Next create a Python module <code>calculations.py</code>. Remove the function definitions from <code>calculator6.py</code> and put them into <code>calculations.py</code>. As a result all function calls in <code>calculator6.py</code> will give errors because they are calling undefined functions.</p>
+<p>Resolve the errors by importing the calculations module with an import statement in the first line of <code>calculator6.py</code> :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> calculations</span></span></code></pre>
+
+<p>This is not enough. You will also need to prefix all function names with the module name where they come from :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addresult </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> calculations</span><span style="color:#212121">.</span><span style="color:#6F42C1">add</span><span style="color:#212121">(f1, f2)</span></span></code></pre>
+
+<h3 id="step-2-4">Step 2</h3>
+<p>It is inconvenient to put the module name as prefix before the function name. Therefore there is an alternative syntax called <code>from &lt;module&gt; import &lt;name&gt;</code>. Now change to this alternative and name all the function names that must be imported :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> calculations </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> faculty</span><span style="color:#212121">,</span><span style="color:#24292EFF"> convertointlist</span><span style="color:#212121">,</span><span style="color:#24292EFF"> summate</span><span style="color:#212121">,</span><span style="color:#24292EFF"> average</span><span style="color:#212121">,</span><span style="color:#24292EFF"> add</span><span style="color:#212121">,</span><span style="color:#24292EFF"> subtract</span><span style="color:#212121">,</span><span style="color:#24292EFF"> multiply</span><span style="color:#212121">,</span><span style="color:#24292EFF"> divide</span></span></code></pre>
+
+<p>As a result the prefixes before the method calls can be removed in <code>calculator6.py</code>.</p>
+<h3 id="step-3-4">Step 3</h3>
+<p>Finally make a <code>calcu</code> package. Put the <code>calculations.py</code> module in this package, edit the <code>__init__.py</code> file and import the functions from the package in <code>calculator6.py</code>.</p>
+<h1 id="exercise-7--comprehensions"><a id="ex-6"></a>Exercise 7 : Comprehensions</h1>
+<p>In this exercise functions are replaced by functional programming constructs like lambdas, comprehensions and <code>reduce</code>.</p>
+<hr>
+<h3 id="step-1-5">Step 1</h3>
+<p>Create a project or directory named <code>exercise7</code> and a Python module <code>calculator7.py</code>. Copy the contents of <code>calculator6.py</code> from the previous exercise to <code>calculator7.py</code>. Do not copy the <code>calcu</code> package.</p>
+<p>Put the import <code>from functools import reduce</code> in the first line of <code>calculator7.py</code>.</p>
+<h3 id="step-2-5">Step 2</h3>
+<p>Replace the following code by a list comprehension :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">s </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give a set of numbers separated by space characters : "</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">slist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> s</span><span style="color:#212121">.</span><span style="color:#6F42C1">split</span><span style="color:#212121">(</span><span style="color:#22863A">' '</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">intlist </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> convertointlist</span><span style="color:#212121">(slist)</span></span></code></pre>
+
+<p>We do not need a <code>convertointlist</code> function because we can do the conversion in a one-liner using a list comprehension.</p>
+<h3 id="step-3-5">Step 3</h3>
+<p>Replace the following code by a call to the <code>reduce</code> function which uses a lambda function for summing :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">summation </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> summate</span><span style="color:#212121">(intlist)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Sum of list </span><span style="color:#1976D2">{</span><span style="color:#212121">intlist</span><span style="color:#1976D2">}</span><span style="color:#22863A"> is </span><span style="color:#1976D2">{</span><span style="color:#212121">summation</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<h3 id="step-4-1">Step 4</h3>
+<p>Replace the following code by a call to the <code>reduce</code> function which uses a lambda function for summing, and divide by the length of the list of integers :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">av </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> average</span><span style="color:#212121">(intlist)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Average of list </span><span style="color:#1976D2">{</span><span style="color:#212121">intlist</span><span style="color:#1976D2">}</span><span style="color:#22863A"> is </span><span style="color:#1976D2">{</span><span style="color:#212121">av</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>We can calculate the average in a one-liner using the <code>reduce</code> function, a lambda and the length of the list with the <code>len</code> function.</p>
+<h3 id="step-5">Step 5</h3>
+<p>Replace the following code with one line which uses the definition and call of a lambda function for <code>add</code>. Do the same for <code>subtract</code>, <code>divide</code> and <code>multiply</code>. All can be replaced by one-liners which do not use an external function :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">addresult </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> add</span><span style="color:#212121">(f1, f2)</span></span>
+<span class="line"><span style="color:#24292EFF">addlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [f1</span><span style="color:#212121">,</span><span style="color:#24292EFF"> f2</span><span style="color:#212121">,</span><span style="color:#24292EFF"> addresult]</span></span>
+<span class="line"><span style="color:#24292EFF">resdict</span><span style="color:#212121">[</span><span style="color:#22863A">"Add"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> resdict</span><span style="color:#212121">[</span><span style="color:#22863A">"Add"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> +</span><span style="color:#24292EFF"> addlist</span></span></code></pre>
+
+<h3 id="step-6">Step 6</h3>
+<p>Finally replace the calculation of the factorial with the following code and observe that it gives the correct results :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">n </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> int</span><span style="color:#212121">(</span><span style="color:#6F42C1">input</span><span style="color:#212121">(</span><span style="color:#22863A">"Give a positive integer number : "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#24292EFF">fac </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> reduce</span><span style="color:#212121">((</span><span style="color:#D32F2F">lambda</span><span style="color:#FF9800"> x</span><span style="color:#212121">, </span><span style="color:#FF9800">y</span><span style="color:#212121">: x </span><span style="color:#D32F2F">*</span><span style="color:#212121"> y), </span><span style="color:#1976D2">list</span><span style="color:#212121">(</span><span style="color:#6F42C1">range</span><span style="color:#212121">(</span><span style="color:#1976D2">1</span><span style="color:#212121">, n</span><span style="color:#D32F2F">+</span><span style="color:#1976D2">1</span><span style="color:#212121">)))</span></span></code></pre>
+
+
+<h1 id="exercise-8--exception-handling"><a id="ex-7"></a>Exercise 8 : Exception Handling</h1>
+<p>In this exercise the calculator is made robust against invalid input.</p>
+<hr>
+<h3 id="step-1-6">Step 1</h3>
+<p>Create a project or directory named <code>exercise8</code> and a Python module <code>calculator8.py</code>. Copy the contents of <code>calculator6.py</code> to <code>calculator8.py</code>. Also copy the <code>calcu</code> package which now should contain comprehensions.</p>
+<p>Write <code>try: except:</code> statements for the following cases. In all these cases the current program crashes. With exception handling we can ask for new input.</p>
+<ol>
+<li>Division by zero.</li>
+<li>Wrong input for Add, Subtract, Multiply and Divide operations.</li>
+<li>Wrong input for the number for the factorial.</li>
+<li>Wrong input for the list of integers.</li>
+</ol>
+<h3 id="step-2-6">Step 2</h3>
+<p>Define an exception class. Then write a <code>try: except:</code> statement in which you throw and catch that specific exception. Use code from the demo directories or the internet as example code.</p>
+<h3 id="step-3-6">Step 3</h3>
+<p>The code that we have made up to now is not very clean. We should make our script more maintainable and extensible. One big script in which everything happens is not so good. The if statements are also nested too much.</p>
+<p>Now refactor the code so it consists of a main from where three functions are called, namely : <code>OneNumberCalculations</code>, <code>TwoNumberCalculations</code> and <code>MultipleNumberCalculations</code>. Each of these functions should get a <code>calcAction</code> string as parameter.</p>
+<p>Write this script in the file <code>calculatorclean.py</code>. Make sure the script works exactly the same as the non-clean version.</p>
+<h1 id="exercise-9--python-io"><a id="ex-8"></a>Exercise 9 : Python IO</h1>
+<p>In this exercise every calculation is logged to a text file.</p>
+<hr>
+<h3 id="step-1-7">Step 1</h3>
+<p>Create a project or directory named <code>exercise9</code> and a Python module <code>calculator9.py</code>. Copy the contents of <code>calculator8.py</code> from the previous exercise to <code>calculator9.py</code>. Also copy the <code>calcu</code> package.</p>
+<p>Open a text file for writing just before entering the while loop that asks the user to choose a calculation type :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">fw </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> open</span><span style="color:#212121">(</span><span style="color:#22863A">'calculationdata.txt'</span><span style="color:#212121">, mode</span><span style="color:#D32F2F">=</span><span style="color:#22863A">'w'</span><span style="color:#212121">, encoding</span><span style="color:#D32F2F">=</span><span style="color:#22863A">'UTF-8'</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Next add the details of a calculation to a line in this file when each calculation is performed. For the Faculty calculation you could use the following code :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">fw</span><span style="color:#212121">.</span><span style="color:#6F42C1">write</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">calcAction</span><span style="color:#1976D2">}</span><span style="color:#22863A">,</span><span style="color:#1976D2">{</span><span style="color:#212121">x</span><span style="color:#1976D2">}</span><span style="color:#22863A">,</span><span style="color:#1976D2">{</span><span style="color:#6F42C1">faculty</span><span style="color:#212121">(x)</span><span style="color:#1976D2">}</span><span style="color:#212121">\n</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>For the Sum and Average calculations you could use the following code :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">fw</span><span style="color:#212121">.</span><span style="color:#6F42C1">write</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">calcAction</span><span style="color:#1976D2">}</span><span style="color:#22863A">,</span><span style="color:#1976D2">{</span><span style="color:#212121">intlist</span><span style="color:#1976D2">}</span><span style="color:#22863A">,</span><span style="color:#1976D2">{</span><span style="color:#6F42C1">summate</span><span style="color:#212121">(intlist)</span><span style="color:#1976D2">}</span><span style="color:#212121">\n</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>And for the Add, Subtract, Divide and Multiply calculations you could use the following code just after the input of the numbers :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">fw</span><span style="color:#212121">.</span><span style="color:#6F42C1">write</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">calcAction</span><span style="color:#1976D2">}</span><span style="color:#22863A">,</span><span style="color:#1976D2">{</span><span style="color:#212121">f1</span><span style="color:#1976D2">}</span><span style="color:#22863A">,</span><span style="color:#1976D2">{</span><span style="color:#212121">f2</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>And the following code just after each calculation :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">fw</span><span style="color:#212121">.</span><span style="color:#6F42C1">write</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#6F42C1">add</span><span style="color:#212121">(f1, f2)</span><span style="color:#1976D2">}</span><span style="color:#212121">\n</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Finally close the file when you give the <code>"Quit"</code> command, otherwise nothing is written :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">fw</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span></span></code></pre>
+
+<p>Now enter some calculations to test your code and observe the contents of the file.</p>
+<h3 id="step-2-7">Step 2</h3>
+<p>Next create a new Python module <code>readcalculations.py</code>, read the lines of the file and display its contents with the following code :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">fr </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> open</span><span style="color:#212121">(</span><span style="color:#22863A">'calculationdata.txt'</span><span style="color:#212121">, mode</span><span style="color:#D32F2F">=</span><span style="color:#22863A">'r'</span><span style="color:#212121">, encoding</span><span style="color:#D32F2F">=</span><span style="color:#22863A">'UTF-8'</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> line </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> fr</span><span style="color:#212121">.</span><span style="color:#6F42C1">readlines</span><span style="color:#212121">():</span></span>
+<span class="line"><span style="color:#24292EFF">    s </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> line</span><span style="color:#212121">.</span><span style="color:#6F42C1">rstrip</span><span style="color:#212121">(</span><span style="color:#22863A">'\n'</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">    slist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> s</span><span style="color:#212121">.</span><span style="color:#6F42C1">split</span><span style="color:#212121">(</span><span style="color:#22863A">','</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">    print </span><span style="color:#212121">(slist)</span></span>
+<span class="line"><span style="color:#24292EFF">fr</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span></span></code></pre>
+
+<p>The results could look as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span>['Faculty', '12', '479001600']</span></span>
+<span class="line"><span>['Sum', '[1', ' 1', ' 3]', '5']</span></span>
+<span class="line"><span>['Average', '[4', ' 5', ' 6]', '5.0']</span></span></code></pre>
+
+
+<h1 id="exercise-10--python-database-access"><a id="ex-9"></a>Exercise 10 : Python Database Access</h1>
+<p>In this exercise the file logging is replaced by a SQLite database.</p>
+<hr>
+<h3 id="step-1-8">Step 1</h3>
+<p>Create a project or directory named <code>exercise10</code> and a Python module <code>calculator10.py</code>. Copy the contents of <code>calculator9.py</code> from the previous exercise to <code>calculator10.py</code>. Also copy the <code>calcu</code> package. You will replace the file access code with database access code.</p>
+<p>Before entering the while loop in which the user is asked to choose the type of calculation, use the following code to create a database <code>calculations.db</code> and a table <code>Calculations</code> :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">con </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> sqlite3</span><span style="color:#212121">.</span><span style="color:#6F42C1">connect</span><span style="color:#212121">(</span><span style="color:#22863A">'calculations.db'</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">with</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">    cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"DROP TABLE IF EXISTS Calculations"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">    cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"CREATE TABLE Calculations (Id VARCHAR(10), Nr1 INT, Nr2 INT, Result DECIMAL)"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Next consider the Faculty calculation type and replace the code where data is written to the file with code that writes data to the database :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">with</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">    cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"INSERT INTO Calculations ('Id', 'Nr1', 'Nr2', 'Result') VALUES(?,?,?,?)"</span><span style="color:#212121">,</span></span>
+<span class="line"><span style="color:#212121">                (calcAction, x, </span><span style="color:#1976D2">0</span><span style="color:#212121">, </span><span style="color:#6F42C1">faculty</span><span style="color:#212121">(x)))</span></span></code></pre>
+
+<p>In this exercise we will not consider the Sum and Average calculation types; just remove the code that writes their data to the file. We will however consider the Add, Subtract, Divide and Multiply calculation types. For these replace the file access code with the following database access code, for instance for the Add calculation type :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">with</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">    cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"INSERT INTO Calculations ('Id', 'Nr1', 'Nr2', 'Result') VALUES(?,?,?,?)"</span><span style="color:#212121">,</span></span>
+<span class="line"><span style="color:#212121">                (calcAction, f1, f2, </span><span style="color:#6F42C1">add</span><span style="color:#212121">(f1, f2)))</span></span></code></pre>
+
+<p>Next insert some records in the database, observe the existence of the <code>calculations.db</code> file in the directory of the script and use the SQLiteStudio Database Viewer to connect to SQLite and examine the contents of the database.</p>
+<p>Also make a script to read the database records back in and display them in the console.</p>
+<h1 id="exercise-11--python-classes"><a id="ex-10"></a>Exercise 11 : Python Classes</h1>
+<p>In this exercise you build an Employee class and a Company script around it.</p>
+<hr>
+<h3 id="step-1--employee-class">Step 1 : Employee class</h3>
+<p>Make an <code>Employee</code> class representing some employee working in a company in the Python module <code>employee.py</code>. The <code>Employee</code> class should have two attributes representing the name and the ID of an employee.</p>
+<p>Add a constructor to the <code>Employee</code> class which sets the attributes when they are passed. Make a simple program which declares an <code>Employee</code> object and displays the values of the attributes of the <code>Employee</code> object by accessing the attributes directly :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Employee</span><span style="color:#24292EFF">(</span><span style="color:#1976D2">object</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __init__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> name</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#6F42C1">        print </span><span style="color:#212121">(</span><span style="color:#22863A">"Calling Employee constructor"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> name</span></span></code></pre>
+
+<p>Next make the attributes private in the <code>Employee</code> class and add public set and get member functions to be able to access these attributes. Change the values of the attributes through the accessor functions and display their changed values :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> set_name</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> value</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    self</span><span style="color:#212121">.</span><span style="color:#24292EFF">__name </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> value</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> del_name</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    del</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">__name</span></span></code></pre>
+
+<p>Notice that private data cannot be accessed directly from outside of the class. This demonstrates the object oriented principle of encapsulation. In Python there is a workaround so you can still access private data; use this workaround also for demonstration purposes.</p>
+<p>Also add a destructor to the class and keep a class variable which counts how many instances of the class are present :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> __del__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    class_name </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#1976D2">__class__</span><span style="color:#212121">.</span><span style="color:#1976D2">__name__</span></span>
+<span class="line"><span style="color:#6F42C1">    print </span><span style="color:#212121">(class_name, </span><span style="color:#22863A">"destroyed"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Write print statements when the constructor, destructor, getters and setters are called. Also print an instance variable directly. What is the result?</p>
+<p>Next make a property in the class with the following code :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">name </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> property</span><span style="color:#212121">(get_name, set_name, del_name, </span><span style="color:#22863A">"name's docstring"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Access the <code>Employee</code> object through the property as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">e1</span><span style="color:#212121">.</span><span style="color:#24292EFF">name </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Some Name"</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(e1.name)</span></span></code></pre>
+
+<p>Also write statements to show the class and object data :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">"Employee.__doc__:"</span><span style="color:#212121">, Employee.</span><span style="color:#1976D2">__doc__</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">"Employee.__name__:"</span><span style="color:#212121">, Employee.</span><span style="color:#1976D2">__name__</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">"Employee.__module__:"</span><span style="color:#212121">, Employee.</span><span style="color:#1976D2">__module__</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">"Employee.__bases__:"</span><span style="color:#212121">, Employee.</span><span style="color:#1976D2">__bases__</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print </span><span style="color:#212121">(</span><span style="color:#22863A">"Employee.__dict__:"</span><span style="color:#212121">, Employee.</span><span style="color:#1976D2">__dict__</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Put the <code>Employee</code> class in a script in the <code>employees</code> package and add code to be able to export the <code>Employee</code> class from this package. Give the <code>Employee</code> class a <code>calcSal()</code> method as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> calcSal</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#1976D2"> 0</span></span></code></pre>
+
+<p>Optionally you can also add a <code>hiringdate</code> attribute to the <code>Employee</code> class. Add the following code to test the <code>Employee</code> class in stand alone mode :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">if</span><span style="color:#1976D2"> __name__</span><span style="color:#D32F2F"> ==</span><span style="color:#22863A"> '__main__'</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    main</span><span style="color:#212121">()</span></span></code></pre>
+
+<h3 id="step-2--company-script">Step 2 : Company Script</h3>
+<p>Make a <code>Company</code> script above the <code>employees</code> package. Add the necessary import statements to be able to find the <code>Employee</code> class in the employee script in the <code>employees</code> package. If you keep the <code>__init__.py</code> file in the package empty your code could look as follows :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> employees</span><span style="color:#212121">.</span><span style="color:#24292EFF">employee</span></span>
+<span class="line"><span style="color:#24292EFF">e1 </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> employees</span><span style="color:#212121">.</span><span style="color:#24292EFF">employee</span><span style="color:#212121">.</span><span style="color:#6F42C1">Employee</span><span style="color:#212121">(</span><span style="color:#22863A">"Albert Einstein"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Create a number of employees and put them in a list, called for instance <code>employeeList</code>. Next iterate through the list and print the name of the employees in the list.</p>
+<p><strong>If time permits</strong> : alternatively you could create a <code>Company</code> class with functions to add or to remove employees from the <code>employeeList</code>, which displays a list of employees including their name and ID. In that case make a simple script which declares a <code>Company</code> object, add several employees to the company and display a list of employees.</p>
+<p>The relationship between the <code>Company</code> class and the <code>Employee</code> class is an association relation of the normal type. We can say every Company employs Employees, or every Employee works for a Company.</p>
+<h1 id="exercise-12--optional-exercise--python-libraries"><a id="ex-11"></a>Exercise 12 : Optional Exercise : Python Libraries</h1>
+<p>This optional exercise is provided as a separate document; see the appendix PDFs in the course material. Library exercises (numpy, datetime, regular expressions and others) are also available in the <code>exercises/</code> directory of the repository.</p>
+</div>
+	
+
+</body></html>
