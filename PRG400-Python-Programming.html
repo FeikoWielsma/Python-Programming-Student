@@ -3737,22 +3737,21 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> changeme</span><span style="color:#24292EFF">( </span><span style="color:#FF9800">mylist</span><span style="color:#24292EFF"> ):</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> change_me1</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">mylist</span><span style="color:#24292EFF">):</span></span>
 <span class="line"><span style="color:#24292EFF">    mylist</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(</span><span style="color:#1976D2">40</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"List inside the function: "</span><span style="color:#212121">, mylist)</span></span>
-<span class="line"><span style="color:#D32F2F">    return</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"List inside the function change_me1: "</span><span style="color:#212121">, mylist)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>Call to <code>changeme</code> function :</li>
+<li>Call to <code>change_me1</code> function :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">mylistouter </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2">20</span><span style="color:#212121">,</span><span style="color:#1976D2">30</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#6F42C1">changeme</span><span style="color:#212121">(mylistouter)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"List outside the function: "</span><span style="color:#212121">, mylistouter)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">my_list_outer </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2"> 20</span><span style="color:#212121">,</span><span style="color:#1976D2"> 30</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#6F42C1">change_me1</span><span style="color:#212121">(my_list_outer)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"List outside the function: "</span><span style="color:#212121">, my_list_outer)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Reference of passed object is used to append values :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>List inside the function changeme1: [10, 20, 30, 40]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>List inside the function change_me1: [10, 20, 30, 40]</span></span>
 <span class="line"><span>List outside the function: [10, 20, 30, 40]</span></span>
 <span class="line"><span></span></span></code></pre>
 <blockquote>
@@ -3765,27 +3764,26 @@
 <ul>
 <li>Reference may be overwritten in the function :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> changeme</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">mylist</span><span style="color:#24292EFF">):</span></span>
-<span class="line"><span style="color:#24292EFF">    mylist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">1</span><span style="color:#212121">,</span><span style="color:#1976D2">2</span><span style="color:#212121">,</span><span style="color:#1976D2">3</span><span style="color:#212121">,</span><span style="color:#1976D2">4</span><span style="color:#24292EFF">] </span><span style="color:#4a9c59"># This would assign new reference</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Values inside the function: "</span><span style="color:#212121">, mylist)</span></span>
-<span class="line"><span style="color:#D32F2F">    return</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> change_me2</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">mylist</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    mylist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">1</span><span style="color:#212121">,</span><span style="color:#1976D2"> 2</span><span style="color:#212121">,</span><span style="color:#1976D2"> 3</span><span style="color:#212121">,</span><span style="color:#1976D2"> 4</span><span style="color:#24292EFF">]  </span><span style="color:#4a9c59"># This would assign new reference</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Values inside the function change_me2: "</span><span style="color:#212121">, mylist)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>Call <code>changeme</code> function :</li>
+<li>Call <code>change_me2</code> function :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">mylistouter </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2">20</span><span style="color:#212121">,</span><span style="color:#1976D2">30</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#6F42C1">changeme</span><span style="color:#212121">(mylistouter)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Values outside the function: "</span><span style="color:#212121">, mylistouter)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">my_list_outer </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2"> 20</span><span style="color:#212121">,</span><span style="color:#1976D2"> 30</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#6F42C1">change_me2</span><span style="color:#212121">(my_list_outer)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Values outside the function: "</span><span style="color:#212121">, my_list_outer)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>Parameter <code>mylist</code> is changed in the function <code>changeme</code> :
+<li>Parameter <code>mylist</code> is changed in the function <code>change_me2</code> :
 <ul>
-<li>Changing <code>mylist</code> within the function does not affect <code>mylistouter</code></li>
+<li>Changing <code>mylist</code> within the function does not affect <code>my_list_outer</code></li>
 <li>Function does nothing to original list and finally this would produce following result :</li>
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Values inside the function: [1, 2, 3, 4]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Values inside the function change_me2: [1, 2, 3, 4]</span></span>
 <span class="line"><span>Values outside the function: [10, 20, 30]</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
@@ -3832,10 +3830,10 @@
 <rect x="750" y="132" width="180" height="54" rx="3" />
 </g>
 <g fill="currentColor" font-size="18" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" text-anchor="middle">
-<text x="110" y="95">mylistouter</text>
+<text x="110" y="95">my_list_outer</text>
 <text x="110" y="165">mylist</text>
 <text x="360" y="130">[10,20,30,40]</text>
-<text x="590" y="95">mylistouter</text>
+<text x="590" y="95">my_list_outer</text>
 <text x="590" y="165">mylist</text>
 <text x="840" y="95">[10, 20, 30]</text>
 <text x="840" y="165">[1, 2, 3, 4]</text>
@@ -3897,23 +3895,22 @@
 <ul>
 <li>Function definition :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> printinfo</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">name</span><span style="color:#212121">,</span><span style="color:#FF9800"> age</span><span style="color:#24292EFF">):</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> print_info</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">name</span><span style="color:#212121">,</span><span style="color:#FF9800"> age</span><span style="color:#24292EFF">):</span></span>
 <span class="line"><span style="color:#4a9c59">    """This prints name and age passed into this function"""</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Name: "</span><span style="color:#212121">, name)</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Age: "</span><span style="color:#212121">, age)</span></span>
-<span class="line"><span style="color:#D32F2F">    return</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Function call with keyword arguments :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">printinfo</span><span style="color:#212121">(age</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">55</span><span style="color:#212121">, name</span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Albert"</span><span style="color:#212121">)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print_info</span><span style="color:#212121">(age</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">55</span><span style="color:#212121">, name</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"Albert"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Result :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">Name</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Albert</span></span>
-<span class="line"><span style="color:#24292EFF">Age</span><span style="color:#212121">:</span><span style="color:#1976D2"> 55</span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Name: Albert</span></span>
+<span class="line"><span>Age: 55</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
 <li>Calling code specifies arguments by name :
 <ul>
@@ -3960,10 +3957,10 @@
 <ul>
 <li>Syntax for function with variable arguments :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> testArgLists</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">arg</span><span style="color:#212121">,</span><span style="color:#D32F2F"> *</span><span style="color:#FF9800">argtuple</span><span style="color:#212121">,</span><span style="color:#D32F2F"> **</span><span style="color:#FF9800">kwargs</span><span style="color:#24292EFF">):</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> show_arg_lists</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">arg</span><span style="color:#212121">,</span><span style="color:#D32F2F"> *</span><span style="color:#FF9800">arg_tuple</span><span style="color:#212121">,</span><span style="color:#D32F2F"> **</span><span style="color:#FF9800">kwargs</span><span style="color:#24292EFF">):</span></span>
 <span class="line"><span style="color:#4a9c59">     """Function referencing argument, argument list and keyword arguments"""</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">'arg:'</span><span style="color:#212121">, arg)</span></span>
-<span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">'args:'</span><span style="color:#212121">, argtuple)</span></span>
+<span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">'args:'</span><span style="color:#212121">, arg_tuple)</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#22863A">'kwargs:'</span><span style="color:#212121">, kwargs)</span></span>
 <span class="line"></span></code></pre>
 <ul>
@@ -3980,9 +3977,9 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">testArgLists</span><span style="color:#212121">(</span><span style="color:#1976D2">1</span><span style="color:#212121">, </span><span style="color:#1976D2">2</span><span style="color:#212121">, </span><span style="color:#1976D2">3</span><span style="color:#212121">, </span><span style="color:#1976D2">4</span><span style="color:#212121">, </span><span style="color:#1976D2">5</span><span style="color:#212121">, x</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">, y</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">2</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">testArgLists</span><span style="color:#212121">(</span><span style="color:#1976D2">33</span><span style="color:#212121">, x</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">8</span><span style="color:#212121">, y</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">9</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">testArgLists</span><span style="color:#212121">(</span><span style="color:#1976D2">44</span><span style="color:#212121">)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">show_arg_lists</span><span style="color:#212121">(</span><span style="color:#1976D2">1</span><span style="color:#212121">, </span><span style="color:#1976D2">2</span><span style="color:#212121">, </span><span style="color:#1976D2">3</span><span style="color:#212121">, </span><span style="color:#1976D2">4</span><span style="color:#212121">, </span><span style="color:#1976D2">5</span><span style="color:#212121">, x</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">, y</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">2</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">show_arg_lists</span><span style="color:#212121">(</span><span style="color:#1976D2">33</span><span style="color:#212121">, x</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">8</span><span style="color:#212121">, y</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">9</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">show_arg_lists</span><span style="color:#212121">(</span><span style="color:#1976D2">44</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo08</code><br><code class="pill-demo pill-desc">variableargumentlist</code></p>
@@ -4258,9 +4255,8 @@
 </li>
 <li><code>test.py</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> print_func</span><span style="color:#24292EFF">( </span><span style="color:#FF9800">par</span><span style="color:#24292EFF"> ):</span></span>
-<span class="line"><span style="color:#6F42C1">    print </span><span style="color:#212121">(</span><span style="color:#22863A">"Hello : "</span><span style="color:#212121">, par)</span></span>
-<span class="line"><span style="color:#D32F2F">    return</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> print_func</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">par</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Hello : "</span><span style="color:#212121">, par)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Modules allows code reuse :
@@ -4471,14 +4467,14 @@
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>cameras/</span></span>
 <span class="line"><span>├─ __init__.py     marks the directory as a package</span></span>
-<span class="line"><span>├─ Canon.py        defines CanonInfo()</span></span>
-<span class="line"><span>├─ Leika.py        defines LeikaInfo()</span></span>
-<span class="line"><span>└─ Nikon.py        defines NikonInfo()</span></span>
+<span class="line"><span>├─ canon.py        defines canon_info()</span></span>
+<span class="line"><span>├─ leika.py        defines leika_info()</span></span>
+<span class="line"><span>└─ nikon.py        defines nikon_info()</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
-<li><code>Canon.py</code> could define a simple function like :</li>
+<li><code>canon.py</code> could define a simple function like :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> CanonInfo</span><span style="color:#24292EFF">():</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> canon_info</span><span style="color:#24292EFF">():</span></span>
 <span class="line"><span style="color:#6F42C1">     print </span><span style="color:#212121">(</span><span style="color:#22863A">"Canon camera"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
@@ -4496,16 +4492,16 @@
 <li><code>__init__.py</code> should be present but can be empty</li>
 <li>If <code>__init.py__</code> empty modules of package must be imported explicitly :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Canon</span></span>
-<span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Leika</span></span>
-<span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Nikon</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">canon</span></span>
+<span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">leika</span></span>
+<span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">nikon</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Functions in package are called with full name :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Nikon</span><span style="color:#212121">.</span><span style="color:#6F42C1">NikonInfo</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Canon</span><span style="color:#212121">.</span><span style="color:#6F42C1">CanonInfo</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Leika</span><span style="color:#212121">.</span><span style="color:#6F42C1">LeikaInfo</span><span style="color:#212121">()</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">nikon</span><span style="color:#212121">.</span><span style="color:#6F42C1">nikon_info</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">canon</span><span style="color:#212121">.</span><span style="color:#6F42C1">canon_info</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">leika</span><span style="color:#212121">.</span><span style="color:#6F42C1">leika_info</span><span style="color:#212121">()</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Full name consists of :
@@ -4524,9 +4520,9 @@
 <ul>
 <li>Following lines can be added to <code>__init__.py</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Canon </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> CanonInfo</span></span>
-<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Leika </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> LeikaInfo</span></span>
-<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">Nikon </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> NikonInfo</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">canon </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> canon_info</span></span>
+<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">leika </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> leika_info</span></span>
+<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras</span><span style="color:#212121">.</span><span style="color:#24292EFF">nikon </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> nikon_info</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Now modules can be imported by importing the package :</li>
@@ -4536,17 +4532,17 @@
 <ul>
 <li>Import <code>cameras</code> package and call methods as follows :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#6F42C1">NikonInfo</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#6F42C1">CanonInfo</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#6F42C1">LeikaInfo</span><span style="color:#212121">()</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#6F42C1">nikon_info</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#6F42C1">canon_info</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">cameras</span><span style="color:#212121">.</span><span style="color:#6F42C1">leika_info</span><span style="color:#212121">()</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Also <code>from .. import</code> can be used :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> NikonInfo</span><span style="color:#212121">,</span><span style="color:#24292EFF"> CanonInfo</span><span style="color:#212121">,</span><span style="color:#24292EFF"> LeikaInfo</span></span>
-<span class="line"><span style="color:#6F42C1">NikonInfo</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#6F42C1">CanonInfo</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#6F42C1">LeikaInfo</span><span style="color:#212121">()</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> cameras </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> nikon_info</span><span style="color:#212121">,</span><span style="color:#24292EFF"> canon_info</span><span style="color:#212121">,</span><span style="color:#24292EFF"> leika_info</span></span>
+<span class="line"><span style="color:#6F42C1">nikon_info</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#6F42C1">canon_info</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#6F42C1">leika_info</span><span style="color:#212121">()</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo07</code><br><code class="pill-demo pill-desc">implicitimport</code></p>
@@ -4817,17 +4813,17 @@
 <li><code>list comprehension</code></li>
 </ul>
 </li>
-<li><code>map(aFunction, aSequence) :</code>
+<li><code>map(function, iterable) :</code>
 <ul>
 <li>Applies operation to each item and collects the result</li>
 </ul>
 </li>
-<li><code>filter(aFunction, aSequence)</code> :
+<li><code>filter(function, iterable)</code> :
 <ul>
 <li>Extracts each element in the sequence for which function returns True</li>
 </ul>
 </li>
-<li><code>reduce(aFunction, aSequence)</code> :
+<li><code>reduce(function, iterable)</code> :
 <ul>
 <li>Reduces list to single value by combining elements via supplied function</li>
 <li>In functools in Python 3.0</li>
@@ -6317,7 +6313,7 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">fileObject</span><span style="color:#212121">.</span><span style="color:#6F42C1">read</span><span style="color:#212121">([count])</span><span style="color:#24292EFF">;</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">file_object</span><span style="color:#212121">.</span><span style="color:#6F42C1">read</span><span style="color:#212121">([count])</span><span style="color:#24292EFF">;</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li><code>read()</code> starts reading from the beginning of the file :
@@ -6349,7 +6345,7 @@
 </li>
 <li>Syntax :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">fileObject</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span><span style="color:#24292EFF">;</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">file_object</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span><span style="color:#24292EFF">;</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Example :</li>
@@ -6967,12 +6963,12 @@
 </li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> sqlite3</span></span>
-<span class="line"><span style="color:#24292EFF">uId </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 1</span></span>
-<span class="line"><span style="color:#24292EFF">uPrice </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 62300</span></span>
+<span class="line"><span style="color:#24292EFF">car_id </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 1</span></span>
+<span class="line"><span style="color:#24292EFF">new_price </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 62300</span></span>
 <span class="line"><span style="color:#24292EFF">con </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> sqlite3</span><span style="color:#212121">.</span><span style="color:#6F42C1">connect</span><span style="color:#212121">(</span><span style="color:#22863A">'test.db'</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#D32F2F">with</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#24292EFF">     cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">     cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"UPDATE Cars SET Price=? WHERE Id=?"</span><span style="color:#212121">, (uPrice, uId))</span></span>
+<span class="line"><span style="color:#24292EFF">     cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"UPDATE Cars SET Price=? WHERE Id=?"</span><span style="color:#212121">, (new_price, car_id))</span></span>
 <span class="line"><span style="color:#24292EFF">     con</span><span style="color:#212121">.</span><span style="color:#6F42C1">commit</span><span style="color:#212121">()</span></span>
 <span class="line"><span style="color:#6F42C1">     print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Number of rows updated: </span><span style="color:#1976D2">{</span><span style="color:#212121">cur.rowcount</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
@@ -7289,14 +7285,14 @@
 <h1 id="example-creating-classes-and-objects">Example Creating Classes and Objects</h1>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Employee</span><span style="color:#24292EFF"> :</span></span>
 <span class="line"><span style="color:#22863A">    'Common base class for all employees'</span></span>
-<span class="line"><span style="color:#24292EFF">    empCount </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0</span></span>
+<span class="line"><span style="color:#24292EFF">    emp_count </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0</span></span>
 <span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __init__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> name</span><span style="color:#212121">,</span><span style="color:#FF9800"> salary</span><span style="color:#24292EFF">):</span></span>
 <span class="line"><span style="color:#24292EFF">       self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> name</span></span>
 <span class="line"><span style="color:#24292EFF">       self</span><span style="color:#212121">.</span><span style="color:#24292EFF">salary </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> salary</span></span>
-<span class="line"><span style="color:#24292EFF">       Employee</span><span style="color:#212121">.</span><span style="color:#24292EFF">empCount </span><span style="color:#D32F2F">+=</span><span style="color:#1976D2"> 1</span></span>
-<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> displayCount</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
-<span class="line"><span style="color:#6F42C1">      print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Total Employee </span><span style="color:#1976D2">{</span><span style="color:#212121">Employee.empCount</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> displayEmployee</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">       Employee</span><span style="color:#212121">.</span><span style="color:#24292EFF">emp_count </span><span style="color:#D32F2F">+=</span><span style="color:#1976D2"> 1</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> display_count</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#6F42C1">      print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Total Employee </span><span style="color:#1976D2">{</span><span style="color:#212121">Employee.emp_count</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> display_employee</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">):</span></span>
 <span class="line"><span style="color:#6F42C1">       print </span><span style="color:#212121">(</span><span style="color:#22863A">"Name : "</span><span style="color:#212121">, self.name, </span><span style="color:#22863A">", Salary: "</span><span style="color:#212121">, self.salary)</span></span>
 <span class="line"></span></code></pre>
 <ul>
@@ -7317,10 +7313,10 @@
 <div class="ml-eyebrow"><a href="#187"><span class="ml-tag">python</span>Python Classes</a></div>
 <h1 id="class-members">Class Members</h1>
 <ul>
-<li><code>empCount</code> :
+<li><code>emp_count</code> :
 <ul>
 <li>Class variable whose value would be shared among all instances of a this class</li>
-<li>Accessible as <code>Employee.empCount</code> from inside the class or outside the class</li>
+<li>Accessible as <code>Employee.emp_count</code> from inside the class or outside the class</li>
 </ul>
 </li>
 <li><code>__init__()</code> :
@@ -7366,13 +7362,13 @@
 <ul>
 <li>Access object's attributes using dot operator with object :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">emp1</span><span style="color:#212121">.</span><span style="color:#6F42C1">displayEmployee</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#24292EFF">emp2</span><span style="color:#212121">.</span><span style="color:#6F42C1">displayEmployee</span><span style="color:#212121">()</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">emp1</span><span style="color:#212121">.</span><span style="color:#6F42C1">display_employee</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">emp2</span><span style="color:#212121">.</span><span style="color:#6F42C1">display_employee</span><span style="color:#212121">()</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Access class variable using class name :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Total Employee </span><span style="color:#1976D2">{</span><span style="color:#212121">Employee.empCount</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Total Employee </span><span style="color:#1976D2">{</span><span style="color:#212121">Employee.emp_count</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Result :</li>
@@ -7497,9 +7493,9 @@ In the order of their occurrence in the base class list</p>
 <span class="line"><span>Employee.__name__: Employee</span></span>
 <span class="line"><span>Employee.__module__: __main__</span></span>
 <span class="line"><span>Employee.__bases__: (&#x3C;class 'object'>,)</span></span>
-<span class="line"><span>Employee.__dict__: {'__module__': '__main__', 'displayCount':</span></span>
-<span class="line"><span>&#x3C;function displayCount at 0xb7c84994>, 'empCount': 2,</span></span>
-<span class="line"><span>'displayEmployee': &#x3C;function displayEmployee at 0xb7c8441c>,</span></span>
+<span class="line"><span>Employee.__dict__: {'__module__': '__main__', 'display_count':</span></span>
+<span class="line"><span>&#x3C;function display_count at 0xb7c84994>, 'emp_count': 2,</span></span>
+<span class="line"><span>'display_employee': &#x3C;function display_employee at 0xb7c8441c>,</span></span>
 <span class="line"><span>'__doc__': 'Common base class for all employees',</span></span>
 <span class="line"><span>'__init__': &#x3C;function __init__ at 0xb7c846bc>}</span></span>
 <span class="line"><span></span></span></code></pre>
@@ -7594,18 +7590,18 @@ In the order of their occurrence in the base class list</p>
 </li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Account</span><span style="color:#24292EFF">:</span></span>
-<span class="line"><span style="color:#24292EFF">    interestRate </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 10</span></span>
+<span class="line"><span style="color:#24292EFF">    interest_rate </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 10</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> getInterestRate1</span><span style="color:#24292EFF">():</span></span>
-<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#24292EFF"> Account</span><span style="color:#212121">.</span><span style="color:#24292EFF">interestRate</span></span>
-<span class="line"><span style="color:#24292EFF">    getInterestRate1 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> staticmethod</span><span style="color:#212121">(getInterestRate1)</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> get_interest_rate1</span><span style="color:#24292EFF">():</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#24292EFF"> Account</span><span style="color:#212121">.</span><span style="color:#24292EFF">interest_rate</span></span>
+<span class="line"><span style="color:#24292EFF">    get_interest_rate1 </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> staticmethod</span><span style="color:#212121">(get_interest_rate1)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6F42C1">    @</span><span style="color:#1976D2">staticmethod</span></span>
-<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> getInterestRate2</span><span style="color:#24292EFF">():</span></span>
-<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#24292EFF"> Account</span><span style="color:#212121">.</span><span style="color:#24292EFF">interestRate</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> get_interest_rate2</span><span style="color:#24292EFF">():</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#24292EFF"> Account</span><span style="color:#212121">.</span><span style="color:#24292EFF">interest_rate</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(Account.</span><span style="color:#6F42C1">getInterestRate1</span><span style="color:#212121">())</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(Account.</span><span style="color:#6F42C1">getInterestRate2</span><span style="color:#212121">())</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(Account.</span><span style="color:#6F42C1">get_interest_rate1</span><span style="color:#212121">())</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(Account.</span><span style="color:#6F42C1">get_interest_rate2</span><span style="color:#212121">())</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>A static method typically is called through the class</li>
@@ -7702,7 +7698,7 @@ In the order of their occurrence in the base class list</p>
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">obj </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> className</span><span style="color:#212121">(args)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">obj </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> ClassName</span><span style="color:#212121">(args)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li><code>__del__( self ) :</code>
