@@ -1046,7 +1046,7 @@ details.solution-page pre {
 
 <ul class="toc-list">
 
-  <li><a href="#ex-0"><span class="toc-text">Exercise 1 : Python Tooling</span><span class="toc-dots"></span><span class="toc-page">3</span></a></li>
+  <li><a href="#ex-0"><span class="toc-text">Exercise 1 : Python Intro</span><span class="toc-dots"></span><span class="toc-page">3</span></a></li>
 
   <li><a href="#ex-1"><span class="toc-text">Exercise 2 : Variables and Data Types</span><span class="toc-dots"></span><span class="toc-page">6</span></a></li>
 
@@ -1076,7 +1076,7 @@ details.solution-page pre {
 
 </ul>
 
-<h1 id="exercise-1--python-tooling"><a id="ex-0"></a>Exercise 1 : Python Tooling</h1>
+<h1 id="exercise-1--python-intro"><a id="ex-0"></a>Exercise 1 : Python Intro</h1>
 <p>This exercise takes about fifteen minutes and leaves you with a working Python 3.14, the <code>uv</code> project manager, the <code>ruff</code> linter and an editor that understands Python. Everything you do in the rest of the course runs in the project you build here.</p>
 <hr>
 <h3 id="step-1--install-uv">Step 1 : Install uv</h3>
@@ -1133,7 +1133,7 @@ details.solution-page pre {
 <p>Run <code>uv run ruff check .</code> again. It reports <code>F401 'json' imported but unused</code>. Notice that VS Code underlines the same line. Remove the import, or let the linter do it for you :</p>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> ruff</span><span style="color:#2B5581"> check</span><span style="color:#2B5581"> .</span><span style="color:#2B5581"> --fix</span></span></code></pre>
 
-<p><strong>If time permits</strong> : look at <code>demos/00a-python-tooling/02_ruff_findings.py</code>, which is written badly on purpose. Run <code>uv run ruff check</code> over it and read every finding before you look at the comments explaining them.</p>
+<p><strong>If time permits</strong> : look at <code>demos/01-pythonintro/03_ruff_findings.py</code>, which is written badly on purpose. Run <code>uv run ruff check</code> over it and read every finding before you look at the comments explaining them.</p>
 <h1 id="exercise-2--variables-and-data-types"><a id="ex-1"></a>Exercise 2 : Variables and Data Types</h1>
 <p>In this exercise you build the first version of the calculator application that you will extend throughout the course.</p>
 <hr>
