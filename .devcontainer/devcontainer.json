@@ -5,7 +5,7 @@
   "name": "Python Programming (PRG400)",
   "image": "mcr.microsoft.com/devcontainers/python:3.14",
   "hostRequirements": { "cpus": 2 },
-  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR=/usr/local/bin UV_NO_MODIFY_PATH=1 sh",
   "customizations": {
     "codespaces": {
       "openFiles": ["README.md"]
