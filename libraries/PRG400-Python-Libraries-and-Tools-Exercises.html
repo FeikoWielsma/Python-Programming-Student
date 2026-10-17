@@ -1,0 +1,1740 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/workspace/SpiralTrain/Presentation-Template/build/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+.hljs {
+  color: #24292e;
+  background: #ffffff
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #d73a49
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  /* prettylights-syntax-entity */
+  color: #6f42c1
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5
+}
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #032f62
+}
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209
+}
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #6a737d
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+  /* prettylights-syntax-entity-tag */
+  color: #22863a
+}
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #24292e
+}
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #005cc5;
+  font-weight: bold
+}
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f
+}
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic
+}
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #24292e;
+  font-weight: bold
+}
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4
+}
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #b31d28;
+  background-color: #ffeef0
+}
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+  /* purposely ignored */
+  
+}/*# sourceURL=/workspace/SpiralTrain/Presentation-Template/build/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<style>
+
+/* =============================================================================
+   exercises.css — SpiralTrain Multi-Language Exercises Theme
+   -----------------------------------------------------------------------------
+   A4 print companion to spiraltrain.css. Same 15-language palette system, same
+   typography (IBM Plex Sans + IBM Plex Mono), same brand identity — but tuned
+   for a printable PDF reference manual rather than 16:10 slides.
+
+   Apply a language palette by adding a class to <body> (or any wrapping div):
+       <body class="lang-cs">  (or lang-py / cpp / rust / java / html / js /
+                                    json / n8n / powerbi / perl / oop / sql /
+                                    scrum / git)
+   Without a class, the document uses the default SpiralTrain palette.
+   ============================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap');
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm 18mm;
+}
+
+/* ============ DEFAULT PALETTE (SpiralTrain blue) ============ */
+:root,
+body {
+  --ml-primary:    #1F5D9C;
+  --ml-secondary:  #2A8AA8;
+  --ml-accent:     #D94C2F;
+  --ml-tint:       #EEF3F9;
+  --ml-tint-strong:#CCDDED;
+  --ml-text:       #0F1729;
+  --ml-muted:      #6B7686;
+  --ml-rule:       #D9DDE5;
+  --ml-bg:         #FFFFFF;
+
+  --solution-bg:   #F6F8FB;
+  --solution-rule: var(--ml-primary);
+
+  --code-bg:    #F5F7FA;
+  --code-fg:    #0F1729;
+  --code-kw:    #1F5D9C;
+  --code-type:  #6F42C1;
+  --code-prop:  #2761B5;
+  --code-str:   #1A7A3E;
+  --code-cmt:   #7A8493;
+}
+
+/* ============ BODY ============ */
+html, body {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+body {
+  font-family: 'IBM Plex Sans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13pt;
+  line-height: 1.55;
+  color: var(--ml-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* ============ HEADINGS ============ */
+h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 26pt;
+  font-weight: 700;
+  color: var(--ml-text);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  border-bottom: 3px solid var(--ml-primary);
+  padding-bottom: 8px;
+  margin: 0 0 0.9em;
+  page-break-before: always;
+  page-break-after: avoid;
+}
+/* Only the TOC title may share its page; every exercise h1 must start a fresh
+   page AND carry its own break-before so Chrome attributes the exercise's
+   anchor destination to the new page (a break inherited from the previous
+   element's break-after lands the anchor on the page before the break). */
+h1.toc-title { page-break-before: auto; }
+
+h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 17pt;
+  font-weight: 600;
+  color: var(--ml-primary);
+  margin: 1.7em 0 0.6em;
+  letter-spacing: -0.005em;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14pt;
+  font-weight: 600;
+  color: var(--ml-primary);
+  margin: 1.3em 0 0.4em;
+  page-break-after: avoid;
+}
+
+h4, h5, h6 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  color: var(--ml-text);
+  margin: 1.1em 0 0.3em;
+  page-break-after: avoid;
+}
+
+/* ============ BODY COPY ============ */
+p {
+  margin: 0.5em 0 0.8em;
+  orphans: 3;
+  widows: 3;
+}
+p + pre,
+p + table,
+p + ul,
+p + ol {
+  page-break-before: avoid;
+  break-before: avoid;
+}
+p:has(+ pre),
+p:has(+ table) {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+p:has(.expected-output) {
+  page-break-before: avoid;
+  break-before: avoid;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+strong { font-weight: 700; color: var(--ml-text); }
+em { font-style: italic; }
+
+/* ============ LISTS ============ */
+ul, ol {
+  margin: 0.3em 0 0.9em 0;
+  padding-left: 1.5em;
+}
+ul { list-style: disc; }
+ol { list-style: decimal; }
+li {
+  margin-bottom: 0.3em;
+  page-break-inside: avoid;
+}
+li > p { margin: 0.2em 0; }
+li > ul, li > ol { margin: 0.2em 0; }
+
+/* ============ INLINE CODE CHIP ============ */
+:not(pre) > code,
+li > code,
+p > code,
+strong > code,
+em > code {
+  display: inline-block;
+  background: var(--ml-tint);
+  color: var(--ml-primary);
+  font-family: 'IBM Plex Mono', 'Consolas', monospace;
+  font-size: 0.86em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ============ CODE BLOCKS ============ */
+pre {
+  font-family: 'IBM Plex Mono', 'Consolas', monospace;
+  font-size: 11pt;
+  line-height: 1.45;
+  padding: 11px 14px;
+  margin: 0.5em 0 0.9em;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border-left: 3px solid var(--ml-primary);
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  page-break-inside: avoid;
+  tab-size: 4;
+}
+pre code {
+  background: transparent !important;
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: inherit;
+  display: inline;
+}
+pre.shiki { background: var(--code-bg) !important; }
+pre.shiki code { background: transparent; padding: 0; }
+
+/* ============ HORIZONTAL RULES (step separators) ============ */
+hr {
+  border: 0;
+  border-top: 1px solid var(--ml-rule);
+  margin: 1.4em 0;
+}
+
+/* ============ TABLES ============ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6em 0 1em;
+  font-size: 11.5pt;
+  page-break-inside: avoid;
+}
+th {
+  background: var(--ml-primary);
+  color: #fff;
+  padding: 5px 9px;
+  text-align: left;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 11pt;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--ml-rule);
+}
+td {
+  padding: 4px 9px;
+  border: 1px solid var(--ml-rule);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td { background: #fafbfd; }
+
+/* ============ BLOCKQUOTES ============ */
+blockquote {
+  margin: 0.8em 0;
+  padding: 0.6em 1em;
+  border-left: 3px solid var(--ml-secondary);
+  background: var(--ml-tint);
+  color: var(--ml-text);
+  font-size: 0.97em;
+  border-radius: 0 4px 4px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  page-break-before: avoid;
+  break-before: avoid;
+}
+blockquote p { margin: 0.2em 0; }
+
+/* ============ CALLOUTS (GitHub-style alerts) =================================
+   Generated from `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, and
+   `> [!CAUTION]` blockquotes by shiki-exercises.mjs. NOTE / TIP / IMPORTANT pick
+   up the active language palette; WARNING / CAUTION use fixed semantic colours so
+   they read as warnings regardless of the per-language theme.
+   ============================================================================= */
+.callout {
+  margin: 1em 0;
+  padding: 0.7em 1.1em 0.8em;
+  border-left: 4px solid var(--callout-accent, var(--ml-secondary));
+  background: var(--callout-bg, var(--ml-tint));
+  border-radius: 0 6px 6px 0;
+  font-size: 0.97em;
+  page-break-inside: avoid;
+}
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 0.35em;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--callout-accent, var(--ml-secondary));
+}
+.callout-title::before {
+  content: '';
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--callout-accent, var(--ml-secondary));
+}
+.callout-body > :first-child { margin-top: 0; }
+.callout-body > :last-child { margin-bottom: 0; }
+.callout-body p { margin: 0.35em 0; }
+
+.callout-note     { --callout-accent: var(--ml-secondary); --callout-bg: var(--ml-tint); }
+.callout-tip      { --callout-accent: #1F8A5B; --callout-bg: #EAF6F0; }
+.callout-important { --callout-accent: var(--ml-primary); --callout-bg: var(--ml-tint); }
+.callout-warning  { --callout-accent: #B07A12; --callout-bg: #FBF3E0; }
+.callout-caution  { --callout-accent: #C0392B; --callout-bg: #FBEAE7; }
+
+/* ============ LINKS ============ */
+a {
+  color: var(--ml-primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ml-secondary);
+}
+a:hover { border-bottom-style: solid; }
+
+/* =============================================================================
+   TABLE-OF-CONTENTS PAGE (rendered by build.ts buildExercises)
+   ============================================================================= */
+.toc-stripe {
+  height: 12px;
+  background: linear-gradient(90deg, var(--ml-primary) 0%, var(--ml-secondary) 50%, var(--ml-accent) 100%);
+  margin: 0 0 3.5em 0;
+  border-radius: 6px;
+}
+.toc-title {
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 48pt;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ml-primary);
+  margin: 0.5em 0 0.1em;
+  padding: 0;
+  border: 0;
+  page-break-before: auto;
+}
+.toc-subtitle {
+  text-align: center;
+  color: var(--ml-secondary);
+  margin-bottom: 4.5em;
+  font-size: 16pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+}
+.toc-list {
+  list-style: none;
+  padding: 0;
+  max-width: 720px;
+  margin: 0 auto;
+  /* No break-after here: the first exercise h1 must own its page break, or
+     Chrome attributes its anchor destination to the TOC's last page. */
+}
+.toc-list li {
+  margin-bottom: 18px;
+  font-size: 16.5pt;
+  font-weight: 500;
+}
+.toc-list a {
+  display: flex;
+  align-items: baseline;
+  color: var(--ml-text);
+  text-decoration: none;
+  border-bottom: 0;
+}
+.toc-list a:hover {
+  color: var(--ml-primary);
+}
+.toc-text {
+  flex-shrink: 0;
+}
+.toc-dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted var(--ml-rule);
+  margin: 0 10px;
+}
+.toc-page {
+  flex-shrink: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  color: var(--ml-muted);
+}
+.toc-list a:hover .toc-page {
+  color: var(--ml-primary);
+}
+
+/* TOC divider: before the first appendix entry, and as module group header
+   when a course keeps several exercises in one file per module */
+.toc-list li.toc-divider {
+  list-style: none;
+  margin: 1.4em 0 0.6em;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ml-muted);
+  font-weight: 700;
+  border-top: 1px dashed var(--ml-rule);
+  padding-top: 0.6em;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+.toc-list li {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.toc-list li.toc-divider span {
+  background: var(--ml-bg, #fff);
+}
+
+/* Appendix tag rendered next to the exercise H1 */
+.exercise-appendix-tag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 14px;
+  padding: 3px 10px;
+  background: var(--ml-tint);
+  color: var(--ml-primary);
+  border: 1px solid var(--ml-secondary);
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  position: relative;
+  top: -4px;
+}
+
+/* TOC compact variants — triggered when item count exceeds threshold
+   toc-lg: 16–20 items   toc-xl: 21+ items */
+.toc-lg .toc-stripe { margin-bottom: 2em; }
+.toc-lg .toc-title { font-size: 40pt; }
+.toc-lg .toc-subtitle { font-size: 13pt; margin-bottom: 3em; }
+.toc-lg .toc-list li { font-size: 14pt; margin-bottom: 13px; }
+.toc-lg .toc-list li.toc-divider { font-size: 10pt; margin: 0.9em 0 0.4em; }
+
+.toc-xl .toc-stripe { margin-bottom: 1.5em; }
+.toc-xl .toc-title { font-size: 36pt; }
+.toc-xl .toc-subtitle { font-size: 12pt; margin-bottom: 2em; }
+.toc-xl .toc-list li { font-size: 13pt; margin-bottom: 9px; }
+.toc-xl .toc-list li.toc-divider { font-size: 9pt; margin: 0.7em 0 0.3em; }
+
+/* =============================================================================
+   REFERENCE SOLUTION BLOCK
+   ============================================================================= */
+details.solution-page {
+  page-break-before: always;
+  margin-top: 0.6em;
+}
+details.solution-page > summary {
+  list-style: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 11.5pt;
+  color: var(--ml-primary);
+  margin-bottom: 0.5em;
+  cursor: default;
+  letter-spacing: 0.01em;
+}
+details.solution-page > summary::-webkit-details-marker { display: none; }
+details.solution-page > summary::marker { content: ""; }
+details.solution-page pre {
+  page-break-inside: auto;
+  background: var(--solution-bg);
+  border-left: 3px solid var(--solution-rule);
+}
+
+.solution-hint {
+  font-size: 9pt;
+  color: var(--ml-muted);
+  font-style: italic;
+  text-align: right;
+  margin: 0.4em 0 0;
+  letter-spacing: 0.02em;
+}
+.solution-cue {
+  page-break-before: avoid;
+  break-before: avoid;
+  page-break-after: avoid;
+  break-after: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* =============================================================================
+   PER-LANGUAGE PALETTES — apply class on <body> or any wrapper element
+   ============================================================================= */
+
+/* ── C# / .NET ────────────────────────────────────────────────────────── */
+.lang-cs {
+  --ml-primary: #512BD4;
+  --ml-secondary: #9B4993;
+  --ml-accent: #E5004B;
+  --ml-tint: #F0ECFB;
+  --ml-tint-strong: #DDD0F4;
+  --solution-bg: #F7F5FC;
+  --solution-rule: #9B4993;
+  --code-bg: #F7F5FC;
+  --code-kw: #9B4993;
+  --code-type: #512BD4;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8B88A8;
+}
+
+/* ── Python ───────────────────────────────────────────────────────────── */
+.lang-py {
+  --ml-primary: #2B6BAD;
+  --ml-secondary: #4B8BBE;
+  --ml-accent: #F2C94C;
+  --ml-tint: #EAF2FA;
+  --ml-tint-strong: #C7DDF0;
+  --solution-bg: #F4F8FC;
+  --solution-rule: #F2C94C;
+  --code-bg: #F4F8FC;
+  --code-kw: #2B6BAD;
+  --code-type: #1C4F84;
+  --code-prop: #1F6F4F;
+  --code-str: #A56700;
+  --code-cmt: #859AB0;
+}
+
+/* ── C / C++ ──────────────────────────────────────────────────────────── */
+.lang-cpp,
+.lang-c {
+  --ml-primary: #00599C;
+  --ml-secondary: #004482;
+  --ml-accent: #659AD2;
+  --ml-tint: #E5EEF6;
+  --ml-tint-strong: #B8CFE5;
+  --solution-bg: #F1F6FB;
+  --solution-rule: #659AD2;
+  --code-bg: #F1F6FB;
+  --code-kw: #00599C;
+  --code-type: #6B358C;
+  --code-prop: #1F6F4F;
+  --code-str: #B14E22;
+  --code-cmt: #7A8DA1;
+}
+
+/* ── Rust (dark code panel) ───────────────────────────────────────────── */
+.lang-rust {
+  --ml-primary: #B7410E;
+  --ml-secondary: #CE422B;
+  --ml-accent: #2A2A2A;
+  --ml-tint: #FBEDE5;
+  --ml-tint-strong: #F2CFB8;
+  --solution-bg: #1a1a1f;
+  --solution-rule: #B7410E;
+  --code-bg: #1a1a1f;
+  --code-fg: #e8e6e3;
+  --code-kw: #CE422B;
+  --code-type: #E8C547;
+  --code-prop: #88C0D0;
+  --code-str: #A3BE8C;
+  --code-cmt: #8a8278;
+}
+.lang-rust pre,
+.lang-rust pre.shiki,
+.lang-rust details.solution-page pre { background: #1a1a1f !important; color: #e8e6e3 !important; }
+.lang-rust pre code { color: inherit; }
+
+/* ── Java ─────────────────────────────────────────────────────────────── */
+.lang-java {
+  --ml-primary: #5382A1;
+  --ml-secondary: #ED8B00;
+  --ml-accent: #1F4F7A;
+  --ml-tint: #ECF2F6;
+  --ml-tint-strong: #C7D9E5;
+  --solution-bg: #F3F7FA;
+  --solution-rule: #ED8B00;
+  --code-bg: #F3F7FA;
+  --code-kw: #ED8B00;
+  --code-type: #5382A1;
+  --code-prop: #1F4F7A;
+  --code-str: #1F7A4A;
+  --code-cmt: #7E94A6;
+}
+
+/* ── HTML / CSS ───────────────────────────────────────────────────────── */
+.lang-html,
+.lang-css {
+  --ml-primary: #E34F26;
+  --ml-secondary: #264DE4;
+  --ml-accent: #2965F1;
+  --ml-tint: #FDEFEA;
+  --ml-tint-strong: #FACFBE;
+  --solution-bg: #FFF8F5;
+  --solution-rule: #264DE4;
+  --code-bg: #FFF8F5;
+  --code-kw: #264DE4;
+  --code-type: #E34F26;
+  --code-prop: #B14E22;
+  --code-str: #1F7A4A;
+  --code-cmt: #98968F;
+}
+
+/* ── JavaScript ───────────────────────────────────────────────────────── */
+.lang-js {
+  --ml-primary: #1A1A1A;
+  --ml-secondary: #B58900;
+  --ml-accent: #323330;
+  --ml-tint: #FFF8C9;
+  --ml-tint-strong: #FFEC4F;
+  --solution-bg: #FFFDF0;
+  --solution-rule: #F7DF1E;
+  --code-bg: #FFFDF0;
+  --code-kw: #B58900;
+  --code-type: #1A1A1A;
+  --code-prop: #1F6F4F;
+  --code-str: #A56700;
+  --code-cmt: #8A8A8A;
+}
+
+/* ── JSON ─────────────────────────────────────────────────────────────── */
+.lang-json {
+  --ml-primary: #2D3142;
+  --ml-secondary: #FF6B35;
+  --ml-accent: #4F5466;
+  --ml-tint: #F2F1F4;
+  --ml-tint-strong: #D6D4DC;
+  --solution-bg: #F9F8FC;
+  --solution-rule: #FF6B35;
+  --code-bg: #F9F8FC;
+  --code-kw: #2D3142;
+  --code-type: #FF6B35;
+  --code-prop: #2563EB;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a87a3;
+}
+
+/* ── n8n ──────────────────────────────────────────────────────────────── */
+.lang-n8n {
+  --ml-primary: #EA4B71;
+  --ml-secondary: #1D1D1D;
+  --ml-accent: #FF6D5A;
+  --ml-tint: #FCEAF0;
+  --ml-tint-strong: #F5C4D2;
+  --solution-bg: #FFF6F8;
+  --solution-rule: #EA4B71;
+  --code-bg: #FFF6F8;
+  --code-kw: #EA4B71;
+  --code-type: #B73552;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #B19BA5;
+}
+
+/* ── Power BI ─────────────────────────────────────────────────────────── */
+.lang-powerbi {
+  --ml-primary: #0B5394;
+  --ml-secondary: #F2C811;
+  --ml-accent: #E8A33D;
+  --ml-tint: #E7F0FB;
+  --ml-tint-strong: #B8D2EE;
+  --solution-bg: #F4F8FD;
+  --solution-rule: #F2C811;
+  --code-bg: #F4F8FD;
+  --code-kw: #0B5394;
+  --code-type: #B58900;
+  --code-prop: #117DBB;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a9fb0;
+}
+
+/* ── Perl ─────────────────────────────────────────────────────────────── */
+.lang-perl {
+  --ml-primary: #002545;
+  --ml-secondary: #4A82B6;
+  --ml-accent: #93C9FF;
+  --ml-tint: #E5EEF7;
+  --ml-tint-strong: #B8D0E8;
+  --solution-bg: #F4F8FC;
+  --solution-rule: #4A82B6;
+  --code-bg: #F4F8FC;
+  --code-kw: #002545;
+  --code-type: #4A82B6;
+  --code-prop: #B14E22;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a9fb0;
+}
+
+/* ── OOP ──────────────────────────────────────────────────────────────── */
+.lang-oop {
+  --ml-primary: #1F8A5B;
+  --ml-secondary: #4A5568;
+  --ml-accent: #2DA66F;
+  --ml-tint: #E8F4ED;
+  --ml-tint-strong: #B8DDC8;
+  --solution-bg: #F4FAF6;
+  --solution-rule: #2DA66F;
+  --code-bg: #F4FAF6;
+  --code-kw: #1F8A5B;
+  --code-type: #2D5F89;
+  --code-prop: #1B66C9;
+  --code-str: #B14E22;
+  --code-cmt: #8a9b8e;
+}
+
+/* ── SQL ──────────────────────────────────────────────────────────────── */
+.lang-sql {
+  --ml-primary: #0F766E;
+  --ml-secondary: #E0AF68;
+  --ml-accent: #135C57;
+  --ml-tint: #E0F2F1;
+  --ml-tint-strong: #ABDDD8;
+  --solution-bg: #F2FAF9;
+  --solution-rule: #E0AF68;
+  --code-bg: #F2FAF9;
+  --code-kw: #0F766E;
+  --code-type: #B58900;
+  --code-prop: #2761b5;
+  --code-str: #B14E22;
+  --code-cmt: #6f897f;
+}
+
+/* ── Scrum / Agile ────────────────────────────────────────────────────── */
+.lang-scrum,
+.lang-agile {
+  --ml-primary: #5E60CE;
+  --ml-secondary: #FFB703;
+  --ml-accent: #4A4DA8;
+  --ml-tint: #ECECFA;
+  --ml-tint-strong: #C9C9F0;
+  --solution-bg: #F5F5FC;
+  --solution-rule: #FFB703;
+  --code-bg: #F5F5FC;
+  --code-kw: #5E60CE;
+  --code-type: #C58800;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a87a3;
+}
+
+/* ── Git ──────────────────────────────────────────────────────────────── */
+.lang-git {
+  --ml-primary: #F05033;
+  --ml-secondary: #2C2C2C;
+  --ml-accent: #C04125;
+  --ml-tint: #FBE9E3;
+  --ml-tint-strong: #F5C0B0;
+  --solution-bg: #FAFAFA;
+  --solution-rule: #F05033;
+  --code-bg: #FAFAFA;
+  --code-kw: #F05033;
+  --code-type: #2C2C2C;
+  --code-prop: #2C2C2C;
+  --code-str: #1F7A4A;
+  --code-cmt: #8a8a8a;
+}
+
+/* ── Go ───────────────────────────────────────────────────────────────── */
+.lang-go {
+  --ml-primary: #00ADD8;
+  --ml-secondary: #00758D;
+  --ml-accent: #CE3262;
+  --ml-tint: #E0F4F9;
+  --ml-tint-strong: #B5E5F0;
+  --solution-bg: #F2FAFC;
+  --solution-rule: #00758D;
+  --code-bg: #F2FAFC;
+  --code-kw: #00758D;
+  --code-type: #CE3262;
+  --code-prop: #1B66C9;
+  --code-str: #1F7A4A;
+  --code-cmt: #8AA5AC;
+}
+
+/* ============ TWO-COL LAYOUT ============ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+  margin-top: 0.4em;
+  align-items: start;
+}
+.two-col.split-20-80 { grid-template-columns: 2fr 8fr; }
+.two-col.split-30-70 { grid-template-columns: 3fr 7fr; }
+.two-col.split-40-60 { grid-template-columns: 4fr 6fr; }
+.two-col.split-60-40 { grid-template-columns: 6fr 4fr; }
+.two-col.split-70-30 { grid-template-columns: 7fr 3fr; }
+.two-col.split-80-20 { grid-template-columns: 8fr 2fr; }
+.two-col table { font-size: 9.5pt; margin-top: 0; }
+
+
+/* ============ MEDIA SCREEN (Simulation of A4 page on screen) ============ */
+@media screen {
+  html {
+    background-color: #f3f4f6;
+  }
+  body {
+    background-color: #ffffff;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 50px 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* Simulate A4 page breaks/chapter dividers on screen */
+  h1 {
+    margin-top: 80px !important;
+    padding-top: 50px;
+    border-top: 2px dashed var(--ml-rule);
+  }
+  h1:first-of-type,
+  h1.toc-title {
+    margin-top: 0 !important;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  /* Simulate page breaks before solutions on screen */
+  details.solution-page {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px dashed var(--ml-rule);
+  }
+}
+
+
+
+
+</style>
+
+
+
+<div class="lang-python">
+
+<div class="toc-stripe"></div>
+
+<h1 class="toc-title">Libraries and Tools</h1>
+
+<div class="toc-subtitle">Course Exercises</div>
+
+<ul class="toc-list">
+
+  <li><a href="#ex-0"><span class="toc-text">Exercise 1 : Inheritance and Class Design</span><span class="toc-dots"></span><span class="toc-page">2</span></a></li>
+
+  <li><a href="#ex-1"><span class="toc-text">Exercise 2 : Command-line Programs</span><span class="toc-dots"></span><span class="toc-page">7</span></a></li>
+
+  <li><a href="#ex-2"><span class="toc-text">Exercise 3 : The Modern Toolbelt</span><span class="toc-dots"></span><span class="toc-page">11</span></a></li>
+
+  <li><a href="#ex-3"><span class="toc-text">Exercise 4 : Scraping a Page Into a Database</span><span class="toc-dots"></span><span class="toc-page">15</span></a></li>
+
+  <li><a href="#ex-4"><span class="toc-text">Exercise 5 : SQLAlchemy</span><span class="toc-dots"></span><span class="toc-page">20</span></a></li>
+
+  <li><a href="#ex-5"><span class="toc-text">Exercise 5 : NumPy</span><span class="toc-dots"></span><span class="toc-page">24</span></a></li>
+
+  <li><a href="#ex-6"><span class="toc-text">Exercise 6 : Pandas</span><span class="toc-dots"></span><span class="toc-page">29</span></a></li>
+
+  <li class="toc-divider"><span>Appendix</span></li>
+
+  <li><a href="#ex-7"><span class="toc-text">Exercise 9 : Running Other Programs</span><span class="toc-dots"></span><span class="toc-page">35</span></a></li>
+
+</ul>
+
+<h1 id="exercise-1--inheritance-and-class-design"><a id="ex-0"></a>Exercise 1 : Inheritance and Class Design</h1>
+<p>A fundamentals course ends with an <code>Employee</code> class much like the one below. In this exercise you keep that class and grow a family of employees around it, so that a payroll run works the same whether a person is paid by the hour, by the month, or by the hour plus a bonus. Inheritance is the only new idea here; everything else is ordinary class work.</p>
+<p>Work in a folder of your own, for example <code>work/01-inheritance/</code>. The reference solution is in <code>solutions/solution01-inheritance/</code>.</p>
+<hr>
+<h3 id="step-1--the-employee-you-already-have">Step 1 : The employee you already have</h3>
+<p>Create <code>employee.py</code> and put a plain <code>Employee</code> class in it, with a name, an ID and a <code>calc_salary</code> method that returns zero. Nothing here is new :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Employee</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __init__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#212121">,</span><span style="color:#FF9800"> employee_id</span><span style="color:#212121">:</span><span style="color:#1976D2"> int</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> name</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">employee_id</span><span style="color:#212121">:</span><span style="color:#1976D2"> int</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> employee_id</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> calc_salary</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#1976D2"> 0.0</span></span></code></pre>
+
+<p>Add a <code>main</code> function that builds one employee and prints the name, the ID and the salary, and call it from the usual guard :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">if</span><span style="color:#1976D2"> __name__</span><span style="color:#D32F2F"> ==</span><span style="color:#22863A"> "__main__"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    main</span><span style="color:#212121">()</span></span></code></pre>
+
+<p>Run it with <code>uv run employee.py</code>. One line of output is the whole goal of this step; it proves the file is where you think it is and that <code>uv</code> is working.</p>
+<h3 id="step-2--an-employee-paid-by-the-hour">Step 2 : An employee paid by the hour</h3>
+<p>Add a second class in the same file. <code>WageEmployee</code> is a kind of <code>Employee</code>, so it names <code>Employee</code> as its base class, adds an hourly wage and a number of hours, and replaces <code>calc_salary</code> with a version that multiplies the two :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> WageEmployee</span><span style="color:#24292EFF">(</span><span style="color:#6F42C1">Employee</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __init__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#212121">,</span><span style="color:#FF9800"> employee_id</span><span style="color:#212121">:</span><span style="color:#1976D2"> int</span><span style="color:#212121">,</span><span style="color:#FF9800"> wage</span><span style="color:#212121">:</span><span style="color:#1976D2"> float</span><span style="color:#212121">,</span><span style="color:#FF9800"> hours</span><span style="color:#212121">:</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#1976D2">        super</span><span style="color:#212121">().</span><span style="color:#6F42C1">__init__</span><span style="color:#212121">(name, employee_id)</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">wage</span><span style="color:#212121">:</span><span style="color:#1976D2"> float</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> wage</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">hours</span><span style="color:#212121">:</span><span style="color:#1976D2"> float</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> hours</span></span></code></pre>
+
+<p>Write <code>calc_salary</code> yourself. Then create a <code>WageEmployee</code>, print its <code>name</code>, and notice that you never wrote a <code>name</code> attribute in this class.</p>
+<p>Now delete the <code>super().__init__(...)</code> line, run the program again, and read the error carefully. Put the line back. That error is the single most common mistake with inheritance, and it is worth recognising once on purpose.</p>
+<h3 id="step-3--two-more-kinds-of-employee">Step 3 : Two more kinds of employee</h3>
+<p>Add <code>ManagerEmployee</code>, which is also a kind of <code>Employee</code> but is paid a fixed amount each month. Its <code>calc_salary</code> returns that amount.</p>
+<p>Then add <code>ProgrammerEmployee</code>. A programmer is paid like a wage employee and gets a bonus on top, so its base class is <code>WageEmployee</code> rather than <code>Employee</code>. Its <code>calc_salary</code> should reuse the version it inherits rather than repeating the multiplication :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> ProgrammerEmployee</span><span style="color:#24292EFF">(</span><span style="color:#6F42C1">WageEmployee</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> calc_salary</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">        base </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> super</span><span style="color:#212121">().</span><span style="color:#6F42C1">calc_salary</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#24292EFF"> base </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> ...</span></span></code></pre>
+
+<p>Give it <code>lines</code> and <code>bugs</code> attributes and decide for yourself what the bonus is worth. Something like one euro a line, minus twenty a bug, is fine.</p>
+<p>Print the salary of one of each class.</p>
+<h3 id="step-4--printing-an-employee-properly">Step 4 : Printing an employee properly</h3>
+<p>Put <code>__str__</code> and <code>__repr__</code> on <code>Employee</code> only, and check that all four classes get them :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __str__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name</span><span style="color:#1976D2">}</span><span style="color:#22863A"> (#</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">self</span><span style="color:#212121">.</span><span style="color:#24292EFF">employee_id</span><span style="color:#1976D2">}</span><span style="color:#22863A">)"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __repr__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{type</span><span style="color:#212121">(self).</span><span style="color:#1976D2">__name__}</span><span style="color:#22863A">(name=</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name</span><span style="color:#D32F2F">!r</span><span style="color:#1976D2">}</span><span style="color:#22863A">, id=</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">self</span><span style="color:#212121">.</span><span style="color:#24292EFF">employee_id</span><span style="color:#1976D2">}</span><span style="color:#22863A">)"</span></span></code></pre>
+
+<p>Use <code>type(self).__name__</code> rather than writing the class name as text, so that a <code>ManagerEmployee</code> says so. Print one employee directly, then print a list of employees, and note which of the two methods each case used.</p>
+<h3 id="step-5--one-loop-over-all-of-them">Step 5 : One loop over all of them</h3>
+<p>Create <code>company.py</code> next to <code>employee.py</code>, import the classes from it, and build a list holding one of each :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> employee </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Employee</span><span style="color:#212121">,</span><span style="color:#24292EFF"> ManagerEmployee</span><span style="color:#212121">,</span><span style="color:#24292EFF"> ProgrammerEmployee</span><span style="color:#212121">,</span><span style="color:#24292EFF"> WageEmployee</span></span></code></pre>
+
+<p>Write a <code>payroll</code> function that takes a <code>list[Employee]</code>, loops over it, prints each employee with the salary, and returns the total :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> payroll</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">staff</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#24292EFF">Employee</span><span style="color:#212121">]</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<p>The body must not mention <code>WageEmployee</code>, <code>ManagerEmployee</code> or <code>ProgrammerEmployee</code> anywhere. Each call to <code>calc_salary</code> finds the right version on its own, and that is polymorphism.</p>
+<h3 id="step-6--asking-what-an-employee-is">Step 6 : Asking what an employee is</h3>
+<p>Add a function that counts how many of the staff are managers, using <code>isinstance</code> rather than comparing <code>type(...)</code> with a class. Print the count.</p>
+<p>Then check <code>isinstance(a_programmer, WageEmployee)</code> and explain to yourself why it is true. Check <code>issubclass(ProgrammerEmployee, Employee)</code> as well.</p>
+<h3 id="step-7--turning-the-base-class-into-a-contract">Step 7 : Turning the base class into a contract</h3>
+<p>Right now nothing stops someone writing a new kind of employee and forgetting <code>calc_salary</code>; the payroll would silently pay them zero. Make that impossible by turning <code>Employee</code> into an abstract base class :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> abc </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> ABC</span><span style="color:#212121">,</span><span style="color:#24292EFF"> abstractmethod</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Employee</span><span style="color:#24292EFF">(ABC):</span></span>
+<span class="line"><span style="color:#6F42C1">    @abstractmethod</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> calc_salary</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> float</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#4a9c59">        """Every kind of employee has to say how it is paid."""</span></span></code></pre>
+
+<p>Keep <code>__init__</code>, <code>__str__</code> and <code>__repr__</code> concrete; only <code>calc_salary</code> becomes abstract. Then try to create a plain <code>Employee(...)</code> and read the <code>TypeError</code>. Write a <code>SalesEmployee</code> that inherits from <code>Employee</code> but supplies no <code>calc_salary</code>, try to construct one, and confirm the failure happens at construction rather than at payroll time.</p>
+<p>Remove <code>SalesEmployee</code> again, or finish it, whichever you prefer.</p>
+<h3 id="step-8--optional-a-company-that-has-employees">Step 8 : Optional, a company that has employees</h3>
+<p>A <code>Company</code> is not a kind of employee, so it must not inherit from one. It holds a list of them instead, which is composition :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Company</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __init__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> name</span></span>
+<span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">staff</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#24292EFF">Employee</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> []</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> hire</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> employee</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Employee) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">        ...</span></span></code></pre>
+
+<p>Give it <code>hire</code>, <code>fire</code> and a <code>payroll</code> method that reuses the function from Step 5. Then add a <code>breakdown</code> method that reports the total per class, using <code>type(employee).__name__</code> as the key of a dictionary.</p>
+<p>Say both relationships out loud as a check on the design : a programmer <em>is a</em> wage employee, and a company <em>has</em> employees.</p>
+<h1 id="exercise-2--command-line-programs"><a id="ex-1"></a>Exercise 2 : Command-line Programs</h1>
+<p>In this exercise you take a script that reads one hard-coded log file and turn it into a small command-line tool called <code>logtool</code>, with two subcommands, generated help, and an exit status the shell can act on.</p>
+<hr>
+<h3 id="step-1--take-an-argument">Step 1 : Take an argument</h3>
+<p>Create a directory <code>exercise2</code> and a Python module <code>logtool.py</code> in it, and copy <code>data/cli-sample.log</code> into the same directory so that everything you need is in one place. Start from the script below, which is also shipped as <code>solutions/solution02-command-line-programs/logreport_start.py</code>, where the only difference is that it looks for the log in the course's <code>data/</code> directory rather than next to itself. It counts how many lines of the sample log carry each level, and the filename is written into the source :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> collections </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Counter</span></span>
+<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> pathlib </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Path</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">LOGFILE </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Path</span><span style="color:#212121">(</span><span style="color:#1976D2">__file__</span><span style="color:#212121">).</span><span style="color:#24292EFF">parent </span><span style="color:#D32F2F">/</span><span style="color:#22863A"> "cli-sample.log"</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> count_levels</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">path</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Path) </span><span style="color:#212121">-&gt;</span><span style="color:#24292EFF"> Counter</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#6F42C1"> Counter</span><span style="color:#212121">(line.</span><span style="color:#6F42C1">split</span><span style="color:#212121">()[</span><span style="color:#1976D2">2</span><span style="color:#212121">] </span><span style="color:#D32F2F">for</span><span style="color:#212121"> line </span><span style="color:#D32F2F">in</span><span style="color:#212121"> path.</span><span style="color:#6F42C1">read_text</span><span style="color:#212121">(encoding</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"utf-8"</span><span style="color:#212121">).</span><span style="color:#6F42C1">splitlines</span><span style="color:#212121">())</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> main</span><span style="color:#24292EFF">() </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">    for</span><span style="color:#24292EFF"> level</span><span style="color:#212121">,</span><span style="color:#24292EFF"> count </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> count_levels</span><span style="color:#212121">(LOGFILE).</span><span style="color:#6F42C1">most_common</span><span style="color:#212121">():</span></span>
+<span class="line"><span style="color:#6F42C1">        print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">level</span><span style="color:#D32F2F">:&lt;6</span><span style="color:#1976D2">}{</span><span style="color:#212121">count</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">if</span><span style="color:#1976D2"> __name__</span><span style="color:#D32F2F"> ==</span><span style="color:#22863A"> "__main__"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    main</span><span style="color:#212121">()</span></span></code></pre>
+
+<p>Run it once so that you know what its output looks like. Then give it an <code>ArgumentParser</code> with a single positional argument for the file to read, converted to a <code>Path</code> :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> argparse</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">parser </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> argparse</span><span style="color:#212121">.</span><span style="color:#6F42C1">ArgumentParser</span><span style="color:#212121">(description</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"Summarise a log file."</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">parser</span><span style="color:#212121">.</span><span style="color:#6F42C1">add_argument</span><span style="color:#212121">(</span><span style="color:#22863A">"logfile"</span><span style="color:#212121">, type</span><span style="color:#D32F2F">=</span><span style="color:#212121">Path, help</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"the log file to read"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">args </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> parser</span><span style="color:#212121">.</span><span style="color:#6F42C1">parse_args</span><span style="color:#212121">()</span></span></code></pre>
+
+<p>Use <code>args.logfile</code> instead of the <code>LOGFILE</code> constant, and run the script again, this time passing <code>cli-sample.log</code> on the command line. Then run it with <code>--help</code> and confirm that the help text you never wrote is there.</p>
+<h3 id="step-2--two-subcommands">Step 2 : Two subcommands</h3>
+<p>The tool is going to do two jobs, so it needs two verbs : <code>count</code>, which is the report you already have, and <code>errors</code>, which prints the lines at one level.</p>
+<p>Move the body of the current program into a function <code>cmd_count</code>, and write a second function <code>cmd_errors</code> next to it. Both take the parsed arguments and return an integer :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> cmd_count</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">args</span><span style="color:#212121">:</span><span style="color:#24292EFF"> argparse</span><span style="color:#212121">.</span><span style="color:#24292EFF">Namespace) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> int</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#1976D2"> 0</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> cmd_errors</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">args</span><span style="color:#212121">:</span><span style="color:#24292EFF"> argparse</span><span style="color:#212121">.</span><span style="color:#24292EFF">Namespace) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> int</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    matches </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [line </span><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> line </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> read_lines</span><span style="color:#212121">(args.logfile)</span><span style="color:#D32F2F"> if</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">" </span><span style="color:#1976D2">{</span><span style="color:#24292EFF">args</span><span style="color:#212121">.</span><span style="color:#24292EFF">level</span><span style="color:#1976D2">}</span><span style="color:#22863A"> "</span><span style="color:#D32F2F"> in</span><span style="color:#24292EFF"> line]</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<p>Now register the two verbs with <code>add_subparsers</code>, and attach each function to its verb with <code>set_defaults</code>, so that no <code>if</code> statement over the verb name is needed :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">verbs </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> parser</span><span style="color:#212121">.</span><span style="color:#6F42C1">add_subparsers</span><span style="color:#212121">(dest</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"command"</span><span style="color:#212121">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">counting </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> verbs</span><span style="color:#212121">.</span><span style="color:#6F42C1">add_parser</span><span style="color:#212121">(</span><span style="color:#22863A">"count"</span><span style="color:#212121">, help</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"count the lines per level"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">counting</span><span style="color:#212121">.</span><span style="color:#6F42C1">set_defaults</span><span style="color:#212121">(handler</span><span style="color:#D32F2F">=</span><span style="color:#212121">cmd_count)</span></span></code></pre>
+
+<p>Give the <code>errors</code> verb a <code>--level</code> option with a default of <code>ERROR</code>, so that <code>logtool errors --level WARN</code> works too. Both verbs need the <code>logfile</code> argument. You can add it to each subparser separately, or declare it once on a parent parser and pass <code>parents=[common]</code> to both, which is what the solution does.</p>
+<p>Calling the handler is then a single line :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">return</span><span style="color:#24292EFF"> args</span><span style="color:#212121">.</span><span style="color:#6F42C1">handler</span><span style="color:#212121">(args)</span></span></code></pre>
+
+<p>Check that <code>logtool.py count</code>, <code>logtool.py errors</code> and <code>logtool.py errors --level WARN</code> all work, and that <code>logtool.py count --help</code> shows the help for that verb only.</p>
+<h3 id="step-3--an-exit-status-that-means-something">Step 3 : An exit status that means something</h3>
+<p>Give the program the standard entry point, so that the value it returns becomes the exit status of the process :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> main</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">argv</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#D32F2F"> |</span><span style="color:#1976D2"> None</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> int</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">if</span><span style="color:#1976D2"> __name__</span><span style="color:#D32F2F"> ==</span><span style="color:#22863A"> "__main__"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">    raise</span><span style="color:#1976D2"> SystemExit</span><span style="color:#212121">(</span><span style="color:#6F42C1">main</span><span style="color:#212121">())</span></span></code></pre>
+
+<p>Use three statuses, following the usual convention :</p>
+<ul>
+<li><code>0</code> when the tool did its job and there is nothing to report</li>
+<li><code>1</code> from <code>errors</code> when it actually found lines at the requested level</li>
+<li><code>2</code> when the file cannot be read at all</li>
+</ul>
+<p>For the last one, wrap the call to the handler in a <code>try</code> block, catch <code>OSError</code>, and print the reason to <strong>stderr</strong> rather than stdout, because a message is not data :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">except</span><span style="color:#1976D2"> OSError</span><span style="color:#D32F2F"> as</span><span style="color:#24292EFF"> error</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"logtool: </span><span style="color:#1976D2">{</span><span style="color:#212121">error.strerror</span><span style="color:#1976D2">}</span><span style="color:#22863A">: </span><span style="color:#1976D2">{</span><span style="color:#212121">args.logfile</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">, file</span><span style="color:#D32F2F">=</span><span style="color:#212121">sys.stderr)</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#1976D2"> 2</span></span></code></pre>
+
+<p>Now test it the way the shell would, running each command and asking for the status afterwards :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> logtool.py</span><span style="color:#2B5581"> errors</span><span style="color:#2B5581"> cli-sample.log</span><span style="color:#24292EFF"> ; </span><span style="color:#6F42C1">echo</span><span style="color:#24292EFF"> $?                 </span><span style="color:#4a9c59"># 1, there are ERROR lines</span></span>
+<span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> logtool.py</span><span style="color:#2B5581"> errors</span><span style="color:#2B5581"> cli-sample.log</span><span style="color:#2B5581"> --level</span><span style="color:#2B5581"> FATAL</span><span style="color:#24292EFF"> ; </span><span style="color:#6F42C1">echo</span><span style="color:#24292EFF"> $?   </span><span style="color:#4a9c59"># 0, there are none</span></span>
+<span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> run</span><span style="color:#2B5581"> logtool.py</span><span style="color:#2B5581"> count</span><span style="color:#2B5581"> /no/such/file</span><span style="color:#24292EFF"> ; </span><span style="color:#6F42C1">echo</span><span style="color:#24292EFF"> $?                   </span><span style="color:#4a9c59"># 2, message on stderr</span></span></code></pre>
+
+<p>Finally, run the tool with no arguments at all. Decide what should happen, and make it happen deliberately : either print the help and return <code>0</code>, or let <code>add_subparsers(required=True)</code> refuse the call with status <code>2</code>.</p>
+<h3 id="step-4--optional-make-it-a-standalone-command">Step 4 : Optional, make it a standalone command</h3>
+<p>Turn the file into a program that needs nothing but <code>uv</code> to run. Add a shebang and a PEP 723 metadata block as the very first lines, above the docstring :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#4a9c59">#!/usr/bin/env -S uv run --script</span></span>
+<span class="line"><span style="color:#4a9c59"># /// script</span></span>
+<span class="line"><span style="color:#4a9c59"># requires-python = "&gt;=3.12"</span></span>
+<span class="line"><span style="color:#4a9c59"># dependencies = []</span></span>
+<span class="line"><span style="color:#4a9c59"># ///</span></span></code></pre>
+
+<p>On Linux or macOS, <code>chmod +x logtool.py</code> and then run <code>./logtool.py count</code> directly. Then add <code>rich</code> to the <code>dependencies</code> list and use a <code>rich.table.Table</code> for the output of <code>count</code>, as demo 12 does. The dependency is installed the first time the script runs and cached afterwards, and the file is still one file.</p>
+<h1 id="exercise-3--the-modern-toolbelt"><a id="ex-2"></a>Exercise 3 : The Modern Toolbelt</h1>
+<p>In this exercise you take a plain reporting script and give it the two things that make a command-line tool feel finished : a progress bar while it works, and a coloured table when it is done. The whole exercise is about thirty lines of code, and every step runs on its own.</p>
+<hr>
+<h3 id="step-1--prove-the-libraries-are-there">Step 1 : Prove the libraries are there</h3>
+<p>Make a file <code>health.py</code> and check that the three libraries import and print something. Do this before anything else, so that nothing later fails for a reason that has nothing to do with your code :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> rich</span><span style="color:#212121">.</span><span style="color:#24292EFF">console </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Console</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">console </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Console</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">console</span><span style="color:#212121">.</span><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"[bold green]toolbelt ready[/]"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Run it with <code>uv run health.py</code>. If you see the words in green, the environment is correct and the rest of the exercise will work.</p>
+<hr>
+<h3 id="step-2--read-the-inventory">Step 2 : Read the inventory</h3>
+<p>Read <code>data/servers.csv</code> into a <code>list[dict[str, str]]</code> with <code>csv.DictReader</code>. Resolve the path from the file rather than from the working directory, so that the script runs from anywhere :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> pathlib </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Path</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">DATA </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Path</span><span style="color:#212121">(</span><span style="color:#1976D2">__file__</span><span style="color:#212121">).</span><span style="color:#6F42C1">resolve</span><span style="color:#212121">().</span><span style="color:#24292EFF">parent </span><span style="color:#D32F2F">/</span><span style="color:#22863A"> "data"</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> load</span><span style="color:#24292EFF">() </span><span style="color:#212121">-&gt;</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#24292EFF">dict</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">,</span><span style="color:#1976D2"> str</span><span style="color:#212121">]]</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<p>Print how many rows you read. You should get fourteen.</p>
+<hr>
+<h3 id="step-3--add-a-progress-bar">Step 3 : Add a progress bar</h3>
+<p>Write a <code>check(server: dict[str, str]) -&gt; str</code> function that decides whether a host is <code>"ok"</code>, <code>"warning"</code> or <code>"full"</code>, based on <code>used_gb</code> divided by <code>disk_gb</code>. Call <code>time.sleep(0.2)</code> inside it, so that the bar has something to show.</p>
+<p>Now loop over the servers and wrap the loop in <code>tqdm</code>. You do not change the loop body at all :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> tqdm </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> tqdm</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> server </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> tqdm</span><span style="color:#212121">(servers, desc</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"Checking"</span><span style="color:#212121">, unit</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"host"</span><span style="color:#212121">):</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<p>One host in the file has no <code>used_gb</code> reading. Decide what your <code>check</code> should return for it rather than letting it raise.</p>
+<hr>
+<h3 id="step-4--report-anything-alarming-without-breaking-the-bar">Step 4 : Report anything alarming, without breaking the bar</h3>
+<p>While the bar is running, print a line for every host that is not <code>"ok"</code>. Use <code>tqdm.write</code> rather than <code>print</code>, and see what happens if you use <code>print</code> instead :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">tqdm</span><span style="color:#212121">.</span><span style="color:#6F42C1">write</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">server[</span><span style="color:#22863A">'hostname'</span><span style="color:#212121">]</span><span style="color:#1976D2">}</span><span style="color:#22863A">: </span><span style="color:#1976D2">{</span><span style="color:#212121">fraction</span><span style="color:#D32F2F">:.0%</span><span style="color:#1976D2">}</span><span style="color:#22863A"> used"</span><span style="color:#212121">)</span></span></code></pre>
+
+<hr>
+<h3 id="step-5--print-a-table-at-the-end">Step 5 : Print a table at the end</h3>
+<p>Build a <code>rich.table.Table</code> with a column for the host, the site, the disk size and the usage, and add one row per server. Right-align the numbers, and colour the usage cell by how alarming it is :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> rich</span><span style="color:#212121">.</span><span style="color:#24292EFF">table </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Table</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">table </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Table</span><span style="color:#212121">(title</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"Disk usage"</span><span style="color:#212121">, header_style</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"bold magenta"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">table</span><span style="color:#212121">.</span><span style="color:#6F42C1">add_column</span><span style="color:#212121">(</span><span style="color:#22863A">"Host"</span><span style="color:#212121">, style</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"cyan"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">table</span><span style="color:#212121">.</span><span style="color:#6F42C1">add_column</span><span style="color:#212121">(</span><span style="color:#22863A">"Used"</span><span style="color:#212121">, justify</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"right"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Remember that the colour goes in the cell text as markup, <code>f"[red]{value}[/]"</code>, not as an argument to <code>add_row</code>.</p>
+<hr>
+<h3 id="step-6--sort-and-summarise">Step 6 : Sort and summarise</h3>
+<p>Sort the rows so the fullest disks are at the top, since that is the only part of the report anybody reads. Then add a footer row giving the total disk space and the overall percentage used, with <code>table.show_footer = True</code> and <code>table.columns[0].footer = ...</code>.</p>
+<hr>
+<h3 id="step-7-optional--turn-it-into-a-command-line-tool">Step 7 <em>Optional</em> : Turn it into a command line tool</h3>
+<p>Give the script a <code>--site</code> option so it reports on one site only, and a <code>--threshold</code> option that sets the percentage at which a host counts as alarming. Do it with <code>typer</code>, and note how much of the argparse version from module 2 you no longer have to write :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> typer</span></span>
+<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> typing </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Annotated</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">app </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> typer</span><span style="color:#212121">.</span><span style="color:#6F42C1">Typer</span><span style="color:#212121">(add_completion</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">False</span><span style="color:#212121">)</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">@app</span><span style="color:#212121">.</span><span style="color:#6F42C1">command</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> report</span><span style="color:#24292EFF">(</span></span>
+<span class="line"><span style="color:#FF9800">    site</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Annotated</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#D32F2F"> |</span><span style="color:#1976D2"> None</span><span style="color:#212121">,</span><span style="color:#24292EFF"> typer</span><span style="color:#212121">.</span><span style="color:#6F42C1">Option</span><span style="color:#212121">(</span><span style="color:#22863A">"--site"</span><span style="color:#212121">, </span><span style="color:#22863A">"-s"</span><span style="color:#212121">)]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> None</span><span style="color:#212121">,</span></span>
+<span class="line"><span style="color:#FF9800">    threshold</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Annotated</span><span style="color:#212121">[</span><span style="color:#1976D2">int</span><span style="color:#212121">,</span><span style="color:#24292EFF"> typer</span><span style="color:#212121">.</span><span style="color:#6F42C1">Option</span><span style="color:#212121">(</span><span style="color:#22863A">"--threshold"</span><span style="color:#212121">, </span><span style="color:#22863A">"-t"</span><span style="color:#212121">)]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 85</span><span style="color:#212121">,</span></span>
+<span class="line"><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#4a9c59">    """Report disk usage across the estate."""</span></span></code></pre>
+
+<p>Run it with <code>--help</code> and read the help page you did not write.</p>
+<hr>
+<h3 id="step-8-optional--swap-tqdm-for-rich">Step 8 <em>Optional</em> : Swap tqdm for rich</h3>
+<p>Replace the <code>tqdm</code> bar with <code>rich.progress.track</code>, so that the bar and the table are drawn by the same library and share a colour scheme. Note that inside a rich progress block an ordinary <code>print</code> no longer corrupts the display.</p>
+<h1 id="exercise-4--scraping-a-page-into-a-database"><a id="ex-3"></a>Exercise 4 : Scraping a Page Into a Database</h1>
+<p>In this exercise you build the three steps of a scraper against a real site : you fetch a page from <code>books.toscrape.com</code>, parse the twenty books out of the markup, write them into a SQLite database with parameterised inserts, and query the result back. The site exists to be scraped, so you are welcome there as long as you are polite about it.</p>
+<p>Work in a file of your own, for example <code>scrape_books.py</code>, and run it with <code>uv run scrape_books.py</code> from the repository root. The reference answer is in <code>solutions/solution04-web-scraping/</code>.</p>
+<hr>
+<h3 id="step-1--prove-the-fetch-and-the-parser-work">Step 1 : Prove the fetch and the parser work</h3>
+<p>Fetch the page and make a soup from it. Always pass a <code>timeout</code>, because <code>requests</code> has no default and a server that goes quiet would hang your script for ever :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> requests</span></span>
+<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> bs4 </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> BeautifulSoup</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">URL </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "https://books.toscrape.com/catalogue/category/books/mystery_3/index.html"</span></span>
+<span class="line"><span style="color:#24292EFF">html </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> requests</span><span style="color:#212121">.</span><span style="color:#6F42C1">get</span><span style="color:#212121">(URL, timeout</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">10</span><span style="color:#212121">).</span><span style="color:#24292EFF">text</span></span>
+<span class="line"><span style="color:#24292EFF">soup </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> BeautifulSoup</span><span style="color:#212121">(html, </span><span style="color:#22863A">"lxml"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Print two things : the page title, and how many <code>article</code> elements with class <code>product_pod</code> the page contains. You should see the word <code>Mystery</code> and the number <code>20</code>. That is the whole of step one.</p>
+<p>If the title comes out full of newlines, tidy it with <code>" ".join(soup.title.text.split())</code>.</p>
+<hr>
+<h3 id="step-2--one-book">Step 2 : One book</h3>
+<p>Take the first <code>article.product_pod</code> and pull three fields out of it :</p>
+<ul>
+<li>the title, which is the <code>title</code> attribute of the link inside the <code>h3</code></li>
+<li>the price, which is the text of the <code>p</code> with class <code>price_color</code></li>
+<li>the rating, which is the second class name on the <code>p</code> with class <code>star-rating</code></li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">pod </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> soup</span><span style="color:#212121">.</span><span style="color:#6F42C1">select_one</span><span style="color:#212121">(</span><span style="color:#22863A">"article.product_pod"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">link </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> pod</span><span style="color:#212121">.</span><span style="color:#6F42C1">select_one</span><span style="color:#212121">(</span><span style="color:#22863A">"h3 a"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(link[</span><span style="color:#22863A">"title"</span><span style="color:#212121">], link[</span><span style="color:#22863A">"href"</span><span style="color:#212121">])</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(pod.</span><span style="color:#6F42C1">select_one</span><span style="color:#212121">(</span><span style="color:#22863A">"p.price_color"</span><span style="color:#212121">).text)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(pod.</span><span style="color:#6F42C1">select_one</span><span style="color:#212121">(</span><span style="color:#22863A">"p.star-rating"</span><span style="color:#212121">)[</span><span style="color:#22863A">"class"</span><span style="color:#212121">])</span></span></code></pre>
+
+<p>Note that the price text carries a currency sign and the rating is a word rather than a number. Deal with both : strip everything that is not a digit or a dot out of the price and turn it into a <code>float</code>, and map the words <code>One</code> to <code>Five</code> onto the numbers 1 to 5 with a dictionary.</p>
+<hr>
+<h3 id="step-3--all-twenty-as-records">Step 3 : All twenty, as records</h3>
+<p>Write a function that does step 2 for every book on the page and returns a list of dictionaries, one per book :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> parse_books</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">html</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#212121">,</span><span style="color:#FF9800"> page_url</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">) </span><span style="color:#212121">-&gt;</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">dict</span><span style="color:#212121">]</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<p>Each record should carry <code>title</code>, <code>price_gbp</code> as a <code>float</code>, <code>rating</code> as an <code>int</code>, <code>availability</code> as text, and <code>url</code>. Build the url with <code>urllib.parse.urljoin</code> against the page address so the stored link is absolute :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">url </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> urljoin</span><span style="color:#212121">(page_url, link[</span><span style="color:#22863A">"href"</span><span style="color:#212121">])</span></span></code></pre>
+
+<p>Print the first three records and the number of records. After this function returns, no part of your program should ever mention HTML again.</p>
+<hr>
+<h3 id="step-4--into-the-database">Step 4 : Into the database</h3>
+<p>Create <code>data/exercise-books.db</code> if it is not there, with one table. Give <code>url</code> a <code>UNIQUE</code> constraint, because one page is one book :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">SCHEMA </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> """</span></span>
+<span class="line"><span style="color:#22863A">CREATE TABLE IF NOT EXISTS books (</span></span>
+<span class="line"><span style="color:#22863A">    id        INTEGER PRIMARY KEY,</span></span>
+<span class="line"><span style="color:#22863A">    title     TEXT    NOT NULL,</span></span>
+<span class="line"><span style="color:#22863A">    price_gbp REAL    NOT NULL,</span></span>
+<span class="line"><span style="color:#22863A">    rating    INTEGER NOT NULL,</span></span>
+<span class="line"><span style="color:#22863A">    url       TEXT    NOT NULL UNIQUE,</span></span>
+<span class="line"><span style="color:#22863A">    last_seen TEXT    NOT NULL</span></span>
+<span class="line"><span style="color:#22863A">);</span></span>
+<span class="line"><span style="color:#22863A">"""</span></span></code></pre>
+
+<p>Insert the records with <code>executemany</code> and placeholders, never with a formatted string. Named placeholders take your dictionaries directly, once you have added the timestamp :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">INSERT </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "INSERT INTO books (title, price_gbp, rating, url, last_seen) VALUES (...)"</span></span>
+<span class="line"><span style="color:#24292EFF">seen_at </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> datetime</span><span style="color:#212121">.</span><span style="color:#6F42C1">now</span><span style="color:#212121">(UTC).</span><span style="color:#6F42C1">isoformat</span><span style="color:#212121">(timespec</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"seconds"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">conn</span><span style="color:#212121">.</span><span style="color:#6F42C1">executemany</span><span style="color:#212121">(INSERT, [book </span><span style="color:#D32F2F">|</span><span style="color:#212121"> {</span><span style="color:#22863A">"seen_at"</span><span style="color:#212121">: seen_at} </span><span style="color:#D32F2F">for</span><span style="color:#212121"> book </span><span style="color:#D32F2F">in</span><span style="color:#212121"> books])</span></span>
+<span class="line"><span style="color:#24292EFF">conn</span><span style="color:#212121">.</span><span style="color:#6F42C1">commit</span><span style="color:#212121">()</span></span></code></pre>
+
+<p>Remember that <code>sqlite3</code> does not commit for you. Print how many rows the table holds when you are done.</p>
+<hr>
+<h3 id="step-5--query-it-back">Step 5 : Query it back</h3>
+<p>With the data in a table, the questions are ordinary SQL. Answer three of them and print the results :</p>
+<ul>
+<li>the five most expensive books, title and price</li>
+<li>how many books there are at each rating, and the average price per rating</li>
+<li>the number of books priced under twenty</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">rows </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> conn</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span></span>
+<span class="line"><span style="color:#22863A">    "SELECT rating, COUNT(*), ROUND(AVG(price_gbp), 2) FROM books GROUP BY rating"</span></span>
+<span class="line"><span style="color:#212121">).</span><span style="color:#6F42C1">fetchall</span><span style="color:#212121">()</span></span></code></pre>
+
+<p>Setting <code>conn.row_factory = sqlite3.Row</code> before the query lets you write <code>row["rating"]</code> instead of <code>row[0]</code>, which is worth it as soon as a query has more than two columns.</p>
+<hr>
+<h3 id="step-6--run-it-twice">Step 6 : Run it twice</h3>
+<p>Run your script a second time. If it fails with <code>sqlite3.IntegrityError</code> on the unique url, that is the constraint doing its job.</p>
+<p>Make the script safe to re-run by turning the insert into an upsert :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">INSERT INTO</span><span style="color:#24292EFF"> books (...) </span><span style="color:#D32F2F">VALUES</span><span style="color:#24292EFF"> (...)</span></span>
+<span class="line"><span style="color:#D32F2F">ON</span><span style="color:#24292EFF"> CONFLICT(</span><span style="color:#D32F2F">url</span><span style="color:#24292EFF">) DO </span><span style="color:#D32F2F">UPDATE</span><span style="color:#D32F2F"> SET</span></span>
+<span class="line"><span style="color:#24292EFF">    price_gbp </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> excluded.price_gbp,</span></span>
+<span class="line"><span style="color:#24292EFF">    last_seen </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> excluded.last_seen</span></span></code></pre>
+
+<p>Run it twice more and confirm the row count stays at twenty while <code>last_seen</code> moves.</p>
+<hr>
+<h3 id="step-7--optional-the-second-page-politely">Step 7 : Optional, the second page, politely</h3>
+<p>The Mystery category has a second page of twelve more books :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">PAGE_URLS </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span></span>
+<span class="line"><span style="color:#22863A">    "https://books.toscrape.com/catalogue/category/books/mystery_3/index.html"</span><span style="color:#212121">,</span></span>
+<span class="line"><span style="color:#22863A">    "https://books.toscrape.com/catalogue/category/books/mystery_3/page-2.html"</span><span style="color:#212121">,</span></span>
+<span class="line"><span style="color:#24292EFF">]</span></span></code></pre>
+
+<p>Loop over both, parse each, and upsert the lot. Three things make the difference between a scraper a site tolerates and one it blocks :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">session </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> requests</span><span style="color:#212121">.</span><span style="color:#6F42C1">Session</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">session</span><span style="color:#212121">.</span><span style="color:#24292EFF">headers</span><span style="color:#212121">[</span><span style="color:#22863A">"User-Agent"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#22863A"> "MyScraper/1.0 (you@example.com)"</span></span>
+<span class="line"><span style="color:#24292EFF">time</span><span style="color:#212121">.</span><span style="color:#6F42C1">sleep</span><span style="color:#212121">(</span><span style="color:#1976D2">2</span><span style="color:#212121">)</span><span style="color:#4a9c59">          # between requests, not before the first one</span></span></code></pre>
+
+<p>Use one <code>Session</code> so the connection is reused, name your program in the <code>User-Agent</code>, and sleep between the two requests. The row count should go from twenty to thirty two, and running the whole thing again should leave it at thirty two.</p>
+<h1 id="exercise-5--sqlalchemy"><a id="ex-4"></a>Exercise 5 : SQLAlchemy</h1>
+<p>In this exercise you point SQLAlchemy at the database the scraping module filled in, describe its table as a Python class, and then build a small catalogue of your own with a relationship in it. Everything you write goes into <code>data/exercise-library.db</code>, so the scraped <code>data/books.db</code> is only ever read and cannot be damaged.</p>
+<hr>
+<h3 id="step-1--connect-to-something-that-already-exists">Step 1 : Connect to something that already exists</h3>
+<p>Make a file <code>library.py</code>. Create an engine pointing at the scraped database and ask it what is in there. This step exists to prove the environment works :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> pathlib </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Path</span></span>
+<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> sqlalchemy </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> MetaData</span><span style="color:#212121">,</span><span style="color:#24292EFF"> create_engine</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">DATA </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Path</span><span style="color:#212121">(</span><span style="color:#1976D2">__file__</span><span style="color:#212121">).</span><span style="color:#6F42C1">resolve</span><span style="color:#212121">().</span><span style="color:#24292EFF">parent </span><span style="color:#D32F2F">/</span><span style="color:#22863A"> "data"</span></span>
+<span class="line"><span style="color:#24292EFF">engine </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> create_engine</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"sqlite:///</span><span style="color:#1976D2">{</span><span style="color:#212121">DATA </span><span style="color:#D32F2F">/</span><span style="color:#22863A"> 'books.db'</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">metadata </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> MetaData</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">metadata</span><span style="color:#212121">.</span><span style="color:#6F42C1">reflect</span><span style="color:#212121">(bind</span><span style="color:#D32F2F">=</span><span style="color:#212121">engine)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#1976D2">list</span><span style="color:#212121">(metadata.tables))</span></span></code></pre>
+
+<p>You should see <code>['books']</code>. Now print the column names of that table, and then the number of rows in it. If <code>data/books.db</code> does not exist, run <code>uv run demos/04-web-scraping/12_rebuilding_from_seed.py</code> first, which builds it from the checked-in seed without touching the network.</p>
+<hr>
+<h3 id="step-2--describe-the-table-as-a-class">Step 2 : Describe the table as a class</h3>
+<p>Reflection is convenient, but it gives you tuples. Write a <code>Book</code> model that matches the table you just inspected, so that queries hand back objects instead :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Base</span><span style="color:#24292EFF">(</span><span style="color:#6F42C1">DeclarativeBase</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#D32F2F">    pass</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Book</span><span style="color:#24292EFF">(</span><span style="color:#6F42C1">Base</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    __tablename__ </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "books"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    id</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Mapped</span><span style="color:#212121">[</span><span style="color:#1976D2">int</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#6F42C1"> mapped_column</span><span style="color:#212121">(Integer, primary_key</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">True</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">    title</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Mapped</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#6F42C1"> mapped_column</span><span style="color:#212121">(</span><span style="color:#6F42C1">String</span><span style="color:#212121">(</span><span style="color:#1976D2">200</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#4a9c59">    # add price_gbp, rating and category</span></span></code></pre>
+
+<p>Give it a <code>__repr__</code> so that printing one is readable. Then open a <code>Session</code> and print the first three books.</p>
+<p>You do not need <code>create_all()</code> here; the table already exists and your class is describing it, not creating it.</p>
+<hr>
+<h3 id="step-3--ask-it-questions">Step 3 : Ask it questions</h3>
+<p>Using <code>select()</code> and the session, answer each of these. Print the answer with a line saying what it is :</p>
+<ul>
+<li>Every book rated 5, ordered by price, most expensive first.</li>
+<li>The number of books costing more than £30.</li>
+<li>The average price at each rating, as a small table.</li>
+</ul>
+<p>For the last one you want <code>func.count()</code> and <code>func.avg()</code>, and <code>group_by</code>. Compare what you write with the SQL you would have written by hand; they should look similar enough to be reassuring.</p>
+<hr>
+<h3 id="step-4--your-own-database-with-two-tables">Step 4 : Your own database, with two tables</h3>
+<p>Now build something of your own in <code>data/exercise-library.db</code>. Two models :</p>
+<ul>
+<li><code>Shelf</code>, with an <code>id</code> and a <code>name</code>.</li>
+<li><code>Volume</code>, with an <code>id</code>, a <code>title</code>, and a foreign key to <code>Shelf</code>.</li>
+</ul>
+<p>Wire them together with a relationship in both directions :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Shelf</span><span style="color:#24292EFF">(</span><span style="color:#6F42C1">Base</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    __tablename__ </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "shelf"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    id</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Mapped</span><span style="color:#212121">[</span><span style="color:#1976D2">int</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#6F42C1"> mapped_column</span><span style="color:#212121">(Integer, primary_key</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">True</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">    name</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Mapped</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#6F42C1"> mapped_column</span><span style="color:#212121">(</span><span style="color:#6F42C1">String</span><span style="color:#212121">(</span><span style="color:#1976D2">60</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#24292EFF">    volumes</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Mapped</span><span style="color:#212121">[</span><span style="color:#24292EFF">list</span><span style="color:#212121">[</span><span style="color:#24292EFF">Volume</span><span style="color:#212121">]]</span><span style="color:#D32F2F"> =</span><span style="color:#6F42C1"> relationship</span><span style="color:#212121">(back_populates</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"shelf"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Call <code>Base.metadata.create_all(engine)</code> against the new database, then create two shelves with a few volumes each. Add only the shelves to the session, not the volumes, and check that the volumes are saved anyway.</p>
+<hr>
+<h3 id="step-5--read-it-back-both-ways">Step 5 : Read it back both ways</h3>
+<p>Print every shelf with the titles on it, using the relationship attribute. Then print the same information again as a single query with an explicit <code>join</code>.</p>
+<p>Both should produce the same lines. Satisfy yourself about which one issued how many queries; passing <code>echo=True</code> to <code>create_engine</code> will show you every statement as it is sent, which is the quickest way to see the difference.</p>
+<hr>
+<h3 id="step-6--change-something">Step 6 : Change something</h3>
+<p>Move one volume from one shelf to the other by assigning to its <code>shelf</code> attribute, then commit. Print both shelves again to confirm it moved.</p>
+<p>Notice that you did not write an <code>UPDATE</code> statement, and that you did not touch the foreign key column yourself.</p>
+<hr>
+<h3 id="step-7--optional-hand-it-to-pandas">Step 7 : Optional, hand it to pandas</h3>
+<p>Load your <code>volume</code> table into a DataFrame with <code>pandas.read_sql</code>, passing the engine rather than a connection. Group it by shelf and count the rows.</p>
+<p>Then do the same aggregation in SQL instead, and compare. Which one you would reach for in real work depends on how big the table is and on what you want to do next, and it is worth having an opinion about both.</p>
+<h1 id="exercise-5--numpy"><a id="ex-5"></a>Exercise 5 : NumPy</h1>
+<p>In this exercise you take a day of CPU readings off five servers and answer questions about them with arrays instead of loops. The data is already in the repository as <code>data/server-load.csv</code> : twenty-four hourly readings for <code>web01</code>, <code>web02</code>, <code>web03</code>, <code>db01</code> and <code>cache01</code>, as a percentage. By the end you will have found the busiest server, the busiest hour, and the one host that misbehaves in the middle of the night.</p>
+<p>Work in a folder <code>numpy_load/</code>, one file per step, and keep the files as you go. Every answer in this exercise is one or two lines. If you find yourself writing a <code>for</code> loop over an array, stop and look for the expression instead.</p>
+<hr>
+<h3 id="step-1--load-the-file">Step 1 : Load the file</h3>
+<p>Create <code>01_load.py</code>.</p>
+<p>Read the CSV into an array. The first row is a header and the first column is the hour, so neither is a number you want in the array :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> pathlib </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Path</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> numpy </span><span style="color:#D32F2F">as</span><span style="color:#24292EFF"> np</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">DATA </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Path</span><span style="color:#212121">(</span><span style="color:#1976D2">__file__</span><span style="color:#212121">).</span><span style="color:#6F42C1">resolve</span><span style="color:#212121">().</span><span style="color:#24292EFF">parents</span><span style="color:#212121">[</span><span style="color:#1976D2">2</span><span style="color:#212121">]</span><span style="color:#D32F2F"> /</span><span style="color:#22863A"> "data"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">load </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> np</span><span style="color:#212121">.</span><span style="color:#6F42C1">loadtxt</span><span style="color:#212121">(DATA </span><span style="color:#D32F2F">/</span><span style="color:#22863A"> "server-load.csv"</span><span style="color:#212121">, delimiter</span><span style="color:#D32F2F">=</span><span style="color:#22863A">","</span><span style="color:#212121">, skiprows</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">, usecols</span><span style="color:#D32F2F">=</span><span style="color:#212121">(</span><span style="color:#1976D2">1</span><span style="color:#212121">, </span><span style="color:#1976D2">2</span><span style="color:#212121">, </span><span style="color:#1976D2">3</span><span style="color:#212121">, </span><span style="color:#1976D2">4</span><span style="color:#212121">, </span><span style="color:#1976D2">5</span><span style="color:#212121">))</span></span></code></pre>
+
+<p>Print <code>load.shape</code>, <code>load.dtype</code> and <code>load.size</code>. You should see <code>(24, 5)</code> : twenty-four rows of hours, five columns of servers. Print the first two rows as well, so you can see real numbers on the screen.</p>
+<p>That is the whole of step one. If it printed <code>(24, 5)</code>, your environment works and the rest of the exercise will run.</p>
+<hr>
+<h3 id="step-2--summarise-each-server">Step 2 : Summarise each server</h3>
+<p>Create <code>02_per_server.py</code> and load the array again.</p>
+<p>Each column is one server, so a per-server answer means collapsing the hours. That is <code>axis=0</code> : the rows are the dimension that disappears.</p>
+<p>Compute the mean, the minimum and the maximum for each of the five servers, and print them next to their names :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">SERVERS </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"web01"</span><span style="color:#212121">,</span><span style="color:#22863A"> "web02"</span><span style="color:#212121">,</span><span style="color:#22863A"> "web03"</span><span style="color:#212121">,</span><span style="color:#22863A"> "db01"</span><span style="color:#212121">,</span><span style="color:#22863A"> "cache01"</span><span style="color:#24292EFF">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">means </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> load</span><span style="color:#212121">.</span><span style="color:#6F42C1">mean</span><span style="color:#212121">(axis</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">0</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> name</span><span style="color:#212121">,</span><span style="color:#24292EFF"> mean </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> zip</span><span style="color:#212121">(SERVERS, means, strict</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">True</span><span style="color:#212121">):</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<p>Then find the busiest server. <code>np.argmax</code> gives you a position rather than a value, and <code>SERVERS[position]</code> turns that position back into a name.</p>
+<p>Check your answer against the shapes : <code>load.mean(axis=0)</code> must have shape <code>(5,)</code>. If you got <code>(24,)</code>, you used the other axis.</p>
+<hr>
+<h3 id="step-3--summarise-each-hour">Step 3 : Summarise each hour</h3>
+<p>Create <code>03_per_hour.py</code>.</p>
+<p>Now collapse the other way. A per-hour answer keeps the rows and loses the servers, which is <code>axis=1</code>.</p>
+<p>Compute the mean load per hour, then print :</p>
+<ol>
+<li>The busiest hour of the day, and its mean.</li>
+<li>The quietest hour, and its mean.</li>
+<li>The total load per hour, so you can see the shape of the working day.</li>
+</ol>
+<p>The hour number is the row number, because the rows are in order from 00:00, so <code>np.argmax</code> gives you the hour directly.</p>
+<blockquote>
+<p>If you are not sure which axis you want, print the shape of the result. One number per hour means twenty-four numbers.</p>
+</blockquote>
+<hr>
+<h3 id="step-4--find-the-readings-that-matter">Step 4 : Find the readings that matter</h3>
+<p>Create <code>04_alerts.py</code>.</p>
+<p>Build a boolean mask of every reading above 80 percent :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">busy </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> load </span><span style="color:#D32F2F">&gt;</span><span style="color:#1976D2"> 80.0</span></span></code></pre>
+
+<p>Print how many readings are over the line, using <code>busy.sum()</code>. Then use <code>np.nonzero(busy)</code> to get the positions. It returns one array per dimension, so unpack it into two names :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">hours</span><span style="color:#212121">,</span><span style="color:#24292EFF"> servers </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> np</span><span style="color:#212121">.</span><span style="color:#6F42C1">nonzero</span><span style="color:#212121">(busy)</span></span></code></pre>
+
+<p>Loop over those two arrays together and print one line per alert, naming the server and the hour, for example <code>db01 at 02:00 -&gt; 93.3 %</code>. This is the one loop in the exercise you are allowed to write, because you are formatting text rather than computing numbers.</p>
+<p>Then answer the same question a second way : which servers ever go over 80 percent at all? <code>busy.any(axis=0)</code> gives you one <code>True</code> or <code>False</code> per server, which you can use to index the server names once you have made them an array.</p>
+<hr>
+<h3 id="step-5--compare-each-server-to-its-own-baseline">Step 5 : Compare each server to its own baseline</h3>
+<p>Create <code>05_baseline.py</code>.</p>
+<p>A raw percentage is not very interesting; the interesting question is how far each reading is from normal <em>for that server</em>. <code>cache01</code> sitting at 10 percent is fine, <code>cache01</code> at 40 percent would not be.</p>
+<p>Take the median of each server, then subtract it from that server's column. The medians come out as shape <code>(5,)</code> and the array is <code>(24, 5)</code>, so they line up from the right and broadcast across every row with no reshaping needed :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">baseline </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> np</span><span style="color:#212121">.</span><span style="color:#6F42C1">median</span><span style="color:#212121">(load, axis</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">0</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">deviation </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> load </span><span style="color:#D32F2F">-</span><span style="color:#24292EFF"> baseline</span></span></code></pre>
+
+<p>Print the shape of <code>baseline</code>, and the largest deviation for each server. Then find the single worst deviation in the whole table. <code>np.argmax</code> on a two-dimensional array gives you a position into the flattened array, so use <code>np.unravel_index</code> to turn it back into a row and a column :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">hour</span><span style="color:#212121">,</span><span style="color:#24292EFF"> server </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> np</span><span style="color:#212121">.</span><span style="color:#6F42C1">unravel_index</span><span style="color:#212121">(np.</span><span style="color:#6F42C1">argmax</span><span style="color:#212121">(deviation), deviation.shape)</span></span></code></pre>
+
+<p>Finally, make a copy of <code>load</code> and clip every reading in the copy to a ceiling of 90 percent, without disturbing the original :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">capped </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> load</span><span style="color:#212121">.</span><span style="color:#6F42C1">copy</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">capped</span><span style="color:#212121">[</span><span style="color:#24292EFF">capped </span><span style="color:#D32F2F">&gt;</span><span style="color:#1976D2"> 90.0</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 90.0</span></span></code></pre>
+
+<p>Print the maximum of both arrays to prove the original survived. Leave the <code>.copy()</code> out and run it again to see what happens when you forget.</p>
+<hr>
+<h3 id="optional--band-every-reading">Optional : band every reading</h3>
+<p>Create <code>06_bands.py</code> if you have time.</p>
+<p>Use <code>np.where</code> to turn the whole table into labels in one expression : <code>critical</code> above 90, <code>warning</code> above 60, and <code>fine</code> otherwise. Nesting one <code>np.where</code> inside another gives you the three bands.</p>
+<p>Then count how many readings fall into each band. Comparing the label array against a string gives you a mask, and a mask sums to a count :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">labels </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> np</span><span style="color:#212121">.</span><span style="color:#6F42C1">where</span><span style="color:#212121">(load </span><span style="color:#D32F2F">&gt;</span><span style="color:#1976D2"> 90.0</span><span style="color:#212121">, </span><span style="color:#22863A">"critical"</span><span style="color:#212121">, np.</span><span style="color:#6F42C1">where</span><span style="color:#212121">(load </span><span style="color:#D32F2F">&gt;</span><span style="color:#1976D2"> 60.0</span><span style="color:#212121">, </span><span style="color:#22863A">"warning"</span><span style="color:#212121">, </span><span style="color:#22863A">"fine"</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"critical :"</span><span style="color:#212121">, (labels </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "critical"</span><span style="color:#212121">).</span><span style="color:#6F42C1">sum</span><span style="color:#212121">())</span></span></code></pre>
+
+<p>For a last flourish, print a per-server count of warnings by summing that mask along <code>axis=0</code>, and write the hourly means out to a new CSV in <code>data/</code> with <code>np.savetxt</code>.</p>
+<h1 id="exercise-6--pandas"><a id="ex-6"></a>Exercise 6 : Pandas</h1>
+<p>In this exercise you take the book catalogue that the scraping module put into SQLite, pull it into pandas, and turn it into the spreadsheet somebody upstairs actually asked for. You will read a database with <code>read_sql</code>, filter it, add a column, summarise it with <code>groupby</code>, and write the answer out as an Excel workbook with two sheets. Nothing here is longer than a couple of lines; the work is choosing the right couple of lines.</p>
+<p>Work in a folder <code>book_report/</code>, one file per step, and keep the files as you go. Each step reloads the data at the top, which costs nothing on twenty rows and means any file runs on its own.</p>
+<blockquote>
+<p><strong>If <code>data/books.db</code> is not there yet</strong>, the scraping module has not been run on this machine. Build it with <code>uv run demos/04-web-scraping/12_rebuilding_from_seed.py</code>, which recreates the table from the checked-in <code>data/books-seed.sql</code> without scraping anything.</p>
+</blockquote>
+<hr>
+<h3 id="step-1--open-the-database">Step 1 : Open the database</h3>
+<p>Create <code>01_load.py</code>.</p>
+<p>Connect to the database, ask it what tables it has, and read one of them into a DataFrame :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> sqlite3</span></span>
+<span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> pathlib </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> Path</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> pandas </span><span style="color:#D32F2F">as</span><span style="color:#24292EFF"> pd</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">DATA </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Path</span><span style="color:#212121">(</span><span style="color:#1976D2">__file__</span><span style="color:#212121">).</span><span style="color:#6F42C1">resolve</span><span style="color:#212121">().</span><span style="color:#24292EFF">parents</span><span style="color:#212121">[</span><span style="color:#1976D2">2</span><span style="color:#212121">]</span><span style="color:#D32F2F"> /</span><span style="color:#22863A"> "data"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">conn </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> sqlite3</span><span style="color:#212121">.</span><span style="color:#6F42C1">connect</span><span style="color:#212121">(DATA </span><span style="color:#D32F2F">/</span><span style="color:#22863A"> "books.db"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(pd.</span><span style="color:#6F42C1">read_sql</span><span style="color:#212121">(</span><span style="color:#22863A">"SELECT name FROM sqlite_master WHERE type = 'table'"</span><span style="color:#212121">, conn))</span></span>
+<span class="line"><span style="color:#24292EFF">books </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> pd</span><span style="color:#212121">.</span><span style="color:#6F42C1">read_sql</span><span style="color:#212121">(</span><span style="color:#22863A">"SELECT * FROM books"</span><span style="color:#212121">, conn)</span></span>
+<span class="line"><span style="color:#24292EFF">conn</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(books.shape)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(books.</span><span style="color:#6F42C1">head</span><span style="color:#212121">())</span></span></code></pre>
+
+<p>You should see one table called <code>books</code>, a shape of <code>(20, 9)</code>, and five rows of book titles.</p>
+<p>That is the whole of step one. If those twenty rows printed, your environment works and the rest of the exercise will run.</p>
+<hr>
+<h3 id="step-2--look-at-what-you-loaded">Step 2 : Look at what you loaded</h3>
+<p>Create <code>02_inspect.py</code> and read the table again.</p>
+<p>Print <code>books.info()</code> and <code>books.describe()</code>. Between them they answer the three questions worth asking about a file you did not write yourself : how many rows are there, what type is each column, and is anything missing.</p>
+<p>Then answer two more, using what the demos showed :</p>
+<ol>
+<li>How many missing values are there in each column? <code>isna()</code> gives a mask and a mask sums to a count.</li>
+<li>What distinct values does the <code>category</code> column hold, and how many books are in each? <code>value_counts()</code> does both at once.</li>
+</ol>
+<p>Note the dtype of <code>price_gbp</code> and the dtype of <code>rating</code>. One is a float and one is an integer, and pandas worked that out from the database rather than being told.</p>
+<hr>
+<h3 id="step-3--filter-down-to-the-rows-that-matter">Step 3 : Filter down to the rows that matter</h3>
+<p>Create <code>03_filter.py</code>.</p>
+<p>Build the filters as named variables first, then combine them. A mask with a name is a mask you can read six weeks later :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">well_rated </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> books</span><span style="color:#212121">[</span><span style="color:#22863A">"rating"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> &gt;=</span><span style="color:#1976D2"> 4</span></span>
+<span class="line"><span style="color:#24292EFF">in_stock </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> books</span><span style="color:#212121">[</span><span style="color:#22863A">"availability"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> ==</span><span style="color:#22863A"> "In stock"</span></span>
+<span class="line"><span style="color:#24292EFF">affordable </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> books</span><span style="color:#212121">[</span><span style="color:#22863A">"price_gbp"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> &lt;</span><span style="color:#1976D2"> 40.0</span></span></code></pre>
+
+<p>Print how many rows each single filter matches, then print the rows that satisfy all three. Remember <code>&amp;</code> rather than <code>and</code>, and remember the parentheses around each comparison when you write the combination in one line.</p>
+<p>Then do the same thing two other ways, so you have seen them :</p>
+<ol>
+<li><code>books[books["rating"].isin([4, 5])]</code>, which replaces a chain of ORs.</li>
+<li><code>books[books["price_gbp"].between(20.0, 40.0)]</code>, which replaces two comparisons and includes both ends.</li>
+</ol>
+<hr>
+<h3 id="step-4--add-the-columns-the-report-needs">Step 4 : Add the columns the report needs</h3>
+<p>Create <code>04_derive.py</code>.</p>
+<p>The catalogue is priced in pounds and the report wants euros. Add a column, rounded to two decimals :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">books</span><span style="color:#212121">[</span><span style="color:#22863A">"price_eur"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> (books</span><span style="color:#212121">[</span><span style="color:#22863A">"price_gbp"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> *</span><span style="color:#24292EFF"> RATE)</span><span style="color:#212121">.</span><span style="color:#6F42C1">round</span><span style="color:#212121">(</span><span style="color:#1976D2">2</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Then add a <code>band</code> column that says <code>budget</code> under 20 euros, <code>mid</code> under 45, and <code>premium</code> above that. <code>np.where</code> nested inside another <code>np.where</code> does it in one expression, or use <code>pd.cut</code> if you would rather name the edges.</p>
+<p>Finally sort the whole thing by price, most expensive first, and print the top five titles with their two prices. <code>sort_values("price_eur", ascending=False).head(5)</code> is the whole of it, and <code>nlargest(5, "price_eur")</code> says the same thing in fewer words.</p>
+<hr>
+<h3 id="step-5--summarise-by-rating">Step 5 : Summarise by rating</h3>
+<p>Create <code>05_group.py</code>.</p>
+<p>This is the <code>GROUP BY</code> of the exercise. Produce one row per star rating, with four columns : how many books have that rating, the mean price, the cheapest and the dearest.</p>
+<p>Use named aggregation so the output columns arrive with the names you want rather than names you have to fix afterwards :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">per_rating </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span></span>
+<span class="line"><span style="color:#24292EFF">    books</span><span style="color:#212121">.</span><span style="color:#6F42C1">groupby</span><span style="color:#212121">(</span><span style="color:#22863A">"rating"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#212121">    .</span><span style="color:#6F42C1">agg</span><span style="color:#212121">(</span></span>
+<span class="line"><span style="color:#212121">        titles</span><span style="color:#D32F2F">=</span><span style="color:#212121">(</span><span style="color:#22863A">"title"</span><span style="color:#212121">, </span><span style="color:#22863A">"count"</span><span style="color:#212121">),</span></span>
+<span class="line"><span style="color:#212121">        mean_price</span><span style="color:#D32F2F">=</span><span style="color:#212121">(</span><span style="color:#22863A">"price_eur"</span><span style="color:#212121">, </span><span style="color:#22863A">"mean"</span><span style="color:#212121">),</span></span>
+<span class="line"><span style="color:#212121">        ...</span></span>
+<span class="line"><span style="color:#212121">    )</span></span>
+<span class="line"><span style="color:#212121">    .</span><span style="color:#6F42C1">round</span><span style="color:#212121">(</span><span style="color:#1976D2">2</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#212121">    .</span><span style="color:#6F42C1">reset_index</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">)</span></span></code></pre>
+
+<p>Print it. Then answer the question it raises : does a higher rating cost more? Sorting the result by <code>mean_price</code> is enough to see.</p>
+<hr>
+<h3 id="step-6--export-to-excel">Step 6 : Export to Excel</h3>
+<p>Create <code>06_export.py</code>.</p>
+<p>Build both frames again : the filtered list of well-rated books from step 3 with the derived columns from step 4, and the per-rating summary from step 5. Then put them in one workbook, one sheet each :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">with</span><span style="color:#24292EFF"> pd</span><span style="color:#212121">.</span><span style="color:#6F42C1">ExcelWriter</span><span style="color:#212121">(DATA </span><span style="color:#D32F2F">/</span><span style="color:#22863A"> "book-report.xlsx"</span><span style="color:#212121">, engine</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"openpyxl"</span><span style="color:#212121">)</span><span style="color:#D32F2F"> as</span><span style="color:#24292EFF"> workbook</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    shortlist</span><span style="color:#212121">.</span><span style="color:#6F42C1">to_excel</span><span style="color:#212121">(workbook, sheet_name</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"shortlist"</span><span style="color:#212121">, index</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">False</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">    per_rating</span><span style="color:#212121">.</span><span style="color:#6F42C1">to_excel</span><span style="color:#212121">(workbook, sheet_name</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"by rating"</span><span style="color:#212121">, index</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">False</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Pass <code>index=False</code> on both, because the row numbers are pandas' business and not the reader's. Write a CSV of the shortlist as well with <code>to_csv</code>, for whoever does not have Excel.</p>
+<p>Print the path and the sheet names at the end, then open the file and check that it is really a spreadsheet.</p>
+<hr>
+<h3 id="optional--a-chart-and-a-second-table">Optional : a chart and a second table</h3>
+<p>Create <code>07_chart.py</code> if you have time.</p>
+<p>Two things, either order.</p>
+<p><strong>A picture.</strong> Plot the mean price per rating as a bar chart. Select the non-interactive backend before importing <code>pyplot</code>, so the script writes a file instead of waiting for you to close a window :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> matplotlib</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">matplotlib</span><span style="color:#212121">.</span><span style="color:#6F42C1">use</span><span style="color:#212121">(</span><span style="color:#22863A">"Agg"</span><span style="color:#212121">)</span></span></code></pre>
+
+<p>Then <code>per_rating.plot(kind="bar", x="rating", y="mean_price")</code>, take <code>.get_figure()</code> from the axes it returns, and <code>savefig</code> it into <code>data/</code>.</p>
+<p><strong>A join.</strong> Build a small lookup frame giving each star rating a word :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#24292EFF">words </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> pd</span><span style="color:#212121">.</span><span style="color:#6F42C1">DataFrame</span><span style="color:#212121">({</span><span style="color:#22863A">"rating"</span><span style="color:#212121">: [</span><span style="color:#1976D2">1</span><span style="color:#212121">, </span><span style="color:#1976D2">2</span><span style="color:#212121">, </span><span style="color:#1976D2">3</span><span style="color:#212121">, </span><span style="color:#1976D2">4</span><span style="color:#212121">, </span><span style="color:#1976D2">5</span><span style="color:#212121">], </span><span style="color:#22863A">"verdict"</span><span style="color:#212121">: [</span><span style="color:#22863A">"poor"</span><span style="color:#212121">, ...]})</span></span></code></pre>
+
+<p><code>merge</code> it onto the summary on <code>rating</code> and print the result, so the report reads in English rather than in integers. Then try the same merge with <code>how="left"</code> after deleting one row from the lookup, and use <code>indicator=True</code> to see exactly which rows failed to match. That check is worth doing on every join you ever write.</p>
+<h1 id="exercise-9--running-other-programs-appendix"><a id="ex-7"></a>Exercise 9 : Running Other Programs <span class="exercise-appendix-tag">Appendix</span></h1>
+<p>A small appendix exercise, and the one most worth doing on your own Linux machine rather than in the classroom, because there the commands are real and the shell is a POSIX one. You will build a short report about a directory of files by asking other programs for the answers, and then replace half of it with Python that needs no other program at all.</p>
+<hr>
+<h3 id="step-1--ask-one-program-one-question">Step 1 : Ask one program one question</h3>
+<p>Make a file <code>report.py</code>. Run <code>git --version</code> and print the version it reports, without the surrounding text :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> subprocess</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">finished </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> subprocess</span><span style="color:#212121">.</span><span style="color:#6F42C1">run</span><span style="color:#212121">(</span></span>
+<span class="line"><span style="color:#212121">    [</span><span style="color:#22863A">"git"</span><span style="color:#212121">, </span><span style="color:#22863A">"--version"</span><span style="color:#212121">], capture_output</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">True</span><span style="color:#212121">, text</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">True</span><span style="color:#212121">, check</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">True</span></span>
+<span class="line"><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(finished.stdout.</span><span style="color:#6F42C1">strip</span><span style="color:#212121">())</span></span></code></pre>
+
+<p>Change <code>check=True</code> to <code>check=False</code> and run it against a command that does not exist, such as <code>["git", "nonsense"]</code>. Look at <code>returncode</code> and at <code>stderr</code>.</p>
+<hr>
+<h3 id="step-2--read-an-exit-code-that-means-something">Step 2 : Read an exit code that means something</h3>
+<p>Run <code>grep -c ERROR</code> against <code>data/cli-sample.log</code> and print the count.</p>
+<p>Then run it against a pattern that matches nothing. You will get a return code of 1 and an empty count, and that is not a failure; it is <code>grep</code> telling you it found nothing.</p>
+<p>Write a function that returns the number of matching lines, treating a return code of 0 or 1 as success and anything else as a real error :</p>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code class="nohighlight"><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> count_matches</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">pattern</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#212121">,</span><span style="color:#FF9800"> path</span><span style="color:#212121">:</span><span style="color:#24292EFF"> Path) </span><span style="color:#212121">-&gt;</span><span style="color:#1976D2"> int</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#24292EFF">    found </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> subprocess</span><span style="color:#212121">.</span><span style="color:#6F42C1">run</span><span style="color:#212121">(...)</span></span>
+<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> found</span><span style="color:#212121">.</span><span style="color:#24292EFF">returncode </span><span style="color:#D32F2F">&gt;</span><span style="color:#1976D2"> 1</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">        raise</span><span style="color:#1976D2"> RuntimeError</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"grep failed: </span><span style="color:#1976D2">{</span><span style="color:#212121">found.stderr.</span><span style="color:#6F42C1">strip</span><span style="color:#212121">()</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">    ...</span></span></code></pre>
+
+<hr>
+<h3 id="step-3--make-it-fail-safely">Step 3 : Make it fail safely</h3>
+<p>Add a check at the top of the script that <code>grep</code> is actually installed, using <code>shutil.which</code>. If it is missing, print a clear message to <code>stderr</code> and exit with a non-zero status, using what you built in block 02.</p>
+<p>Test it by asking for a program you know is not there.</p>
+<hr>
+<h3 id="step-4--two-commands-no-shell">Step 4 : Two commands, no shell</h3>
+<p>Produce a count of each log level in <code>data/cli-sample.log</code>, the way you would with <code>grep -o -E 'INFO|WARN|ERROR' file | sort | uniq -c</code>, but as separate <code>subprocess.run</code> calls passing text between them with <code>input=</code>.</p>
+<p>Print the result as a small table.</p>
+<hr>
+<h3 id="step-5--give-it-a-timeout">Step 5 : Give it a timeout</h3>
+<p>Add <code>timeout=</code> to every call. Pick something generous, five seconds say, so it never fires in normal use.</p>
+<p>Then prove it works by running a command that sleeps for longer than that, and catching <code>TimeoutExpired</code>. On Linux, <code>["sleep", "30"]</code> will do.</p>
+<hr>
+<h3 id="step-6--now-throw-half-of-it-away">Step 6 : Now throw half of it away</h3>
+<p>Rewrite Step 4 in pure Python: read the file with <code>Path.read_text</code>, and count the levels with a dictionary or <code>collections.Counter</code>. No <code>subprocess</code> at all.</p>
+<p>Compare the two versions. Time them if you like; the difference will be larger than you expect, because the first version starts three processes and the second starts none.</p>
+<p>Which one you would rather maintain is the real question, and the answer is not the same for every script.</p>
+<hr>
+<h3 id="step-7--optional-something-genuinely-useful">Step 7 : Optional, something genuinely useful</h3>
+<p>Point the script at a directory of your own and have it report something you actually want to know, using a program that has no Python equivalent worth writing. Some possibilities :</p>
+<ul>
+<li><code>git log --format=%an</code> piped into a count, for who has touched a repository.</li>
+<li><code>systemctl is-active</code> for a list of services, reporting only the ones that are not running.</li>
+<li><code>df -P</code> parsed into a warning for any filesystem over a threshold you choose.</li>
+</ul>
+<p>Keep the rule from the last slide in mind : let the other program do what only it can do, and do the rest in Python.</p>
+</div>
+	
+
+</body></html>
