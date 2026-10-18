@@ -272,6 +272,46 @@ code.hljs {
   margin: 20mm 18mm 22mm 18mm;
 }
 
+/* Pele diagrams follow the same language palette as the slides. The wrapper
+   div.lang-* sets --ml-*; the SVG reads them through --pele-*. */
+svg.pele {
+  --pele-bg: var(--ml-bg);
+  --pele-fg: var(--ml-text);
+  --pele-muted: var(--ml-muted);
+  --pele-line: var(--ml-primary);
+  --pele-surface: var(--ml-tint);
+  --pele-surface-alt: var(--ml-tint-strong);
+  --pele-border: var(--ml-primary);
+  --pele-accent: var(--ml-secondary);
+  --pele-font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --pele-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --pele-radius: 6px;
+  --pele-series-1: var(--ml-primary);
+  --pele-series-2: var(--ml-secondary);
+  --pele-series-3: var(--ml-accent);
+  --pele-series-4: var(--code-type);
+  --pele-series-5: var(--code-str);
+  --pele-series-6: var(--code-kw);
+  --pele-series-7: var(--code-prop);
+  --pele-series-8: var(--ml-muted);
+}
+
+.mermaid-diagram {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 12px auto;
+}
+
+.mermaid-diagram > svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* ============ DEFAULT PALETTE (SpiralTrain blue) ============ */
 :root,
 body {
@@ -1401,7 +1441,7 @@ details.solution-page pre {
 
 <p>A tuple cannot be changed once it is made. See that for yourself : add the line <code>ruled_out[0] = "wrong"</code> below the tuple, run the program, and read the last line of the error. It is a <code>TypeError</code> that says a <code>tuple</code> does not support item assignment. Then turn the line into a comment, so the program runs again and the reader can still see what you tried.</p>
 <blockquote>
-<p><strong>Hint :</strong> <code>demo01 · lists</code> starts with an empty list, the slide <em>List Functions and Methods</em> has <code>append</code>, and <em>Tuples</em> shows how a tuple is written.</p>
+<p><strong>Hint :</strong> <code>demo01 · lists</code> also creates an empty list, the slide <em>List Functions and Methods</em> has <code>append</code>, and <em>Tuples</em> shows how a tuple is written.</p>
 </blockquote>
 <blockquote>
 <p><strong>Hint :</strong> <code>[]</code> is an empty list, and <code>append</code> adds one item at the end. A tuple is written as values separated by commas, usually in brackets.</p>
@@ -1829,7 +1869,7 @@ details.solution-page pre {
 <span class="line"><span style="color:#D32F2F">    continue</span></span></code></pre>
 
 <blockquote>
-<p><strong>Hint :</strong> The slide <em>Built-in String Methods</em>, in module 02, lists a method that tells whether a string holds only letters. <em>return Statement</em> shows a function that returns the value of an expression.</p>
+<p><strong>Hint :</strong> The slide <em>Built-in String Methods</em>, in module 02, lists a method that tells whether a string holds only letters. <em>return Statement</em> shows how a function passes a value back to its caller.</p>
 </blockquote>
 <blockquote>
 <p><strong>Hint :</strong> A word made of letters only is something a string method can tell you. And a condition is already <code>True</code> or <code>False</code>, so it can be returned as it is; there is no need for <code>if ... : return True</code> followed by <code>return False</code>.</p>
@@ -3219,7 +3259,7 @@ details.solution-page pre {
 
 <p>Make it work <strong>without changing a line anywhere else</strong>. <code>__init__</code> still says <code>self.max_guesses = max_guesses</code>, and <code>play</code> still reads <code>game.max_guesses</code>. That is the lesson : callers could not tell the plain attribute from the property, so nobody had to write <code>get_max_guesses</code> and <code>set_max_guesses</code> in advance. You start with the plain attribute, and you turn it into a property on the day it needs a rule.</p>
 <blockquote>
-<p><strong>Hint :</strong> The slide <em>When a Plain Attribute Is Not Enough</em> turns <code>length</code> into a property whose setter checks the value; <code>demo07 · validatingsetter</code> runs it.</p>
+<p><strong>Hint :</strong> The slide <em>When a Plain Attribute Is Not Enough</em> turns <code>health</code> into a property whose setter checks the value; <code>demo07 · validatingsetter</code> runs it.</p>
 </blockquote>
 <blockquote>
 <p><strong>Hint :</strong> The getter returns <code>self._max_guesses</code>. The setter checks <code>1 &lt;= value &lt;= 10</code>, raises <code>ValueError</code> when that is false and assigns <code>self._max_guesses = value</code> otherwise.</p>

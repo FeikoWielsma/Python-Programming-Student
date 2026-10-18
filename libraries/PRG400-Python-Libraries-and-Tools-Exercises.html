@@ -272,6 +272,46 @@ code.hljs {
   margin: 20mm 18mm 22mm 18mm;
 }
 
+/* Pele diagrams follow the same language palette as the slides. The wrapper
+   div.lang-* sets --ml-*; the SVG reads them through --pele-*. */
+svg.pele {
+  --pele-bg: var(--ml-bg);
+  --pele-fg: var(--ml-text);
+  --pele-muted: var(--ml-muted);
+  --pele-line: var(--ml-primary);
+  --pele-surface: var(--ml-tint);
+  --pele-surface-alt: var(--ml-tint-strong);
+  --pele-border: var(--ml-primary);
+  --pele-accent: var(--ml-secondary);
+  --pele-font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --pele-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --pele-radius: 6px;
+  --pele-series-1: var(--ml-primary);
+  --pele-series-2: var(--ml-secondary);
+  --pele-series-3: var(--ml-accent);
+  --pele-series-4: var(--code-type);
+  --pele-series-5: var(--code-str);
+  --pele-series-6: var(--code-kw);
+  --pele-series-7: var(--code-prop);
+  --pele-series-8: var(--ml-muted);
+}
+
+.mermaid-diagram {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 12px auto;
+}
+
+.mermaid-diagram > svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* ============ DEFAULT PALETTE (SpiralTrain blue) ============ */
 :root,
 body {
