@@ -97,11 +97,11 @@
 <span class="line"><span style="color:#24292EFF">    remainder </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> seconds </span><span style="color:#D32F2F">%</span><span style="color:#1976D2"> 60</span></span>
 <span class="line"><span style="color:#D32F2F">    return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">minutes</span><span style="color:#1976D2">}</span><span style="color:#22863A">:</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">remainder</span><span style="color:#D32F2F">:02d</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF">label </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> format_duration</span><span style="color:#212121">(</span><span style="color:#1976D2">222</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#24292EFF">message </span><span style="color:#D32F2F">=</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"Orbit [</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">label</span><span style="color:#1976D2">}</span><span style="color:#22863A">]"</span></span>
+<span class="line"><span style="color:#24292EFF">label </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> format_duration</span><span style="color:#212121">(</span><span style="color:#1976D2">125</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">message </span><span style="color:#D32F2F">=</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"Yesterday [</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">label</span><span style="color:#1976D2">}</span><span style="color:#22863A">]"</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(message)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Orbit [3:42]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Yesterday [2:05]</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li><code>return</code> ends the current call and passes its value back</li>
@@ -127,11 +127,11 @@
 <span class="line"><span style="color:#6F42C1">        print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">number</span><span style="color:#1976D2">}</span><span style="color:#22863A">. </span><span style="color:#1976D2">{</span><span style="color:#212121">title</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">print_playlist</span><span style="color:#212121">(</span><span style="color:#22863A">"Night drive"</span><span style="color:#212121">, [</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">, </span><span style="color:#22863A">"Echo"</span><span style="color:#212121">])</span></span>
+<span class="line"><span style="color:#6F42C1">print_playlist</span><span style="color:#212121">(</span><span style="color:#22863A">"Night drive"</span><span style="color:#212121">, [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">, </span><span style="color:#22863A">"Yesterday"</span><span style="color:#212121">])</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Playlist: Night drive</span></span>
-<span class="line"><span>1. Orbit</span></span>
-<span class="line"><span>2. Echo</span></span>
+<span class="line"><span>1. Imagine</span></span>
+<span class="line"><span>2. Yesterday</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>Reaching the end of a function returns <code>None</code></li>
@@ -293,15 +293,15 @@
 </li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> add_encore</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">tracks</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#24292EFF">) </span><span style="color:#212121">-></span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
-<span class="line"><span style="color:#24292EFF">    tracks</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(</span><span style="color:#22863A">"Encore"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">    tracks</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">(</span><span style="color:#22863A">"Let It Be"</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Inside: </span><span style="color:#1976D2">{</span><span style="color:#212121">tracks</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF">queue </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#24292EFF">queue </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#24292EFF">]</span></span>
 <span class="line"><span style="color:#6F42C1">add_encore</span><span style="color:#212121">(queue)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"After call: </span><span style="color:#1976D2">{</span><span style="color:#212121">queue</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Inside: ['Orbit', 'Echo', 'Encore']</span></span>
-<span class="line"><span>After call: ['Orbit', 'Echo', 'Encore']</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Inside: ['Imagine', 'Yesterday', 'Let It Be']</span></span>
+<span class="line"><span>After call: ['Imagine', 'Yesterday', 'Let It Be']</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li><code>append</code> changes the existing list, so the caller sees the encore</li>
@@ -316,22 +316,22 @@
 <ul>
 <li>A function can create an encore mix while keeping the original queue :
 <ul>
-<li><code>tracks + [&quot;Encore&quot;]</code> creates a new list</li>
+<li><code>tracks + [&quot;Let It Be&quot;]</code> creates a new list</li>
 <li>Assigning to <code>tracks</code> changes only the local name</li>
 </ul>
 </li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> with_encore</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">tracks</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#24292EFF">) </span><span style="color:#212121">-></span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#24292EFF">:</span></span>
-<span class="line"><span style="color:#24292EFF">    tracks </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> tracks </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Encore"</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#24292EFF">    tracks </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> tracks </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Let It Be"</span><span style="color:#24292EFF">]</span></span>
 <span class="line"><span style="color:#D32F2F">    return</span><span style="color:#24292EFF"> tracks</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF">queue </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#24292EFF">queue </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#24292EFF">]</span></span>
 <span class="line"><span style="color:#24292EFF">extended </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> with_encore</span><span style="color:#212121">(queue)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Original: </span><span style="color:#1976D2">{</span><span style="color:#212121">queue</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Encore mix: </span><span style="color:#1976D2">{</span><span style="color:#212121">extended</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"With encore: </span><span style="color:#1976D2">{</span><span style="color:#212121">extended</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Original: ['Orbit', 'Echo']</span></span>
-<span class="line"><span>Encore mix: ['Orbit', 'Echo', 'Encore']</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Original: ['Imagine', 'Yesterday']</span></span>
+<span class="line"><span>With encore: ['Imagine', 'Yesterday', 'Let It Be']</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>The caller stores the returned list in <code>extended</code>; <code>queue</code> keeps its original list</li>
@@ -355,11 +355,11 @@
 </thead>
 <tbody>
 <tr>
-<td><code>tracks.append(&quot;Encore&quot;)</code></td>
+<td><code>tracks.append(&quot;Let It Be&quot;)</code></td>
 <td>Adds to the list the caller already holds</td>
 </tr>
 <tr>
-<td><code>tracks = tracks + [&quot;Encore&quot;]</code></td>
+<td><code>tracks = tracks + [&quot;Let It Be&quot;]</code></td>
 <td>Binds the local name to a new list</td>
 </tr>
 <tr>
@@ -389,7 +389,7 @@
 <span class="line"><span style="color:#6F42C1">        print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">key</span><span style="color:#1976D2">}</span><span style="color:#22863A">: </span><span style="color:#1976D2">{</span><span style="color:#212121">value</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6F42C1">show_playlist</span><span style="color:#212121">(</span><span style="color:#22863A">"Night drive"</span><span style="color:#212121">, </span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">, </span><span style="color:#22863A">"Echo"</span><span style="color:#212121">, mood</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"calm"</span><span style="color:#212121">, owner</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"Nova"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">show_playlist</span><span style="color:#212121">(</span><span style="color:#22863A">"Night drive"</span><span style="color:#212121">, </span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">, </span><span style="color:#22863A">"Yesterday"</span><span style="color:#212121">, mood</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"calm"</span><span style="color:#212121">, owner</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"Sam"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>At a call, <code>*values</code> unpacks a sequence and <code>**options</code> unpacks a dictionary</li>
@@ -413,11 +413,11 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">tracks </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [(</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 222</span><span style="color:#24292EFF">)</span><span style="color:#212121">,</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Echo"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 185</span><span style="color:#24292EFF">)</span><span style="color:#212121">,</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Pulse"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 204</span><span style="color:#24292EFF">)]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">tracks </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [(</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 183</span><span style="color:#24292EFF">)</span><span style="color:#212121">,</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Yesterday"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 125</span><span style="color:#24292EFF">)</span><span style="color:#212121">,</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Respect"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 149</span><span style="color:#24292EFF">)]</span></span>
 <span class="line"><span style="color:#24292EFF">by_length </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> sorted</span><span style="color:#212121">(tracks, key</span><span style="color:#D32F2F">=lambda</span><span style="color:#FF9800"> track</span><span style="color:#212121">: track[</span><span style="color:#1976D2">1</span><span style="color:#212121">])</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(by_length)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>[('Echo', 185), ('Pulse', 204), ('Orbit', 222)]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>[('Yesterday', 125), ('Respect', 149), ('Imagine', 183)]</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>The value after the colon is returned automatically</li>
@@ -446,13 +446,13 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292EFF">formatters </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"clean"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> clean_title</span><span style="color:#212121">,</span><span style="color:#22863A"> "shout"</span><span style="color:#212121">:</span><span style="color:#24292EFF"> shout_title</span><span style="color:#212121">}</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(formatters[</span><span style="color:#22863A">"clean"</span><span style="color:#212121">](</span><span style="color:#22863A">"  Orbit  "</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(formatters[</span><span style="color:#22863A">"clean"</span><span style="color:#212121">](</span><span style="color:#22863A">"  Imagine  "</span><span style="color:#212121">))</span></span>
 <span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> name</span><span style="color:#212121">,</span><span style="color:#24292EFF"> format_title </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> formatters</span><span style="color:#212121">.</span><span style="color:#6F42C1">items</span><span style="color:#212121">():</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(name, </span><span style="color:#6F42C1">format_title</span><span style="color:#212121">(</span><span style="color:#22863A">"Echo"</span><span style="color:#212121">))</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(name, </span><span style="color:#6F42C1">format_title</span><span style="color:#212121">(</span><span style="color:#22863A">"Yesterday"</span><span style="color:#212121">))</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Orbit</span></span>
-<span class="line"><span>clean Echo</span></span>
-<span class="line"><span>shout ECHO</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Imagine</span></span>
+<span class="line"><span>clean Yesterday</span></span>
+<span class="line"><span>shout YESTERDAY</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>A dictionary mapping keys to functions is a dispatch table</li>

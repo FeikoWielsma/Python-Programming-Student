@@ -89,14 +89,16 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">filename </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> input</span><span style="color:#212121">(</span><span style="color:#22863A">"Photo filename: "</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> filename</span><span style="color:#212121">.</span><span style="color:#6F42C1">lower</span><span style="color:#212121">().</span><span style="color:#6F42C1">endswith</span><span style="color:#212121">(</span><span style="color:#22863A">".jpg"</span><span style="color:#212121">):</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Photo selected: </span><span style="color:#1976D2">{</span><span style="color:#212121">filename</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">battery </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 15</span></span>
+<span class="line"><span style="color:#D32F2F">if</span><span style="color:#24292EFF"> battery </span><span style="color:#D32F2F">>=</span><span style="color:#1976D2"> 20</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Camera ready"</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Choose a JPG photo"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Charge the battery"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Charge the battery</span></span>
+<span class="line"><span></span></span></code></pre>
 <ul>
-<li><code>cover.jpg</code> selects a photo; <code>notes.txt</code> asks for a different file</li>
+<li>With <code>battery = 80</code>, the first block runs instead</li>
 <li>An optional <code>else</code> comes last</li>
 </ul>
 <blockquote>
@@ -211,7 +213,7 @@
 <li><code>for</code> runs a block once for each item in a list, string or other iterable.</li>
 <li>The loop variable receives the next item before the block runs.</li>
 </ul>
-<div class="mermaid-diagram" style="aspect-ratio: 670 / 168"><svg xmlns="http://www.w3.org/2000/svg" class="pele pele-flowchart" viewBox="0 0 670 168" style="--_bg:var(--pele-bg,#fff);--_fg:var(--pele-fg,#1f1f1f);--_m:var(--pele-muted,#6e6e6e);--_l:var(--pele-line,#1f1f1f);--_s:var(--pele-surface,#f3f3f3);--_a:var(--pele-surface-alt,#e6e6e6);--_b:var(--pele-border,#8a8a8a);--_c:var(--pele-accent,#5b7bd5);color:var(--_fg);--_r:var(--pele-radius,4px);--_fm:var(--pele-font-mono,IBM Plex Mono, ui-monospace, monospace);font:16px sans-serif;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;font-family:var(--pele-font,IBM Plex Sans, Helvetica Neue, Arial, sans-serif)" fill="var(--_fg)" role="graphics-document document" aria-roledescription="flowchart" preserveAspectRatio="xMidYMid meet"><g class="pele-edges" fill="none" stroke="var(--_l)" stroke-linecap="round"><g class="pele-edge" data-id="L_A_B_0"><path d="M75.12,84L116.12,84" /><path class="pele-marker" d="M123.12,84L115.12,87.36L115.12,80.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_B_C_0"><path d="M228.75,68L241.75,68C258.3,68 258.3,32 274.85,32L331.47,32" /><path class="pele-marker" d="M338.47,32L330.47,35.36L330.47,28.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_C_D_0"><path d="M485.63,32C503.13,32 503.13,50 520.63,50L526.63,50" /><path class="pele-marker" d="M533.63,50L525.63,53.36L525.63,46.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_D_B_0"><path d="M533.63,66L520.63,66C503.13,66 503.13,84 485.63,84L261.35,84" /><path class="pele-marker" d="M254.35,84L262.35,80.64L262.35,87.36Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_B_E_0"><path d="M228.75,100L241.75,100C258.3,100 258.3,136 274.85,136L340.35,136" /><path class="pele-marker" d="M347.35,136L339.35,139.36L339.35,132.64Z" fill="var(--_l)" stroke="none" /></g></g><g class="pele-edge-labels" font-size="14"><g class="pele-edge-label" data-id="L_B_C_0"><rect x="276.85" y="21.5" width="32.12" height="21" rx="3" fill="var(--_bg)" /><text x="292.91" y="36.9" text-anchor="middle">Yes</text></g><g class="pele-edge-label" data-id="L_B_E_0"><rect x="279.97" y="125.5" width="25.89" height="21" rx="3" fill="var(--_bg)" /><text x="292.91" y="140.9" text-anchor="middle">No</text></g></g><g class="pele-nodes"><g class="pele-node pele-shape-rect" data-id="A" transform="translate(41.56,84)"><rect x="-33.56" y="-24" width="67.12" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">start</text></g><g class="pele-node pele-shape-diam" data-id="B" transform="translate(188.74,84)"><polygon points="0,-41.01 65.62,0 0,41.01 -65.62,0" fill="var(--_s)" stroke="var(--_b)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">next file?</text></g><g class="pele-node pele-shape-rect" data-id="C" transform="translate(412.05,32)"><rect x="-73.58" y="-24" width="147.15" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">assign filename</text></g><g class="pele-node pele-shape-rect" data-id="D" transform="translate(597.43,58)"><rect x="-63.8" y="-24" width="127.6" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">run the block</text></g><g class="pele-node pele-shape-rect" data-id="E" transform="translate(412.05,136)"><rect x="-64.7" y="-24" width="129.39" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">after the loop</text></g></g></svg></div>
+<div class="mermaid-diagram" style="aspect-ratio: 767 / 168"><svg xmlns="http://www.w3.org/2000/svg" class="pele pele-flowchart" viewBox="0 0 767 168" style="--_bg:var(--pele-bg,#fff);--_fg:var(--pele-fg,#1f1f1f);--_m:var(--pele-muted,#6e6e6e);--_l:var(--pele-line,#1f1f1f);--_s:var(--pele-surface,#f3f3f3);--_a:var(--pele-surface-alt,#e6e6e6);--_b:var(--pele-border,#8a8a8a);--_c:var(--pele-accent,#5b7bd5);color:var(--_fg);--_r:var(--pele-radius,4px);--_fm:var(--pele-font-mono,IBM Plex Mono, ui-monospace, monospace);font:16px sans-serif;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;font-family:var(--pele-font,IBM Plex Sans, Helvetica Neue, Arial, sans-serif)" fill="var(--_fg)" role="graphics-document document" aria-roledescription="flowchart" preserveAspectRatio="xMidYMid meet"><g class="pele-edges" fill="none" stroke="var(--_l)" stroke-linecap="round"><g class="pele-edge" data-id="L_A_B_0"><path d="M75.12,84L116.12,84" /><path class="pele-marker" d="M123.12,84L115.12,87.36L115.12,80.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_B_C_0"><path d="M238.53,68L251.53,68C268.08,68 268.08,32 284.63,32L341.25,32" /><path class="pele-marker" d="M348.25,32L340.25,35.36L340.25,28.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_C_D_0"><path d="M582.57,32C600.07,32 600.07,50 617.57,50L623.57,50" /><path class="pele-marker" d="M630.57,50L622.57,53.36L622.57,46.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_D_B_0"><path d="M630.57,66L617.57,66C600.07,66 600.07,84 582.57,84L271.13,84" /><path class="pele-marker" d="M264.13,84L272.13,80.64L272.13,87.36Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_B_E_0"><path d="M238.53,100L251.53,100C268.08,100 268.08,136 284.63,136L393.71,136" /><path class="pele-marker" d="M400.71,136L392.71,139.36L392.71,132.64Z" fill="var(--_l)" stroke="none" /></g></g><g class="pele-edge-labels" font-size="14"><g class="pele-edge-label" data-id="L_B_C_0"><rect x="286.63" y="21.5" width="32.12" height="21" rx="3" fill="var(--_bg)" /><text x="302.69" y="36.9" text-anchor="middle">Yes</text></g><g class="pele-edge-label" data-id="L_B_E_0"><rect x="289.74" y="125.5" width="25.89" height="21" rx="3" fill="var(--_bg)" /><text x="302.69" y="140.9" text-anchor="middle">No</text></g></g><g class="pele-nodes"><g class="pele-node pele-shape-rect" data-id="A" transform="translate(41.56,84)"><rect x="-33.56" y="-24" width="67.12" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">start</text></g><g class="pele-node pele-shape-diam" data-id="B" transform="translate(193.62,84)"><polygon points="0,-44.06 70.5,0 0,44.07 -70.5,0" fill="var(--_s)" stroke="var(--_b)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">next item?</text></g><g class="pele-node pele-shape-rect" data-id="C" transform="translate(465.41,32)"><rect x="-117.16" y="-24" width="234.32" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">assign it to the loop variable</text></g><g class="pele-node pele-shape-rect" data-id="D" transform="translate(694.37,58)"><rect x="-63.8" y="-24" width="127.6" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">run the block</text></g><g class="pele-node pele-shape-rect" data-id="E" transform="translate(465.41,136)"><rect x="-64.7" y="-24" width="129.39" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">after the loop</text></g></g></svg></div>
 <ul>
 <li>An empty sequence skips the block entirely.</li>
 <li>The loop stops automatically when there are no items left.</li>
@@ -219,20 +221,28 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="10" data-paginate="true" data-class="default" data-theme="spiraltrain" lang="C" class="default" data-marpit-pagination="10" style="--paginate:true;--class:default;--theme:spiraltrain;" data-marpit-pagination-total="17" data-size="16:10">
 <div class="ml-eyebrow"><a>Control Flow</a></div>
-<h1 id="processing-each-file">Processing Each File</h1>
+<h1 id="looping-over-a-playlist">Looping over a Playlist</h1>
 <ul>
-<li><code>filename</code> takes each name from <code>files</code> in turn.</li>
+<li><code>title</code> takes each item from <code>playlist</code> in turn.</li>
 <li>The unindented <code>print</code> runs once, after the loop.</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">files </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"cover.jpg"</span><span style="color:#212121">,</span><span style="color:#22863A"> "stage.jpg"</span><span style="color:#212121">,</span><span style="color:#22863A"> "crowd.jpg"</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> filename </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> files</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Processing </span><span style="color:#1976D2">{</span><span style="color:#212121">filename</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"All files processed"</span><span style="color:#212121">)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">playlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> title </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> playlist</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Now playing: </span><span style="color:#1976D2">{</span><span style="color:#212121">title</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Playlist finished"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Processing cover.jpg</span></span>
-<span class="line"><span>Processing stage.jpg</span></span>
-<span class="line"><span>Processing crowd.jpg</span></span>
-<span class="line"><span>All files processed</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Now playing: Imagine</span></span>
+<span class="line"><span>Now playing: Yesterday</span></span>
+<span class="line"><span>Now playing: Respect</span></span>
+<span class="line"><span>Playlist finished</span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li>Any iterable works the same way; a string gives one character per pass :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> letter </span><span style="color:#D32F2F">in</span><span style="color:#22863A"> "ABBA"</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(letter, end</span><span style="color:#D32F2F">=</span><span style="color:#22863A">" "</span><span style="color:#212121">)</span></span>
+<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>A B B A</span></span>
 <span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo07</code><br><code class="pill-demo pill-desc">for</code></p>
@@ -244,9 +254,9 @@
 <ul>
 <li>A sequence can be walked by index, using <code>len()</code> and <code>range()</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">planets </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"venus"</span><span style="color:#212121">,</span><span style="color:#22863A"> "mars"</span><span style="color:#212121">,</span><span style="color:#22863A"> "jupiter"</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> index </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> range</span><span style="color:#212121">(</span><span style="color:#6F42C1">len</span><span style="color:#212121">(planets)):</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Current planet :"</span><span style="color:#212121">, planets[index])</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">playlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> index </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> range</span><span style="color:#212121">(</span><span style="color:#6F42C1">len</span><span style="color:#212121">(playlist)):</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Now playing :"</span><span style="color:#212121">, playlist[index])</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>This works, and is what a loop over positions looks like in many languages :
@@ -263,8 +273,8 @@
 </li>
 <li>When the element is all you need, iterate the sequence itself :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> planet </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> planets</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Current planet :"</span><span style="color:#212121">, planet)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> title </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> playlist</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#22863A">"Now playing :"</span><span style="color:#212121">, title)</span></span>
 <span class="line"></span></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="12" data-paginate="true" data-class="default" data-theme="spiraltrain" lang="C" class="default" data-marpit-pagination="12" style="--paginate:true;--class:default;--theme:spiraltrain;" data-marpit-pagination-total="17" data-size="16:10">
@@ -273,19 +283,19 @@
 <ul>
 <li>When the index is genuinely needed, <code>enumerate</code> yields both :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> index</span><span style="color:#212121">,</span><span style="color:#24292EFF"> planet </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(planets):</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(index, planet)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> index</span><span style="color:#212121">,</span><span style="color:#24292EFF"> title </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(playlist):</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(index, title)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>0 venus</span></span>
-<span class="line"><span>1 mars</span></span>
-<span class="line"><span>2 jupiter</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>0 Imagine</span></span>
+<span class="line"><span>1 Yesterday</span></span>
+<span class="line"><span>2 Respect</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>The two can never fall out of step, because they come from one call</li>
 <li>Counting starts at zero unless a <code>start</code> is given :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> number</span><span style="color:#212121">,</span><span style="color:#24292EFF"> planet </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(planets, start</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">):</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(number, planet)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> number</span><span style="color:#212121">,</span><span style="color:#24292EFF"> title </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(playlist, start</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">):</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(number, title)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>The pattern generalises :
@@ -314,14 +324,14 @@
 <ul>
 <li><code>break</code> ends the loop immediately when the requested track is found :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Intro"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Outro"</span><span style="color:#24292EFF">]</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">:</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Thriller"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Hey Jude"</span><span style="color:#24292EFF">]</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#D32F2F">        break</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Checked </span><span style="color:#1976D2">{</span><span style="color:#212121">track</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Search complete"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>The final message runs after the search; <code>Outro</code> is never checked</li>
+<li>The final message runs after the search; <code>Hey Jude</code> is never checked</li>
 </ul>
 <blockquote>
 <p><code class="pill-demo pill-id">demo09</code><br><code class="pill-demo pill-desc">breakandcontinue</code></p>
@@ -337,8 +347,8 @@
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">requested </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Comet"</span></span>
-<span class="line"><span style="color:#24292EFF">playlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#24292EFF">]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">requested </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Wonderwall"</span></span>
+<span class="line"><span style="color:#24292EFF">playlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#24292EFF">]</span></span>
 <span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> playlist</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#24292EFF"> requested</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">        print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Found </span><span style="color:#1976D2">{</span><span style="color:#212121">requested</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
@@ -346,10 +356,10 @@
 <span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">requested</span><span style="color:#1976D2">}</span><span style="color:#22863A"> is not in the playlist"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Comet is not in the playlist</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Wonderwall is not in the playlist</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
-<li>With <code>requested = &quot;Echo&quot;</code>, <code>break</code> skips the <code>else</code> block</li>
+<li>With <code>requested = &quot;Yesterday&quot;</code>, <code>break</code> skips the <code>else</code> block</li>
 <li>A <code>while</code> loop can also have <code>else</code>; it runs when the condition becomes false</li>
 </ul>
 <blockquote>

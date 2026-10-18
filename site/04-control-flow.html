@@ -1352,14 +1352,14 @@ a.ex-row:hover { border-color: var(--accent); }
 <ul>
 <li><code>break</code> ends the loop immediately when the requested track is found :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Intro"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Outro"</span><span style="color:#24292EFF">]</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">:</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Thriller"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Hey Jude"</span><span style="color:#24292EFF">]</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#D32F2F">        break</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Checked </span><span style="color:#1976D2">{</span><span style="color:#212121">track</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Search complete"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>The final message runs after the search; <code>Outro</code> is never checked</li>
+<li>The final message runs after the search; <code>Hey Jude</code> is never checked</li>
 </ul>
 <blockquote>
 <p><code class="pill-demo pill-id">demo09</code><br><code class="pill-demo pill-desc">breakandcontinue</code></p>
@@ -1445,19 +1445,19 @@ a.ex-row:hover { border-color: var(--accent); }
 <ul>
 <li>When the index is genuinely needed, <code>enumerate</code> yields both :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> index</span><span style="color:#212121">,</span><span style="color:#24292EFF"> planet </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(planets):</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(index, planet)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> index</span><span style="color:#212121">,</span><span style="color:#24292EFF"> title </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(playlist):</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(index, title)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>0 venus</span></span>
-<span class="line"><span>1 mars</span></span>
-<span class="line"><span>2 jupiter</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>0 Imagine</span></span>
+<span class="line"><span>1 Yesterday</span></span>
+<span class="line"><span>2 Respect</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>The two can never fall out of step, because they come from one call</li>
 <li>Counting starts at zero unless a <code>start</code> is given :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> number</span><span style="color:#212121">,</span><span style="color:#24292EFF"> planet </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(planets, start</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">):</span></span>
-<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(number, planet)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> number</span><span style="color:#212121">,</span><span style="color:#24292EFF"> title </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(playlist, start</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">1</span><span style="color:#212121">):</span></span>
+<span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(number, title)</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>The pattern generalises :
@@ -1532,7 +1532,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <template id="slide-02-variables-and-data-types-23" data-css="slide-css-1" data-title="Built-in String Methods" data-module="Module 2 · Variables and Data Types" data-deck="slides/02-variables-and-data-types.html#23"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Variables and Data Types</a></div>
 <h1 id="built-in-string-methods">Built-in String Methods</h1>
 <ul>
-<li>String methods are called with dot notation : <code>&quot;Orbit&quot;.upper()</code>
+<li>String methods are called with dot notation : <code>&quot;Imagine&quot;.upper()</code>
 <ul>
 <li>A string never changes, so each method returns a new string or a value</li>
 </ul>
@@ -1601,21 +1601,21 @@ a.ex-row:hover { border-color: var(--accent); }
 <template id="slide-03-data-structures-15" data-css="slide-css-1" data-title="Set Operations" data-module="Module 3 · Data Structures" data-deck="slides/03-data-structures.html#15"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Data Structures</a></div>
 <h1 id="set-operations">Set Operations</h1>
 <ul>
-<li>Two festival lineups show which artists play either day or both days :</li>
+<li>Two fields of science show who worked in either field or in both :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">day_one </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Nova"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Orbit"</span><span style="color:#212121">}</span></span>
-<span class="line"><span style="color:#24292EFF">day_two </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Pulse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Muse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Vega"</span><span style="color:#212121">}</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Pulse"</span><span style="color:#D32F2F"> in</span><span style="color:#212121"> day_two)</span><span style="color:#4a9c59">  # True</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">|</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # union, in either set</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">&#x26;</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # intersection, in both</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">-</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # difference, in day_one only</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">^</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # in one of the two, not both</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">physics </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Einstein"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Bohr"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Curie"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Fermi"</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#24292EFF">chemistry </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Curie"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Rutherford"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pauling"</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Curie"</span><span style="color:#D32F2F"> in</span><span style="color:#212121"> chemistry)</span><span style="color:#4a9c59">  # True</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">|</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # union, in either set</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">&#x26;</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # intersection, in both</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">-</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # difference, in physics only</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">^</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # in one of the two, not both</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>True</span></span>
-<span class="line"><span>['Echo', 'Muse', 'Nova', 'Orbit', 'Pulse', 'Vega']</span></span>
-<span class="line"><span>['Pulse']</span></span>
-<span class="line"><span>['Echo', 'Nova', 'Orbit']</span></span>
-<span class="line"><span>['Echo', 'Muse', 'Nova', 'Orbit', 'Vega']</span></span>
+<span class="line"><span>['Bohr', 'Curie', 'Einstein', 'Fermi', 'Pauling', 'Rutherford']</span></span>
+<span class="line"><span>['Curie']</span></span>
+<span class="line"><span>['Bohr', 'Einstein', 'Fermi']</span></span>
+<span class="line"><span>['Bohr', 'Einstein', 'Fermi', 'Pauling', 'Rutherford']</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>A set has no order, so <code>sorted()</code> turns it into a list to print it predictably</li>
@@ -1636,8 +1636,8 @@ a.ex-row:hover { border-color: var(--accent); }
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">requested </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Comet"</span></span>
-<span class="line"><span style="color:#24292EFF">playlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#24292EFF">]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">requested </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Wonderwall"</span></span>
+<span class="line"><span style="color:#24292EFF">playlist </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#24292EFF">]</span></span>
 <span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> playlist</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#24292EFF"> requested</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">        print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Found </span><span style="color:#1976D2">{</span><span style="color:#212121">requested</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
@@ -1645,10 +1645,10 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="color:#D32F2F">else</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#212121">requested</span><span style="color:#1976D2">}</span><span style="color:#22863A"> is not in the playlist"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Comet is not in the playlist</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Wonderwall is not in the playlist</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
-<li>With <code>requested = &quot;Echo&quot;</code>, <code>break</code> skips the <code>else</code> block</li>
+<li>With <code>requested = &quot;Yesterday&quot;</code>, <code>break</code> skips the <code>else</code> block</li>
 <li>A <code>while</code> loop can also have <code>else</code>; it runs when the condition becomes false</li>
 </ul>
 <blockquote>

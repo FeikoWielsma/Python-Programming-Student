@@ -1183,21 +1183,21 @@ a.ex-row:hover { border-color: var(--accent); }
 <template id="slide-03-data-structures-15" data-css="slide-css-1" data-title="Set Operations" data-module="Module 3 · Data Structures" data-deck="slides/03-data-structures.html#15"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Data Structures</a></div>
 <h1 id="set-operations">Set Operations</h1>
 <ul>
-<li>Two festival lineups show which artists play either day or both days :</li>
+<li>Two fields of science show who worked in either field or in both :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">day_one </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Nova"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Orbit"</span><span style="color:#212121">}</span></span>
-<span class="line"><span style="color:#24292EFF">day_two </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Pulse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Muse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Vega"</span><span style="color:#212121">}</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Pulse"</span><span style="color:#D32F2F"> in</span><span style="color:#212121"> day_two)</span><span style="color:#4a9c59">  # True</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">|</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # union, in either set</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">&#x26;</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # intersection, in both</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">-</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # difference, in day_one only</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(day_one </span><span style="color:#D32F2F">^</span><span style="color:#212121"> day_two))</span><span style="color:#4a9c59">  # in one of the two, not both</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">physics </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Einstein"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Bohr"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Curie"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Fermi"</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#24292EFF">chemistry </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Curie"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Rutherford"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pauling"</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Curie"</span><span style="color:#D32F2F"> in</span><span style="color:#212121"> chemistry)</span><span style="color:#4a9c59">  # True</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">|</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # union, in either set</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">&#x26;</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # intersection, in both</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">-</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # difference, in physics only</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">sorted</span><span style="color:#212121">(physics </span><span style="color:#D32F2F">^</span><span style="color:#212121"> chemistry))</span><span style="color:#4a9c59">  # in one of the two, not both</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>True</span></span>
-<span class="line"><span>['Echo', 'Muse', 'Nova', 'Orbit', 'Pulse', 'Vega']</span></span>
-<span class="line"><span>['Pulse']</span></span>
-<span class="line"><span>['Echo', 'Nova', 'Orbit']</span></span>
-<span class="line"><span>['Echo', 'Muse', 'Nova', 'Orbit', 'Vega']</span></span>
+<span class="line"><span>['Bohr', 'Curie', 'Einstein', 'Fermi', 'Pauling', 'Rutherford']</span></span>
+<span class="line"><span>['Curie']</span></span>
+<span class="line"><span>['Bohr', 'Einstein', 'Fermi']</span></span>
+<span class="line"><span>['Bohr', 'Einstein', 'Fermi', 'Pauling', 'Rutherford']</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li>A set has no order, so <code>sorted()</code> turns it into a list to print it predictably</li>
@@ -1284,11 +1284,11 @@ a.ex-row:hover { border-color: var(--accent); }
 </ul>
 </li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">track </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 222</span><span style="color:#24292EFF">)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">track </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 183</span><span style="color:#24292EFF">)</span></span>
 <span class="line"><span style="color:#24292EFF">dimensions </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#1976D2">1920</span><span style="color:#212121">,</span><span style="color:#1976D2"> 1080</span><span style="color:#24292EFF">)</span></span>
-<span class="line"><span style="color:#24292EFF">titles </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#4a9c59">  # The comma creates a tuple.</span></span>
+<span class="line"><span style="color:#24292EFF">titles </span><span style="color:#D32F2F">=</span><span style="color:#22863A"> "Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#4a9c59">  # The comma creates a tuple.</span></span>
 <span class="line"><span style="color:#24292EFF">empty </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> ()</span></span>
-<span class="line"><span style="color:#24292EFF">single </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#24292EFF">)  </span><span style="color:#4a9c59"># A one-item tuple needs the comma.</span></span>
+<span class="line"><span style="color:#24292EFF">single </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#24292EFF">)  </span><span style="color:#4a9c59"># A one-item tuple needs the comma.</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Items cannot be replaced, inserted or removed from an existing tuple</li>
@@ -1374,20 +1374,20 @@ a.ex-row:hover { border-color: var(--accent); }
 <li>Dictionaries are hash tables :
 <ul>
 <li>Looking up a key is fast, however large the dictionary</li>
-<li>Consist of key-value pairs separated by commas</li>
 </ul>
 </li>
 <li>Dictionaries are enclosed by curly braces <code>{ }</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 222</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 185</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 204</span><span style="color:#212121">}</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span><span style="color:#4a9c59">  # {'Orbit': 222, 'Echo': 185, 'Pulse': 204}</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 183</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 125</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 149</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span><span style="color:#4a9c59">  # {'Imagine': 183, 'Yesterday': 125, 'Respect': 149}</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Values can be assigned and accessed using square brackets <code>[]</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Nova"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 196</span></span>
-<span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Intro"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 90</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span><span style="color:#4a9c59">  # {'Orbit': 222, 'Echo': 185, 'Pulse': 204, 'Nova': 196, 'Intro': 90}</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Toxic"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 199</span></span>
+<span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Thriller"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 357</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span></span>
+<span class="line"><span style="color:#4a9c59"># {'Imagine': 183, 'Yesterday': 125, 'Respect': 149, 'Toxic': 199, 'Thriller': 357}</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Dictionaries remember insertion order :
@@ -1409,20 +1409,20 @@ a.ex-row:hover { border-color: var(--accent); }
 </li>
 <li>Use square brackets along with the key to obtain its value :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Echo"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # 185</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Intro"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # 90</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Yesterday"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # 125</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Thriller"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # 357</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Dictionary can be updated by modifying an existing entry :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Pulse"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 210</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Pulse"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # 210</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Respect"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 147</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Respect"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # 147</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Dictionary entry can be deleted :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">del</span><span style="color:#24292EFF"> durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">]</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # KeyError</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">del</span><span style="color:#24292EFF"> durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">]</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations[</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">])</span><span style="color:#4a9c59">  # KeyError</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Entire contents of dictionary is cleared with <code>clear()</code> :
@@ -1450,7 +1450,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <ul>
 <li><code>bool</code> converts a value using its truth value :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#1976D2">bool</span><span style="color:#212121">(</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">))</span><span style="color:#4a9c59">  # True</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#1976D2">bool</span><span style="color:#212121">(</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">))</span><span style="color:#4a9c59">  # True</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#1976D2">bool</span><span style="color:#212121">(</span><span style="color:#22863A">""</span><span style="color:#212121">))</span><span style="color:#4a9c59">  # False</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#1976D2">bool</span><span style="color:#212121">(</span><span style="color:#1976D2">222</span><span style="color:#212121">))</span><span style="color:#4a9c59">  # True</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#1976D2">bool</span><span style="color:#212121">(</span><span style="color:#1976D2">0</span><span style="color:#212121">))</span><span style="color:#4a9c59">  # False</span></span>

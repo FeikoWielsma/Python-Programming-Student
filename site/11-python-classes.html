@@ -1035,7 +1035,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        self</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.words </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> words</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        self</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.history: list[tuple[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, list[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]]] </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> []</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        self</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">.max_guesses </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> max_guesses</span></span></code></pre></div>
-<p><code>__init__</code> runs when you write <code>Game(...)</code>, and <code>self</code> is the new object. Every <code>self.name = ...</code> makes an attribute on that object. <code>secret</code> is the word to find, <code>words</code> is the list of words the game accepts as a guess, and <code>history</code> collects each guess with its marks, which is the list that <code>candidates</code> in <code>wordle/solver.py</code> already expects. See <button type="button" class="slide-ref" data-slide="11-python-classes-3" title="Show the slide"><em>Creating Classes</em></button> and <button type="button" class="slide-ref" data-slide="11-python-classes-5" title="Show the slide"><em>Class Members</em></button>.</p>
+<p><code>__init__</code> runs when you write <code>Game(...)</code>, and <code>self</code> is the new object. Every <code>self.name = ...</code> makes an attribute on that object. <code>secret</code> is the word to find, <code>words</code> is the list of words the game accepts as a guess, and <code>history</code> collects each guess with its marks, which is the list that <code>candidates</code> in <code>wordle/solver.py</code> already expects. See <button type="button" class="slide-ref" data-slide="11-python-classes-3" title="Show the slide"><em>Creating Classes</em></button> and <button type="button" class="slide-ref" data-slide="11-python-classes-6" title="Show the slide"><em>Class Members</em></button>.</p>
 <p>Start a Python session in the project folder and look at an object :</p>
 <div class="codeblock"><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">uv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> run</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> python</span></span></code></pre></div>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.game </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Game</span></span>
@@ -1046,7 +1046,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(game.max_guesses)</span></span></code></pre></div>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>crane 6 []</span></span>
 <span class="line"><span>3</span></span></code></pre></div>
-<p>An attribute is read and assigned like a variable. There is nothing else to write, and for now that is how it should be. See <button type="button" class="slide-ref" data-slide="11-python-classes-10" title="Show the slide"><em>Attributes Are Public</em></button>.</p>
+<p>An attribute is read and assigned like a variable. There is nothing else to write, and for now that is how it should be. See <button type="button" class="slide-ref" data-slide="11-python-classes-11" title="Show the slide"><em>Attributes Are Public</em></button>.</p>
 
 </section>
 <section class="step" id="step-2" data-step="2">
@@ -1066,7 +1066,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span>wordle.scoring.InvalidGuess: That word is not in the word list.</span></span></code></pre></div>
 <p>The rejected guess left the history alone : <code>game.history</code> still holds only <code>slate</code>.</p>
 <details class="aid hint" name="hint-2"><summary>Hint 1</summary><div class="body">
-<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-5" title="Show the slide"><em>Class Members</em></button> shows a method that works on <code>self</code>, and <button type="button" class="slide-ref" data-slide="03-data-structures-7" title="Show the slide"><em>List Functions and Methods</em></button>, in module 03, has <code>append</code>.</p>
+<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-6" title="Show the slide"><em>Class Members</em></button> shows a method that works on <code>self</code>, and <button type="button" class="slide-ref" data-slide="03-data-structures-7" title="Show the slide"><em>List Functions and Methods</em></button>, in module 03, has <code>append</code>.</p>
 </div></details>
 <details class="aid hint" name="hint-2"><summary>Hint 2</summary><div class="body">
 <p>The method has three lines of real work : <code>check_guess(word, self.words)</code>, then <code>marks = score_guess(self.secret, word)</code>, then an <code>append</code> of the pair <code>(word, marks)</code> to <code>self.history</code>. Return <code>marks</code>.</p>
@@ -1084,7 +1084,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </section>
 <section class="step" id="step-3" data-step="3">
 <h2><span class="num">Step 3</span><span class="title">Values that work themselves out</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="3" data-step="3"> Done</label></h2>
-<p>Callers will keep asking three things : has the player won, is the game over, how many guesses are left. All three can be worked out from <code>history</code> and <code>max_guesses</code>, so none of them needs to be stored. As methods they would be called <code>game.is_won()</code>. With <code>@property</code> above the <code>def</code> they are read as <code>game.is_won</code>, like an attribute that is always correct. See <button type="button" class="slide-ref" data-slide="11-python-classes-11" title="Show the slide"><em>A Computed Attribute</em></button>.</p>
+<p>Callers will keep asking three things : has the player won, is the game over, how many guesses are left. All three can be worked out from <code>history</code> and <code>max_guesses</code>, so none of them needs to be stored. As methods they would be called <code>game.is_won()</code>. With <code>@property</code> above the <code>def</code> they are read as <code>game.is_won</code>, like an attribute that is always correct. See <button type="button" class="slide-ref" data-slide="11-python-classes-12" title="Show the slide"><em>A Computed Attribute</em></button>.</p>
 <p>Add these three to <code>Game</code>, above <code>guess</code> :</p>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    @</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">property</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> is_won</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(self) -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
@@ -1119,7 +1119,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span>True True 0</span></span>
 <span class="line"><span>AttributeError: property 'is_won' of 'Game' object has no setter</span></span></code></pre></div>
 <details class="aid hint" name="hint-3"><summary>Hint 1</summary><div class="body">
-<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-11" title="Show the slide"><em>A Computed Attribute</em></button> shows <code>@property</code> on a method that returns a value worked out from other attributes.</p>
+<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-12" title="Show the slide"><em>A Computed Attribute</em></button> shows <code>@property</code> on a method that returns a value worked out from other attributes.</p>
 </div></details>
 <details class="aid hint" name="hint-3"><summary>Hint 2</summary><div class="body">
 <p><code>is_won</code> is true when there is at least one guess and the last one is the secret. <code>self.history[-1][0]</code> is the word of the last guess. An empty list has no last item, so check <code>self.history</code> first; <code>bool(self.history and ...)</code> returns a real <code>bool</code>.</p>
@@ -1155,7 +1155,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(game.max_guesses, game.guesses_left, game.is_over)</span></span></code></pre></div>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>0 0 True</span></span>
 <span class="line"><span>-3 -3 True</span></span></code></pre></div>
-<p>Both games are over before they start, and the second one claims to have minus three guesses left. The class has no way to stop either. This is the situation the slide <button type="button" class="slide-ref" data-slide="11-python-classes-12" title="Show the slide"><em>When a Plain Attribute Is Not Enough</em></button> is about.</p>
+<p>Both games are over before they start, and the second one claims to have minus three guesses left. The class has no way to stop either. This is the situation the slide <button type="button" class="slide-ref" data-slide="11-python-classes-13" title="Show the slide"><em>When a Plain Attribute Is Not Enough</em></button> is about.</p>
 <p>The fix is to turn <code>max_guesses</code> into a property with a setter, and to let the setter refuse values that are not between 1 and 10. Here are the signatures. Both methods are called <code>max_guesses</code>, and the second is decorated with <code>@max_guesses.setter</code> :</p>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    @</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">property</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> max_guesses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(self) -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
@@ -1164,7 +1164,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    @max_guesses.setter</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> max_guesses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(self, value: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">None</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        """Keep the guess limit between one and ten."""</span></span></code></pre></div>
-<p>The setter raises <code>ValueError(&quot;max_guesses must be between 1 and 10&quot;)</code> for any other value, and stores a valid one in <code>self._max_guesses</code>. The leading underscore says that the attribute is the property's own storage and not for outside use; see <button type="button" class="slide-ref" data-slide="11-python-classes-13" title="Show the slide"><em>The Rule of Thumb</em></button>.</p>
+<p>The setter raises <code>ValueError(&quot;max_guesses must be between 1 and 10&quot;)</code> for any other value, and stores a valid one in <code>self._max_guesses</code>. The leading underscore says that the attribute is the property's own storage and not for outside use; see <button type="button" class="slide-ref" data-slide="11-python-classes-14" title="Show the slide"><em>The Rule of Thumb</em></button>.</p>
 <p>In a new session, <code>10</code> is still accepted, but <code>0</code>, and a limit of <code>11</code> given to the constructor, now stop with the error :</p>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">game </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Game(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"crane"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, [</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"crane"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"slate"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">])</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">game.max_guesses </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 10</span></span>
@@ -1176,7 +1176,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span>ValueError: max_guesses must be between 1 and 10</span></span></code></pre></div>
 <p>Make it work <strong>without changing a line anywhere else</strong>. <code>__init__</code> still says <code>self.max_guesses = max_guesses</code>, and <code>play</code> still reads <code>game.max_guesses</code>. That is the lesson : callers could not tell the plain attribute from the property, so nobody had to write <code>get_max_guesses</code> and <code>set_max_guesses</code> in advance. You start with the plain attribute, and you turn it into a property on the day it needs a rule.</p>
 <details class="aid hint" name="hint-4"><summary>Hint 1</summary><div class="body">
-<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-12" title="Show the slide"><em>When a Plain Attribute Is Not Enough</em></button> turns <code>health</code> into a property whose setter checks the value; <code>demo07 · validatingsetter</code> runs it.</p>
+<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-13" title="Show the slide"><em>When a Plain Attribute Is Not Enough</em></button> turns <code>health</code> into a property whose setter checks the value; <code>demo08 · validatingsetter</code> runs it.</p>
 </div></details>
 <details class="aid hint" name="hint-4"><summary>Hint 2</summary><div class="body">
 <p>The getter returns <code>self._max_guesses</code>. The setter checks <code>1 &lt;= value &lt;= 10</code>, raises <code>ValueError</code> when that is false and assigns <code>self._max_guesses = value</code> otherwise.</p>
@@ -1226,7 +1226,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </ul>
 <p>Play a game with <code>WORDLE_SECRET=crane</code>; it must behave as before.</p>
 <details class="aid hint" name="hint-5"><summary>Hint 1</summary><div class="body">
-<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-9" title="Show the slide"><em><code>__str__</code> and <code>__repr__</code></em></button> shows <code>__str__</code> returning the text that <code>print</code> shows, and <button type="button" class="slide-ref" data-slide="07-comprehensions-12" title="Show the slide"><em>Generator Expressions</em></button>, in module 07, writes an expression inside <code>join</code>.</p>
+<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-10" title="Show the slide"><em><code>__str__</code> and <code>__repr__</code></em></button> shows <code>__str__</code> returning the text that <code>print</code> shows, and <button type="button" class="slide-ref" data-slide="07-comprehensions-12" title="Show the slide"><em>Generator Expressions</em></button>, in module 07, writes an expression inside <code>join</code>.</p>
 </div></details>
 <details class="aid hint" name="hint-5"><summary>Hint 2</summary><div class="body">
 <p>The loop body shrinks to : read the guess, handle the commands, <code>check_guess</code> and <code>marks = game.guess(guess)</code> inside <code>try</code>, update <code>used_letters</code>, print <code>render(guess, marks)</code>. The win test and the counter are gone, because the loop condition and <code>game.is_won</code> now know.</p>
@@ -1308,7 +1308,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Character</span><span style="color:#24292EFF">:</span></span>
-<span class="line"><span style="color:#4a9c59">    """A game character, with nothing in it yet."""</span></span>
+<span class="line"><span style="color:#4a9c59">    """A World of Warcraft character, with nothing in it yet."""</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D32F2F">    pass</span><span style="color:#4a9c59">  # an empty block</span></span>
 <span class="line"></span></code></pre>
@@ -1320,8 +1320,8 @@ a.ex-row:hover { border-color: var(--accent); }
 </li>
 <li>Calling the class creates an object :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">hero </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">()</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(hero)</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">jaina </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(jaina)</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>&#x3C;__main__.Character object at 0x0000024A00FD8D70></span></span>
 <span class="line"><span></span></span></code></pre>
@@ -1330,7 +1330,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </blockquote>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-11-python-classes-5" data-css="slide-css-1" data-title="Class Members" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#5"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
+<template id="slide-11-python-classes-6" data-css="slide-css-1" data-title="Class Members" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#6"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
 <h1 id="class-members">Class Members</h1>
 <ul>
 <li><code>__init__()</code> :
@@ -1349,7 +1349,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <li><code>self</code> is a reference to the instance :
 <ul>
 <li>Instance attributes are read and written as <code>self.health</code></li>
-<li><code>hero.take_damage(10)</code> changes the health of <code>hero</code> and of no other character</li>
+<li><code>jaina.take_damage(10)</code> changes the health of <code>jaina</code> and of no other character</li>
 </ul>
 </li>
 <li>Python frees objects for you when nothing refers to them any more :
@@ -1360,7 +1360,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </ul>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-11-python-classes-10" data-css="slide-css-1" data-title="Attributes Are Public" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#10"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
+<template id="slide-11-python-classes-11" data-css="slide-css-1" data-title="Attributes Are Public" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#11"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
 <h1 id="attributes-are-public">Attributes Are Public</h1>
 <ul>
 <li>An attribute set in <code>__init__</code> is public, and that is fine :
@@ -1375,16 +1375,16 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> name</span></span>
 <span class="line"><span style="color:#24292EFF">        self</span><span style="color:#212121">.</span><span style="color:#24292EFF">health </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> health</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF">hero </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">(</span><span style="color:#22863A">"Aria"</span><span style="color:#212121">, </span><span style="color:#1976D2">100</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(hero.health)</span><span style="color:#4a9c59">  # read it</span></span>
-<span class="line"><span style="color:#24292EFF">hero</span><span style="color:#212121">.</span><span style="color:#24292EFF">health </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 80</span><span style="color:#4a9c59">  # write it</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(hero.health)</span></span>
+<span class="line"><span style="color:#24292EFF">jaina </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">(</span><span style="color:#22863A">"Jaina"</span><span style="color:#212121">, </span><span style="color:#1976D2">100</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(jaina.health)</span><span style="color:#4a9c59">  # read it</span></span>
+<span class="line"><span style="color:#24292EFF">jaina</span><span style="color:#212121">.</span><span style="color:#24292EFF">health </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 80</span><span style="color:#4a9c59">  # write it</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(jaina.health)</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>100</span></span>
 <span class="line"><span>80</span></span>
 <span class="line"><span></span></span></code></pre>
 <blockquote>
-<p><code class="pill-demo pill-id">demo05</code><br><code class="pill-demo pill-desc">publicattributes</code></p>
+<p><code class="pill-demo pill-id">demo06</code><br><code class="pill-demo pill-desc">publicattributes</code></p>
 </blockquote>
 </section>
 </foreignObject></svg></div></template>
@@ -1453,13 +1453,13 @@ a.ex-row:hover { border-color: var(--accent); }
 </blockquote>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-11-python-classes-11" data-css="slide-css-1" data-title="A Computed Attribute" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#11"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
+<template id="slide-11-python-classes-12" data-css="slide-css-1" data-title="A Computed Attribute" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#12"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
 <h1 id="a-computed-attribute">A Computed Attribute</h1>
 <ul>
 <li>Whether a character is alive depends on its health :
 <ul>
-<li>As a method, <code>def is_alive(self)</code>, it is called as <code>hero.is_alive()</code></li>
-<li>With <code>@property</code> above the <code>def</code>, it is read as <code>hero.is_alive</code>, like an attribute</li>
+<li>As a method, <code>def is_alive(self)</code>, it is called as <code>jaina.is_alive()</code></li>
+<li>With <code>@property</code> above the <code>def</code>, it is read as <code>jaina.is_alive</code>, like an attribute</li>
 </ul>
 </li>
 </ul>
@@ -1471,25 +1471,25 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> is_alive</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">) </span><span style="color:#212121">-></span><span style="color:#1976D2"> bool</span><span style="color:#24292EFF">:</span></span>
 <span class="line"><span style="color:#D32F2F">        return</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">health </span><span style="color:#D32F2F">></span><span style="color:#1976D2"> 0</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF">hero </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">(</span><span style="color:#22863A">"Aria"</span><span style="color:#212121">, </span><span style="color:#1976D2">30</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(hero.is_alive)</span><span style="color:#4a9c59">  # no parentheses</span></span>
-<span class="line"><span style="color:#24292EFF">hero</span><span style="color:#212121">.</span><span style="color:#24292EFF">health </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(hero.is_alive)</span><span style="color:#4a9c59">  # always current</span></span>
-<span class="line"><span style="color:#24292EFF">hero</span><span style="color:#212121">.</span><span style="color:#24292EFF">is_alive </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> True</span><span style="color:#4a9c59">  # read-only : there is no setter</span></span>
+<span class="line"><span style="color:#24292EFF">jaina </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">(</span><span style="color:#22863A">"Jaina"</span><span style="color:#212121">, </span><span style="color:#1976D2">30</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(jaina.is_alive)</span><span style="color:#4a9c59">  # no parentheses</span></span>
+<span class="line"><span style="color:#24292EFF">jaina</span><span style="color:#212121">.</span><span style="color:#24292EFF">health </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(jaina.is_alive)</span><span style="color:#4a9c59">  # always current</span></span>
+<span class="line"><span style="color:#24292EFF">jaina</span><span style="color:#212121">.</span><span style="color:#24292EFF">is_alive </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> True</span><span style="color:#4a9c59">  # read-only : there is no setter</span></span>
 <span class="line"></span></code></pre>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>True</span></span>
 <span class="line"><span>False</span></span>
 <span class="line"><span>AttributeError: property 'is_alive' of 'Character' object has no setter</span></span>
 <span class="line"><span></span></span></code></pre>
 <blockquote>
-<p><code class="pill-demo pill-id">demo06</code><br><code class="pill-demo pill-desc">computedproperty</code></p>
+<p><code class="pill-demo pill-id">demo07</code><br><code class="pill-demo pill-desc">computedproperty</code></p>
 </blockquote>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-11-python-classes-12" data-css="slide-css-1" data-title="When a Plain Attribute Is Not Enough" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#12"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
+<template id="slide-11-python-classes-13" data-css="slide-css-1" data-title="When a Plain Attribute Is Not Enough" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#13"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
 <h1 id="when-a-plain-attribute-is-not-enough">When a Plain Attribute Is Not Enough</h1>
 <ul>
-<li>The <code>Character</code> so far accepts any health, <code>hero.health = -20</code> included</li>
+<li>The <code>Character</code> so far accepts any health, <code>jaina.health = -20</code> included</li>
 <li>The fix makes <code>health</code> a property whose setter checks the value :</li>
 </ul>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Character</span><span style="color:#24292EFF">:</span></span>
@@ -1509,16 +1509,16 @@ a.ex-row:hover { border-color: var(--accent); }
 <li>The value is stored in <code>self._health</code>, the property's own storage</li>
 <li>The code that uses the class does not change :
 <ul>
-<li><code>hero.health = 0</code> still works, and <code>hero.health = -20</code> now raises <code>ValueError</code></li>
+<li><code>jaina.health = 0</code> still works, and <code>jaina.health = -20</code> now raises <code>ValueError</code></li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p><code class="pill-demo pill-id">demo07</code><br><code class="pill-demo pill-desc">validatingsetter</code></p>
+<p><code class="pill-demo pill-id">demo08</code><br><code class="pill-demo pill-desc">validatingsetter</code></p>
 </blockquote>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-11-python-classes-13" data-css="slide-css-1" data-title="The Rule of Thumb" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#13"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
+<template id="slide-11-python-classes-14" data-css="slide-css-1" data-title="The Rule of Thumb" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#14"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
 <h1 id="the-rule-of-thumb">The Rule of Thumb</h1>
 <ul>
 <li>Start with a plain attribute :
@@ -1529,7 +1529,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <li>Turn it into a property the day it needs a rule :
 <ul>
 <li>A check on the value, or a value computed from other attributes</li>
-<li>The calling code keeps writing <code>hero.health</code>, so nothing else changes</li>
+<li>The calling code keeps writing <code>jaina.health</code>, so nothing else changes</li>
 </ul>
 </li>
 <li>The property keeps its value in an attribute with a leading underscore :
@@ -1538,10 +1538,10 @@ a.ex-row:hover { border-color: var(--accent); }
 </ul>
 </li>
 </ul>
-<div class="mermaid-diagram" style="aspect-ratio: 620 / 88"><svg xmlns="http://www.w3.org/2000/svg" class="pele pele-flowchart" viewBox="0 0 620 88" style="--_bg:var(--pele-bg,#fff);--_fg:var(--pele-fg,#1f1f1f);--_m:var(--pele-muted,#6e6e6e);--_l:var(--pele-line,#1f1f1f);--_s:var(--pele-surface,#f3f3f3);--_a:var(--pele-surface-alt,#e6e6e6);--_b:var(--pele-border,#8a8a8a);--_c:var(--pele-accent,#5b7bd5);color:var(--_fg);--_r:var(--pele-radius,4px);--_fm:var(--pele-font-mono,IBM Plex Mono, ui-monospace, monospace);font:16px sans-serif;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;font-family:var(--pele-font,IBM Plex Sans, Helvetica Neue, Arial, sans-serif)" fill="var(--_fg)" role="graphics-document document" aria-roledescription="flowchart" preserveAspectRatio="xMidYMid meet"><g class="pele-edges" fill="none" stroke="var(--_l)" stroke-linecap="round"><g class="pele-edge" data-id="L_A_B_0"><path d="M128.48,44L283.05,44" /><path class="pele-marker" d="M290.05,44L282.05,47.36L282.05,40.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_B_C_0"><path d="M445.22,44L486.22,44" /><path class="pele-marker" d="M493.22,44L485.22,47.36L485.22,40.64Z" fill="var(--_l)" stroke="none" /></g></g><g class="pele-edge-labels" font-size="14"><g class="pele-edge-label" data-id="L_A_B_0"><rect x="150.98" y="33.5" width="109.57" height="21" rx="3" fill="var(--_bg)" /><text x="205.77" y="48.9" text-anchor="middle">hero.health = 80</text></g></g><g class="pele-nodes"><g class="pele-node pele-shape-rect" data-id="A" transform="translate(68.24,44)"><rect x="-60.24" y="-24" width="120.48" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">calling code</text></g><g class="pele-node pele-shape-rect" data-id="B" transform="translate(367.63,44)"><rect x="-77.58" y="-36" width="155.17" height="72" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" text-anchor="middle" xml:space="preserve"><tspan x="0" y="-6.4">health property</tspan><tspan x="0" y="17.6">checks the value</tspan></text></g><g class="pele-node pele-shape-rect" data-id="C" transform="translate(552.13,44)"><rect x="-58.91" y="-24" width="117.82" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">self._health</text></g></g></svg></div>
+<div class="mermaid-diagram" style="aspect-ratio: 621 / 88"><svg xmlns="http://www.w3.org/2000/svg" class="pele pele-flowchart" viewBox="0 0 621 88" style="--_bg:var(--pele-bg,#fff);--_fg:var(--pele-fg,#1f1f1f);--_m:var(--pele-muted,#6e6e6e);--_l:var(--pele-line,#1f1f1f);--_s:var(--pele-surface,#f3f3f3);--_a:var(--pele-surface-alt,#e6e6e6);--_b:var(--pele-border,#8a8a8a);--_c:var(--pele-accent,#5b7bd5);color:var(--_fg);--_r:var(--pele-radius,4px);--_fm:var(--pele-font-mono,IBM Plex Mono, ui-monospace, monospace);font:16px sans-serif;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;font-family:var(--pele-font,IBM Plex Sans, Helvetica Neue, Arial, sans-serif)" fill="var(--_fg)" role="graphics-document document" aria-roledescription="flowchart" preserveAspectRatio="xMidYMid meet"><g class="pele-edges" fill="none" stroke="var(--_l)" stroke-linecap="round"><g class="pele-edge" data-id="L_A_B_0"><path d="M128.48,44L284.6,44" /><path class="pele-marker" d="M291.6,44L283.6,47.36L283.6,40.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_B_C_0"><path d="M446.77,44L487.77,44" /><path class="pele-marker" d="M494.77,44L486.77,47.36L486.77,40.64Z" fill="var(--_l)" stroke="none" /></g></g><g class="pele-edge-labels" font-size="14"><g class="pele-edge-label" data-id="L_A_B_0"><rect x="150.98" y="33.5" width="111.12" height="21" rx="3" fill="var(--_bg)" /><text x="206.54" y="48.9" text-anchor="middle">jaina.health = 80</text></g></g><g class="pele-nodes"><g class="pele-node pele-shape-rect" data-id="A" transform="translate(68.24,44)"><rect x="-60.24" y="-24" width="120.48" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">calling code</text></g><g class="pele-node pele-shape-rect" data-id="B" transform="translate(369.19,44)"><rect x="-77.58" y="-36" width="155.17" height="72" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" text-anchor="middle" xml:space="preserve"><tspan x="0" y="-6.4">health property</tspan><tspan x="0" y="17.6">checks the value</tspan></text></g><g class="pele-node pele-shape-rect" data-id="C" transform="translate(553.68,44)"><rect x="-58.91" y="-24" width="117.82" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">self._health</text></g></g></svg></div>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-11-python-classes-9" data-css="slide-css-1" data-title="`__str__` and `__repr__`" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#9"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
+<template id="slide-11-python-classes-10" data-css="slide-css-1" data-title="`__str__` and `__repr__`" data-module="Module 11 · Python Classes" data-deck="slides/11-python-classes.html#10"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Classes</a></div>
 <h1 id="__str__-and-__repr__"><code>__str__</code> and <code>__repr__</code></h1>
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">class</span><span style="color:#6F42C1"> Character</span><span style="color:#24292EFF">:</span></span>
 <span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __init__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> name</span><span style="color:#212121">:</span><span style="color:#1976D2"> str</span><span style="color:#212121">,</span><span style="color:#FF9800"> health</span><span style="color:#212121">:</span><span style="color:#1976D2"> int</span><span style="color:#24292EFF">) </span><span style="color:#212121">-></span><span style="color:#1976D2"> None</span><span style="color:#24292EFF">:</span></span>
@@ -1552,14 +1552,14 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> __str__</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#24292EFF">) </span><span style="color:#212121">-></span><span style="color:#1976D2"> str</span><span style="color:#24292EFF">:</span></span>
 <span class="line"><span style="color:#D32F2F">        return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">self</span><span style="color:#212121">.</span><span style="color:#24292EFF">name</span><span style="color:#1976D2">}</span><span style="color:#22863A"> (</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">self</span><span style="color:#212121">.</span><span style="color:#24292EFF">health</span><span style="color:#1976D2">}</span><span style="color:#22863A"> health)"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#24292EFF">hero </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">(</span><span style="color:#22863A">"Aria"</span><span style="color:#212121">, </span><span style="color:#1976D2">100</span><span style="color:#212121">)</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(hero)</span><span style="color:#4a9c59">  # str(), for people</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">repr</span><span style="color:#212121">(hero))</span><span style="color:#4a9c59">  # repr(), for developers</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">([hero])</span><span style="color:#4a9c59">  # a list shows the repr() of its items</span></span>
+<span class="line"><span style="color:#24292EFF">jaina </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> Character</span><span style="color:#212121">(</span><span style="color:#22863A">"Jaina"</span><span style="color:#212121">, </span><span style="color:#1976D2">100</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(jaina)</span><span style="color:#4a9c59">  # str(), for people</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#6F42C1">repr</span><span style="color:#212121">(jaina))</span><span style="color:#4a9c59">  # repr(), for developers</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">([jaina])</span><span style="color:#4a9c59">  # a list shows the repr() of its items</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Aria (100 health)</span></span>
-<span class="line"><span>Character('Aria', 100)</span></span>
-<span class="line"><span>[Character('Aria', 100)]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Jaina (100 health)</span></span>
+<span class="line"><span>Character('Jaina', 100)</span></span>
+<span class="line"><span>[Character('Jaina', 100)]</span></span>
 <span class="line"><span></span></span></code></pre>
 <ul>
 <li><code>__str__</code> is used by <code>print()</code>, <code>str()</code> and f-strings</li>
@@ -1570,7 +1570,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </li>
 </ul>
 <blockquote>
-<p><code class="pill-demo pill-id">demo04</code><br><code class="pill-demo pill-desc">strrepr</code></p>
+<p><code class="pill-demo pill-id">demo05</code><br><code class="pill-demo pill-desc">strrepr</code></p>
 </blockquote>
 </section>
 </foreignObject></svg></div></template>

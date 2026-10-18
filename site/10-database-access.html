@@ -1562,20 +1562,20 @@ a.ex-row:hover { border-color: var(--accent); }
 <li>Dictionaries are hash tables :
 <ul>
 <li>Looking up a key is fast, however large the dictionary</li>
-<li>Consist of key-value pairs separated by commas</li>
 </ul>
 </li>
 <li>Dictionaries are enclosed by curly braces <code>{ }</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 222</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 185</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 204</span><span style="color:#212121">}</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span><span style="color:#4a9c59">  # {'Orbit': 222, 'Echo': 185, 'Pulse': 204}</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations </span><span style="color:#D32F2F">=</span><span style="color:#212121"> {</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 183</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 125</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 149</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span><span style="color:#4a9c59">  # {'Imagine': 183, 'Yesterday': 125, 'Respect': 149}</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Values can be assigned and accessed using square brackets <code>[]</code> :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Nova"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 196</span></span>
-<span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Intro"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 90</span></span>
-<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span><span style="color:#4a9c59">  # {'Orbit': 222, 'Echo': 185, 'Pulse': 204, 'Nova': 196, 'Intro': 90}</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Toxic"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 199</span></span>
+<span class="line"><span style="color:#24292EFF">durations</span><span style="color:#212121">[</span><span style="color:#22863A">"Thriller"</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#1976D2"> 357</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span></span>
+<span class="line"><span style="color:#4a9c59"># {'Imagine': 183, 'Yesterday': 125, 'Respect': 149, 'Toxic': 199, 'Thriller': 357}</span></span>
 <span class="line"></span></code></pre>
 <ul>
 <li>Dictionaries remember insertion order :
@@ -1591,12 +1591,12 @@ a.ex-row:hover { border-color: var(--accent); }
 <ul>
 <li><code>dict</code> builds a lookup from pairs of keys and values :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">titles </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#24292EFF">]</span></span>
-<span class="line"><span style="color:#24292EFF">lengths </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">222</span><span style="color:#212121">,</span><span style="color:#1976D2"> 185</span><span style="color:#212121">,</span><span style="color:#1976D2"> 204</span><span style="color:#24292EFF">]</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">titles </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#24292EFF">lengths </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">183</span><span style="color:#212121">,</span><span style="color:#1976D2"> 125</span><span style="color:#212121">,</span><span style="color:#1976D2"> 149</span><span style="color:#24292EFF">]</span></span>
 <span class="line"><span style="color:#24292EFF">durations </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> dict</span><span style="color:#212121">(</span><span style="color:#6F42C1">zip</span><span style="color:#212121">(titles, lengths))</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(durations)</span></span>
 <span class="line"></span></code></pre>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>{'Orbit': 222, 'Echo': 185, 'Pulse': 204}</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>{'Imagine': 183, 'Yesterday': 125, 'Respect': 149}</span></span>
 <span class="line"><span></span></span></code></pre>
 <blockquote>
 <p><code class="pill-demo pill-id">demo06</code><br><code class="pill-demo pill-desc">dictionary_with_zip</code></p>
@@ -1616,14 +1616,14 @@ a.ex-row:hover { border-color: var(--accent); }
 <ul>
 <li><code>break</code> ends the loop immediately when the requested track is found :</li>
 </ul>
-<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Intro"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Orbit"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Echo"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Outro"</span><span style="color:#24292EFF">]</span><span style="color:#212121">:</span></span>
-<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Pulse"</span><span style="color:#212121">:</span></span>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">for</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> [</span><span style="color:#22863A">"Thriller"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Hey Jude"</span><span style="color:#24292EFF">]</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">    if</span><span style="color:#24292EFF"> track </span><span style="color:#D32F2F">==</span><span style="color:#22863A"> "Respect"</span><span style="color:#212121">:</span></span>
 <span class="line"><span style="color:#D32F2F">        break</span></span>
 <span class="line"><span style="color:#6F42C1">    print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"Checked </span><span style="color:#1976D2">{</span><span style="color:#212121">track</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Search complete"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
 <ul>
-<li>The final message runs after the search; <code>Outro</code> is never checked</li>
+<li>The final message runs after the search; <code>Hey Jude</code> is never checked</li>
 </ul>
 <blockquote>
 <p><code class="pill-demo pill-id">demo09</code><br><code class="pill-demo pill-desc">breakandcontinue</code></p>

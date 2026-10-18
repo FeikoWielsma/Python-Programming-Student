@@ -3259,7 +3259,7 @@ details.solution-page pre {
 
 <p>Make it work <strong>without changing a line anywhere else</strong>. <code>__init__</code> still says <code>self.max_guesses = max_guesses</code>, and <code>play</code> still reads <code>game.max_guesses</code>. That is the lesson : callers could not tell the plain attribute from the property, so nobody had to write <code>get_max_guesses</code> and <code>set_max_guesses</code> in advance. You start with the plain attribute, and you turn it into a property on the day it needs a rule.</p>
 <blockquote>
-<p><strong>Hint :</strong> The slide <em>When a Plain Attribute Is Not Enough</em> turns <code>health</code> into a property whose setter checks the value; <code>demo07 · validatingsetter</code> runs it.</p>
+<p><strong>Hint :</strong> The slide <em>When a Plain Attribute Is Not Enough</em> turns <code>health</code> into a property whose setter checks the value; <code>demo08 · validatingsetter</code> runs it.</p>
 </blockquote>
 <blockquote>
 <p><strong>Hint :</strong> The getter returns <code>self._max_guesses</code>. The setter checks <code>1 &lt;= value &lt;= 10</code>, raises <code>ValueError</code> when that is false and assigns <code>self._max_guesses = value</code> otherwise.</p>
