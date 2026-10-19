@@ -187,17 +187,6 @@
 <div class="ml-eyebrow"><a>Type Hinting</a></div>
 <h1 id="summary--type-hinting">Summary : Type Hinting</h1>
 <ul>
-<li><code>uv</code> manages the interpreter, the environment and the packages :
-<ul>
-<li><code>uv python install</code> , <code>uv init</code> , <code>uv add</code> , <code>uv sync</code> , <code>uv run</code></li>
-<li><code>pyproject.toml</code> states what is wanted, <code>uv.lock</code> pins what was resolved</li>
-</ul>
-</li>
-<li><code>ruff</code> reports style and correctness problems without running the code :
-<ul>
-<li><code>ruff check .</code> and <code>ruff check . --fix</code> , configured in <code>ruff.toml</code></li>
-</ul>
-</li>
 <li>Type hints record in the signature what a function expects and returns :
 <ul>
 <li><code>age: int</code> for a variable, <code>def f(a: int) -&gt; str</code> for a function</li>
@@ -211,6 +200,7 @@
 <li>Their value comes from the editor and from a checker such as <code>mypy</code></li>
 </ul>
 </li>
+<li><code>uv run mypy wordle</code> checks the package without running the game</li>
 </ul>
 <blockquote>
 <p><code class="pill-exercise pill-id">exercise12</code><br><code class="pill-exercise pill-desc">Type Hinting</code></p>

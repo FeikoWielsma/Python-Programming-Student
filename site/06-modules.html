@@ -1020,18 +1020,21 @@ a.ex-row:hover { border-color: var(--accent); }
 </header>
 <div class="brief">
 <p>The scoring can now be called on its own, but loading words, drawing rows and running the game still share one file. Split those responsibilities into a package so the solver in the next exercise has a clear place to live.</p>
-<p>Continue in your own <code>wordle</code> project, or use <code>exercises/starters/06-modules/</code>, the finished Exercise 5. Run commands from the project root, beside <code>pyproject.toml</code> and <code>words.txt</code>, not from inside the new package directory.</p>
+<p>Continue in your own <code>wordle</code> project, or use <code>exercises/starters/06-modules/</code>, the finished Exercise 5. Run commands from the project root, beside <code>pyproject.toml</code>, not from inside the new package directory.</p>
 </div>
 <section class="step" id="step-1" data-step="1">
 <h2><span class="num">Step 1</span><span class="title">Start a package</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="1" data-step="1"> Done</label></h2>
-<p>Create a directory named <code>wordle</code> inside your project and an empty <code>wordle/__init__.py</code>. That file marks the directory as a package; see <button type="button" class="slide-ref" data-slide="06-modules-7" title="Show the slide"><em>Packages in Python</em></button>. Copy <code>load_words</code> into <code>wordle/words.py</code> with its import :</p>
-<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pathlib </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Path</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> load_words</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(path: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "words.txt"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) -> list[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]:</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    """Read the word list, one word per line."""</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Path(path).read_text(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">encoding</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"utf-8"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">).split()</span></span></code></pre></div>
-<p>Keep the original <code>wordle.py</code> intact for this step so <code>uv run python wordle.py</code> still plays a game. In the next step you will finish the package and remove that old file. Leave <code>words.txt</code> beside <code>pyproject.toml</code>; moving the loader does not change the working directory.</p>
+<p>Create a directory named <code>wordle</code> inside your project and an empty <code>wordle/__init__.py</code>. That file marks the directory as a package; see <button type="button" class="slide-ref" data-slide="06-modules-7" title="Show the slide"><em>Packages in Python</em></button>. Copy <code>load_words</code> into <code>wordle/words.py</code> :</p>
+<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> load_words</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">() -> list[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]:</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    """Return the small practice word list."""</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> [</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "hello"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"crane"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"react"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"paper"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"slate"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"error"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"house"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"ghost"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        "world"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"money"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"speed"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"geese"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"trace"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"grace"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"raise"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"trick"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ]</span></span></code></pre></div>
+<p>Keep the original <code>wordle.py</code> intact for this step so <code>uv run python wordle.py</code> still plays a game. In the next step you will finish the package and remove that old file. The practice words stay in <code>load_words</code>; no data file is needed.</p>
+<details class="aid hint" name="hint-1"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="06-modules-7" title="Show the slide"><em>Packages in Python</em></button> shows the package folder and its <code>__init__.py</code>. <button type="button" class="slide-ref" data-slide="05-functions-2" title="Show the slide"><em>Function Syntax</em></button> shows the function definition and its body.</p>
+</div></details>
 
 </section>
 <section class="step" id="step-2" data-step="2">
@@ -1069,10 +1072,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Move play here, keeping its body and annotations.</span></span></code></pre></div>
 <p>Use this skeleton in <code>__main__.py</code> :</p>
-<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> os</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> random</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.game </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> ...</span></span>
+<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.game </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> ...</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.words </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> ...</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -1095,10 +1095,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.display </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> render</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.scoring </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> is_valid, score_guess</span></span></code></pre></div>
 <p><code>__main__.py</code> contains :</p>
-<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> os</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> random</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.game </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> play</span></span>
+<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.game </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> play</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.words </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> load_words</span></span>
 <span class="line"></span>
 <span class="line"></span>
@@ -1106,7 +1103,8 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    """Load the words and play one game."""</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    words </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> load_words()</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Guess the five-letter word. Type 'quit' to give up, 'letters' for the letters tried."</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    play(os.environ.get(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"WORDLE_SECRET"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, random.choice(words)), words)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    secret </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "crane"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    play(secret, words)</span></span>
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">if</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> __name__</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> ==</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "__main__"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
@@ -1119,10 +1117,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <p>Run from the project root :</p>
 <div class="codeblock"><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">uv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> run</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> python</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -m</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> wordle</span></span></code></pre></div>
 <p>The <code>-m</code> option asks Python to locate a module or package. For a package, Python runs <code>wordle/__main__.py</code>. The guard moved with the entry point; importing <code>wordle.scoring</code> does not start a game.</p>
-<p>For a repeatable check in PowerShell, run :</p>
-<div class="codeblock"><span class="lang">powershell</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">$</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">env:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WORDLE_SECRET </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "crane"</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">uv run python </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">m wordle</span></span></code></pre></div>
-<p>In Bash, use <code>WORDLE_SECRET=crane uv run python -m wordle</code>. Enter <code>slate</code>, then <code>crane</code>. Captured output, with typed input omitted :</p>
+<p>Keep the fixed secret in the entry point. Enter <code>slate</code>, then <code>crane</code>. Captured output, with typed input omitted :</p>
 <details class="aid output"><summary>Check your output</summary><div class="body">
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Guess the five-letter word. Type 'quit' to give up, 'letters' for the letters tried.</span></span>
 <span class="line"><span>Guess 1/6 :  S  L [A] T [E]</span></span>
@@ -1153,7 +1148,6 @@ a.ex-row:hover { border-color: var(--accent); }
 <p>Your project now has this shape, apart from environment and lock files :</p>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>wordle/</span></span>
 <span class="line"><span>    pyproject.toml</span></span>
-<span class="line"><span>    words.txt</span></span>
 <span class="line"><span>    wordle/</span></span>
 <span class="line"><span>        __init__.py</span></span>
 <span class="line"><span>        __main__.py</span></span>
@@ -1162,7 +1156,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span>        display.py</span></span>
 <span class="line"><span>        game.py</span></span></code></pre></div>
 </div></details>
-<p>Remove the fixed-secret override with <code>Remove-Item Env:WORDLE_SECRET</code> in PowerShell, or <code>unset WORDLE_SECRET</code> if exported in Bash. Play another game with <code>uv run python -m wordle</code>. Its behaviour should be the same as Exercise 5, with the duplicate-letter fix intact.</p>
+<p>Change the secret in <code>wordle/__main__.py</code> to try another word, then restore <code>&quot;crane&quot;</code>. Play another game with <code>uv run python -m wordle</code>. Its behaviour should be the same as Exercise 5, with the duplicate-letter fix intact.</p>
 
 </section>
 <section class="step optional" id="step-opt" data-step="opt">
@@ -1200,6 +1194,32 @@ a.ex-row:hover { border-color: var(--accent); }
 <li>Move the existing <code>timing.py</code> into <code>player/</code> to group reporting code.</li>
 <li><code>__init__.py</code> runs when the package is first imported.</li>
 <li>A module's top-level code runs on its first import in a Python process.</li>
+</ul>
+</section>
+</foreignObject></svg></div></template>
+<template id="slide-05-functions-2" data-css="slide-css-1" data-title="Function Syntax" data-module="Module 5 · Functions" data-deck="slides/05-functions.html#2"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Functions</a></div>
+<h1 id="function-syntax">Function Syntax</h1>
+<ul>
+<li><code>format_duration</code> turns a track length into display text :
+<ul>
+<li><code>// 60</code> gives complete minutes; <code>% 60</code> gives remaining seconds</li>
+<li><code>:02d</code> displays the seconds with two digits, including a leading zero</li>
+</ul>
+</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> format_duration</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">seconds</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    minutes </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> seconds </span><span style="color:#D32F2F">//</span><span style="color:#1976D2"> 60</span></span>
+<span class="line"><span style="color:#24292EFF">    remainder </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> seconds </span><span style="color:#D32F2F">%</span><span style="color:#1976D2"> 60</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">minutes</span><span style="color:#1976D2">}</span><span style="color:#22863A">:</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">remainder</span><span style="color:#D32F2F">:02d</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li>A definition starts with <code>def</code>, the name and parentheses :
+<ul>
+<li><code>seconds</code> is a parameter that receives a track length</li>
+<li>The colon starts the indented body</li>
+</ul>
+</li>
+<li><code>return</code> passes the display text back to the caller</li>
 </ul>
 </section>
 </foreignObject></svg></div></template>

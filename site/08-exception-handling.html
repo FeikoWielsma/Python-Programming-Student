@@ -1021,6 +1021,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <div class="brief">
 <p>The game gives the same rejection for every bad guess, and a missing word list or an interrupted input ends in a traceback. Give each failure a useful response.</p>
 <p>Continue in your own <code>wordle</code> project, or use <code>exercises/starters/08-exception-handling/</code>, the finished Exercise 7.</p>
+<p>After editing a module, restart the Python interpreter and repeat its imports before trying the new definitions. Previously imported code stays in an existing session.</p>
 </div>
 <section class="step" id="step-1" data-step="1">
 <h2><span class="num">Step 1</span><span class="title">Name an invalid guess</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="1" data-step="1"> Done</label></h2>
@@ -1029,6 +1030,9 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    """Raised when a guess is not an allowed five-letter word."""</span></span></code></pre></div>
 <p>This creates a specific <code>ValueError</code> the game can catch. See <button type="button" class="slide-ref" data-slide="08-exception-handling-15" title="Show the slide"><em>User Defined Exceptions</em></button>; Module 11 covers classes in detail. The <code>noqa</code> comment permits the course's exception name instead of Ruff's preferred <code>Error</code> suffix.</p>
 <p>Next, make the validator raise this exception with a reason.</p>
+<details class="aid hint" name="hint-1"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="08-exception-handling-15" title="Show the slide"><em>User Defined Exceptions</em></button> defines a new exception class using an existing exception type. Keep the supplied class definition above the functions that use it.</p>
+</div></details>
 
 </section>
 <section class="step" id="step-2" data-step="2">
@@ -1114,20 +1118,18 @@ a.ex-row:hover { border-color: var(--accent); }
 </section>
 <section class="step" id="step-4" data-step="4">
 <h2><span class="num">Step 4</span><span class="title">Stop cleanly when play cannot continue</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="4" data-step="4"> Done</label></h2>
-<p>In <code>wordle/__main__.py</code>, wrap loading the words and playing the game in handlers for a missing file and interrupted input. Keep <code>os</code>, <code>random</code>, <code>play</code> and <code>load_words</code> imported, and keep the existing guard below <code>main</code>.</p>
+<p>In <code>wordle/__main__.py</code>, wrap loading the words and playing the game in a handler for interrupted input. Keep <code>play</code> and <code>load_words</code> imported, and keep the existing guard below <code>main</code>.</p>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">() -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">None</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    try</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        ...</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  # load words, print the welcome message and play</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    except</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> FileNotFoundError</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        ...</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  # explain how to restore the word list</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    except</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">KeyboardInterrupt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">EOFError</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">):</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        ...</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  # print a newline followed by a friendly stopping message</span></span></code></pre></div>
-<p>For a missing file, print <code>The word list is missing. Restore words.txt and try again.</code> For interrupted input, print <code>\nGame stopped.</code> Try Ctrl+C while the game waits for a guess. End-of-input is Ctrl+D on Unix terminals, or Ctrl+Z followed by Enter on Windows. To try the missing-file case, temporarily rename <code>words.txt</code>, run the game, and restore the filename immediately afterwards.</p>
+<p>For interrupted input, print <code>&quot;\nGame stopped.&quot;</code>. Try Ctrl+C while the game waits for a guess. End-of-input is Ctrl+D on Unix terminals, or Ctrl+Z followed by Enter on Windows.</p>
 <details class="aid hint" name="hint-4"><summary>Hint 1</summary><div class="body">
 <p>The slide <button type="button" class="slide-ref" data-slide="08-exception-handling-4" title="Show the slide"><em>Typed Exception Handling</em></button> shows several <code>except</code> clauses after one <code>try</code>, and <button type="button" class="slide-ref" data-slide="08-exception-handling-6" title="Show the slide"><em>except Clause Multiple Exceptions</em></button> catches a tuple of types in one clause.</p>
 </div></details>
 <details class="aid hint" name="hint-4"><summary>Hint 2</summary><div class="body">
-<p>The game can recover from one bad guess, so that handler belongs inside <code>play</code>. Missing data or interrupted input ends the session, so those handlers belong in <code>main</code>. A tuple lets one handler catch either interruption type.</p>
+<p>The game can recover from one bad guess, so that handler belongs inside <code>play</code>. Interrupted input ends the session, so those handlers belong in <code>main</code>. A tuple lets one handler catch either interruption type.</p>
 </div></details>
 <details class="aid output"><summary>Check your output</summary><div class="body">
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Guess the five-letter word. Type 'quit' to give up, 'letters' for the letters tried.</span></span>
@@ -1137,10 +1139,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span>Guess 1/6 : [C][R][A][N][E]</span></span>
 <span class="line"><span>Got it in 1!</span></span></code></pre></div>
 </div></details>
-<p>Finally, set <code>WORDLE_SECRET</code> to <code>crane</code> and play again :</p>
-<div class="codeblock"><span class="lang">powershell</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">$</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">env:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">WORDLE_SECRET </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "crane"</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">uv run python </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">m wordle</span></span></code></pre></div>
-<p>In Bash, use <code>WORDLE_SECRET=crane uv run python -m wordle</code>. Enter <code>cran</code>, <code>cr4ne</code>, <code>zzzzz</code>, then <code>crane</code>. Captured output, with typed input omitted :</p>
+<p>Keep the fixed secret <code>&quot;crane&quot;</code> and run <code>uv run python -m wordle</code>. Enter <code>cran</code>, <code>cr4ne</code>, <code>zzzzz</code>, then <code>crane</code>. Captured output, with typed input omitted :</p>
 <details class="aid solution"><summary><span class="closed">Show solution</span><span class="opened">Hide solution</span></summary><div class="body">
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> main</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">() -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">None</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    """Load the words and play one game."""</span></span>
@@ -1150,13 +1149,12 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">            "Guess the five-letter word. Type 'quit' to give up, "</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">            "'letters' for the letters tried."</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        )</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        play(os.environ.get(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"WORDLE_SECRET"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, random.choice(words)), words)</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    except</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> FileNotFoundError</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"The word list is missing. Restore words.txt and try again."</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        secret </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "crane"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        play(secret, words)</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    except</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">KeyboardInterrupt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">EOFError</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">):</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\n</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">Game stopped."</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span></code></pre></div>
 </div></details>
-<p>All three invalid guesses leave the first turn available. Remove the override with <code>Remove-Item Env:WORDLE_SECRET</code> in PowerShell, or <code>unset WORDLE_SECRET</code> if exported in Bash, and play a random game. The solver's <code>hint</code> command should still work.</p>
+<p>All three invalid guesses leave the first turn available. Change the secret in <code>wordle/__main__.py</code> to another practice word and play again, then restore <code>&quot;crane&quot;</code>. The solver's <code>hint</code> command should still work.</p>
 
 </section>
 <section class="step optional" id="step-opt" data-step="opt">

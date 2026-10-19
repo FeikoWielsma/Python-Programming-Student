@@ -1020,13 +1020,13 @@ a.ex-row:hover { border-color: var(--accent); }
 </header>
 <div class="brief">
 <!-- appendix -->
-<p>Your code has carried type hints since Exercise 2, and nobody has ever checked them. Python itself ignores them, so a wrong hint is only a comment that lies. In this exercise you hand the hints to <code>mypy</code>, a tool that reads the whole package without running it and reports where the types do not fit. It finds a bug that has been waiting in your solver all along, and it helps you describe the marks of a guess so precisely that a typo in them cannot slip through.</p>
+<p>Your game already carries type hints on collections and functions. Python itself does not enforce them. In this exercise you hand the hints to <code>mypy</code>, a tool that reads the whole package without running it and reports where the types do not fit. It helps you describe the marks of a guess precisely and makes callers handle a solver result that may be missing.</p>
 <p>Continue in your own <code>wordle</code> project, or start from <code>exercises/starters/12-type-hinting/</code>. The starter is the finished Exercise 11; this exercise hands out nothing. Keep running commands beside <code>pyproject.toml</code>.</p>
 <p>Some steps give you the code, some a list of changes to make, and one only a signature and what it should do. Where you write the code yourself, the solution is hidden until you open it. Try the step first; the solution is there for when you are stuck, or to compare afterwards. This exercise is an appendix : do the steps in order.</p>
 </div>
 <section class="step" id="step-1" data-step="1">
 <h2><span class="num">Step 1</span><span class="title">Run mypy</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="1" data-step="1"> Done</label></h2>
-<p><code>mypy</code> is a development tool, not something the game needs when it runs, so add it to the development dependencies, the way you added <code>ruff</code> in Exercise 1, and run it on the package :</p>
+<p><code>mypy</code> is a tool for checking the code while developing it. <code>uv add --dev</code> installs such a tool for this project and records it in <code>pyproject.toml</code>. Install it and run it on the package :</p>
 <div class="codeblock"><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">uv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> add</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> --dev</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> mypy</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">uv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> run</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> mypy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> wordle</span></span></code></pre></div>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>wordle\game.py:65: error: Need type annotation for "used_letters" (hint: "used_letters: set[&#x3C;type>] = ...")  [var-annotated]</span></span>
@@ -1036,6 +1036,9 @@ a.ex-row:hover { border-color: var(--accent); }
 <p>Run <code>uv run mypy wordle</code> again :</p>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Success: no issues found in 8 source files</span></span></code></pre></div>
 <p>See <button type="button" class="slide-ref" data-slide="12-appendix-type-hinting-6" title="Show the slide"><em>Checking with mypy</em></button> for the same run on a smaller program.</p>
+<details class="aid hint" name="hint-1"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="12-appendix-type-hinting-6" title="Show the slide"><em>Checking with mypy</em></button> shows installing and running the checker. <button type="button" class="slide-ref" data-slide="03-data-structures-18" title="Show the slide"><em>Annotating Collections</em></button>, in module 03, shows <code>set[str]</code> for a set of strings.</p>
+</div></details>
 
 </section>
 <section class="step" id="step-2" data-step="2">
@@ -1097,7 +1100,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </section>
 <section class="step" id="step-3" data-step="3">
 <h2><span class="num">Step 3</span><span class="title">A hint that may not exist</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="3" data-step="3"> Done</label></h2>
-<p><code>best_guess</code> returns a word, and it returns it for any list you give it. Ask for a hint when no word is left and see what happens. This can only happen when the secret is a word the game accepts as a guess but never picks, so start the game with the environment variable <code>WORDLE_SECRET</code> set to <code>crone</code>, guess <code>crane</code>, and type <code>hint</code> :</p>
+<p><code>best_guess</code> returns a word, and it returns it for any list you give it. Ask for a hint when no word is left and see what happens. This can only happen when the secret is a word the game accepts as a guess but never picks, so start the game after changing <code>secret = &quot;crane&quot;</code> to <code>secret = &quot;crone&quot;</code> in <code>wordle/__main__.py</code>, guess <code>crane</code>, and type <code>hint</code> :</p>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>ValueError: max() iterable argument is empty</span></span></code></pre></div>
 <p>The game stops with a traceback, and the type hints never warned about it, because <code>-&gt; str</code> promised a word that cannot exist. The honest signature says that the answer may be missing. Python writes &quot;a <code>str</code> or <code>None</code>&quot; as <code>str | None</code>. See <button type="button" class="slide-ref" data-slide="12-appendix-type-hinting-4" title="Show the slide"><em>Optional Values</em></button>.</p>
 <p>Here is the new signature of <code>best_guess</code> in <code>wordle/solver.py</code> :</p>
@@ -1109,7 +1112,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <p>That is the whole use of <code>| None</code> : the checker makes every caller deal with the case that there is no answer. Fix the <code>hint</code> command in <code>play</code> so that it prints <code>No candidate words remain.</code> when there is no suggestion, and the old message when there is one. Run <code>mypy</code> again until it reports <code>Success: no issues found in 8 source files</code>, then repeat the experiment with <code>crone</code> :</p>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>[C][R] A [N][E]</span></span>
 <span class="line"><span>No candidate words remain.</span></span></code></pre></div>
-<p>The first line is the row for the guess <code>crane</code>; the second is the answer to <code>hint</code>.</p>
+<p>The first line is the row for the guess <code>crane</code>; the second is the answer to <code>hint</code>. Restore <code>secret = &quot;crane&quot;</code> after this check.</p>
 <details class="aid hint" name="hint-3"><summary>Hint 1</summary><div class="body">
 <p>The slide <button type="button" class="slide-ref" data-slide="12-appendix-type-hinting-4" title="Show the slide"><em>Optional Values</em></button> writes <code>| None</code> for a value that may be absent, and tests <code>is None</code> before it uses the value.</p>
 </div></details>
@@ -1206,6 +1209,37 @@ a.ex-row:hover { border-color: var(--accent); }
 <blockquote>
 <p><code class="pill-demo pill-id">demo05</code><br><code class="pill-demo pill-desc">mypy_error</code></p>
 </blockquote>
+</section>
+</foreignObject></svg></div></template>
+<template id="slide-03-data-structures-18" data-css="slide-css-1" data-title="Annotating Collections" data-module="Module 3 · Data Structures" data-deck="slides/03-data-structures.html#18"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Data Structures</a></div>
+<h1 id="annotating-collections">Annotating Collections</h1>
+<ul>
+<li>Each built-in collection is annotated with the type of what it holds :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">scores</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">int</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> [</span><span style="color:#1976D2">10</span><span style="color:#212121">,</span><span style="color:#1976D2"> 20</span><span style="color:#212121">,</span><span style="color:#1976D2"> 30</span><span style="color:#24292EFF">]</span></span>
+<span class="line"><span style="color:#24292EFF">names</span><span style="color:#212121">:</span><span style="color:#24292EFF"> set</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#212121"> {</span><span style="color:#22863A">"Alice"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Bob"</span><span style="color:#212121">}</span></span>
+<span class="line"><span style="color:#24292EFF">track_lengths</span><span style="color:#212121">:</span><span style="color:#24292EFF"> dict</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">,</span><span style="color:#1976D2"> int</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#212121"> {</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 183</span><span style="color:#212121">,</span><span style="color:#22863A"> "Yesterday"</span><span style="color:#212121">:</span><span style="color:#1976D2"> 125</span><span style="color:#212121">}</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li>A dictionary takes two types, the key first and then the value</li>
+<li>A tuple is annotated position by position, because its length is fixed :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">point</span><span style="color:#212121">:</span><span style="color:#24292EFF"> tuple</span><span style="color:#212121">[</span><span style="color:#1976D2">int</span><span style="color:#212121">,</span><span style="color:#1976D2"> int</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> (</span><span style="color:#1976D2">3</span><span style="color:#212121">,</span><span style="color:#1976D2"> 4</span><span style="color:#24292EFF">)</span></span>
+<span class="line"><span style="color:#24292EFF">track</span><span style="color:#212121">:</span><span style="color:#24292EFF"> tuple</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">,</span><span style="color:#1976D2"> int</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#1976D2"> 183</span><span style="color:#24292EFF">)</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li>An ellipsis means any number of one type :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">readings</span><span style="color:#212121">:</span><span style="color:#24292EFF"> tuple</span><span style="color:#212121">[</span><span style="color:#1976D2">float</span><span style="color:#212121">,</span><span style="color:#24292EFF"> ...</span><span style="color:#212121">]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> (</span><span style="color:#1976D2">1.5</span><span style="color:#212121">,</span><span style="color:#1976D2"> 2.5</span><span style="color:#212121">,</span><span style="color:#1976D2"> 3.5</span><span style="color:#24292EFF">)</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li>Annotate where the collection is homogeneous, which most are :
+<ul>
+<li>Mixed element types are allowed, but a playlist of titles has the clearer<br />
+annotation <code>list[str]</code></li>
+</ul>
+</li>
+</ul>
 </section>
 </foreignObject></svg></div></template>
 <template id="slide-12-appendix-type-hinting-7" data-css="slide-css-1" data-title="Closed Sets with Literal" data-module="Appendix 12 · Type Hinting" data-deck="slides/12-appendix-type-hinting.html#7"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Type Hinting</a></div>

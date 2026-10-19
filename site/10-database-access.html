@@ -999,14 +999,14 @@ a.ex-row:hover { border-color: var(--accent); }
 </div>
 <div class="layout">
 <nav class="nav" aria-label="Steps">
-  <div class="overall"><div class="overall-label">Progress</div><div class="meter"><i></i></div><div class="overall-text">0 of 6 done</div></div>
+  <div class="overall"><div class="overall-label">Progress</div><div class="meter"><i></i></div><div class="overall-text">0 of 8 done</div></div>
   <ol>
 <li class=""><a href="#step-1" data-step="1"><span class="n">1</span><span class="t">Open the database</span><span class="count">0/1</span></a></li>
 <li class=""><a href="#step-2" data-step="2"><span class="n">2</span><span class="t">Record a finished game</span><span class="count">0/1</span></a></li>
 <li class=""><a href="#step-3" data-step="3"><span class="n">3</span><span class="t">Totals</span><span class="count">0/1</span></a></li>
 <li class=""><a href="#step-4" data-step="4"><span class="n">4</span><span class="t">The guess distribution</span><span class="count">0/1</span></a></li>
 <li class=""><a href="#step-5" data-step="5"><span class="n">5</span><span class="t">The current streak</span><span class="count">0/1</span></a></li>
-<li class=""><a href="#step-6" data-step="6"><span class="n">6</span><span class="t">Use the database in the game</span><span class="count">0/1</span></a></li>
+<li class=""><a href="#step-6" data-step="6"><span class="n">6</span><span class="t">Use the database in the game</span><span class="count">0/3</span></a></li>
 <li class="optional"><a href="#step-opt" data-step="opt"><span class="n">If time permits</span><span class="t"></span><span class="count">0/1</span></a></li>
   </ol>
 </nav>
@@ -1047,7 +1047,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        )"""</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    )</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> connection</span></span></code></pre></div>
-<p><code>sqlite3.connect</code> opens the file, and creates it when it does not exist. <code>CREATE TABLE IF NOT EXISTS</code> makes the function safe to call at the start of every game : the first call makes the table, later calls find it. SQLite has no <code>BOOLEAN</code>, so <code>won</code> is an <code>INTEGER</code> holding <code>0</code> or <code>1</code>, the same convention as the history file. Read <button type="button" class="slide-ref" data-slide="10-python-database-access-2" title="Show the slide"><em>DB API Concepts</em></button> if you want the picture of connection, cursor and result. Creating the table does not need a <code>commit()</code>; only statements that change rows do, and the next step says who commits those.</p>
+<p><code>sqlite3.connect</code> opens the file, and creates it when it does not exist. <code>CREATE TABLE IF NOT EXISTS</code> makes the function safe to call at the start of every game : the first call makes the table, later calls find it. SQLite stores Boolean values as integers, so <code>won</code> holds <code>0</code> or <code>1</code>, the same convention as the history file. Read <button type="button" class="slide-ref" data-slide="10-python-database-access-2" title="Show the slide"><em>DB API Concepts</em></button> if you want the picture of connection, cursor and result. Creating the table does not need a <code>commit()</code>; only statements that change rows do, and the next step says who commits those.</p>
 <p>Check it in a Python session :</p>
 <div class="codeblock"><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">uv</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> run</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> python</span></span></code></pre></div>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> wordle.stats </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> connect</span></span>
@@ -1057,12 +1057,16 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">connection.close()</span></span></code></pre></div>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>[('games',)]</span></span></code></pre></div>
 <p>A connection holds the file open until you close it. Closing it explicitly is the habit to keep, and the last step of this exercise makes it automatic.</p>
-<p>There is now a file <code>wordle.db</code> in the project folder. Like the <code>words.txt</code> of Exercise 9 used to be, it is created in the working directory, so start the game from the project folder. Finding a fixed location for it is left to the last step, If time permits.</p>
+<details class="aid hint" name="hint-1"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="10-python-database-access-2" title="Show the slide"><em>DB API Concepts</em></button> shows connecting to SQLite and creating a table with <code>execute</code>. <button type="button" class="slide-ref" data-slide="10-python-database-access-3" title="Show the slide"><em>Check Database Version</em></button> shows fetching a result and closing the connection.</p>
+</div></details>
+<p>There is now a file <code>wordle.db</code> in the project folder. It is created in the working directory, so start the game from the project folder. Finding a fixed location for it is left to the last step, If time permits.</p>
 
 </section>
 <section class="step" id="step-2" data-step="2">
 <h2><span class="num">Step 2</span><span class="title">Record a finished game</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="2" data-step="2"> Done</label></h2>
 <p>Add a function that stores one game. The time is given, in the ISO text format SQLite sorts correctly :</p>
+<p>The slide <button type="button" class="slide-ref" data-slide="10-python-database-access-16" title="Show the slide"><em>Recording a Timestamp</em></button> shows <code>datetime.now().isoformat(timespec=&quot;seconds&quot;)</code>. Keep that supplied expression while implementing the database insert.</p>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> record_game</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(connection: sqlite3.Connection, secret: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, guesses: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, won: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">None</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    """Insert one game using a parameterized statement; the caller commits."""</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    played_at </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> datetime.now().isoformat(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">timespec</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"seconds"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
@@ -1081,7 +1085,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <p>The slide <button type="button" class="slide-ref" data-slide="10-python-database-access-12" title="Show the slide"><em>Parameterized Queries</em></button> writes <code>?</code> in the statement and passes the values as a tuple after it.</p>
 </div></details>
 <details class="aid hint" name="hint-2"><summary>Hint 2</summary><div class="body">
-<p>The statement is <code>INSERT INTO games (played_at, secret, guesses, won) VALUES (?, ?, ?, ?)</code>. The database has no <code>bool</code>, so pass <code>int(won)</code>.</p>
+<p>The statement is <code>INSERT INTO games (played_at, secret, guesses, won) VALUES (?, ?, ?, ?)</code>. Store the Boolean as an integer with <code>int(won)</code>.</p>
 </div></details>
 <details class="aid solution"><summary><span class="closed">Show solution</span><span class="opened">Hide solution</span></summary><div class="body">
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> record_game</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(connection: sqlite3.Connection, secret: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, guesses: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">int</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, won: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">bool</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">None</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
@@ -1121,7 +1125,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>{'played': 4, 'won': 3, 'win_percentage': 75.0}</span></span>
 <span class="line"><span>{'played': 0, 'won': 0, 'win_percentage': 0.0}</span></span></code></pre></div>
 <details class="aid hint" name="hint-3"><summary>Hint 1</summary><div class="body">
-<p>The slide <button type="button" class="slide-ref" data-slide="10-python-database-access-8" title="Show the slide"><em>Retrieving Data</em></button> shows <code>fetchone()</code>, and <button type="button" class="slide-ref" data-slide="03-data-structures-16" title="Show the slide"><em>Dictionaries</em></button>, in module 03, builds a dictionary from keys and values.</p>
+<p>The slide <button type="button" class="slide-ref" data-slide="10-python-database-access-8" title="Show the slide"><em>Retrieving Data</em></button> shows <code>fetchone()</code>, and <button type="button" class="slide-ref" data-slide="03-data-structures-15" title="Show the slide"><em>Dictionaries</em></button>, in module 03, builds a dictionary from keys and values.</p>
 </div></details>
 <details class="aid hint" name="hint-3"><summary>Hint 2</summary><div class="body">
 <p><code>played, won = connection.execute(&quot;...&quot;).fetchone()</code> unpacks the one result row into two names.</p>
@@ -1197,7 +1201,9 @@ a.ex-row:hover { border-color: var(--accent); }
 
 </section>
 <section class="step" id="step-6" data-step="6">
-<h2><span class="num">Step 6</span><span class="title">Use the database in the game</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="6" data-step="6"> Done</label></h2>
+<h2><span class="num">Step 6</span><span class="title">Use the database in the game</span><span class="grow"></span></h2>
+<article class="card" id="sub-6a" data-card>
+  <div class="card-head"><h3><span class="tag">6a</span><span></span></h3><label class="done"><input type="checkbox" data-unit="6/6a" data-step="6"> Done</label></div>
 <p>Everything is ready to replace the history file. In <code>wordle/game.py</code>:</p>
 <ul>
 <li>import <code>closing</code> from <code>contextlib</code>, and <code>connect</code> and <code>summary</code> from <code>wordle.stats</code>; <code>print_stats</code> needs all three</li>
@@ -1213,8 +1219,14 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">            return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> guess_count, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">True</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">f</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"The word was </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">secret.upper()</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">}</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">."</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> guess_count, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">False</span></span></code></pre></div>
+<details class="aid hint" name="hint-6/6a"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="05-functions-4" title="Show the slide"><em>return Statement</em></button> shows that a function returns values to its caller, and <button type="button" class="slide-ref" data-slide="03-data-structures-11" title="Show the slide"><em>Usage of Tuples</em></button>, in module 03, shows unpacking a pair. Return the count with the Boolean on both exit paths.</p>
+</div></details>
+</article>
+<article class="card" id="sub-6b" data-card>
+  <div class="card-head"><h3><span class="tag">6b</span><span></span></h3><label class="done"><input type="checkbox" data-unit="6/6b" data-step="6"> Done</label></div>
 <p>In <code>wordle/__main__.py</code>, keep the secret in a variable, unpack what <code>play</code> returns and record the game. Add <code>from wordle.stats import connect, record_game</code> :</p>
-<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        secret </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> os.environ.get(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"WORDLE_SECRET"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, random.choice(words))</span></span>
+<div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        secret </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "crane"</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        guesses, won </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> play(secret, words)</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">        with</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> closing(connect()) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> connection, connection:</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">            record_game(connection, secret, guesses, won)</span></span></code></pre></div>
@@ -1224,6 +1236,12 @@ a.ex-row:hover { border-color: var(--accent); }
 <li>The second part, <code>connection</code>, is the transaction. When the block ends without an error the changes are committed, and when it ends with an error they are rolled back. This is the single place in the program where a game is committed : <code>record_game</code> only inserts, and the caller decides. The parts leave in reverse order, so the commit comes before the close.</li>
 </ul>
 <p>A game you stop with Ctrl+C or Ctrl+D never reaches the <code>record_game</code> line, so it is not recorded. A game you give up with <code>quit</code> ends the loop and counts as lost.</p>
+<details class="aid hint" name="hint-6/6b"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="10-python-database-access-4" title="Show the slide"><em>Using with</em></button>, in the database module, shows <code>closing(...)</code> together with the connection's transaction block. Keep <code>record_game</code> inside that block so it commits before the connection closes.</p>
+</div></details>
+</article>
+<article class="card" id="sub-6c" data-card>
+  <div class="card-head"><h3><span class="tag">6c</span><span></span></h3><label class="done"><input type="checkbox" data-unit="6/6c" data-step="6"> Done</label></div>
 <p>Now rewrite <code>print_stats</code> so that the <code>stats</code> command reports the new numbers. It must print three lines : the totals and win rate with one decimal, the wins per guess count as <code>#</code> bars, and the streak :</p>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">def</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> print_stats</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">() -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">None</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    """Print database totals, a guess chart and the current winning streak."""</span></span>
@@ -1233,17 +1251,17 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    chart </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> ...</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Wins by guesses: 1: # 2: # 3: #</span></span>
 <span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    print</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)  </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Current streak: 1</span></span></code></pre></div>
-<p>Play four games with <code>WORDLE_SECRET=crane</code> : win in two (<code>slate</code>, <code>crane</code>), win in one (<code>crane</code>), give up (<code>quit</code>) and win in three (<code>slate</code>, <code>trace</code>, <code>crane</code>). Type <code>stats</code> at the first prompt of a fifth game :</p>
+<p>Play four games with <code>secret = &quot;crane&quot;</code> in <code>wordle/__main__.py</code> : win in two (<code>slate</code>, <code>crane</code>), win in one (<code>crane</code>), give up (<code>quit</code>) and win in three (<code>slate</code>, <code>trace</code>, <code>crane</code>). Type <code>stats</code> at the first prompt of a fifth game :</p>
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Games played: 4; won: 3; win rate: 75.0%.</span></span>
 <span class="line"><span>Wins by guesses: 1: # 2: # 3: #</span></span>
 <span class="line"><span>Current streak: 1</span></span></code></pre></div>
-<details class="aid hint" name="hint-6"><summary>Hint 1</summary><div class="body">
-<p>The slide <button type="button" class="slide-ref" data-slide="02-variables-and-data-types-16" title="Show the slide"><em>String Operators</em></button>, in module 02, lists <code>*</code> for repetition, <button type="button" class="slide-ref" data-slide="02-variables-and-data-types-21" title="Show the slide"><em>Format Specifications</em></button> shows a number with a fixed count of decimals, and <button type="button" class="slide-ref" data-slide="07-comprehensions-12" title="Show the slide"><em>Generator Expressions</em></button>, in module 07, writes an expression inside <code>join</code>.</p>
+<details class="aid hint" name="hint-6/6c"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="02-variables-and-data-types-17" title="Show the slide"><em>String Operators</em></button>, in module 02, lists <code>*</code> for repetition, <button type="button" class="slide-ref" data-slide="02-variables-and-data-types-22" title="Show the slide"><em>Format Specifications</em></button> shows a number with a fixed count of decimals, and <button type="button" class="slide-ref" data-slide="07-comprehensions-12" title="Show the slide"><em>Generator Expressions</em></button>, in module 07, writes an expression inside <code>join</code>.</p>
 </div></details>
-<details class="aid hint" name="hint-6"><summary>Hint 2</summary><div class="body">
+<details class="aid hint" name="hint-6/6c"><summary>Hint 2</summary><div class="body">
 <p>A chart for one guess count is <code>f&quot;{guesses}: {'#' * count}&quot;</code>, and a string can be multiplied by a number. Join the pieces with <code>&quot; &quot;.join(...)</code> over <code>totals[&quot;distribution&quot;].items()</code>.</p>
 </div></details>
-<details class="aid hint" name="hint-6"><summary>Hint 3</summary><div class="body">
+<details class="aid hint" name="hint-6/6c"><summary>Hint 3</summary><div class="body">
 <p>With no wins the chart is an empty string, which prints a confusing nothing. <code>chart or 'none'</code> prints <code>none</code> instead.</p>
 </div></details>
 <details class="aid solution"><summary><span class="closed">Show solution</span><span class="opened">Hide solution</span></summary><div class="body">
@@ -1264,7 +1282,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <p>Delete <code>history.txt</code> if you want : the database has taken over. The finished project is in <code>solutions/10-database-access/</code>.</p>
 </div></details>
 <hr>
-
+</article>
 </section>
 <section class="step optional" id="step-opt" data-step="opt">
 <h2><span class="num">If time permits</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="opt" data-step="opt" data-optional="1"> Done</label></h2>
@@ -1317,6 +1335,61 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="color:#24292EFF">cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
 <span class="line"><span style="color:#24292EFF">cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"CREATE TABLE IF NOT EXISTS films(id INTEGER PRIMARY KEY, title TEXT)"</span><span style="color:#212121">)</span></span>
 <span class="line"></span></code></pre>
+</section>
+</foreignObject></svg></div></template>
+<template id="slide-10-python-database-access-3" data-css="slide-css-1" data-title="Check Database Version" data-module="Module 10 · Python Database Access" data-deck="slides/10-python-database-access.html#3"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Database Access</a></div>
+<h1 id="check-database-version">Check Database Version</h1>
+<ul>
+<li>A first query asks SQLite for its version :
+<ul>
+<li><code>fetchone()</code> returns the result row as a tuple, here with one value</li>
+<li><code>close()</code> releases the database file</li>
+</ul>
+</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> sqlite3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">con </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> sqlite3</span><span style="color:#212121">.</span><span style="color:#6F42C1">connect</span><span style="color:#212121">(</span><span style="color:#22863A">"watchlist.db"</span><span style="color:#212121">)</span><span style="color:#4a9c59">  # creates watchlist.db if it does not exist</span></span>
+<span class="line"><span style="color:#24292EFF">cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"SELECT sqlite_version()"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#D32F2F">f</span><span style="color:#22863A">"SQLite version: </span><span style="color:#1976D2">{</span><span style="color:#212121">cur.</span><span style="color:#6F42C1">fetchone</span><span style="color:#212121">()[</span><span style="color:#1976D2">0</span><span style="color:#212121">]</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">con</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span></span>
+<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>SQLite version: 3.50.4</span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li>The version depends on the Python installation.</li>
+</ul>
+<blockquote>
+<p><code class="pill-demo pill-id">demo01</code><br><code class="pill-demo pill-desc">databaseversion</code></p>
+</blockquote>
+</section>
+</foreignObject></svg></div></template>
+<template id="slide-10-python-database-access-16" data-css="slide-css-1" data-title="Recording a Timestamp" data-module="Module 10 · Python Database Access" data-deck="slides/10-python-database-access.html#16"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Database Access</a></div>
+<h1 id="recording-a-timestamp">Recording a Timestamp</h1>
+<ul>
+<li><code>datetime</code> from the standard library represents a date and time</li>
+<li><code>isoformat</code> produces text with the year first :
+<ul>
+<li><code>timespec=&quot;seconds&quot;</code> keeps the time to whole seconds</li>
+</ul>
+</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> datetime </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">taken_at </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> datetime</span><span style="color:#212121">(</span><span style="color:#1976D2">2026</span><span style="color:#212121">, </span><span style="color:#1976D2">10</span><span style="color:#212121">, </span><span style="color:#1976D2">17</span><span style="color:#212121">, </span><span style="color:#1976D2">10</span><span style="color:#212121">, </span><span style="color:#1976D2">8</span><span style="color:#212121">, </span><span style="color:#1976D2">15</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(taken_at.</span><span style="color:#6F42C1">isoformat</span><span style="color:#212121">(timespec</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"seconds"</span><span style="color:#212121">))</span></span>
+<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>2026-10-17T10:08:15</span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li><code>datetime.now()</code> supplies the current local date and time :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">recorded_at </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> datetime</span><span style="color:#212121">.</span><span style="color:#6F42C1">now</span><span style="color:#212121">().</span><span style="color:#6F42C1">isoformat</span><span style="color:#212121">(timespec</span><span style="color:#D32F2F">=</span><span style="color:#22863A">"seconds"</span><span style="color:#212121">)</span></span>
+<span class="line"></span></code></pre>
+<blockquote>
+<p><code class="pill-demo pill-id">demo13</code><br><code class="pill-demo pill-desc">timestamp</code></p>
+</blockquote>
 </section>
 </foreignObject></svg></div></template>
 <template id="slide-10-python-database-access-5" data-css="slide-css-1" data-title="Inserting Data" data-module="Module 10 · Python Database Access" data-deck="slides/10-python-database-access.html#5"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Database Access</a></div>
@@ -1549,7 +1622,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </blockquote>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-03-data-structures-16" data-css="slide-css-1" data-title="Dictionaries" data-module="Module 3 · Data Structures" data-deck="slides/03-data-structures.html#16"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Data Structures</a></div>
+<template id="slide-03-data-structures-15" data-css="slide-css-1" data-title="Dictionaries" data-module="Module 3 · Data Structures" data-deck="slides/03-data-structures.html#15"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Data Structures</a></div>
 <h1 id="dictionaries">Dictionaries</h1>
 <ul>
 <li>A dictionary can map a track title to its duration in seconds :
@@ -1630,7 +1703,109 @@ a.ex-row:hover { border-color: var(--accent); }
 </blockquote>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-02-variables-and-data-types-16" data-css="slide-css-1" data-title="String Operators" data-module="Module 2 · Variables and Data Types" data-deck="slides/02-variables-and-data-types.html#16"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Variables and Data Types</a></div>
+<template id="slide-05-functions-4" data-css="slide-css-1" data-title="return Statement" data-module="Module 5 · Functions" data-deck="slides/05-functions.html#4"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Functions</a></div>
+<h1 id="return-statement">return Statement</h1>
+<ul>
+<li>A returned value can be stored and used by the caller :
+<ul>
+<li><code>label</code> receives the duration text</li>
+<li>The caller includes it in a track description</li>
+</ul>
+</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">def</span><span style="color:#6F42C1"> format_duration</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">seconds</span><span style="color:#24292EFF">):</span></span>
+<span class="line"><span style="color:#24292EFF">    minutes </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> seconds </span><span style="color:#D32F2F">//</span><span style="color:#1976D2"> 60</span></span>
+<span class="line"><span style="color:#24292EFF">    remainder </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> seconds </span><span style="color:#D32F2F">%</span><span style="color:#1976D2"> 60</span></span>
+<span class="line"><span style="color:#D32F2F">    return</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">minutes</span><span style="color:#1976D2">}</span><span style="color:#22863A">:</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">remainder</span><span style="color:#D32F2F">:02d</span><span style="color:#1976D2">}</span><span style="color:#22863A">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">label </span><span style="color:#D32F2F">=</span><span style="color:#6F42C1"> format_duration</span><span style="color:#212121">(</span><span style="color:#1976D2">125</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">message </span><span style="color:#D32F2F">=</span><span style="color:#D32F2F"> f</span><span style="color:#22863A">"Yesterday [</span><span style="color:#1976D2">{</span><span style="color:#24292EFF">label</span><span style="color:#1976D2">}</span><span style="color:#22863A">]"</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(message)</span></span>
+<span class="line"></span></code></pre>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span>Yesterday [2:05]</span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li><code>return</code> ends the current call and passes its value back</li>
+</ul>
+<blockquote>
+<p><code class="pill-demo pill-id">demo02</code><br><code class="pill-demo pill-desc">returnstatement</code></p>
+</blockquote>
+</section>
+</foreignObject></svg></div></template>
+<template id="slide-03-data-structures-11" data-css="slide-css-1" data-title="Usage of Tuples" data-module="Module 3 · Data Structures" data-deck="slides/03-data-structures.html#11"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Data Structures</a></div>
+<h1 id="usage-of-tuples">Usage of Tuples</h1>
+<ul>
+<li>Tuples have many uses :
+<ul>
+<li>Photo dimensions, track metadata and records from a database</li>
+</ul>
+</li>
+<li>Any set of comma-separated objects default to tuples :
+<ul>
+<li>Even without parentheses around them</li>
+</ul>
+</li>
+<li>Tuples can be dictionary keys and set members if every item is hashable</li>
+<li>Tuples can make your code safer :
+<ul>
+<li>Allows you to &quot;write-protect&quot; data that does not need to be changed</li>
+</ul>
+</li>
+<li>A tuple can have lists as items :
+<ul>
+<li>The items in the lists are mutable however</li>
+</ul>
+</li>
+<li>Tuple can be destructured and contents assigned to variables :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#24292EFF">selection </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> (</span><span style="color:#22863A">"Imagine"</span><span style="color:#212121">,</span><span style="color:#22863A"> "Toxic"</span><span style="color:#24292EFF">)</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(selection)</span><span style="color:#4a9c59">  # ('Imagine', 'Toxic')</span></span>
+<span class="line"><span style="color:#24292EFF">primary</span><span style="color:#212121">,</span><span style="color:#24292EFF"> backup </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> selection</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(primary)</span><span style="color:#4a9c59">  # 'Imagine'</span></span>
+<span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(backup)</span><span style="color:#4a9c59">  # 'Toxic'</span></span>
+<span class="line"></span></code></pre>
+<blockquote>
+<p><code class="pill-demo pill-id">demo08</code><br><code class="pill-demo pill-desc">destructurewithtuples</code></p>
+</blockquote>
+</section>
+</foreignObject></svg></div></template>
+<template id="slide-10-python-database-access-4" data-css="slide-css-1" data-title="Using with" data-module="Module 10 · Python Database Access" data-deck="slides/10-python-database-access.html#4"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Python Database Access</a></div>
+<h1 id="using-with">Using with</h1>
+<ul>
+<li>A connection used in a <code>with</code> statement manages the transaction :
+<ul>
+<li>When the block ends normally, the changes are committed</li>
+<li>When the block ends with an exception, the changes are rolled back</li>
+</ul>
+</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> sqlite3</span></span>
+<span class="line"><span style="color:#24292EFF">con </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> sqlite3</span><span style="color:#212121">.</span><span style="color:#6F42C1">connect</span><span style="color:#212121">(</span><span style="color:#22863A">"watchlist.db"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">with</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">    cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"SELECT COUNT(*) FROM films"</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#24292EFF">con</span><span style="color:#212121">.</span><span style="color:#6F42C1">close</span><span style="color:#212121">()</span><span style="color:#4a9c59">  # `with con:` commits or rolls back, it does not close</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li>The connection stays open after the block :
+<ul>
+<li>Close it yourself with <code>con.close()</code> when you are done</li>
+</ul>
+</li>
+<li><code>closing()</code> from <code>contextlib</code> calls <code>close()</code> when the block ends, so one <code>with</code> line can commit and close :</li>
+</ul>
+<pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#D32F2F">from</span><span style="color:#24292EFF"> contextlib </span><span style="color:#D32F2F">import</span><span style="color:#24292EFF"> closing</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D32F2F">with</span><span style="color:#6F42C1"> closing</span><span style="color:#212121">(sqlite3.</span><span style="color:#6F42C1">connect</span><span style="color:#212121">(</span><span style="color:#22863A">"watchlist.db"</span><span style="color:#212121">))</span><span style="color:#D32F2F"> as</span><span style="color:#24292EFF"> con</span><span style="color:#212121">,</span><span style="color:#24292EFF"> con</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">    cur </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> con</span><span style="color:#212121">.</span><span style="color:#6F42C1">cursor</span><span style="color:#212121">()</span></span>
+<span class="line"><span style="color:#24292EFF">    cur</span><span style="color:#212121">.</span><span style="color:#6F42C1">execute</span><span style="color:#212121">(</span><span style="color:#22863A">"SELECT COUNT(*) FROM films"</span><span style="color:#212121">)</span></span>
+<span class="line"></span></code></pre>
+<blockquote>
+<p><code class="pill-demo pill-id">demo02</code><br><code class="pill-demo pill-desc">usingwith</code></p>
+</blockquote>
+</section>
+</foreignObject></svg></div></template>
+<template id="slide-02-variables-and-data-types-17" data-css="slide-css-1" data-title="String Operators" data-module="Module 2 · Variables and Data Types" data-deck="slides/02-variables-and-data-types.html#17"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Variables and Data Types</a></div>
 <h1 id="string-operators">String Operators</h1>
 <table>
 <thead>
@@ -1672,7 +1847,7 @@ a.ex-row:hover { border-color: var(--accent); }
 </table>
 </section>
 </foreignObject></svg></div></template>
-<template id="slide-02-variables-and-data-types-21" data-css="slide-css-1" data-title="Format Specifications" data-module="Module 2 · Variables and Data Types" data-deck="slides/02-variables-and-data-types.html#21"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Variables and Data Types</a></div>
+<template id="slide-02-variables-and-data-types-22" data-css="slide-css-1" data-title="Format Specifications" data-module="Module 2 · Variables and Data Types" data-deck="slides/02-variables-and-data-types.html#22"><div class="marpit"><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="1" data-class="default" data-theme="spiraltrain" class="default" style="--class:default;--theme:spiraltrain;" data-size="16:10"><div class="ml-eyebrow"><a>Variables and Data Types</a></div>
 <h1 id="format-specifications">Format Specifications</h1>
 <ul>
 <li>A colon inside a field introduces its display format :</li>
@@ -1721,7 +1896,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="color:#6F42C1">print</span><span style="color:#212121">(</span><span style="color:#22863A">"Photo </span><span style="color:#1976D2">{</span><span style="color:#D32F2F">:05d</span><span style="color:#1976D2">}</span><span style="color:#22863A">: </span><span style="color:#1976D2">{</span><span style="color:#D32F2F">:6.2f</span><span style="color:#1976D2">}</span><span style="color:#22863A"> MB"</span><span style="color:#212121">.</span><span style="color:#6F42C1">format</span><span style="color:#212121">(photo_id, size_mb))</span></span>
 <span class="line"></span></code></pre>
 <blockquote>
-<p><code class="pill-demo pill-id">demo13</code><br><code class="pill-demo pill-desc">formatspecs</code></p>
+<p><code class="pill-demo pill-id">demo14</code><br><code class="pill-demo pill-desc">formatspecs</code></p>
 </blockquote>
 </section>
 </foreignObject></svg></div></template>

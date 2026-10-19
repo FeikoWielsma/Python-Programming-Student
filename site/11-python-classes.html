@@ -999,13 +999,13 @@ a.ex-row:hover { border-color: var(--accent); }
 </div>
 <div class="layout">
 <nav class="nav" aria-label="Steps">
-  <div class="overall"><div class="overall-label">Progress</div><div class="meter"><i></i></div><div class="overall-text">0 of 5 done</div></div>
+  <div class="overall"><div class="overall-label">Progress</div><div class="meter"><i></i></div><div class="overall-text">0 of 6 done</div></div>
   <ol>
 <li class=""><a href="#step-1" data-step="1"><span class="n">1</span><span class="t">A Game with plain attributes</span><span class="count">0/1</span></a></li>
 <li class=""><a href="#step-2" data-step="2"><span class="n">2</span><span class="t">A method that plays a guess</span><span class="count">0/1</span></a></li>
 <li class=""><a href="#step-3" data-step="3"><span class="n">3</span><span class="t">Values that work themselves out</span><span class="count">0/1</span></a></li>
 <li class=""><a href="#step-4" data-step="4"><span class="n">4</span><span class="t">When a plain attribute is not enough</span><span class="count">0/1</span></a></li>
-<li class=""><a href="#step-5" data-step="5"><span class="n">5</span><span class="t">Draw the board and shrink play</span><span class="count">0/1</span></a></li>
+<li class=""><a href="#step-5" data-step="5"><span class="n">5</span><span class="t">Draw the board and shrink play</span><span class="count">0/2</span></a></li>
 <li class="optional"><a href="#step-opt" data-step="opt"><span class="n">If time permits</span><span class="t"></span><span class="count">0/1</span></a></li>
   </ol>
 </nav>
@@ -1022,6 +1022,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <div class="brief">
 <p>Look at <code>play</code> in <code>wordle/game.py</code>. The state of one game is spread over a handful of loose variables : <code>secret</code>, <code>words</code>, <code>history</code>, <code>guess_count</code>, <code>max_guesses</code>. Every new feature, the hint, the statistics and the next one you add, has to pass them around or reach into them, and nothing stops a function from putting a nonsense value in one of them. In this exercise you gather them in a class, <code>Game</code>, which owns its state and the rules about it. On the way you meet properties and the one question that decides when to use them.</p>
 <p>Continue in your own <code>wordle</code> project, or start from <code>exercises/starters/11-python-classes/</code>. The starter is the finished Exercise 10.</p>
+<p>After editing the class, leave the Python interpreter with <code>exit()</code> and start it again. Repeat the import and create a new <code>Game</code> before trying the changed methods or properties; an existing object keeps its old class definition.</p>
 <p>Some steps give you the code, some a skeleton to complete, and one only the signatures and a few examples of what they should do. Where you write the code yourself, the solution is hidden until you open it. Try the step first; the solution is there for when you are stuck, or to compare afterwards.</p>
 </div>
 <section class="step" id="step-1" data-step="1">
@@ -1047,6 +1048,9 @@ a.ex-row:hover { border-color: var(--accent); }
 <div class="codeblock"><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>crane 6 []</span></span>
 <span class="line"><span>3</span></span></code></pre></div>
 <p>An attribute is read and assigned like a variable. There is nothing else to write, and for now that is how it should be. See <button type="button" class="slide-ref" data-slide="11-python-classes-11" title="Show the slide"><em>Attributes Are Public</em></button>.</p>
+<details class="aid hint" name="hint-1"><summary>Hint 1</summary><div class="body">
+<p>The slides <button type="button" class="slide-ref" data-slide="11-python-classes-3" title="Show the slide"><em>Creating Classes</em></button> and <button type="button" class="slide-ref" data-slide="11-python-classes-6" title="Show the slide"><em>Class Members</em></button> show the constructor and attributes assigned through <code>self</code>. Keep <code>Game</code> above the existing <code>play</code> function for now.</p>
+</div></details>
 
 </section>
 <section class="step" id="step-2" data-step="2">
@@ -1201,7 +1205,9 @@ a.ex-row:hover { border-color: var(--accent); }
 
 </section>
 <section class="step" id="step-5" data-step="5">
-<h2><span class="num">Step 5</span><span class="title">Draw the board and shrink play</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="5" data-step="5"> Done</label></h2>
+<h2><span class="num">Step 5</span><span class="title">Draw the board and shrink play</span><span class="grow"></span></h2>
+<article class="card" id="sub-5a" data-card>
+  <div class="card-head"><h3><span class="tag">5a</span><span></span></h3><label class="done"><input type="checkbox" data-unit="5/5a" data-step="5"> Done</label></div>
 <p>A <code>Game</code> that can draw itself helps you debug it. Python asks an object for its text with <code>__str__</code>; <code>print(game)</code> and f-strings call it. Add one to <code>Game</code> that draws every scored guess on its own row with <code>render</code>.</p>
 <div class="codeblock"><span class="lang">python</span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    def</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> __str__</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(self) -> </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">str</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        """Draw every scored guess on its own row."""</span></span>
@@ -1214,6 +1220,12 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span>['green', 'green', 'green', 'green', 'green']</span></span>
 <span class="line"><span> S  L [A] T [E]</span></span>
 <span class="line"><span>[C][R][A][N][E]</span></span></code></pre></div>
+<details class="aid hint" name="hint-5/5a"><summary>Hint 1</summary><div class="body">
+<p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-10" title="Show the slide"><em><code>__str__</code> and <code>__repr__</code></em></button> shows returning text from <code>__str__</code>, and <button type="button" class="slide-ref" data-slide="07-comprehensions-12" title="Show the slide"><em>Generator Expressions</em></button> shows combining generated strings with <code>join</code>.</p>
+</div></details>
+</article>
+<article class="card" id="sub-5b" data-card>
+  <div class="card-head"><h3><span class="tag">5b</span><span></span></h3><label class="done"><input type="checkbox" data-unit="5/5b" data-step="5"> Done</label></div>
 <p>Now let <code>play</code> do less. Change it so that it creates a <code>Game</code> and loops until the game is over :</p>
 <ul>
 <li>create the game after loading the allowed list : <code>game = Game(secret, allowed_words, max_guesses)</code></li>
@@ -1224,14 +1236,14 @@ a.ex-row:hover { border-color: var(--accent); }
 <li>after the loop, <code>game.is_won</code> decides the message : <code>Got it in N!</code> after a win, and <code>The word was ...</code> after a loss</li>
 <li>return <code>len(game.history), game.is_won</code>, the same two values as in Exercise 10, so that <code>__main__</code> still has what it needs for <code>record_game</code></li>
 </ul>
-<p>Play a game with <code>WORDLE_SECRET=crane</code>; it must behave as before.</p>
-<details class="aid hint" name="hint-5"><summary>Hint 1</summary><div class="body">
+<p>Play a game with <code>secret = &quot;crane&quot;</code> in <code>wordle/__main__.py</code>; it must behave as before.</p>
+<details class="aid hint" name="hint-5/5b"><summary>Hint 1</summary><div class="body">
 <p>The slide <button type="button" class="slide-ref" data-slide="11-python-classes-10" title="Show the slide"><em><code>__str__</code> and <code>__repr__</code></em></button> shows <code>__str__</code> returning the text that <code>print</code> shows, and <button type="button" class="slide-ref" data-slide="07-comprehensions-12" title="Show the slide"><em>Generator Expressions</em></button>, in module 07, writes an expression inside <code>join</code>.</p>
 </div></details>
-<details class="aid hint" name="hint-5"><summary>Hint 2</summary><div class="body">
+<details class="aid hint" name="hint-5/5b"><summary>Hint 2</summary><div class="body">
 <p>The loop body shrinks to : read the guess, handle the commands, <code>check_guess</code> and <code>marks = game.guess(guess)</code> inside <code>try</code>, update <code>used_letters</code>, print <code>render(guess, marks)</code>. The win test and the counter are gone, because the loop condition and <code>game.is_won</code> now know.</p>
 </div></details>
-<details class="aid hint" name="hint-5"><summary>Hint 3</summary><div class="body">
+<details class="aid hint" name="hint-5/5b"><summary>Hint 3</summary><div class="body">
 <p>A single <code>&quot;\n&quot;.join(...)</code> over a generator expression is the whole of <code>__str__</code>. The expression is <code>render(word, marks)</code> for each <code>word, marks</code> pair in <code>self.history</code>, and <code>\n</code> is the newline that puts each row on its own line.</p>
 </div></details>
 <details class="aid solution"><summary><span class="closed">Show solution</span><span class="opened">Hide solution</span></summary><div class="body">
@@ -1273,7 +1285,7 @@ a.ex-row:hover { border-color: var(--accent); }
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> len</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(game.history), game.is_won</span></span></code></pre></div>
 </div></details>
 <hr>
-
+</article>
 </section>
 <section class="step optional" id="step-opt" data-step="opt">
 <h2><span class="num">If time permits</span><span class="grow"></span><label class="done"><input type="checkbox" data-unit="opt" data-step="opt" data-optional="1"> Done</label></h2>
