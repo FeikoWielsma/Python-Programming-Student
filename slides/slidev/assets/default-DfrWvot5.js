@@ -1,0 +1,1 @@
+import{$ as e,H as t,vt as n,y as r,z as i}from"./modules/shiki-86dimqu8.js";import{W as a}from"./useNav-D1-F8DNX.js";import"./index-DgW5bn_k.js";import{t as o}from"./CourseFrame-CPoOKNSl.js";var s={__name:`default`,setup(s){let{$frontmatter:c}=a();return(a,s)=>(i(),r(o,{meta:n(c)},{default:e(()=>[t(a.$slots,`default`)]),_:3},8,[`meta`]))}};export{s as t};
