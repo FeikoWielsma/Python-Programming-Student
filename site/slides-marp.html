@@ -65,25 +65,25 @@
 </div>
 <div class="sched-topics" style="font-size:19px;height:732px;overflow:hidden;margin-top:38px;"><ul>
       <li><a href="#4">What is Python?</a></li>
-      <li><a href="#5">Source Code and Output</a></li>
-      <li><a href="#6">Files and Folders</a></li>
-      <li><a href="#7">The Editor and the Terminal</a></li>
-      <li><a href="#8">Preparing Python</a></li>
-      <li><a href="#9">Editor Setup</a></li>
-      <li><a href="#10">Creating a Project</a></li>
-      <li><a href="#11">Creating a Python File</a></li>
-      <li><a href="#12">Running a Python File</a></li>
-      <li><a href="#13">Changing a Program</a></li>
-      <li><a href="#14">Statements Run in Order</a></li>
-      <li><a href="#15">Quotes in Python</a></li>
-      <li><a href="#16">Comments in Python</a></li>
-      <li><a href="#17">Reading a Syntax Error</a></li>
-      <li><a href="#18">Correcting and Rerunning</a></li>
-      <li><a href="#19">Finding a File to Run</a></li>
-      <li><a href="#20">Python in Interactive Mode</a></li>
-      <li><a href="#21">Python Background</a></li>
-      <li><a href="#22">Python Features</a></li>
-      <li><a href="#23">Python Applications</a></li>
+      <li><a href="#5">Python Background</a></li>
+      <li><a href="#6">Python Features</a></li>
+      <li><a href="#7">Python Applications</a></li>
+      <li><a href="#8">Source Code and Output</a></li>
+      <li><a href="#9">Files and Folders</a></li>
+      <li><a href="#10">The Editor and the Terminal</a></li>
+      <li><a href="#11">Preparing Python</a></li>
+      <li><a href="#12">Editor Setup</a></li>
+      <li><a href="#13">Creating a Project</a></li>
+      <li><a href="#14">Creating a Python File</a></li>
+      <li><a href="#15">Running a Python File</a></li>
+      <li><a href="#16">Changing a Program</a></li>
+      <li><a href="#17">Statements Run in Order</a></li>
+      <li><a href="#18">Quotes in Python</a></li>
+      <li><a href="#19">Comments in Python</a></li>
+      <li><a href="#20">Reading a Syntax Error</a></li>
+      <li><a href="#21">Correcting and Rerunning</a></li>
+      <li><a href="#22">Finding a File to Run</a></li>
+      <li><a href="#23">Python in Interactive Mode</a></li>
 </ul></div>
 </div>
 </section>
@@ -108,6 +108,125 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="5" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="5" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
+<h1 id="python-background">Python Background</h1>
+<ul>
+<li>Guido van Rossum started Python at CWI in the Netherlands in 1989</li>
+<li>The first public release followed in February 1991</li>
+<li>The name comes from the comedy series <em>Monty Python's Flying Circus</em></li>
+<li>Python is open source :
+<ul>
+<li>Its source code can be inspected, changed and shared under its licence</li>
+<li>It is free to use, including in commercial applications</li>
+</ul>
+</li>
+</ul>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 140" width="100%" role="img" aria-label="Python milestones: development begins in 1989, first public release in 1991, Python 2 in 2000, Python 3 in 2008, Python 2 support ends in 2020">
+  <path d="M65 62H895" fill="none" stroke="currentColor" stroke-width="3" opacity=".4" />
+  <g fill="currentColor" font-family="sans-serif" text-anchor="middle">
+    <circle cx="65" cy="62" r="7" /><circle cx="255" cy="62" r="7" /><circle cx="465" cy="62" r="7" /><circle cx="675" cy="62" r="7" /><circle cx="895" cy="62" r="7" />
+    <g font-size="26" font-weight="600"><text x="65" y="33">1989</text><text x="255" y="33">1991</text><text x="465" y="33">2000</text><text x="675" y="33">2008</text><text x="895" y="33">2020</text></g>
+    <g font-size="18"><text x="65" y="100">Work begins</text><text x="255" y="100">Public release</text><text x="465" y="100">Python 2</text><text x="675" y="100">Python 3</text><text x="895" y="100">Python 2</text><text x="895" y="124">support ends</text></g>
+  </g>
+</svg>
+<ul>
+<li>Python 3 introduced changes that broke compatibility with Python 2</li>
+<li>Python 2 examples in older books may need changes to run on Python 3</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="6" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="6" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+<div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
+<h1 id="python-features">Python Features</h1>
+<ul>
+<li>Python is a general-purpose language with an emphasis on readable code</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Meaning in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High-level</td>
+<td>Work with text, files and collections using built-in operations</td>
+</tr>
+<tr>
+<td>Interpreted</td>
+<td>Run source code through the Python interpreter</td>
+</tr>
+<tr>
+<td>Interactive</td>
+<td>Try statements directly at the <code>&gt;&gt;&gt;</code> prompt</td>
+</tr>
+<tr>
+<td>Portable</td>
+<td>Python runs on Windows, macOS and Linux</td>
+</tr>
+<tr>
+<td>Standard library</td>
+<td>Python includes tools for files, dates, internet access and more</td>
+</tr>
+<tr>
+<td>Third-party packages</td>
+<td>Install additional tools for specialised tasks</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Operating-system paths and external tools can still require platform-specific code</li>
+<li>A library is reusable code; a package groups code that can be installed or imported</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="7" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="7" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+<div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
+<h1 id="python-applications">Python Applications</h1>
+<ul>
+<li>Python programs range from short scripts to complete applications</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Example task</th>
+<th>Common tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automation</td>
+<td>Rename photos and organise folders</td>
+<td>Standard library</td>
+</tr>
+<tr>
+<td>Data analysis</td>
+<td>Summarise listening history and plot trends</td>
+<td>pandas, Matplotlib</td>
+</tr>
+<tr>
+<td>Web applications</td>
+<td>Serve a music catalogue through a website</td>
+<td>Django, Flask</td>
+</tr>
+<tr>
+<td>Scientific computing</td>
+<td>Calculate with arrays of measurements</td>
+<td>NumPy, SciPy</td>
+</tr>
+<tr>
+<td>Machine learning</td>
+<td>Classify images using a trained model</td>
+<td>scikit-learn, PyTorch</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Libraries provide specialised operations; Python code connects them</li>
+<li>Large computations often run inside libraries implemented in compiled languages</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="8" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="8" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+<div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="source-code-and-output">Source Code and Output</h1>
 <ul>
 <li>Source code is the text written in the Python language</li>
@@ -127,7 +246,7 @@
 <p><code class="pill-demo pill-id">demo01</code><br><code class="pill-demo pill-desc">first_message</code></p>
 </blockquote>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="6" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="6" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="9" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="9" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="files-and-folders">Files and Folders</h1>
 <ul>
@@ -147,7 +266,7 @@
 </ul>
 <div class="mermaid-diagram" style="aspect-ratio: 409 / 200"><svg xmlns="http://www.w3.org/2000/svg" class="pele pele-flowchart" viewBox="0 0 409 200" style="--_bg:var(--pele-bg,#fff);--_fg:var(--pele-fg,#1f1f1f);--_m:var(--pele-muted,#6e6e6e);--_l:var(--pele-line,#1f1f1f);--_s:var(--pele-surface,#f3f3f3);--_a:var(--pele-surface-alt,#e6e6e6);--_b:var(--pele-border,#8a8a8a);--_c:var(--pele-accent,#5b7bd5);color:var(--_fg);--_r:var(--pele-radius,4px);--_fm:var(--pele-font-mono,IBM Plex Mono, ui-monospace, monospace);font:16px sans-serif;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;font-family:var(--pele-font,IBM Plex Sans, Helvetica Neue, Arial, sans-serif)" fill="var(--_fg)" role="graphics-document document" aria-roledescription="flowchart" preserveAspectRatio="xMidYMid meet"><g class="pele-edges" fill="none" stroke="var(--_l)" stroke-linecap="round"><g class="pele-edge" data-id="L_A_B_0"><path d="M175.58,92C193.08,92 193.08,44 210.58,44L216.58,44" /><path class="pele-marker" d="M223.58,44L215.58,47.36L215.58,40.64Z" fill="var(--_l)" stroke="none" /></g><g class="pele-edge" data-id="L_A_C_0"><path d="M175.58,108C193.08,108 193.08,156 210.58,156L216.58,156" /><path class="pele-marker" d="M223.58,156L215.58,159.36L215.58,152.64Z" fill="var(--_l)" stroke="none" /></g></g><g class="pele-nodes"><g class="pele-node pele-shape-rect" data-id="A" transform="translate(91.79,100)"><rect x="-83.79" y="-24" width="167.58" height="48" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" x="0" y="5.6" text-anchor="middle">course-work folder</text></g><g class="pele-node pele-shape-rect" data-id="B" transform="translate(312.29,44)"><rect x="-88.7" y="-36" width="177.41" height="72" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" text-anchor="middle" xml:space="preserve"><tspan x="0" y="-6.4">hello.py</tspan><tspan x="0" y="17.6">Python source code</tspan></text></g><g class="pele-node pele-shape-rect" data-id="C" transform="translate(296.27,156)"><rect x="-72.69" y="-36" width="145.38" height="72" fill="var(--_s)" stroke="var(--_b)" style="rx:var(--_r)" /><text class="pele-label" text-anchor="middle" xml:space="preserve"><tspan x="0" y="-6.4">pyproject.toml</tspan><tspan x="0" y="17.6">Project settings</tspan></text></g></g></svg></div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="7" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="7" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="10" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="10" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="the-editor-and-the-terminal">The Editor and the Terminal</h1>
 <ul>
@@ -168,7 +287,7 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="8" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="8" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="11" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="11" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="preparing-python">Preparing Python</h1>
 <ul>
@@ -189,7 +308,7 @@
 <pre class="shiki min-light" style="background-color:#ffffff;color:#24292eff" tabindex="0"><code><span class="line"><span style="color:#6F42C1">uv</span><span style="color:#2B5581"> python</span><span style="color:#2B5581"> install</span><span style="color:#1976D2"> 3.14</span></span>
 <span class="line"></span></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="9" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="9" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="12" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="12" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="editor-setup">Editor Setup</h1>
 <ul>
@@ -235,7 +354,7 @@
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="10" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="10" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="13" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="13" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="creating-a-project">Creating a Project</h1>
 <ul>
@@ -257,7 +376,7 @@
 <li>Open the new <code>course-work</code> folder with <code>File &gt; Open Folder</code></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="11" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="11" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="14" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="14" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="creating-a-python-file">Creating a Python File</h1>
 <ul>
@@ -276,7 +395,7 @@
 <li>Saving writes the editor's contents to the file on disk</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="12" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="12" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="15" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="15" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="running-a-python-file">Running a Python File</h1>
 <ul>
@@ -296,7 +415,7 @@
 <li>When the program finishes, the terminal prompt returns</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="13" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="13" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="16" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="16" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="changing-a-program">Changing a Program</h1>
 <ul>
@@ -319,7 +438,7 @@
 <p><code class="pill-demo pill-id">demo02</code><br><code class="pill-demo pill-desc">changed_message</code></p>
 </blockquote>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="14" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="14" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="17" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="17" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="statements-run-in-order">Statements Run in Order</h1>
 <ul>
@@ -340,7 +459,7 @@
 <p><code class="pill-demo pill-id">demo03</code><br><code class="pill-demo pill-desc">statement_order</code></p>
 </blockquote>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="15" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="15" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="18" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="18" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="quotes-in-python">Quotes in Python</h1>
 <ul>
@@ -364,7 +483,7 @@
 <p><code class="pill-demo pill-id">demo04</code><br><code class="pill-demo pill-desc">quoted_text</code></p>
 </blockquote>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="16" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="16" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="19" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="19" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="comments-in-python">Comments in Python</h1>
 <ul>
@@ -390,7 +509,7 @@
 <p><code class="pill-demo pill-id">demo05</code><br><code class="pill-demo pill-desc">comments</code></p>
 </blockquote>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="17" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="17" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="20" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="20" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="reading-a-syntax-error">Reading a Syntax Error</h1>
 <ul>
@@ -412,7 +531,7 @@
 <li>The marked location is where Python detected the problem</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="18" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="18" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="21" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="21" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="correcting-and-rerunning">Correcting and Rerunning</h1>
 <ul>
@@ -432,7 +551,7 @@
 <li>The most recent run shows whether the saved correction worked</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="19" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="19" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="22" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="22" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="finding-a-file-to-run">Finding a File to Run</h1>
 <ul>
@@ -456,7 +575,7 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="20" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="20" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="23" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="23" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
 <div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
 <h1 id="python-in-interactive-mode">Python in Interactive Mode</h1>
 <ul>
@@ -478,125 +597,6 @@
 <li>The interactive interpreter displays the result of <code>2 + 3</code> directly</li>
 <li><code>exit()</code> returns to the terminal prompt; terminal commands run there</li>
 <li>Interactive statements are not saved in a <code>.py</code> file</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="21" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="21" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
-<div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
-<h1 id="python-background">Python Background</h1>
-<ul>
-<li>Guido van Rossum started Python at CWI in the Netherlands in 1989</li>
-<li>The first public release followed in February 1991</li>
-<li>The name comes from the comedy series <em>Monty Python's Flying Circus</em></li>
-<li>Python is open source :
-<ul>
-<li>Its source code can be inspected, changed and shared under its licence</li>
-<li>It is free to use, including in commercial applications</li>
-</ul>
-</li>
-</ul>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 140" width="100%" role="img" aria-label="Python milestones: development begins in 1989, first public release in 1991, Python 2 in 2000, Python 3 in 2008, Python 2 support ends in 2020">
-  <path d="M65 62H895" fill="none" stroke="currentColor" stroke-width="3" opacity=".4" />
-  <g fill="currentColor" font-family="sans-serif" text-anchor="middle">
-    <circle cx="65" cy="62" r="7" /><circle cx="255" cy="62" r="7" /><circle cx="465" cy="62" r="7" /><circle cx="675" cy="62" r="7" /><circle cx="895" cy="62" r="7" />
-    <g font-size="26" font-weight="600"><text x="65" y="33">1989</text><text x="255" y="33">1991</text><text x="465" y="33">2000</text><text x="675" y="33">2008</text><text x="895" y="33">2020</text></g>
-    <g font-size="18"><text x="65" y="100">Work begins</text><text x="255" y="100">Public release</text><text x="465" y="100">Python 2</text><text x="675" y="100">Python 3</text><text x="895" y="100">Python 2</text><text x="895" y="124">support ends</text></g>
-  </g>
-</svg>
-<ul>
-<li>Python 3 introduced changes that broke compatibility with Python 2</li>
-<li>Python 2 examples in older books may need changes to run on Python 3</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="22" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="22" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
-<div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
-<h1 id="python-features">Python Features</h1>
-<ul>
-<li>Python is a general-purpose language with an emphasis on readable code</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Meaning in practice</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>High-level</td>
-<td>Work with text, files and collections using built-in operations</td>
-</tr>
-<tr>
-<td>Interpreted</td>
-<td>Run source code through the Python interpreter</td>
-</tr>
-<tr>
-<td>Interactive</td>
-<td>Try statements directly at the <code>&gt;&gt;&gt;</code> prompt</td>
-</tr>
-<tr>
-<td>Portable</td>
-<td>Python runs on Windows, macOS and Linux</td>
-</tr>
-<tr>
-<td>Standard library</td>
-<td>Python includes tools for files, dates, internet access and more</td>
-</tr>
-<tr>
-<td>Third-party packages</td>
-<td>Install additional tools for specialised tasks</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Operating-system paths and external tools can still require platform-specific code</li>
-<li>A library is reusable code; a package groups code that can be installed or imported</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="23" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="23" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
-<div class="ml-eyebrow"><a href="#3"><span class="ml-tag">python</span>Python Intro</a></div>
-<h1 id="python-applications">Python Applications</h1>
-<ul>
-<li>Python programs range from short scripts to complete applications</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Area</th>
-<th>Example task</th>
-<th>Common tools</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Automation</td>
-<td>Rename photos and organise folders</td>
-<td>Standard library</td>
-</tr>
-<tr>
-<td>Data analysis</td>
-<td>Summarise listening history and plot trends</td>
-<td>pandas, Matplotlib</td>
-</tr>
-<tr>
-<td>Web applications</td>
-<td>Serve a music catalogue through a website</td>
-<td>Django, Flask</td>
-</tr>
-<tr>
-<td>Scientific computing</td>
-<td>Calculate with arrays of measurements</td>
-<td>NumPy, SciPy</td>
-</tr>
-<tr>
-<td>Machine learning</td>
-<td>Classify images using a trained model</td>
-<td>scikit-learn, PyTorch</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Libraries provide specialised operations; Python code connects them</li>
-<li>Large computations often run inside libraries implemented in compiled languages</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 800"><foreignObject width="1280" height="800"><section id="24" data-paginate="true" data-class="lang-python" data-theme="spiraltrain" lang="C" class="lang-python" data-marpit-pagination="24" style="--paginate:true;--class:lang-python;--theme:spiraltrain;" data-marpit-pagination-total="270" data-size="16:10">
