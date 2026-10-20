@@ -1,1 +1,0 @@
-import{Q as e,R as t,V as n,_t as r,v as i}from"./modules/shiki-D-xi-ucl.js";import{W as a}from"./useNav-CHfOAPmQ.js";import"./index-CRmi41_1.js";import{t as o}from"./CourseFrame-C6K95mRC.js";var s={__name:`default`,setup(s){let{$frontmatter:c}=a();return(a,s)=>(t(),i(o,{meta:r(c)},{default:e(()=>[n(a.$slots,`default`)]),_:3},8,[`meta`]))}};export{s as t};
